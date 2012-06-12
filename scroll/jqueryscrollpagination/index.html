@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery ScrollPagination</title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/scrollpagination.js"></script>
+<link href="scrollpagination_demo.css" rel="stylesheet" media="screen" />
+<meta name="author" content="Anderson Ferminiano" />
+<meta name="keywords" content="jquery, plugin, anderson ferminiano, scroll, pagination, scroll pagination, html5" /> 
+<script type="text/javascript">
+$(function(){
+	$('#content').scrollPagination({
+		'contentPage': 'democontent.html', // the page where you are searching for results
+		'contentData': {}, // you can pass the children().size() to know where is the pagination
+		'scrollTarget': $(window), // who gonna scroll? in this example, the full window
+		'heightOffset': 10, // how many pixels before reaching end of the page would loading start? positives numbers only please
+		'beforeLoad': function(){ // before load, some function, maybe display a preloader div
+			$('#loading').fadeIn();	
+		},
+		'afterLoad': function(elementsLoaded){ // after loading, some function to animate results and hide a preloader div
+			 $('#loading').fadeOut();
+			 var i = 0;
+			 $(elementsLoaded).fadeInWithDelay();
+			 if ($('#content').children().size() > 100){ // if more than 100 results loaded stop pagination (only for test)
+			 	$('#nomoreresults').fadeIn();
+				$('#content').stopScrollPagination();
+			 }
+		}
+	});
+	
+	// code for fade in element by element with delay
+	$.fn.fadeInWithDelay = function(){
+		var delay = 0;
+		return this.each(function(){
+			$(this).delay(delay).animate({opacity:1}, 200);
+			delay += 100;
+		});
+	};
+		   
+});
+</script>
+</head>
+<body>
+<div id="scrollpaginationdemo">
+    <div class="about">
+        <h1>jQuery ScrollPagination - @andferminiano</h1>
+        <p>jQuery ScrollPagination plugin has been developed by <a href="http://www.andersonferminiano.com" target="_blank">Anderson Ferminiano</a> for studying purposes, you may use it for free in any project you want, only preserve the credits.</p>
+    </div>
+     <div class="about">
+    	<h1>Sources</h1>
+        <p>Click <a href="source.zip" target="_blank">here</a> to download the full source with demo (.zip format).</p>
+    </div>
+    <div class="about">
+    	<h1>Example</h1>
+        <textarea readonly="readonly">
+           $(function(){
+                $('#content').scrollPagination({
+                    'contentPage': 'democontent.html', // the page where you are searching for results
+                    'contentData': {}, // you can pass the children().size() to know where is the pagination
+                    'scrollTarget': $(window), // who gonna scroll? in this example, the full window
+                    'heightOffset': 10, // how many pixels before reaching end of the page would loading start? positives numbers only please
+                    'beforeLoad': function(){ // before load, some function, maybe display a preloader div
+                        $('.loading').fadeIn();	
+                    },
+                    'afterLoad': function(elementsLoaded){ // after loading, some function to animate results and hide a preloader div
+                         $('.loading').fadeOut();
+                         var i = 0;
+                         $(elementsLoaded).fadeInWithDelay();
+                         if ($('#content').children().size() > 100){ // if more than 100 results loaded stop pagination (only for test)
+                            $('#content').stopScrollPagination();
+                         }
+                    }
+                });
+                
+                // code for fade in element by element with delay
+                $.fn.fadeInWithDelay = function(){
+                    var delay = 0;
+                    return this.each(function(){
+                        $(this).delay(delay).animate({opacity:1}, 200);
+                        delay += 100;
+                    });
+                };
+                       
+            });
+        </textarea>
+    </div>
+	<ul id="content">
+    	<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum elementum felis. Quisque porta turpis nec eros consectetur lacinia. Pellentesque sagittis adipiscing egestas. </p></li>
+    	<li><p>Aliquam dapibus tincidunt odio. Phasellus volutpat dui nec ante volutpat euismod. </p></li>
+    	<li><p>Phasellus vehicula turpis nec dui facilisis eget condimentum risus ullamcorper. Nunc imperdiet, tortor ultrices aliquam eleifend, nisl turpis venenatis dui, at vestibulum magna tellus in tortor. </p></li>
+    	<li><p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris tincidunt nisi in tortor tincidunt ut ullamcorper lectus dapibus.  </p></li>
+        <li><p>Aenean interdum dui vitae purus molestie nec placerat nibh semper. Maecenas ultrices elementum dapibus. Aenean feugiat, metus in mattis mattis, justo nisi dignissim libero, ac volutpat dui nibh quis metus.</p></li>
+        <li><p> Morbi eget tristique dui. Vivamus nec turpis eu nisi euismod accumsan sed in tortor. Maecenas laoreet leo ut tortor viverra facilisis.</p></li>
+    </ul>
+    <div class="loading" id="loading">Wait a moment... it's loading!</div>
+    <div class="loading" id="nomoreresults">Sorry, no more results for your pagination demo.</div>
+</div>
+</body>
+</html>
