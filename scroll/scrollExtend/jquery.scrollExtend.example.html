@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html>
+  <head>
+   <title>jQuery scrollExtend demo</title>
+   <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+   <script type="text/javascript" src="js/jquery.scrollExtend.js"></script>
+   <style type="text/css">
+
+	div.scroll_container {
+		background-color: #EEEEEE;
+		width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		border: 1px solid #CCCCCC;
+		text-align: center;
+	}
+
+
+	div.list_item {
+		height: 200px;
+		background-color: #FEFEFE;
+		margin-bottom: 5px;
+		width: 90%;
+		border: 1px solid #999999;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	div.more_content {
+		height: 100px;
+		width: 500px;
+		background-color: #E1ABCE;
+		border: 1px solid blue;
+	}
+
+   </style>
+   <script type="text/javascript">
+
+	jQuery(document).ready(
+		function() {
+			jQuery('.scroll_container').scrollExtend(
+				{	
+					'target': 'div#scroll_items',			
+					'url': 'more_content.html', 
+					'newElementClass': 'list_item more_content'
+
+				}
+			);
+		}
+	);
+
+   </script>
+
+  </head>
+  <body>
+  <div class="scroll_container">
+     <div id="scroll_items">
+        <div class="list_item">
+	        Scroll beyond this container to automatically load more content
+     	</div>
+        <div class="list_item">
+	        [ List Item 2 ]
+     	</div>
+
+        <div class="list_item">
+	        [ List Item 3 ]
+	</div>
+
+        <div class="list_item">
+	        [ List Item 4 ]
+     	</div>
+
+        <div class="list_item">
+	        [ List Item 5 ]
+     	</div>
+
+        <div class="list_item">
+	        [ List Item 6 ]
+     	</div>
+
+     </div>
+  </div>
+    <div style="clear:both;"></div>
+  </body>
+</html>
