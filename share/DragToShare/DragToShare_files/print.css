@@ -1,0 +1,69 @@
+BODY {
+	LINE-HEIGHT: 1.5; FONT-FAMILY: "Helvetica Neue", Arial, Helvetica, sans-serif; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #000; FONT-SIZE: 10pt
+}
+.container {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+HR {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 0px; MARGIN: 2em 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; BACKGROUND: #ccc; HEIGHT: 2px; COLOR: #ccc; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 0px
+}
+HR.space {
+	BACKGROUND: #fff; COLOR: #fff
+}
+H1 {
+	FONT-FAMILY: "Helvetica Neue", Arial, "Lucida Grande", sans-serif
+}
+H2 {
+	FONT-FAMILY: "Helvetica Neue", Arial, "Lucida Grande", sans-serif
+}
+H3 {
+	FONT-FAMILY: "Helvetica Neue", Arial, "Lucida Grande", sans-serif
+}
+H4 {
+	FONT-FAMILY: "Helvetica Neue", Arial, "Lucida Grande", sans-serif
+}
+H5 {
+	FONT-FAMILY: "Helvetica Neue", Arial, "Lucida Grande", sans-serif
+}
+H6 {
+	FONT-FAMILY: "Helvetica Neue", Arial, "Lucida Grande", sans-serif
+}
+CODE {
+	FONT: 0.9em "Courier New", Monaco, Courier, monospace
+}
+IMG {
+	MARGIN: 1.5em 1.5em 1.5em 0px; FLOAT: left
+}
+A IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+P IMG.top {
+	MARGIN-TOP: 0px
+}
+BLOCKQUOTE {
+	PADDING-BOTTOM: 1em; FONT-STYLE: italic; MARGIN: 1.5em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; FONT-SIZE: 0.9em; PADDING-TOP: 1em
+}
+.small {
+	FONT-SIZE: 0.9em
+}
+.large {
+	FONT-SIZE: 1.1em
+}
+.quiet {
+	COLOR: #999
+}
+.hide {
+	DISPLAY: none
+}
+A:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FONT-WEIGHT: 700; TEXT-DECORATION: underline
+}
+A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FONT-WEIGHT: 700; TEXT-DECORATION: underline
+}
+A:link:after {
+	FONT-SIZE: 90%; CONTENT: " (" attr(href) ")"
+}
+A:visited:after {
+	FONT-SIZE: 90%; CONTENT: " (" attr(href) ")"
+}

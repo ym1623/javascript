@@ -1,0 +1,39 @@
+.ui-draggable {
+	CURSOR: move
+}
+#drag2share-tip {
+	POSITION: absolute; PADDING-BOTTOM: 0px; PADDING-LEFT: 9px; PADDING-RIGHT: 9px; DISPLAY: none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND: #000; HEIGHT: 25px; COLOR: #fff; FONT-SIZE: 11px; FONT-WEIGHT: bold; PADDING-TOP: 9px; border-radius: 4px; moz-border-radius: 4px; webkit-border-radius: 4px
+}
+#drag2share-tip .arrow {
+	BORDER-BOTTOM: transparent 8px solid; POSITION: absolute; LINE-HEIGHT: 0; WIDTH: 0px; HEIGHT: 0px; BORDER-TOP: transparent 8px solid; TOP: 9px; BORDER-RIGHT: #000 8px solid; LEFT: -8px
+}
+#drag2share-targets {
+	Z-INDEX: 999999; POSITION: absolute; LIST-STYLE-TYPE: none
+}
+#drag2share-targets LI {
+	POSITION: relative; WIDTH: 64px; DISPLAY: block; FLOAT: left; HEIGHT: 64px; MARGIN-RIGHT: 20px
+}
+#drag2share-targets LI SPAN {
+	POSITION: absolute; BOTTOM: -40px; DISPLAY: block; WHITE-SPACE: pre; COLOR: #fff
+}
+#overlay {
+	Z-INDEX: 99997; POSITION: absolute; BACKGROUND-COLOR: #000; WIDTH: 100%; TOP: 0px; LEFT: 0px
+}
+.drag2share-share {
+	Z-INDEX: 99999999; POSITION: absolute; TEXT-ALIGN: left; FONT-FAMILY: Verdana; COLOR: #fff; FONT-SIZE: 26px; FONT-WEIGHT: bold
+}
+#drag2share-helper {
+	POSITION: absolute; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #fff; PADDING-LEFT: 10px; PADDING-RIGHT: 5px; FONT-FAMILY: Verdana; COLOR: #000; FONT-SIZE: 8px; OVERFLOW: hidden; FONT-WEIGHT: bold; PADDING-TOP: 10px; border-radius: 8px; moz-border-radius: 8px; webkit-border-radius: 8px
+}
+#drag2share-thumb {
+	FLOAT: left; MARGIN-RIGHT: 2px
+}
+#drag2share-helper .title {
+	DISPLAY: inline; COLOR: #3981bc; FONT-SIZE: 12px
+}
+#drag2share-helper .url {
+	DISPLAY: inline; COLOR: #cdcdcd; FONT-SIZE: 8px
+}
+.drag2share-active-helper {
+	BORDER-BOTTOM: #1ff76a 3px solid; BORDER-LEFT: #1ff76a 3px solid; BORDER-TOP: #1ff76a 3px solid; BORDER-RIGHT: #1ff76a 3px solid
+}
