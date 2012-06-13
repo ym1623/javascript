@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>Sliding Checkbox Actions Menu with jQuery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="Sliding Checkbox Actions Menu with jQuery" />
+<meta name="keywords" content="jquery, usability, sliding, checkbox, actions, menu"/>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+</head>
+<style>
+* { margin:0; padding:0; }
+body { font-family: Georgia, serif; font-size: 20px; font-style: italic; font-weight: normal; letter-spacing: normal; background: #f0f0f0; }
+#content { background-color:#fff; width:750px; padding:40px; margin:0 auto; border-left:15px solid #008FCF; border-right:1px solid #ddd; -moz-box-shadow:0px 0px 16px #aaa; }
+.head { font-family:Helvetica, Arial, Verdana; text-transform:uppercase; font-weight:bold; font-size:12px; font-style:normal; letter-spacing:3px; color:#888; border-bottom:3px solid #f0f0f0; padding-bottom:10px; margin-bottom:10px; }
+.head a { color:#008FCF; text-decoration:none; float:right; text-shadow:1px 1px 1px #888; }
+.head a:hover { color:#f0f0f0; }
+#content h1 { font-family:"Trebuchet MS", sans-serif; color:#008FCF; font-weight:normal; font-style:normal; font-size:56px; text-shadow:1px 1px 1px #aaa; }
+#content h2 { font-family:"Trebuchet MS", sans-serif; font-size:30px; font-style:normal; background-color:#f0f0f0; margin:40px 0px 30px -40px; padding:0px 40px; clear:both; float:left; width:100%; color:#aaa; text-shadow:1px 1px 1px #fff; }
+</style>
+<body>
+<div id="content"> <a class="back" href=""></a> <span class="scroll"></span>
+  <p class="head"> Usability Snippets <a href="http://tympanus.net/codrops/2010/05/31/sliding-checkbox-actions-menu-with-jquery/">Back to Codrops</a> </p>
+  <h1>Sliding Checkbox Actions Menu</h1>
+  <h2>Select checkboxes to make the menu appear:</h2>
+  <table id="mytable">
+    <thead>
+      <tr>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th colspan="2"></th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td class="check"><input id="check_1" name="check_1" type="checkbox" value="1" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_2" name="check_2" type="checkbox" value="2" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_3" name="check_3" type="checkbox" value="3" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_4" name="check_4" type="checkbox" value="4" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_5" name="check_5" type="checkbox" value="5" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_6" name="check_6" type="checkbox" value="6" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_7" name="check_7" type="checkbox" value="7" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_8" name="check_8" type="checkbox" value="8" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_9" name="check_9" type="checkbox" value="9" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_10" name="check_10" type="checkbox" value="10" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_11" name="check_11" type="checkbox" value="11" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_12" name="check_12" type="checkbox" value="12" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_13" name="check_13" type="checkbox" value="13" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_14" name="check_14" type="checkbox" value="14" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_15" name="check_15" type="checkbox" value="15" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_16" name="check_16" type="checkbox" value="16" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_17" name="check_17" type="checkbox" value="17" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_18" name="check_18" type="checkbox" value="18" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_19" name="check_19" type="checkbox" value="19" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_20" name="check_20" type="checkbox" value="20" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_21" name="check_21" type="checkbox" value="21" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_22" name="check_22" type="checkbox" value="22" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_23" name="check_23" type="checkbox" value="23" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_24" name="check_24" type="checkbox" value="24" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_25" name="check_25" type="checkbox" value="25" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_26" name="check_26" type="checkbox" value="26" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_27" name="check_27" type="checkbox" value="27" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_28" name="check_28" type="checkbox" value="28" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_29" name="check_29" type="checkbox" value="29" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_30" name="check_30" type="checkbox" value="30" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_31" name="check_31" type="checkbox" value="31" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_32" name="check_32" type="checkbox" value="32" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_33" name="check_33" type="checkbox" value="33" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_34" name="check_34" type="checkbox" value="34" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_35" name="check_35" type="checkbox" value="35" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_36" name="check_36" type="checkbox" value="36" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_37" name="check_37" type="checkbox" value="37" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_38" name="check_38" type="checkbox" value="38" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_39" name="check_39" type="checkbox" value="39" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_40" name="check_40" type="checkbox" value="40" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_41" name="check_41" type="checkbox" value="41" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_42" name="check_42" type="checkbox" value="42" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_43" name="check_43" type="checkbox" value="43" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_44" name="check_44" type="checkbox" value="44" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_45" name="check_45" type="checkbox" value="45" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_46" name="check_46" type="checkbox" value="46" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_47" name="check_47" type="checkbox" value="47" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_48" name="check_48" type="checkbox" value="48" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_49" name="check_49" type="checkbox" value="49" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_50" name="check_50" type="checkbox" value="50" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_51" name="check_51" type="checkbox" value="51" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_52" name="check_52" type="checkbox" value="52" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_53" name="check_53" type="checkbox" value="53" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_54" name="check_54" type="checkbox" value="54" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_55" name="check_55" type="checkbox" value="55" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_56" name="check_56" type="checkbox" value="56" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_57" name="check_57" type="checkbox" value="57" AUTOCOMPLETE=OFF /></td>
+        <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</span></td>
+      </tr>
+      <tr>
+        <td class="check"><input id="check_58" name="check_58" type="checkbox" value="58" AUTOCOMPLETE=OFF /></td>
+        <td> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="clear:both;"></div>
+</div>
+<div id="actionsBox" class="actionsBox">
+  <div id="actionsBoxMenu" class="menu"> <span id="cntBoxMenu">0</span> <a class="button box_action">Archive</a> <a class="button box_action">Delete</a> <a id="toggleBoxMenu" class="open"></a> <a id="closeBoxMenu" class="button">X</a> </div>
+  <div class="submenu"> <a class="first box_action">Move...</a> <a class="box_action">Mark as read</a> <a class="box_action">Mark as unread</a> <a class="last box_action">Spam</a> </div>
+</div>
+
+
+<div style="width:550px;margin:20px auto;">
+<p><strong><a href="http://js.niutuku.com" target="_blank">牛图库整理</a></strong> </p>
+<p></p>
+<p>转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+</div>
+
+<!-- The JavaScript -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+            $(function() {
+                /* tells us if we dragged the box */
+                var dragged = false;
+				
+                /* timeout for moving the mox when scrolling the window */
+                var moveBoxTimeout;
+				
+                /* make the actionsBox draggable */
+                $('#actionsBox').draggable({
+                    start: function(event, ui) {
+                        dragged = true;
+                    },
+                    stop: function(event, ui) {
+                        var $actionsBox = $('#actionsBox');
+                        /*
+                        calculate the current distance from the window's top until the element
+                        this value is going to be used further, to move the box after we scroll
+                         */
+                        $actionsBox.data('distanceTop',parseFloat($actionsBox.css('top'),10) - $(document).scrollTop());
+                    }
+                });
+				
+                /*
+                when clicking on an input (checkbox),
+                change the class of the table row,
+                and show the actions box (if any checked)
+                 */
+                $('#mytable input[type="checkbox"]').bind('click',function(e) {
+                    var $this = $(this);
+                    if($this.is(':checked'))
+                        $this.parents('tr:first').addClass('selected');
+                    else
+                        $this.parents('tr:first').removeClass('selected');
+                    showActionsBox();
+                });
+				
+                function showActionsBox(){
+                    /* number of checked inputs */
+                    var BoxesChecked = $('#mytable input:checked').length;
+                    /* update the number of checked inputs */
+                    $('#cntBoxMenu').html(BoxesChecked);
+                    /*
+                    if there is at least one selected, show the BoxActions Menu
+                    otherwise hide it
+                     */
+                    var $actionsBox = $('#actionsBox');
+                    if(BoxesChecked > 0){
+                        /*
+                        if we didn't drag, then the box stays where it is
+                        we know that that position is the document current top
+                        plus the previous distance that the box had relative to the window top (distanceTop)
+                         */
+                        if(!dragged)
+                            $actionsBox.stop(true).animate({'top': parseInt(15 + $(document).scrollTop()) + 'px','opacity':'1'},500);
+                        else
+                            $actionsBox.stop(true).animate({'top': parseInt($(document).scrollTop() + $actionsBox.data('distanceTop')) + 'px','opacity':'1'},500);
+                    }
+                    else{
+                        $actionsBox.stop(true).animate({'top': parseInt($(document).scrollTop() - 50) + 'px','opacity':'0'},500,function(){
+                            $(this).css('left','50%');
+                            dragged = false;
+                            /* if the submenu was open we hide it again */
+                            var $toggleBoxMenu = $('#toggleBoxMenu');
+                            if($toggleBoxMenu.hasClass('closed')){
+                                $toggleBoxMenu.click();
+                            }
+                        });
+                    }
+                }
+				
+                /*
+                when scrolling, move the box to the right place
+                 */
+                $(window).scroll(function(){
+                    clearTimeout(moveBoxTimeout);
+                    moveBoxTimeout = setTimeout(showActionsBox,500);
+                });
+				
+                /* open sub box menu for other actions */
+                $('#toggleBoxMenu').toggle(
+                function(e){
+                    $(this).addClass('closed').removeClass('open');
+                    $('#actionsBox .submenu').stop(true,true).slideDown();
+                },
+                function(e){
+                    $(this).addClass('open').removeClass('closed');
+                    $('#actionsBox .submenu').stop(true,true).slideUp();
+                }
+            );
+				
+                /*
+                close the actions box menu:
+                hides it, and then removes the element from the DOM,
+                meaning that it will no longer appear
+                 */
+                $('#closeBoxMenu').bind('click',function(e){
+                    $('#actionsBox').animate({'top':'-50px','opacity':'0'},1000,function(){
+                       // $(this).remove();
+					   $(this).css('display:none');
+                    });
+                });
+				
+                /*
+                as an example, for all the actions (className:box_action)
+                alert the values of the checked inputs
+                 */
+                $('#actionsBox .box_action').bind('click',function(e){
+                    var ids = '';
+                    $('#mytable input:checked').each(function(e,i){
+                        var $this = $(this);
+                        ids += 'id : ' + $this.attr('id') + ' , value : ' + $this.val() + '\n';
+                    });
+                    alert('checked inputs:\n'+ids);
+                });
+            });
+        </script>
+</body>
+</html>

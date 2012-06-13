@@ -1,0 +1,179 @@
+table{
+    border-collapse:collapse;
+    width:100%;
+    margin:0px auto;
+    line-height:18px;
+    border:1px solid #ddd;
+    font-weight:bold;
+    color:#444;
+    font-size:13px;
+    font-family:Helvetica,Arial,Verdana;
+    font-style:normal;
+    float:left;
+}
+table thead tr,
+table tfoot tr{
+    height:20px;
+    background-color:#ddd;
+}
+
+table span{
+    color:#999;
+    display:block;
+    font-weight:normal;
+}
+table td{
+    padding:7px;
+    border-bottom:1px solid #ddd;
+    background-color:#f9f9f9;
+    cursor:pointer;
+}
+table td input{
+    margin-left:20px;
+}
+table td.check{
+    width:40px;
+    cursor:default;
+}
+table tbody tr:hover td{
+    background-color:#F0F0F0;
+}
+table tbody tr.selected td{
+    background-color:#FFFFEF;
+}
+table tbody tr.selected:hover td{
+    background-color:#FFFFEF;
+}
+.actionsBox{
+    font-size:13px;
+    font-family:Helvetica,Arial,Verdana;
+    font-style:normal;
+    left:50%;
+    position:absolute;
+    top:-50px;
+    opacity:0;
+    cursor:move;
+}
+.actionsBox .menu{
+    width:240px;
+    color:#47708F;
+    line-height:30px;
+    text-shadow:1px 1px 0px #fff;
+    padding:7px; 
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    font-weight:bold;
+    border:1px solid #D9EAF2;
+    background:#e8f4fa;
+    background:
+        -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.58, rgb(217,234,242)),
+        color-stop(0.93, rgb(232,244,250))
+        );
+    background:
+        -moz-linear-gradient(
+        center bottom,
+        rgb(217,234,242) 58%,
+        rgb(232,244,250) 93%
+        );
+    -moz-box-shadow:1px 1px 3px #999;
+    -webkit-box-shadow:1px 1px 3px #999;
+    box-shadow:1px 1px 3px #999;	
+
+}
+.actionsBox .menu .button{
+    padding:4px 7px;
+    border:1px solid #D9EAF2;
+    background:#e8f4fa;
+    background:
+        -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.38, rgb(230,243,249)),
+        color-stop(0.88, rgb(245,249,250))
+        )
+        ;
+    background:
+        -moz-linear-gradient(
+        center bottom,
+        rgb(230,243,249) 38%,
+        rgb(245,249,250) 88%
+        )
+        ;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    -moz-box-shadow:0px 1px 0px #f9f9f9;
+    -webkit-box-shadow:0px 1px 0px #f9f9f9;
+    box-shadow:0px 1px 0px #f9f9f9;
+    cursor:pointer;
+}
+.actionsBox .menu .button:hover{
+    background:#fff;
+}
+.actionsBox .menu span{
+    padding:0px 10px;
+}
+.actionsBox .submenu{
+    display:none;
+    width:120px;
+    margin-left:100px;
+    top:46px;
+    right:10px;
+    background:#fff;
+    border:1px solid #D9EAF2;
+    border-top:none;
+    -moz-border-radius:0px 0px 10px 10px;
+    -webkit-border-bottom-left-radius:10px;
+    -webkit-border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    -moz-box-shadow:0px 1px 4px #ddd;
+    -webkit-box-shadow:0px 1px 4px #ddd;
+    box-shadow:0px 1px 4px #ddd;
+}
+.actionsBox .submenu a{
+    display:block;
+    cursor:pointer;
+    padding:10px 15px;
+    border-top:1px solid #D9EAF2;
+}
+.actionsBox .submenu a.last{
+    -moz-border-radius:0px 0px 10px 10px;
+}
+.actionsBox .submenu a.first{
+    border-top:none;
+}
+.actionsBox .submenu a:hover{
+    background-color:#f9f9f9;
+}
+.actionsBox .menu a.open,
+.actionsBox .menu a.closed{
+    border:1px solid #D9EAF2;
+    padding:4px 17px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    -moz-box-shadow:0px 1px 0px #f9f9f9;
+    -webkit-box-shadow:0px 1px 0px #f9f9f9;
+    box-shadow:0px 1px 0px #f9f9f9;
+    cursor:pointer;
+    opacity:0.6;
+    margin-right:5px;
+}
+.actionsBox .menu a.open{
+    background:#fff url(../open.png) no-repeat center center;
+
+}
+.actionsBox .menu a.closed{
+    background:#fff url(../closed.png) no-repeat center center;
+}
+.actionsBox .menu a.open:hover,
+.actionsBox .menu a.closed:hover{
+    opacity:1.0;
+}
