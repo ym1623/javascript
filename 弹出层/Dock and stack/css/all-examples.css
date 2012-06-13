@@ -1,0 +1,35 @@
+* { margin: 0; padding: 0; }
+body { font: 13px "Trebuchet MS", Verdana, Helvetica, sans-serif; color: #666; }
+
+/* ================ STACK #2 ================ */
+.stack2 { position: fixed; top: 28px; right: 40px; }
+.stack2 > img { position: relative; cursor: pointer; padding-bottom: 35px; z-index: 2; }
+.stack2 ul { list-style: none; position: absolute; top: 7px; cursor: pointer; z-index: 1; }
+.stack2 ul li { position: absolute; }
+.stack2 ul li img { border: 0; }
+.stack2 ul li span { display: none; }
+.stack2 .openStack li span { 
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	display:block;
+	height: 14px;
+	position:absolute;
+	top: 17px;
+	right:60px;
+	line-height: 14px;
+	border: 0;
+	background-color:#000;
+	padding: 3px 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	color: #fcfcfc;
+	text-align: center;
+	text-shadow: #000 1px 1px 1px;
+	opacity: .85;
+	filter: alpha(opacity = 85);
+}
+
+/* IE Fixes */
+.stack2 { _position: absolute; }
+.stack2 ul { _z-index:-1; _top:-15px; }
+.stack2 ul li { *right:5px; }
