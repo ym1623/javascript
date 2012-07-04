@@ -1,6 +1,7 @@
 $(document).ready(function(){
   notyAlertWithButtons('topLeft', 'noty_theme_default');
   notyAlertWithButtons('topLeft', 'noty_theme_twitter');
+  notyAlertWithButtons('topCenter', 'noty_layout_center');
   notyAlertWithButtons('topRight', 'noty_theme_mitgux');
   notyAlertWithButtons('bottomLeft', 'noty_theme_facebook');
   notyAlertWithButtons('bottomRight', 'noty_theme_growl');

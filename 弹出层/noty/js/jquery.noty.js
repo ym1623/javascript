@@ -222,7 +222,7 @@
   }
 
 	$.noty.queue = [];
-	$.noty.growls = ['noty_layout_topLeft', 'noty_layout_topRight', 'noty_layout_bottomLeft', 'noty_layout_bottomRight'];
+	$.noty.growls = ['noty_layout_topLeft', 'noty_layout_topRight', 'noty_layout_bottomLeft', 'noty_layout_bottomRight', 'noty_layout_center'];
 	$.noty.available = true;
 	$.noty.defaultOptions = {
 		layout: 'top',
