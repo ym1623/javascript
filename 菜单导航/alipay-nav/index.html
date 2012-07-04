@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>仿支付宝的产品推广导航</title>
+<liNK rel=stylesheet type=text/css href="css/style.css">
+</head>
+<BODY>
+<div class="lanrentuku">
+	<div style="width:640px;margin:10px auto 20px auto; padding:0 0 0 380px;overflow:hidden">
+<!-- JiaThis Button BEGIN -->
+<div id="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_kaixin001"></a>
+
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+</div>
+<div style="font-size:18px;text-align:center;padding:0 0 20px 0">
+<a href="http://www.itivy.com/ivy/archive/2012/1/3/alipay-nav.html" target="_blank"><<返回文章《仿支付宝的产品推广导航》</a>
+<p>来源：懒人图库</p>
+</div>
+<!-- JiaThis Button END -->
+
+<div style="display: none">
+    <script language="javascript" type="text/javascript" src="http://js.users.51.la/4473358.js"></script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fadd0db9dee36c7a9b64141788e26de72' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21395429-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+</script>
+    </div>
+</div>
+
+<div id=container>
+<div class=content>
+<div class=svc-title>支付宝页面代码</div>
+<div class=svc>
+<div class=nav-left><A href="#"><EM>1</EM>/2</A> 
+</div>
+<div class=container>
+<div class=content>
+<ul>
+  <li class="first current"><A class="svc-payment icon1" hideFocus href="#" seed="lf-index-payment" data-type="svc-04">我要付款</A> </li>
+  <li><A class="svc-gathering icon1" hideFocus href="#" seed="lf-index-gathering" data-type="svc-03">我要收款</A> </li>
+  <li><A class="svc-weg icon1" hideFocus href="#" seed="lf-index-jiaofei" data-type="svc-01">水电煤</A> </li>
+  <li><A class="svc-tx icon1" hideFocus href="#" seed="lf-index-tx" data-type="svc-10">通讯费</A> </li>
+  <li><A class="svc-credit icon1" hideFocus href="#" seed="lf-index-credit" data-type="svc-02">信用卡还款</A> </li>
+  <li><A class="svc-aa icon1" hideFocus href="#" seed="lf-index-aa" data-type="svc-08">AA收款</A> </li>
+  <li><A class="svc-donate icon1" hideFocus href="#" seed="lf-index-donate" data-type="svc-09">爱心捐赠</A> </li>
+  <li><A class="svc-mobile icon2" hideFocus href="#" seed="lf-index-mobile" data-type="svc-15">手机费</A> </li>
+  <li><A class="svc-escore icon1" hideFocus href="#" seed="lf-index-escore" data-type="svc-05">担保交易收款</A> </li>
+  <li><A class="svc-rent icon1" hideFocus href="#" seed="lf-index-rent" data-type="svc-06">交房租</A> </li>
+  <li><A class="svc-cashgift icon1" hideFocus href="#" seed="lf-index-cashgift" data-type="svc-07">送礼金</A> </li>
+  <li><A class="svc-insurance icon2" hideFocus href="#" seed="lf-index-insurance" data-type="svc-16">买保险</A> </li>
+  <li><A class="svc-flight icon2" hideFocus href="#" seed="lf-index-flight" data-type="svc-13">买机票</A> </li>
+  <li><A class="svc-hotel icon2" hideFocus href="#" seed="lf-index-hotel" data-type="svc-11">订酒店</A> </li>
+  <li><A class="svc-game icon2" hideFocus href="#" seed="lf-index-game" data-type="svc-14">游戏点卡</A> </li>
+  <li><A class="svc-lottery icon2" hideFocus href="#" seed="lf-index-lottery" data-type="svc-12">买彩票</A> </li></ul></div></div>
+<div class=nav-right><A href="#"><EM>1</EM>/2</A> 
+</div>
+</div>
+</div>
+</div>
+
+<script src="js/arale.js" charset=utf-8></script>
+
+<script>
+E.onDOMReady(function(){
+	//初始化当前产品的内容，默认为全部隐藏
+	var currentLink = D.query('.svc .content li.current a');
+	if(currentLink.length >0){
+		var currentCont = currentLink[0].getAttribute('data-type');
+		D.removeClass(D.get(currentCont),'fn-hide');
+	}
+	
+	//根据icon显示相应的信息
+	function showinfo(li){
+		var target = D.getChildren(li)[0].getAttribute('data-type');
+		D.addClass(D.query('.svc-content .item:not(.fn-hide)'),'fn-hide');
+		D.removeClass(D.get(target),'fn-hide');
+		
+		D.removeClass(D.query('.svc .content li.current'),'current');
+		D.addClass(li,'current');
+	}
+
+	//点击icon显示相应内容
+	E.on(D.query('.svc .content li'),'mouseover',function(e){
+		E.preventDefault(e);
+		showinfo(this);
+	});
+	
+	//点击左右的滑动效果
+	var index = 1;
+	var end = D.query('.svc .container')[0].offsetWidth;
+	var content = D.query('.svc .content')[0];
+	var list = D.query('li',content);
+	content.style.width = ( list[0].offsetWidth + 7 ) * list.length + 'px';
+	var left = new YAHOO.util.Anim(content,{left:{to:0}},1,YAHOO.util.Easing.easeOut);
+	var right = new YAHOO.util.Anim(content,{left:{to:-end}},1,YAHOO.util.Easing.easeOut);
+	
+	E.on(D.query('.nav-left a'),'click',function(e){
+		E.preventDefault(e);	
+		if(index == 2){
+			index = 1;
+			left.animate();
+			D.query('.svc em').forEach(function(o){
+				o.innerHTML = index;
+			});			
+			
+			showinfo(list[0]);
+		}
+	});
+	
+	E.on(D.query('.nav-right a'),'click',function(e){
+		E.preventDefault(e);	
+		if(index == 1){
+			index = 2;
+			right.animate();
+			D.query('.svc em').forEach(function(o){
+				o.innerHTML = index;
+			});			
+			
+
+			if(list.length >= 10){ //如果第二排的第一个存在，则选中第一个
+				showinfo(list[9]);
+			}
+		}
+	});
+});	
+</script>
+<!-- 个人版框架底部CMS 开始 -->
+</body>
+</html>

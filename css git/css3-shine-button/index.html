@@ -1,0 +1,120 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+					<title>Radioactive Buttons with CSS Animations and RGBa - ZURB Playground - ZURB.com</title>
+
+		
+		        
+<link href="playground.css" media="all" rel="stylesheet" type="text/css" /> 
+
+		
+		
+    <style type="text/css">
+		/* Place all stylesheet code here */
+		body { background: #333; text-shadow: 0 1px 1px rgba(0,0,0,.5); }
+
+
+		@-webkit-keyframes bigAssButtonPulse {
+		  from { background-color: #749a02; -webkit-box-shadow: 0 0 25px #333; }
+		  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 50px #91bd09; }
+		  to { background-color: #749a02; -webkit-box-shadow: 0 0 25px #333; }
+		}
+
+		@-webkit-keyframes greenPulse {
+		  from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+		  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+		  to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+		}
+
+		@-webkit-keyframes bluePulse {
+		  from { background-color: #007d9a; -webkit-box-shadow: 0 0 9px #333; }
+		  50% { background-color: #2daebf; -webkit-box-shadow: 0 0 18px #2daebf; }
+		  to { background-color: #007d9a; -webkit-box-shadow: 0 0 9px #333; }
+		}
+
+		@-webkit-keyframes redPulse {
+		  from { background-color: #bc330d; -webkit-box-shadow: 0 0 9px #333; }
+		  50% { background-color: #e33100; -webkit-box-shadow: 0 0 18px #e33100; }
+		  to { background-color: #bc330d; -webkit-box-shadow: 0 0 9px #333; }
+		}
+
+		@-webkit-keyframes magentaPulse {
+		  from { background-color: #630030; -webkit-box-shadow: 0 0 9px #333; }
+		  50% { background-color: #a9014b; -webkit-box-shadow: 0 0 18px #a9014b; }
+		  to { background-color: #630030; -webkit-box-shadow: 0 0 9px #333; }
+		}
+
+		@-webkit-keyframes orangePulse {
+		  from { background-color: #d45500; -webkit-box-shadow: 0 0 9px #333; }
+		  50% { background-color: #ff5c00; -webkit-box-shadow: 0 0 18px #ff5c00; }
+		  to { background-color: #d45500; -webkit-box-shadow: 0 0 9px #333; }
+		}
+
+		@-webkit-keyframes orangellowPulse {
+		  from { background-color: #fc9200; -webkit-box-shadow: 0 0 9px #333; }
+		  50% { background-color: #ffb515; -webkit-box-shadow: 0 0 18px #ffb515; }
+		  to { background-color: #fc9200; -webkit-box-shadow: 0 0 9px #333; }
+		}
+
+		a.button {
+			-webkit-animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite; 
+		}
+
+		.green.button { -webkit-animation-name: greenPulse; -webkit-animation-duration: 3s; }
+		.blue.button { -webkit-animation-name: bluePulse; -webkit-animation-duration: 4s; }
+		.red.button { -webkit-animation-name: redPulse; -webkit-animation-duration: 1s; }
+		.magenta.button { -webkit-animation-name: magentaPulse; -webkit-animation-duration: 2s; }
+		.orange.button { -webkit-animation-name: orangePulse; -webkit-animation-duration: 3s; }
+		.orangellow.button { -webkit-animation-name: orangellowPulse; -webkit-animation-duration: 5s; }
+		
+		.wall-of-buttons { width: 100%; height: 180px; text-align: center; }
+		.wall-of-buttons a.button { display: inline-block; margin: 0 10px 9px 0; } 
+    </style>
+
+	</head>
+	
+	<body id="radioactiveButtonsPage" class="chrome windows">
+	
+	    <div class="wall-of-buttons">
+		    <a class="large green button">Look at me!</a>
+		    <a class="large blue button">Click me!</a>
+		    <a class="large magenta button">Hi ho, Silver!</a>
+		    <a class="large green button">Look at me!</a>
+		    <a class="large red button">I'm Glowing!</a>
+		    <a class="large magenta button">Hi ho, Silver!</a>
+		    <br />
+    		
+		    <a class="large orange button">Call to Action</a>
+		    <a class="large magenta button">Hi ho, Silver!</a>
+		    <a class="large green button">Look at me!</a>
+		    <a class="large orangellow button">Got clicks?</a>
+		    <a class="large blue button">Click me!</a>
+		    <a class="large red button">I'm Glowing!</a>
+		    <a class="large blue button">Click me!</a>
+		    <br />
+    		
+		    <a class="large magenta button">Hi ho, Silver!</a>
+		    <a class="large orangellow button">Got clicks?</a>
+		    <a class="large red button">I'm Glowing!</a>
+		    <a class="large orange button">Call to Action</a>
+		    <a class="large green button">Look at me!</a>
+		    <a class="large orangellow button">Got clicks?</a>
+		    <a class="large red button">I'm Glowing!</a>
+
+		    <a class="large blue button">Click me!</a>
+		    <a class="large orangellow button">Got clicks?</a>
+		    <a class="large blue button">Click me!</a>
+		    <a class="large red button">I'm Glowing!</a>
+		    <a class="large orange button">Call to Action</a>
+		    <a class="large orangellow button">Got clicks?</a>
+	    </div>
+
+	</body>
+</html>
+		
+		

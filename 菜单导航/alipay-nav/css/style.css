@@ -1,0 +1,210 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px;
+	FONT: 12px/1.2 Tahoma,Helvetica,Arial,Simsun,sans-serif;
+}
+h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dd,dt {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+EM {
+	FONT-WEIGHT: normal; FONT-STYLE: normal;
+	FONT-WEIGHT: bold;
+}
+BODY {
+	BACKGROUND: url(../images/index-bg.jpg) repeat-x; OVERFLOW-X: hidden
+}
+#container {
+	WIDTH: 100%;
+
+}
+.content {
+	MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 950px; ZOOM: 1; POSITION: relative
+}
+
+.lanrentuku {
+	HEIGHT: 320px;;
+	padding-top:20px;
+	text-align:center;
+}
+
+.svc-title {
+	PADDING-LEFT: 50px; FONT-SIZE: 14px; COLOR: #676b69; HEIGHT: 30px
+}
+.svc {
+	HEIGHT: 123px
+}
+.svc .nav-left {
+	Z-INDEX: 99; FLOAT: left; WIDTH: 40px; POSITION: relative; HEIGHT: 100%
+}
+.svc .nav-left A {
+	MARGIN-TOP: 40px; DISPLAY: block; BACKGROUND: url(../images/index-sprite.png) no-repeat 0px -9px; OVERFLOW: hidden; WIDTH: 24px; COLOR: #828282; TEXT-INDENT: -99px; LINE-HEIGHT: 20px; POSITION: absolute; HEIGHT: 23px; TEXT-DECORATION: none
+}
+.svc .nav-left A:hover {
+	BACKGROUND-POSITION: 0px -33px; WIDTH: 47px; TEXT-INDENT: 18px; TEXT-DECORATION: none
+}
+.svc .nav-right {
+	Z-INDEX: 99; FLOAT: right; WIDTH: 40px; POSITION: relative; HEIGHT: 100%
+}
+.svc .nav-right A {
+	MARGIN-TOP: 40px; DISPLAY: block; RIGHT: 0px; BACKGROUND: url(../images/index-sprite.png) no-repeat -50px -34px; OVERFLOW: hidden; WIDTH: 24px; COLOR: #828282; TEXT-INDENT: -99px; LINE-HEIGHT: 20px; POSITION: absolute; HEIGHT: 23px; TEXT-DECORATION: none
+}
+.svc .nav-right A:hover {
+	BACKGROUND-POSITION: -27px -10px; WIDTH: 47px; TEXT-INDENT: 8px
+}
+.svc .nav-right EM {
+	COLOR: #009dcf
+}
+.svc .nav-left EM {
+	COLOR: #009dcf
+}
+.svc .container {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 870px; POSITION: relative; HEIGHT: 100%
+}
+.svc .content {
+	LEFT: 0px; OVERFLOW: hidden; ZOOM: 1; POSITION: absolute; TOP: 0px; HEIGHT: 100%
+}
+.svc .content UL {
+	HEIGHT: 100%
+}
+.svc .content LI {
+	FLOAT: left; MARGIN-LEFT: 7px; HEIGHT: 100%
+}
+.svc .content LI.first {
+	MARGIN-LEFT: 0px
+}
+.svc .content LI.current {
+	BACKGROUND: url(../images/index-sprite.png) no-repeat 5px 113px
+}
+.svc .content A {
+	DISPLAY: block; FLOAT: left; MARGIN: 14px auto 0px; WIDTH: 90px; TEXT-INDENT: -9999px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 94px; TEXT-DECORATION: none; outline: none
+}
+.svc .content A.icon1 {
+	BACKGROUND-IMAGE: url(../images/index-icon1.jpg)
+}
+.svc .content A.icon2 {
+	BACKGROUND-IMAGE: url(../images/index-icon2.jpg)
+}
+.svc .content A.svc-weg {
+	BACKGROUND-POSITION: -810px 0px
+}
+.svc .content A.svc-weg:hover {
+	BACKGROUND-POSITION: -810px -94px
+}
+.svc .content A.svc-tx {
+	BACKGROUND-POSITION: -540px 0px
+}
+.svc .content A.svc-tx:hover {
+	BACKGROUND-POSITION: -540px -94px
+}
+.svc .content A.svc-credit {
+	BACKGROUND-POSITION: -270px 0px
+}
+.svc .content A.svc-credit:hover {
+	BACKGROUND-POSITION: -270px -94px
+}
+.svc .content A.svc-gathering {
+	BACKGROUND-POSITION: -720px 0px
+}
+.svc .content A.svc-gathering:hover {
+	BACKGROUND-POSITION: -720px -94px
+}
+.svc .content A.svc-payment {
+	BACKGROUND-POSITION: -630px 0px
+}
+.svc .content A.svc-payment:hover {
+	BACKGROUND-POSITION: -630px -94px
+}
+.svc .content A.svc-escore {
+	BACKGROUND-POSITION: -180px 0px
+}
+.svc .content A.svc-escore:hover {
+	BACKGROUND-POSITION: -180px -94px
+}
+.svc .content A.svc-rent {
+	BACKGROUND-POSITION: -360px 0px
+}
+.svc .content A.svc-rent:hover {
+	BACKGROUND-POSITION: -360px -94px
+}
+.svc .content A.svc-cashgift {
+	BACKGROUND-POSITION: -450px 0px
+}
+.svc .content A.svc-cashgift:hover {
+	BACKGROUND-POSITION: -450px -94px
+}
+.svc .content A.svc-aa {
+	BACKGROUND-POSITION: 0px 0px
+}
+.svc .content A.svc-aa:hover {
+	BACKGROUND-POSITION: 0px -94px
+}
+.svc .content A.svc-donate {
+	BACKGROUND-POSITION: -90px 0px
+}
+.svc .content A.svc-donate:hover {
+	BACKGROUND-POSITION: -90px -94px
+}
+.svc .content A.svc-hotel {
+	BACKGROUND-POSITION: 0px 0px
+}
+.svc .content A.svc-hotel:hover {
+	BACKGROUND-POSITION: 0px -94px
+}
+.svc .content A.svc-lottery {
+	BACKGROUND-POSITION: -180px 0px
+}
+.svc .content A.svc-lottery:hover {
+	BACKGROUND-POSITION: -180px -94px
+}
+.svc .content A.svc-flight {
+	BACKGROUND-POSITION: -270px 0px
+}
+.svc .content A.svc-flight:hover {
+	BACKGROUND-POSITION: -270px -94px
+}
+.svc .content A.svc-game {
+	BACKGROUND-POSITION: -450px 0px
+}
+.svc .content A.svc-game:hover {
+	BACKGROUND-POSITION: -450px -94px
+}
+.svc .content A.svc-mobile {
+	BACKGROUND-POSITION: -360px 0px
+}
+.svc .content A.svc-mobile:hover {
+	BACKGROUND-POSITION: -360px -94px
+}
+.svc .content A.svc-insurance {
+	BACKGROUND-POSITION: -90px 0px
+}
+.svc .content A.svc-insurance:hover {
+	BACKGROUND-POSITION: -90px -94px
+}
+.svc-content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 50px; PADDING-BOTTOM: 60px; PADDING-TOP: 30px
+}
+.svc-content H4 {
+	PADDING-RIGHT: 20px; FONT-SIZE: 30px; FLOAT: left; FONT-FAMILY: "Î¢ÈíÑÅºÚ","ºÚÌå",sans-serif; HEIGHT: 40px
+}
+.svc-content H5 {
+	FONT-SIZE: 20px; COLOR: #999; LINE-HEIGHT: 50px; FONT-FAMILY: "Î¢ÈíÑÅºÚ","ºÚÌå",sans-serif
+}
+.svc-content .exp {
+	FONT-SIZE: 16px; COLOR: #9e9f9f; LINE-HEIGHT: 40px; HEIGHT: 40px
+}
+.svc-content .exp A {
+	FONT-SIZE: 14px
+}
+.svc-content .exp A.btn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(../images/index-sprite.png) no-repeat 0px -57px; PADDING-BOTTOM: 5px; COLOR: #fff; PADDING-TOP: 5px
+}
+.svc-content .exp A.btn:hover {
+	TEXT-DECORATION: none
+}
+
+
+.banner {
+	HEIGHT: 289px
+}
+.banner .ad {
+	PADDING-LEFT: 65px; PADDING-TOP: 131px
+}
