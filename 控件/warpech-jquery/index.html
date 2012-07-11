@@ -1,0 +1,503 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset='utf-8'>
+  <title>Handsontable - jQuery grid editor. Excel-like grid editing with HTML &amp; JavaScript</title>
+
+  <!--
+  Loading handsontable dependencies.
+  Please note that some dependencies are optional:
+   - bootstrap-typeahead.js - is required only if you need the sexy autoexpanding textarea feature
+   - jquery.autoresize.js   - is required only if you need the autocomplete feature
+   - jquery.contextMenu.js  - is required only if you need the context menu feature
+   - jquery.contextMenu.css - is required only if you need the context menu feature
+   - jquery.ui.position.js  - is required only if you need the context menu feature
+  -->
+  <script src="lib/jquery.js"></script>
+  <script src="jquery.handsontable.js"></script>
+  <script src="lib/bootstrap-typeahead.js"></script>
+  <script src="lib/jquery.autoresize.js"></script>
+  <script src="lib/jQuery-contextMenu/jquery.contextMenu.js"></script>
+  <script src="lib/jQuery-contextMenu/jquery.ui.position.js"></script>
+  <link rel="stylesheet" media="screen" href="lib/jQuery-contextMenu/jquery.contextMenu.css">
+  <link rel="stylesheet" media="screen" href="jquery.handsontable.css">
+
+  <!--
+  Loading demo dependencies. They are used here only to enhance the examples on this page
+  -->
+  <script src="demo/js/json2.min.js"></script>
+  <script src="demo/js/demo.js"></script>
+  <script src="demo/js/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" media="screen" href="demo/css/demo.css">
+  <link rel="stylesheet" media="screen" href="demo/js/highlight/styles/zenburn.css">
+</head>
+
+<body class="examplesListOffset">
+<a href="http://github.com/warpech/jquery-handsontable"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/></a>
+
+<div id="container">
+
+<h1><a href="index.html">Handsontable</a></h1>
+
+<div class="description">
+  Handsontable is a minimalistic approach to Excel-like table editor in HTML &amp; jQuery.
+  <strong>Now with column and row headers!</strong>
+</div>
+
+<h2 id="demos">Demos</h2>
+
+<ul class="examplesList">
+  <li><a href="#example1">Autoexpanding
+    <div class="arr"></div>
+  </a></li>
+  <li><a href="#example2">Legend
+    <div class="arr"></div>
+  </a></li>
+  <li><a href="#example3">Autocomplete
+    <div class="arr"></div>
+  </a></li>
+  <li><a href="#example4">Scroll
+    <div class="arr"></div>
+  </a></li>
+  <li><a href="#example5">Drag-down
+    <div class="arr"></div>
+  </a></li>
+  <li><a href="#example7">Context menu
+    <div class="arr"></div>
+  </a></li>
+  <li><a href="#example6">Save
+    <div class="arr"></div>
+  </a></li>
+  <li><a href="#example8">Advanced demos
+    <div class="arr"></div>
+  </a></li>
+</ul>
+
+<div id="examples">
+
+<a name="example1"></a>
+
+<div id="example1container" class="example">
+  <div class="pad">
+    <h3>Autoexpanding</h3>
+
+    <p>Type in any cell and see how the grid adds new rows and cols automatically. You can try CTRL+Z and CTRL+Y to&nbsp;undo/redo.</p>
+
+    <p>Also, why not try <b>CTRL+C</b>, <b>CTRL+V</b> between this and Excel, Google Spreadsheet or LibreOffice!</p>
+
+    <div id="example1grid" class="dataTable"></div>
+
+    <p>Code:</p>
+
+    <pre class="html">&lt;div id="example1grid" class="dataTable"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  $("#example1grid").handsontable({
+    rows: 5,
+    cols: 5,
+    minSpareCols: 1, //always keep at least 1 spare row at the right
+    minSpareRows: 1, //always keep at least 1 spare row at the bottom
+    contextMenu: true
+  });
+
+  var data = [
+    ["", "Kia", "Nissan", "Toyota", "Honda"],
+    ["2008", 10, 11, 12, 13],
+    ["2009", 20, 11, 14, 13],
+    ["2010", 30, 15, 12, 13]
+  ];
+
+  $("#example1grid").handsontable("loadData", data);
+&lt;/script&gt;</pre>
+  </div>
+</div>
+
+<a name="example2"></a>
+
+<div id="example2container" class="example">
+  <div class="pad">
+    <h3>Legend</h3>
+
+    <p>The <b>legend</b> feature, which makes the first row have an
+      <span style="color: green; font-weight: bold">green</span> font.</p>
+
+    <p>In the below example, the <strong>column</strong> (A, B, C) and <strong>row</strong> (1, 2, 3) headers are on.
+    </p>
+
+    <div id="example2grid" class="dataTable"></div>
+
+    <p>Code:</p>
+
+    <pre class="html">&lt;div id="example2grid" class="dataTable"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  $("#example2grid").handsontable({
+    rows: 5,
+    cols: 5,
+
+    rowHeaders: true,
+    colHeaders: true,
+
+    fillHandle: false, //fillHandle can be turned off
+
+    contextMenu: ["row_above", "row_below", "remove_row"],
+    //contextMenu will only allow inserting and removing rows
+
+    legend: [
+      {
+        match: function (row, col, data) {
+          return (row === 0); //if it is first row
+        },
+        style: {
+          color: 'green', //make the text green and bold
+          fontWeight: 'bold'
+        },
+        title: 'Heading' //make some tooltip
+      },
+      {
+        match: function (row, col, data) {
+          //if first row in this column contains word "Nissan"
+          return (row &gt; 0 &amp;&amp; data()[0][col].indexOf('Nissan') &gt; -1);
+        },
+        style: {
+          fontStyle: 'italic' //make cells text in this column written in italic
+        }
+      }
+    ]
+  });
+
+  var data = [
+    ["", "Kia", "Nissan", "Toyota", "Honda"],
+    ["2008", 10, 11, 12, 13],
+    ["2009", 20, 11, 14, 13],
+    ["2010", 30, 15, 12, 13]
+  ];
+
+  $("#example2grid").handsontable("loadData", data);
+&lt;/script&gt;</pre>
+  </div>
+</div>
+
+<a name="example3"></a>
+
+<div id="example3container" class="example">
+  <div class="pad">
+    <h3>Autocomplete</h3>
+
+    <p>You can define rules for <b>autocompletition</b>. The below example will suggest you some colors as you type.</p>
+
+    <p>To keep this plugin lightweight, this feature has a dependency on another jQuery plugin:
+      <a href="https://github.com/twitter/bootstrap/blob/master/js/bootstrap-typeahead.js">bootstrap-typeahead</a>. It is included in the repo.
+    </p>
+
+    <div id="example3grid" class="dataTable"></div>
+
+    <p>Code:</p>
+
+    <pre class="html">&lt;div id="example3grid" class="dataTable"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  $("#example3grid").handsontable({
+    rows: 7,
+    cols: 4,
+    rowHeaders: false, //turn off 1, 2, 3, ...
+    colHeaders: ["Car", "Year", "Chassis color", "Bumper color"],
+    legend: [
+      {
+        match: function (row, col, data) {
+          if (col == 0 || col == 2 || col == 3) {
+            return true;
+          }
+          return false;
+        },
+        style: {
+          fontStyle: 'italic' //make the text italic
+        },
+        title: "Type to show the list of options"
+      }
+    ],
+    autoComplete: [
+      {
+        match: function (row, col, data) {
+          if (col == 2 || col == 3) {
+            return true;
+          }
+          return false;
+        },
+        highlighter: function (item) {
+          var query = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&amp;');
+          var label = item.replace(new RegExp('(' + query + ')', 'ig'), function ($1, match) {
+            return '&lt;strong&gt;' + match + '&lt;/strong&gt;';
+          });
+          return '&lt;span style="margin-right: 10px; background-color: ' + item + '"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;' + label;
+        },
+        source: function () {
+          return ["yellow", "red", "orange", "green", "blue", "gray", "black", "white"]
+        }
+      },
+      {
+        match: function (row, col, data) {
+          return (col === 0); //if it is first column
+        },
+        source: function () {
+          return ["BMW", "Chrysler", "Nissan", "Suzuki", "Toyota", "Volvo"]
+        }
+      }
+    ]
+  });
+
+  var data = [
+    ["Nissan", 2009, "black", "black"],
+    ["Nissan", 2006, "blue", "blue"],
+    ["Chrysler", 2004, "yellow", "black"],
+    ["Volvo", 2012, "white", "gray"]
+  ];
+
+  $("#example3grid").handsontable("loadData", data);
+&lt;/script&gt;</pre>
+  </div>
+</div>
+
+<a name="example4"></a>
+
+<div id="example4container" class="example">
+  <div class="pad">
+    <h3>Scroll</h3>
+
+    <p>If you want scrollbars, just set it in the container CSS:</p>
+
+    <div id="example4grid" class="dataTable" style="width: 680px; height: 300px; overflow: scroll"></div>
+
+    <p>Code:</p>
+
+    <pre class="html">&lt;div id="example4grid" class="dataTable" style="width: 680px;
+    height: 300px; overflow: scroll"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  $("#example4grid").handsontable({
+    rows: 40,
+    cols: 40,
+    rowHeaders: true,
+    colHeaders: true,
+    minSpareCols: 1, //always keep at least 1 spare row at the right
+    minSpareRows: 1 //always keep at least 1 spare row at the bottom
+  });
+
+  var data = [
+    ["", "Kia", "Nissan", "Toyota", "Honda"],
+    ["2008", 10, 11, 12, 13],
+    ["2009", 20, 11, 14, 13],
+    ["2010", 30, 15, 12, 13]
+  ];
+
+  $("#example4grid").handsontable("loadData", data);
+&lt;/script&gt;</pre>
+  </div>
+</div>
+
+<a name="example5"></a>
+
+<div id="example5container" class="example">
+  <div class="pad">
+    <h3>Drag-down</h3>
+
+    <p>Notice the little square (<b>fill handle</b>) in the corner of the selected cell. You can drag it (drag-down) to repeat the values from the cell.
+    </p>
+
+    <p>Double click the fill handle to fill the selection down to the last row.</p>
+
+    <div id="example5grid" class="dataTable"></div>
+
+    <p>Code:</p>
+
+    <pre class="html">&lt;div id="example5grid" class="dataTable"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  $("#example5grid").handsontable({
+    rows: 8,
+    cols: 8,
+    rowHeaders: true,
+    colHeaders: true,
+    minSpareCols: 1,
+    minSpareRows: 1,
+    fillHandle: true //possible values: true, false, "horizontal", "vertical"
+  });
+
+  var data = [
+    ["", "Kia", "Nissan", "Toyota", "Honda"],
+    ["2008", 10, 11, 12, 13],
+    ["2009", 20, 11, 14, 13],
+    ["2010", 30, 15, 12, 13]
+  ];
+
+  $("#example5grid").handsontable("loadData", data);
+&lt;/script&gt;</pre>
+  </div>
+</div>
+
+<a name="example7"></a>
+
+<div id="example7container" class="example">
+  <div class="pad">
+    <h3>Context menu</h3>
+
+    <p>Right click to see the context menu.</p>
+
+    <div id="example7grid" class="dataTable"></div>
+
+    <p>Code:</p>
+
+    <pre class="html">&lt;div id="example7grid" class="dataTable"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  $("#example7grid").handsontable({
+    rows: 5,
+    cols: 5,
+    rowHeaders: true,
+    colHeaders: true,
+    minSpareCols: 1,
+    minSpareRows: 1,
+    contextMenu: true
+  });
+
+  var data = [
+    ["", "Kia", "Nissan", "Toyota", "Honda"],
+    ["2008", 10, 11, 12, 13],
+    ["2009", 20, 11, 14, 13],
+    ["2010", 30, 15, 12, 13]
+  ];
+
+  $("#example7grid").handsontable("loadData", data);
+&lt;/script&gt;</pre>
+  </div>
+</div>
+
+<a name="example6"></a>
+
+<div id="example6container" class="example">
+  <div class="pad">
+    <h3>Save</h3>
+
+    <p>Use the
+      <b>onChange</b> callback to track changes made in the table. In the example below it is used to display the last changes.
+    </p>
+
+    <p>There is also the NEW
+      <b>onBeforeChange</b> callback, which can be used to validate changes before they are applied to the table.</p>
+
+    <div id="example6grid" class="dataTable"></div>
+
+    <p>Callback console: <span class="code">[[row, col, oldValue, newValue], ...]</span></p>
+
+    <pre id="example6console" class="console">Edit the above grid to see callback</pre>
+
+    <p>Code:</p>
+
+    <pre class="html">&lt;div id="example6grid" class="dataTable"&gt;&lt;/div&gt;
+
+&lt;pre id="example6console" class="console"&gt;
+  Edit the above grid to see callback
+&lt;/pre&gt;
+
+&lt;script&gt;
+  var first = true;
+  $("#example6grid").handsontable({
+    rows: 8,
+    cols: 8,
+    rowHeaders: true,
+    colHeaders: true,
+    minSpareCols: 1,
+    minSpareRows: 1,
+    contextMenu: true,
+    onBeforeChange: function (data) {
+      for (var i = 0, ilen = data.length; i &lt; ilen; i++) {
+        if (data[i][3] === "foo") {
+          //gently don't accept the word "foo"
+          data[i][3] = false;
+        }
+        else if (data[i][3] === "bar") {
+          //if the word bar is given, add a ! at the end of it
+          data[i][3] = data[i][3] + '!';
+        }
+        else if (data[i][3] === "nuke") {
+          //if any of pasted cells contains the word "nuke", reject the whole paste
+          return false;
+        }
+      }
+    },
+    onChange: function (data) {
+      if (first) {
+        first = false;
+        return; //don't show this change in console
+      }
+      $("#example6console").text(JSON.stringify(data));
+    }
+  });
+
+  var data = [
+    ["", "Kia", "Nissan", "Toyota", "Honda"],
+    ["2008", 10, 11, 12, 13],
+    ["2009", 20, 11, 14, 13],
+    ["2010", 30, 15, 12, 13]
+  ];
+
+  $("#example6grid").handsontable("loadData", data);
+&lt;/script&gt;</pre>
+  </div>
+</div>
+
+<a name="example8"></a>
+
+<div id="example8container" class="example">
+  <div class="pad" style="height: 300px;">
+    <h3>Advanced demos</h3>
+
+    <p>Check out some advanced usage examples:</p>
+
+    <ul>
+      <li><a href="demo/buttons.html">Custom buttons</a></li>
+      <li><a href="demo/conditional.html">Conditional formatting</a></li>
+      <li><a href="demo/prepopulate.html">Pre-populate new rows from template</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<h2>Documentation</h2>
+
+<p>
+  Available plugin methods and configuration options are listed in
+  <a href="http://github.com/warpech/jquery-handsontable">README.md on GitHub</a>
+</p>
+
+<h2>Download</h2>
+
+<p>
+  You can download this project in either
+  <a href="http://github.com/warpech/jquery-handsontable/zipball/master">zip</a> or
+  <a href="http://github.com/warpech/jquery-handsontable/tarball/master">tar</a> formats.
+</p>
+
+<p>
+  You can also clone the project with <a href="http://git-scm.com">Git</a>
+  by running:
+</p>
+
+<pre class="console">$ git clone git://github.com/warpech/jquery-handsontable</pre>
+
+<h2>License</h2>
+
+<p>
+  Licensed under the MIT license
+</p>
+
+<h2>Authors</h2>
+
+<p>
+  Marcin Warpechowski / <a href="http://www.giraffeapp.com/">Giraffe</a>
+</p>
+
+</div>
+
+</body>
+</html>
