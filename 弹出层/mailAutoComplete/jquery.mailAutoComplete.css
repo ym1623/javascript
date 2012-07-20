@@ -1,0 +1,11 @@
+.mailAutoComplete{
+	cursor:pointer;
+	border:1px solid #ccc;
+}
+.mailautocomplete_item{
+	background:#eee;
+	border-bottom:1px solid #bbb;
+}
+.mailautocomplete_item_avt{
+	background:#fff;
+}
