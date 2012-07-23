@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: Arial;
+  list-style: none;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+a {
+  color: #1085d7;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.small {
+  font-size: 12px;
+  margin: 0 0 0 10px;
+}
+
+.float-right {
+  float: right;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.made-box {
+  color: #eee;
+  text-shadow: 1px 1px 1px #333;
+}
+
+.made-box img {
+  margin: 0 0 0 10px;
+  vertical-align: -8px;
+}
+
+
+.clear {
+  width: 100%;
+  height: 1px;
+  font-size: 1px;
+  clear: both;
+}
+
+body {
+  background: #eee;
+}
+
+#wraper {
+  width: 960px;
+  margin: 20px auto;
+  border: solid 1px #ccc;
+  padding: 20px;
+  background: #fff;
+}
+
+#header {
+  padding: 0 0 10px 0;
+}
+
+#btn-size-logo {
+  display: inline;
+}
+
+#btn-size-logo ul {
+  display: inline;
+  width: 245px;
+  margin: 0 0 0 10px;
+}
+
+#btn-size-logo ul li {
+  display: inline;
+  margin: 0 5px 0 0;
+}
+
+#btn-size-logo ul li.last {
+  margin: 0;
+}
+#btn-size-logo ul li a:hover {
+  background-position: bottom;
+}
+
+h1 {
+  display: inline;
+  font-size: 40px;
+}
+
+h1 a {
+  text-shadow: 0 0 10px #ccc;
+}
+
+h1 a:hover {
+  color: #aad9f9;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+#menu {
+  border: solid 1px #eee;
+  margin: 0 0 20px 0;
+}
+
+#menu ul li {
+  padding: 10px 20px;
+  float: left;
+  border-left: solid 1px #eee;
+}
+
+#menu li.first {
+  border-left: none;
+}
+
+#menu li.last {
+  border-right: solid 1px #eee;
+}
+
+
+#menu ul li a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+#principal {
+  width: 640px;
+  margin: 0 20px 0 0;
+  float: left;
+}
+
+h2 {
+  color: #1085d7;
+  font-size: 24px;
+  border-bottom: solid 1px #1085d7;
+  margin: 0 0 10px 0;
+}
+
+h2 a:hover {
+  text-decoration: none;
+}
+
+
+h3 {
+  font-size: 16px;
+}
+
+.lista,
+.box-codigo,
+.box {
+  border: solid 1px #eee;
+  padding: 10px;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+}
+
+.box p {
+  margin: 10px 0;
+}
+
+
+.lista li {
+  margin: 0 0 10px 0;
+}
+
+.lista li.last {
+  margin: 0;
+}
+
+.lista li a:hover {
+  color: #aad9f9;
+}
+
+.tb-details {
+  width: 638px;
+  font-size: 12px;
+  border: solid 1px #ccc;
+}
+
+.tb-details thead {
+  background: #1085d7;
+  color: #fff;
+}
+
+.tb-details th,
+.tb-details td {
+  padding: 5px;
+}
+
+.tb-details .odd {
+  background: #eee;
+}
+
+#direita {
+  width: 300px;
+  float: right;
+}
+
+#rodape {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+  text-shadow: 1px 1px 1px #ccc;
+}

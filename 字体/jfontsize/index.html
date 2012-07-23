@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>jFontSize | jQuery plugin | Font Size | Font Resize | Change font-size | Javascript</title>
+  <meta name="description" content="The jFontSize plugin was developed to facilitate the process of creating the famous buttons A + and A-, which alter the font size on sites with very large texts, such as blogs, journals, tutorials, etc"
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <link type="text/css" rel="stylesheet" href="css/jfontsize.css" />
+  <link type="text/css" rel="stylesheet" href="css/shCoreDefault.css" />
+</head>
+
+<script type="text/javascript" language="javascript" src="js/jquery-1.5.js"></script>
+<script type="text/javascript" language="javascript" src="js/jquery.jfontsize-1.0.js"></script>
+<script type="text/javascript" language="javascript" src="js/jquery.corner-2.09.js"></script>
+<script type="text/javascript" language="javascript" src="js/shCore.js"></script>
+<script type="text/javascript" language="javascript" src="js/shBrushJScript.js"></script>
+<script type="text/javascript" language="javascript" src="js/shBrushXml.js"></script>
+<script type="text/javascript" language="javascript" src="js/shBrushCss.js"></script>
+<script type="text/javascript" language="javascript" src="js/funcoes.js"></script>
+
+<body>
+    <div id="wraper">
+        <div id="header">
+            <span class="float-right italic small made-box">made in Brazil <a href="http://maps.google.com.br/maps?q=rio+de+janeiro&hl=pt-BR&ll=-15.961329,-54.448242&spn=34.61866,39.506836&sll=-14.239424,-53.186502&sspn=66.891466,79.013672&z=5" title="Brasil!" target="_blank"><img src="img/flag-br.jpg" alt"Brazil flag" /></a></span>
+            <h1><a href="#" title="jFontSize">jFontSize</a></h1>
+            <div id="btn-size-logo">
+                <ul>
+                    <li class="first"><a id="jfontsize-minus" href="#" title="Decrease size"><img src="img/btnMinus.jpg" alt="Decrease font size" /></a></li>
+                    <li><a id="jfontsize-default" href="#" title="Deafult size"><img src="img/btnDefault.jpg" alt="Default font size" /></a></li>
+                    <li><a id="jfontsize-plus" href="#" title="Increase size"><img src="img/btnPlus.jpg" alt="Increase font size" /></a></li>
+                    <li class="last"><img src="img/test.jpg" alt="Test" /></li>
+                </ul>
+                <div class="clear">&nbsp;</div>
+            </div>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="first"><a href="http://www.jfontsize.com/#usage">Usage</a></li>
+                <li><a href="http://www.jfontsize.com/#documentation">Documentation</a></li>
+                <li class="last"><a href="#">Demos</a></li>
+                <li class="last"><a href="http://www.jfontsize.com/#download">Download</a></li>
+            </ul>
+            <div class="clear">&nbsp;</div>
+        </div>
+        <div id="conteudo">
+            <div id="principal">
+                <h2>Demonstration</h2>
+                <h3>Basic</h3>
+                <div class="box">
+                    <a class="jfontsize-button" id="jfontsize-m" href="#">A-</a>
+                    <a class="jfontsize-button" id="jfontsize-d" href="#">A</a>
+                    <a class="jfontsize-button" id="jfontsize-p" href="#">A+</a>
+
+                    <p class="some-class-name">This text will be resized</p>
+                    <script type="text/javascript" language="javascript">
+                        $('.some-class-name').jfontsize({
+                            btnMinusClasseId: '#jfontsize-m',
+                            btnDefaultClasseId: '#jfontsize-d',
+                            btnPlusClasseId: '#jfontsize-p'
+                        });
+                    </script>
+                </div>
+                <div class="box-codigo">
+                    <pre class="brush: js;">
+$('.some-class-name').jfontsize();</pre>
+                </div>
+
+                <h3>Defining the change size and the maximum clicks</h3>
+                <div class="box">
+                    <a class="jfontsize-button" id="jfontsize-m2" href="#">A-</a>
+                    <a class="jfontsize-button" id="jfontsize-d2" href="#">A</a>
+                    <a class="jfontsize-button" id="jfontsize-p2" href="#">A+</a>
+
+                    <p class="some-class-name2">This text will be resized</p>
+                    <script type="text/javascript" language="javascript">
+                        $('.some-class-name2').jfontsize({
+                            btnMinusClasseId: '#jfontsize-m2',
+                            btnDefaultClasseId: '#jfontsize-d2',
+                            btnPlusClasseId: '#jfontsize-p2',
+                            btnMinusMaxHits: 1,
+                            btnPlusMaxHits: 5,
+                            sizeChange: 5
+                        });
+                    </script>
+                </div>
+                <div class="box-codigo">
+                    <pre class="brush: js;">
+$('.some-class-name').jfontsize({
+    btnMinusMaxHits: 1,
+    btnPlusMaxHits: 5,
+    sizeChange: 5
+});</pre>
+                </div>
+
+            </div>
+            <div id="direita">
+
+            </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+    <div id="rodape">
+        Created by <a href="http://twitter.com/fredvanelli" title="@fredvanelli" target="_blank">Fred Vanelli</a>
+        <img src="img/flag-br-mini.jpg" alt="Brazil flag" />
+    </div>
+</body>
+
+</html>
