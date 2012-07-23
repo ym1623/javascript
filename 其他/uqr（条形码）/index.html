@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>jQuery uQR plugin</title>
+        <meta name="description" content="The jQuery uQR is a jQuery plugin written by Marius Stanciu - Sergiu for Userdot, a plugin that will allow you to embed QR codes into your web pages." />
+        <meta name="keywords" content="jquery, qr, qr codes, qr generator, userdot" />
+        <link rel="stylesheet" media="screen" href="css/documentation.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.uqr.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <div class="container_6 clearfix">
+                    <h1 class="grid_6"><a href="">jQuery uQR plugin</a> <span class="supersmall">by <a href="http://www.userdot.net">UserDot</a></span></h1>
+                </div>
+            </header>
+            <section>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Documentation</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <img class="fr" alt="Logo" src="images/logo.png" />
+                                    <h3>Overview</h3>
+                                    <hr />
+                                    <p><abbr>QR codes</abbr> are a popular type of two-dimensional barcode. They are also known as hardlinks or physical world hyperlinks.</p>
+                                    <p><abbr>QR codes</abbr> store up to 4,296 alphanumeric characters of arbitrary text. This text can be anything, for example URL, contact information, a telephone number, even a poem! <abbr>QR codes</abbr> can be read by an optical device with the appropriate software. Such devices range from dedicated <abbr>QR code</abbr> readers to mobile phones.</p>
+                                    <p>For more information check out <a target="_blank" href="http://code.google.com/apis/chart/infographics/docs/qr_codes.html">Google's <abbr>QR codes</abbr> documentation</a>.</p>
+                                    <p>The jQuery uQR is a <a href="http://www.jquery.com">jQuery</a> plugin written by Marius Stanciu - Sergiu for <a href="http://www.userdot.net">Userdot</a>, a plugin that will allow you to embed QR codes into your web pages. You might be looking for the <a href="http://www.userdot.net/files/qr/">QR code generator</a>.</p>
+                                    <h3>Download</h3>
+                                    <hr />
+                                    <p>You can download the <a href="http://www.userdot.net/files/jquery/jquery.uqr-1.0.0.zip">last version of the plugin</a>, or <a href="http://www.userdot.net/files/jquery/">browse the archive</a> for older versions.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Usage</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <p>First you need to include the jQuery library, since uQr is a plugin. You can download it from the <a href="http://www.jquery.com">jQuery website</a> or link it directly from the Google CDN.</p>
+                                    <code>
+                                        &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"&gt;&lt;/script&gt;
+                                    </code>
+                                    <p>Secondly, you need to include the jQuery uQr javascript file into your page. You can do it by adding the code below to your page.</p>
+                                    <code>
+                                        &lt;script type="text/javascript" src="js/jquery.uqr.js"&gt;&lt;/script&gt;<br />
+                                    </code>
+                                    <p>Now, you have two possibilities of embedding a QR code.</p>
+                                    <p><strong>1.</strong> Create the image tag that will be replaced with the QR code image.</p>
+                                    <code>
+                                        &lt;img src="#" id="qr1" alt="" /&gt;
+                                    </code>
+                                    <p>For the last part you activate the uQr function on the element you just created, so, we trigger the function on the image with the id <em>qr1</em>.</p>
+                                    <code>
+                                        &lt;script type="text/javascript"&gt;<br />
+                                        $(document).ready(function(){<br />
+                                        &nbsp;&nbsp;&nbsp;$('#qr1').uQr({<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type : 'text',<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text : 'This is the text to embed'<br />
+                                        &nbsp;&nbsp;&nbsp;});<br />
+                                        });<br />
+                                        &lt;/script&gt;
+                                    </code>
+                                    <p><strong>2.</strong> Add a div with a specific id to your page, for example :</p>
+                                    <code>
+                                        &lt;div id="qr2"&gt;&lt;/div&gt;
+                                    </code>
+                                    <p>We trigger the function on the div with the id <em>qr2</em> AND we add the <mark>create: true</mark> option, which signals the library to create the image tag inside the container div.</p>
+                                    <code>
+                                        &lt;script type="text/javascript"&gt;<br />
+                                        $(document).ready(function(){<br />
+                                        &nbsp;&nbsp;&nbsp;$('#qr2').uQr({<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;create : true,<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type : 'text',<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text : 'This is the text to embed'<br />
+                                        &nbsp;&nbsp;&nbsp;});<br />
+                                        });<br />
+                                        &lt;/script&gt;
+                                    </code>
+                                    <h3>Options</h3>
+                                    <hr />
+                                    <p><mark>size</mark> - size of the QR code. Can be omitted, default is <abbr>230</abbr>.</p>
+                                    <p><mark>encoding</mark> - encoding of the QR. Can be omitted, could be one of: UTF-8/Shift_JIS/ISO-8859-1, default is <abbr>UTF-8</abbr></p>
+                                    <p><mark>type</mark> - QR type. Can be: text/url/sms/email/call/location/wifi/contact, default is <abbr>text</abbr></p>
+                                    <p><mark>create</mark> - if the plugin will create an image tag inside the container or just replace the src of an already existing image tag. Can be true or false, default is <abbr>false</abbr>.</p>
+                                    <p><mark>text</mark> - the text to encode in the QR. Only needed for text, email or sms QR codes.</p>
+                                    <p><mark>number</mark> - the phone number if you want to create a sms or call QR code.</p>
+                                    <p><mark>email</mark> - the email address in case you want to create an email QR code.</p>
+                                    <p><mark>subject</mark> - the subject in case you want to create an email QR code.</p>
+                                    <p><mark>latitude</mark> - the geographical latitude for the geolocation QR code.</p>
+                                    <p><mark>longitude</mark> - the geographical longitude for the geolocation QR code.</p>
+                                    <p><mark>address</mark> - the home address in case you want to create a contact QR code.</p>
+                                    <p><mark>name</mark> - the name of the person in case you want to create a contact QR code.</p>
+                                    <p><mark>url</mark> - the URL address in case you want to create an url or contact QR code.</p>
+                                    <p><mark>alt</mark> - the alt code for the created/replaced image. Can be omitted.</p>
+                                    <p><mark>note</mark> - a note in case you want to create a contact QR code.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Demo</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <div class="qrcode" id="qr1">
+                                        <p>Creates a simple <abbr>text</abbr> QR code with the default options.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr2">
+                                        <p>Creates a <abbr>call</abbr> QR code, that your visitors can use to call your phone number.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr3">
+                                        <p>Creates a geo<abbr>location</abbr> QR code.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr4">
+                                        <p>Creates a <abbr>email</abbr> QR code, that your visitors can scan and send you an email to the specified address.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr5">
+                                        <p>Creates a <abbr>sms</abbr> QR code, that your visitors can scan and send you an SMS.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr6">
+                                        <p>Creates a <abbr>url</abbr> QR code, that your visitors can scan and go to a specified address.</p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <script type="text/javascript">
+                                        $(document).ready(function()
+                                        {
+                                            $('#qr1').uQr({
+                                                create: true,
+                                                type: 'text',
+                                                text: 'Welcome to UserDot!'
+                                            });
+                                            $('#qr2').uQr({
+                                                create: true,
+                                                type: 'call',
+                                                number: '+407452353'
+                                            });
+                                            $('#qr3').uQr({
+                                                create: true,
+                                                type: 'location',
+                                                latitude: '44.437711',
+                                                longitude: '26.097367'
+                                            });
+                                            $('#qr4').uQr({
+                                                create: true,
+                                                type: 'email',
+                                                email: 'marius@userdot.net',
+                                                subject: 'Hello',
+                                                text: 'Just wanted to say hi, your QR library is amazing.'
+                                            });
+                                            $('#qr5').uQr({
+                                                create: true,
+                                                type: 'sms',
+                                                number: '',
+                                                text: 'This is my QR code i`ve just generated'
+                                            });
+                                            $('#qr6').uQr({
+                                                create: true,
+                                                type: 'url',
+                                                url: 'http://userdot.net'
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <a id="toTop" href="#" style="display: inline;"><span id="toTopHover" style="opacity: 1;"></span>To Top</a>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-17350501-3']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

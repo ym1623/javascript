@@ -1,0 +1,88 @@
+* {
+    color: #444;
+    font-size: 1em;
+}
+body {
+    font-family: 'Verdana';
+    color: #444;
+    font-size: 15px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#content { background: #000 }
+.contenu {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+.contenu p { line-height: 24px }
+#house0 {
+    background: #f2f2f2;
+    text-align: center;
+}
+#house0 p {
+    color: #626262;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+#house0 a {
+    color: #313131;
+    text-decoration: none;
+    font-weight: bold;
+}
+#house0 h1 { margin-bottom: 100px }
+#house1,
+#house3,
+#house5,
+#house7,
+#house9 { background: #3a393c }
+#house1 p,
+#house3 p,
+#house5 p,
+#house7 p,
+#house9 p {
+    color: #c4c4c4;
+    margin-bottom: 10px;
+}
+#house1 a,
+#house3 a,
+#house5 a,
+#house7 a,
+#house9 a {
+    color: #e9e9e9;
+    text-decoration: none;
+    font-weight: bold;
+}
+#house1 h2,
+#house3 h2,
+#house5 h2,
+#house7 h2,
+#house9 h2 { margin-bottom: 10px }
+#house2,
+#house4,
+#house6,
+#house8 { background: #f2f2f2 }
+#house2 p,
+#house4 p,
+#house6 p,
+#house8 p {
+    color: #626262;
+    margin-bottom: 10px;
+}
+#house2 a,
+#house4 a,
+#house6 a,
+#house8 a {
+    color: #313131;
+    text-decoration: none;
+    font-weight: bold;
+}
+#house2 h2,
+#house4 h2,
+#house6 h2 { margin-bottom: 10px }
+#house8 h2 {
+    margin-bottom: 10px;
+}
+
