@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery Masonry插件方砖布局图片与内容无限滚动加载</title>
+<meta name="description" content="jquery Masonry制作最近非常流行的pinterest、花瓣网方砖式的页面布局，当鼠标拖动滚动条时图片和内容数据无限滚动加载，直到数据为空。jquery插件,jquery 下载。" />
+</head>
+<body>
+
+<style type="text/css">
+html{background:url(images/bg.gif);}
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-table;}/* Hides from IE-mac \*/
+*html .clearfix{height:1%;}
+.clearfix{display:block;}/* End hide from IE-mac */
+*+html .clearfix{min-height:1%;}
+body{font-family:"helvetica neue",arial,sans-serif;font-size:12px;color:#444;}
+.demo{width:960px;margin:0 auto;}
+.demo h1{color:#3366cc;font-size:16px;height:35px;line-height:1.9;text-align:center;border-bottom:1px solid #E5E5E5;margin:0 0 10px 0;}
+#retop{position:fixed;bottom:10%;_position:absolute;width:25px;height:69px;background:url(images/topback.png) no-repeat;text-indent:-9em;overflow:hidden;display:none;}
+/**---------- 比较元素 ---------**/
+/**** 转变 ****/
+.transitions-enabled.masonry,.transitions-enabled.masonry .masonry-brick{-webkit-transition-duration:0.7s;-moz-transition-duration:0.7s;-o-transition-duration:0.7s;transition-duration:0.7s;}
+.transitions-enabled.masonry{-webkit-transition-property:height, width;-moz-transition-property:height, width;-o-transition-property:height, width;transition-property:height, width;}
+.transitions-enabled.masonry .masonry-brick{-webkit-transition-property:left, right, top;-moz-transition-property:left, right, top;-o-transition-property:left, right, top;transition-property:left, right, top;}
+/* 禁用容器上的转变 */
+.transitions-enabled.infinite-scroll.masonry{-webkit-transition-property:none;-moz-transition-property:none;-o-transition-property:none;transition-property:none;}
+/* 无限滚动装载机 */
+#infscr-loading{text-align:center;padding:10px;background:#000;opacity:0.8;filter:alpha(opacity=80);color:#FFF;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
+#infscr-loading{position:fixed;bottom:0px;left:45%;z-index:9999;width:200px;}
+*html,*html body /* 修正IE6振动bug */{background-image:url(about:blank);background-attachment:fixed;}
+*html #infscr-loading{position:absolute;bottom:expression(eval(document.documentElement.scrollTop));}
+/* showpic */
+.showpic .actions{display:none;}
+.showpic:hover .actions{display:block;}
+.showpic:hover img{filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;}
+.showpic{position:relative;float:left;margin:5px;_margin:5px 4px;border:solid 1px #ddd;width:178px;font-size:12px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);-moz-box-shadow:0 1px 3px rgba(0,0,0,.3);-webkit-box-shadow:0 1px 3px rgba(0,0,0,.3);}
+.showpic .picbox{padding:15px 15px 0;text-align:center;}
+.showpic p{line-height:22px;margin:10px 0 0 0;padding:5px 10px;border-top:solid 1px #F5F2F2;background:#FAFAFA;}
+.showpic .actions{position:absolute;top:5px;left:0;z-index:3;width:100%;}
+.showpic .actions .lefter{float:left;margin:0 0 0 5px;display:inline;}
+.showpic .actions .righter{float:right;}
+.showpic .actions .righter a{margin:0 5px 0 0;}
+/* button */
+.button{
+    display:inline-block;
+    text-decoration:none;
+    font:bold 12px/12px HelveticaNeue, Arial;
+    padding:8px 11px;
+    color:#555;
+    border:1px solid #dedede;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+	cursor:pointer;
+}
+.button.white{
+    background:#f5f5f5;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#f0f0f0'); /*  IE */
+    background:-webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f0f0f0)); /*  WebKit */
+    background:-moz-linear-gradient(top,  #f9f9f9, #f0f0f0);
+    border-color:#dedede #d8d8d8 #d3d3d3;
+    color:#555;
+    text-shadow:0 1px 0 #fff;
+    -webkit-box-shadow:0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;
+    -moz-box-shadow:0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;
+    box-shadow:0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;
+}
+.button.white:hover{
+    border-color:#c7c7c7 #c3c3c3 #bebebe;
+    text-shadow:0 1px 0 #fdfdfd;
+    -webkit-box-shadow:0 1px 1px #ebebeb, inset 0 1px 0 #f3f3f3;
+    -moz-box-shadow:0 1px 1px #ebebeb, inset 0 1px 0 #f3f3f3;
+    box-shadow:0 1px 1px #ebebeb, inset 0 1px 0 #f3f3f3;
+}
+.button.white:active{
+    background:#f4f4f4;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#f8f8f8'); /*  IE */
+    background:-webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#f8f8f8)); /*  WebKit */
+    background:-moz-linear-gradient(top,  #eeeeee, #f8f8f8);
+    border-color:#c7c7c7 #c3c3c3 #bebebe;
+    text-shadow:0 1px 0 #fdfdfd;
+    -webkit-box-shadow:0 1px 1px #ebebeb, inset 2px 2px 2px #dddddd;
+    -moz-box-shadow:0 1px 1px #ebebeb, inset 2px 2px 2px #dddddd;
+    box-shadow:0 1px 1px #ebebeb, inset 2px 2px 2px #dddddd;
+}
+</style>
+  
+<div class="demo">
+	
+	<h1>jquery Masonry 方砖石布局插件制作无限滚动页面图片与内容无限加载</h1>    
+
+	<div id="container" class="transitions-enabled infinite-scroll clearfix">
+	
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/images/fdj/2012-04-27/582.html" target="_blank"><img height="150" width="150" alt="jquery hover图片特效,鼠标滑过图片animate动画放大显示" original="http://www.jsfoot.com/d/file/jquery/images/fdj/2012-04-27/smallb6fd6865959a3835485c1a8d54730388.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/images/fdj/2012-04-27/smallb6fd6865959a3835485c1a8d54730388.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery hover图片特效,鼠标滑过图片animate动画放大显示</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/images/more/2012-04-23/576.html" target="_blank"><img height="150" width="150" alt="jquery图片特效插件制作产品3D全景商品图片展示效果" original="http://www.jsfoot.com/d/file/jquery/images/more/2012-04-23/smallab09b1de296db0fcd9792a884814d223.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/images/more/2012-04-23/smallab09b1de296db0fcd9792a884814d223.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery图片特效插件制作产品3D全景商品图片展示效果</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/images/fdj/2012-04-08/543.html" target="_blank"><img width="150" height="150" alt="jquery图片放大特效鼠标滑过图片浮动层变大显示" src="http://www.jsfoot.com/d/file/jquery/images/fdj/2012-04-08/smallc40edfd12471e5104437d58c348cc5ac.jpg" /></a>
+			</div>
+			<p>jquery hover图片放大镜特效制作单排图片当鼠标滑过图片时，大图片浮动在小图上方变大显示。</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/other/2012-04-20/572.html" target="_blank"><img height="150" width="150" alt="jquery图片延迟加载仿花瓣网首页图片波浪条纹排列加载" original="http://www.jsfoot.com/d/file/jquery/other/2012-04-20/small9aed27cde7306f32bf17f505c0277ef9.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/other/2012-04-20/small9aed27cde7306f32bf17f505c0277ef9.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery图片延迟加载仿花瓣网首页图片波浪条纹排列加载</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/images/more/2012-04-13/559.html" target="_blank"><img height="150" width="150" alt="jquery聚光灯插件制作jquery图片特效鼠标滑过图片当前图片高亮" original="http://www.jsfoot.com/d/file/jquery/images/more/2012-04-13/small1ef40ddb8e4798d1737bbc414cfb17ec.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/images/more/2012-04-13/small1ef40ddb8e4798d1737bbc414cfb17ec.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery聚光灯插件制作jquery图片特效鼠标滑过图片当前图片高亮</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/images/qh/2012-04-13/557.html" target="_blank"><img height="150" width="150" alt="jquery图片切换与jquery lazyload图片延迟加载插件结合特效" original="http://www.jsfoot.com/d/file/jquery/images/qh/2012-04-13/small578c5d822200e38fa692f59d6a7f92d2.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/images/qh/2012-04-13/small578c5d822200e38fa692f59d6a7f92d2.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery图片切换与jquery lazyload图片延迟加载插件结合特效</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+			
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/other/2012-04-12/555.html" target="_blank"><img height="150" width="150" alt="jquery图片滚动图片放大展示带tab滑动选项卡标签图片滚动" original="http://www.jsfoot.com/d/file/jquery/other/2012-04-12/small0355db342604226d21b883051b8e7c4d.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/other/2012-04-12/small0355db342604226d21b883051b8e7c4d.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery图片滚动图片放大展示带tab滑动选项卡标签图片滚动</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/popup/2012-04-18/568.html" target="_blank"><img height="150" width="150" alt="jquery弹出层特效animate制作类似flash动画效果弹出层" original="http://www.jsfoot.com/d/file/jquery/popup/2012-04-18/small41efbb22d478409ccd99188d5fad27a6.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/popup/2012-04-18/small41efbb22d478409ccd99188d5fad27a6.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery弹出层特效animate制作类似flash动画效果弹出层</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		  
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/js/popup/2012-03-15/424.html" target="_blank"><img height="150" width="150" alt="js弹出层特效点击按钮弹出窗口支持鼠标拖动" original="http://www.jsfoot.com/d/file/js/popup/2012-03-15/small10a641f6b87e6ee4e4d8decca3df4f9d.jpg" class="txpic" src="http://www.jsfoot.com/d/file/js/popup/2012-03-15/small10a641f6b87e6ee4e4d8decca3df4f9d.jpg" style="display: block;"></a>
+			</div>
+			<p>js弹出层特效点击按钮弹出窗口支持鼠标拖动</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/popup/2011-09-21/195.html" target="_blank"><img height="150" width="150" alt="jquery 弹出层 点击按钮弹出层兼容IE和firefox浏览器" original="http://www.jsfoot.com/d/file/jquery/items/2011-09-21/small28ee23b309f1dfec23e0488f9a4cffa6.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/items/2011-09-21/small28ee23b309f1dfec23e0488f9a4cffa6.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery 弹出层 点击按钮弹出层兼容IE和firefox浏览器</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/jquery/popup/2011-09-13/183.html" target="_blank"><img height="150" width="150" alt="jquery 弹出层插件 鼠标点击文字获取标题弹出层内容信息" original="http://www.jsfoot.com/d/file/jquery/items/2011-09-13/smallc4a109ba30e5ad520220859b9a9380b9.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/items/2011-09-13/smallc4a109ba30e5ad520220859b9a9380b9.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery 弹出层插件 鼠标点击文字获取标题弹出层内容信息</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+			<a href="http://www.jsfoot.com/jquery/popup/2011-08-31/157.html" target="_blank"><img height="150" width="150" alt="jquery 弹出层插件 ThickBox 多功能弹出层插件支持图片、ajax、内嵌内容弹等" original="http://www.jsfoot.com/d/file/jquery/items/2011-08-31/small1b3de3240200fd63602bcfb96a8c6d1e.jpg" class="txpic" src="http://www.jsfoot.com/d/file/jquery/items/2011-08-31/small1b3de3240200fd63602bcfb96a8c6d1e.jpg" style="display: block;"></a>
+			</div>
+			<p>jquery 弹出层插件 ThickBox 多功能弹出层插件支持图片、ajax、内嵌内容弹等</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/html5/tx/2012-04-14/561.html" target="_blank"><img width="150" height="150" alt="jquery框架与coffeescript制作iphone苹果IOS手机主屏幕触摸效果" src="http://www.jsfoot.com/d/file/html5/tx/2012-04-14/smalle330b45a6743674c27b9c223dbac711a.jpg" /></a>
+			</div>
+			<p>jquery框架与coffeescript结合制作iphone苹果手机的IOS手机界面主触屏手指划过屏幕整个界面图片左右滑动的触摸效果。jquery下载。</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/css3/layout/2012-04-10/551.html" target="_blank"><img height="150" width="150" alt="div+css布局通过样式来控制让图片垂直居中与水平居中显示" original="http://www.jsfoot.com/d/file/css3/layout/2012-04-10/smallceec9a946b7af6d1e04944d6ddcc5799.jpg" class="txpic" src="http://www.jsfoot.com/d/file/css3/layout/2012-04-10/smallceec9a946b7af6d1e04944d6ddcc5799.jpg" style="display: block;"></a>
+			</div>
+			<p>div+css布局通过样式来控制让图片垂直居中与水平居中显示</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/css3/layout/2012-04-06/531.html" target="_blank"><img height="150" width="150" alt="div+css教程TOP排行榜或新闻列表最标准div css样式表代码写法" original="http://www.jsfoot.com/d/file/css3/layout/2012-04-06/small37d7e19acbb85fd66d14589ea46a23a7.jpg" class="txpic" src="http://www.jsfoot.com/d/file/css3/layout/2012-04-06/small37d7e19acbb85fd66d14589ea46a23a7.jpg" style="display: block;"></a>
+			</div>
+			<p>div+css教程TOP排行榜或新闻列表最标准div css样式表代码写法</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+		
+		<div class="box showpic">
+			<div class="picbox">
+				<a href="http://www.jsfoot.com/css3/layout/2011-10-13/215.html" target="_blank"><img height="150" width="150" alt="div+css制作在IE6 上用absolute模拟fixed IE6浏览器定位层框不闪动" original="http://www.jsfoot.com/d/file/css3/items/2011-10-13/smalla4c7c67dec86de131924d9e69e745e18.jpg" class="txpic" src="http://www.jsfoot.com/d/file/css3/items/2011-10-13/smalla4c7c67dec86de131924d9e69e745e18.jpg" style="display: block;"></a>
+			</div>
+			<p>div+css制作在IE6 上用absolute模拟fixed IE6浏览器定位层框不闪动</p>
+			<div class="actions">
+				<div class="lefter"><a class="button white" href="#">评论</a></div>
+				<div class="righter"><a class="button white" href="#">喜欢</a><a class="button white" href="#">分享</a></div>
+			</div>
+		</div>
+	
+	</div><!--container end-->
+
+	<div id="page-nav"><a href="pages/2.html"></a></div><!--page-nav end-->
+
+</div><!--demo end-->
+
+<script type="text/javascript" src="http://www.jsfoot.com/skin/js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="js/jquery.infinitescroll.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var $container = $('#container');
+	
+	$container.imagesLoaded(function(){
+		$container.masonry({
+			itemSelector: '.box',
+			columnWidth: 5 //每两列之间的间隙为5像素
+		});
+	});
+	
+	$container.infinitescroll({
+		navSelector  : '#page-nav',    // 选择的分页导航 
+		nextSelector : '#page-nav a',  // 选择的下一个链接到（第2页）
+		itemSelector : '.box',     // 选择检索所有项目
+		loading: {
+			finishedMsg: '没有更多的页面加载。',
+			img: 'images/loading.gif'
+		}
+	},function(newElements){
+		
+			// 隐藏新的项目，而他们正在加载
+			var $newElems = $( newElements ).css({ opacity: 0 });
+		
+			// 确保的图像装载增加砖石布局
+			$newElems.imagesLoaded(function(){
+			
+				// 元素展示准备
+				$newElems.animate({opacity:1});
+				$container.masonry( 'appended', $newElems, true ); 
+			
+			});
+		}
+	);
+	
+	$('<a href="#" id="retop">返回顶部</a>').appendTo('body').fadeOut().click(function(){
+		$(document).scrollTop(0);
+		$(this).fadeOut();
+		return false
+	});
+	var $retop = $('#retop');
+	function backTopLeft(){
+		var btLeft = $(window).width() / 2 + 478;
+		if (btLeft <= 950){
+			$retop.css({ 'left': 955 })
+		}else{
+			$retop.css({ 'left': btLeft }) 
+		}
+	}
+	backTopLeft();
+	$(window).resize(backTopLeft);
+	$(window).scroll(function(){
+		if ($(document).scrollTop() === 0){
+			$retop.fadeOut()
+		}else{
+			$retop.fadeIn()
+		}
+		if ($.browser.msie && $.browser.version == 6.0 && $(document).scrollTop() !== 0){
+			$retop.css({ 'opacity': 1 })
+		} 
+	});
+	
+});
+</script>
+
+</body>
+</html>
