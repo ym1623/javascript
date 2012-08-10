@@ -1,0 +1,72 @@
+<!--
+作者：刚子
+移动Web开发社区移动版
+manifest="cache.manifest"
+-->
+<!DOCTYPE html>
+<html> 
+	<head> 
+	<meta charset="utf-8">
+	<title>移动Web开发社区</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="http://www.html5mobi.com/themes/default/design/favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+	<script src="http://jsconsole.com/remote.js?E580A191-6D97-4486-BDBF-CA89558B736F"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript">
+    $(document).bind("mobileinit", function(){
+    	$.mobile.defaultPageTransition = 'none'
+    	$.mobile.loadingMessage = '努力加载中...'
+    	$.mobile.page.prototype.options.backBtnText = '后退'
+        $.mobile.page.prototype.options.addBackBtn= true
+    });
+	</script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+</head> 
+<body>
+<!-- index -->
+<div data-role="page" id="index">
+	<div data-role="header" >
+		<h1>移动Web开发社区</h1>
+		<div data-role="navbar" data-theme="e" >
+			<ul>
+				<li><a href="#index" data-icon="home"  class="ui-btn-active" data-iconpos="top" data-theme="a">讨论</a></li>
+				<li><a href="categories.html" data-icon="grid" data-iconpos="top" data-theme="a">分类</a></li>
+				<li><a href="about.html"  data-icon="info" data-iconpos="top" data-theme="a">关于</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<div class="content-primary">	
+			<ul data-role="listview" data-inset="true" data-filter="true">
+			</ul>
+		</div>	
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<!-- discussion -->
+<div data-role="page" id="discussion"  data-iscroll="enable">
+
+	<div data-role="header" >
+		<h1>移动Web开发社区</h1>
+		<div data-role="navbar" data-theme="e" >
+			<ul>
+				<li><a href="#index" data-icon="home"   class="ui-btn-active" data-iconpos="top" data-theme="a">讨论</a></li>
+				<li><a href="categories.html" data-icon="grid" data-iconpos="top" data-theme="a">分类</a></li>
+				<li><a href="about.html" data-icon="info" data-iconpos="top" data-theme="a">关于</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			<div class="ui-body ui-body-c" data-iscroll="scroller">
+				<h1></h1>
+				<p></p>
+			</div><!-- /themed container -->
+	</div><!-- /content -->
+</div><!-- /page -->
+<script type="text/javascript" src="js/html5mobi.core.js"></script>
+<script type="text/javascript" src="js/html5mobi.app.js"></script>
+</body>
+</html>

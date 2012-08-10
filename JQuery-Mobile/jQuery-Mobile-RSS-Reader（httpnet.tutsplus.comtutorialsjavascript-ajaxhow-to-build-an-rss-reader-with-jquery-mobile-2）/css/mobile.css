@@ -1,0 +1,20 @@
+header, footer { display: block; }
+ .ui-li-icon {
+   top:  9px;
+}
+ 
+.tuts { background: #c24e00; }
+.nettuts { background: #2d6b61; }
+.psdtuts { background: #af1c00; }
+.vectortuts { background: #1e468e; }
+.aetuts { background: #4a3c59; }
+.phototuts { background: #3798aa; }
+.cgtuts { background: #723b4a; }
+.audiotuts { background: #4b7e00; }
+.webdesigntuts, .webdesigntutsplus { background: #0d533f; }
+.mobiletuts { background: #dba600; }
+.activetuts, .flashtuts { background: #b43607; }
+
+.ui-li-heading { font-size: 12px; }
+
+.tutorial_image object, .tutorial_image embed { max-width: 250px; }
