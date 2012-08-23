@@ -1,0 +1,17 @@
+/**
+ * Just a small stylesheet to help you make your editme fields look as nice
+ * as possible without moving a finger!
+ */
+a.ajaxlink {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+span.edit_link,
+span.remove_link {
+  margin-left: 5px;
+}
+
+.editme_edit_container input {
+  margin-right: 5px;
+}

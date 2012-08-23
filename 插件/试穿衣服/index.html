@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>试穿衣服</title>
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+<script src="js/shiyi.js" type="text/javascript"></SCRIPT>
+<!--[if lte IE 6]>
+<style>#shiyi,#shiyi_5,#shiyi_4,#shiyi_3,#shiyi_8,#shiyi_7,#shiyi_6,#bg{behavior:url("js/iepngfix.htc");}</style>
+
+<![endif]-->
+</head>
+<body onload="checkCookie()">
+
+<div  class="ss" id="divStayTopright" style="position:absolute; z-index:999">
+
+	<div class="ss_1" ><img src="images/ss_1.gif" onclick="sy_rw()" width="29" style="cursor:pointer;" height="138" /></div>
+	<div class="ss_23" id="sy_rw">		
+	<div class="ss_2">
+	<span class="ss_2_wm">
+	<img src="images/rw_1.gif" id="ss_men" onclick="ss_mendt(),this.src='images/rw_1.gif'"style="cursor:pointer;" />
+	<img src="images/rw_22.gif" id="ss_women"  onclick="ss_womendt(),this.src='images/rw_2.gif'"style="cursor:pointer;"/>	</span>
+	<span class="ss_2_jt" ><img src="images/ss_3.gif" onclick="ss_xt()" /></span>
+	<!--试衣服人物大图-->
+	
+	<!--试衣服人物men  开始-->
+	<span class="shiyi_men" id="shiyi_men" >
+	<img id="shiyi_5"  width="193" height="374" src=""/>
+	<img id="shiyi_4"  width="193" height="374" src=""/>
+	<img id="shiyi_3"  width="193" height="374" src=""/>	</span>
+	<!--试衣服人物men  结束-->	
+	
+	<!--试衣服人物women  开始-->
+	<span class="shiyi_women" id="shiyi_women" >
+	<img id="shiyi_8"  width="193" height="374" src=""/>
+	<img id="shiyi_7"  width="193" height="374" src=""/>
+	<img id="shiyi_6"  width="193" height="374" src=""/>	</span>	
+	<!--试衣服人物women  结束--
+	>	
+	<!--试衣服人物大图-->	
+	  </div>
+	
+		<div class="ss_3" id="ss_xt" >
+		<div class="ss_gd"  id="gundong" style="position:absolute; left:12px; top:46px; width:155px; overflow:hidden;"><div id="gdheight">
+		<!--试衣服人物小图men  开始-->
+		<div  class="ss_men_xt" id="ss_men_xt">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+				<td height="30"><img src="images/t_86.gif" width="46" height="12" /></td>
+			  </tr>
+			  <tr>
+				<td >
+		<div class="ss_xt" >
+		<ul>
+			<li id="ss_xtxs_5"></li>
+			<li id="ss_xtxs_4"></li>
+		</ul>
+		</div>		</td>
+			  </tr>
+		  </table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+				<td height="30"><img src="images/t_87.gif" width="59" height="12" /></td>
+			  </tr>
+			  <tr>
+				<td class="ss_xt"><table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+					  <td width="57" height="57">
+					  <div class="ss_xt" >
+		<ul>
+			 <li id="ss_xtxs_3"></li>
+					  </ul></div></td>
+				  </tr>
+				</table></td>
+			  </tr>
+		  </table>
+		</div>
+	    <!--试衣服人物小图men  结束-->	
+		
+		<!--试衣服人物小图women  开始-->
+	    <div  class="ss_women_xt" id="ss_women_xt">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				  <tr>
+					<td height="30"><img src="images/t_86.gif" width="46" height="12" /></td>
+				  </tr>
+				  <tr>
+					<td >
+			<div class="ss_xt" >
+			<ul>
+				<li id="ss_xtxs_8"></li>
+				<li id="ss_xtxs_7"></li>
+			</ul>
+			</div>			</td>
+				  </tr>
+		  </table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				  <tr>
+					<td height="30"><img src="images/t_87.gif" width="59" height="12" /></td>
+				  </tr>
+				  <tr>
+					<td class="ss_xt"><table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+						  <td width="57" height="57">
+						  <div class="ss_xt" >
+			<ul>
+				 <li id="ss_xtxs_6"></li>
+						  </ul></div></td>
+					  </tr>
+					</table></td>
+				  </tr>
+		  </table>
+		</div>
+		<!--试衣服人物小图women  结束-->	
+		</div>
+		</div>
+		<div class="ss_delete"><img src="images/delete.gif" onclick="deletebutton()" /></div>
+		<div class="ss_jt" id="ssjt">	<img onmousedown="scroll(-3)" onmouseover="scroll(-3),this.src='Images/j_1.gif'" style="CURSOR: hand" onmouseout="scroll(0),this.src='Images/j_11.gif'" border="0" src="Images/j_11.gif" width="12" height="12" title="按下鼠标速度会更快"><img onmousedown="scroll(3)" onmouseover="scroll(3),this.src='Images/j_2.gif'" style="CURSOR: hand" onmouseout="scroll(0),this.src='Images/j_22.gif'" border="0" src="Images/j_22.gif" width="12" height="12" title="按下鼠标速度会更快"></div>
+</div>
+	
+  </div>
+</div>
+<SCRIPT type=text/javascript>
+var verticalpos="frombottom"
+function JSFX_FloatTopDiv()
+{
+var startX =0,
+startY = 550;
+var ns = (navigator.appName.indexOf("Netscape") != -1);
+var d = document;
+function ml(id)
+{
+  var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.divs[id];
+  if(d.divs)el.style=el;
+  el.sP=function(x,y){this.style.right=x;this.style.top=y;};
+  el.x = startX;
+  if (verticalpos=="fromtop")
+  el.y = startY;
+  else{
+  el.y = ns ? pageYOffset + innerHeight : document.documentElement.scrollTop + 
+document.documentElement.clientHeight;
+  el.y -= startY;
+  }
+  return el;
+}
+window.stayTopright=function()
+{
+  if (verticalpos=="fromtop"){
+  var pY = ns ? pageYOffset : document.documentElement.scrollTop;
+  ftlObj.y += (pY + startY - ftlObj.y)/8;
+  }
+  else{
+  var pY = ns ? pageYOffset + innerHeight : document.documentElement.scrollTop + 
+document.documentElement.clientHeight;
+  ftlObj.y += (pY - startY - ftlObj.y)/8;
+  }
+  ftlObj.sP(ftlObj.x, ftlObj.y);
+  setTimeout("stayTopright()", 10);
+}
+ftlObj = ml("divStayTopright");
+stayTopright();
+}
+JSFX_FloatTopDiv();
+</SCRIPT>
+<div class="p_pic_p" id="datu">
+		<ul>
+		
+		<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',12312)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',111114412312)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',111111231123122)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',1111112312)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',111111234512)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',111111562312)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',111111572312)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',111159112312)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_1.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(4,'images/shangyi.png','images/haha_1.gif',111189112312)" style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_2.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center"><img src="images/t_25.gif" width="49" height="18" onclick="xt(5,'images/waitao.png','images/haha_2.gif',231231231111111)"style="cursor: pointer;" />				   </td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_3.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(3,'images/kuzi.png','images/haha_3.gif',123121312)" style="cursor: pointer;" />				  </td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_3.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(3,'images/kuzi.png','images/haha_3.gif',12312131275675)" style="cursor: pointer;" />				  </td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_3.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(3,'images/kuzi.png','images/haha_3.gif',1235654)" style="cursor: pointer;" />				  </td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_3.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center">
+				  <img src="images/t_25.gif" width="49" height="18" onclick="xt(3,'images/kuzi.png','images/haha_3.gif',1223423431213155342)" style="cursor: pointer;" />				  </td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="211" align="center" bgcolor="#FFFFFF"><a href="#"><img src="images/haha_4.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center"><img src="images/t_25.gif" width="49" height="18" onclick="xt(8,'images/women_sy.png','images/haha_4.gif',231231231)"style="cursor: pointer;" />				   </td>
+                </tr>
+              </table>
+			</li>
+			<li class="p_pic_p_li" onmousemove="this.className='p_pic_p_li1'"onmouseout="this.className='p_pic_p_li'">
+			  <table width="162" style="margin:7px;"  border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="166" align="center" bgcolor="#FFFFFF"><a href="products_show.asp"><img src="images/haha_5.gif" width="162" height="202" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:7px;" class="p_pic_font1"><a href="#">产品名称</a></td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font1">F101CY002A</td>
+                </tr>
+                <tr>
+                  <td align="center" class="p_pic_font2">￥500.00</td>
+                </tr>
+                <tr>
+                  <td height="26" align="center"><img src="images/t_25.gif" width="49" height="18" onclick="xt(6,'images/women_kuzi.png','images/haha_5.gif',231231231123)"style="cursor: pointer;" /></td>
+                </tr>
+              </table>
+			</li>
+			</ul>
+	</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="1500">&nbsp;</td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>

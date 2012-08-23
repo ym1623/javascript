@@ -1,0 +1,84 @@
+body { text-align: left; font-family:"宋体"; margin:0; padding:0; font-size:12px; background:#FFF; color:#000;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote{padding:0; margin:0;}
+
+li{list-style-type:none;}
+ol, ul{list-style-type:none;}
+table,td,tr,th{font-size:12px;}
+*{ margin:0px; padding:0px; border:0px; font-family:"宋体"; font-size:12px;}
+a{ text-decoration:none;}
+.blank11{height:11px; font-size:1px; clear:both;}
+.blank10{height:10px; font-size:1px; clear:both;}
+.blank18{height:18px; font-size:1px; clear:both;}
+.blank13{height:13px; font-size:1px; clear:both;}
+.blank7{height:7px; font-size:1px; clear:both;}
+/*↓↓ 内页产品展示 ↓↓ */
+.n_title{ width:965px; margin:auto ; text-align:left; color:#e60405; padding-top:10px; padding-bottom:7px;}
+.n_title a{ color:#666666; }
+.n_title img { padding-left:5px; padding-right:7px;}
+.products{ width:965px; margin:auto;}
+.p_left{ width:236px; float:left;}
+.p_fl{ border:1px solid #e6e6e6; width:234px;}
+.p_fllb{ width:214px; padding-left:10px; padding-bottom:10px;}
+.p_fllb li{width:214px;color:#797979;}
+.p_fllb li a{color:#797979;height:24px;width:214px;line-height:24px;color:#797979;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #e3e3e3;display:block;text-indent: 3px;}
+	.p_fllb li a:hover{color:#FFFFFF;border:0px;height:25px;background-color:#9e0000;text-indent:8px;
+	background-image: url(../images/t_20.gif);background-repeat: no-repeat;background-position: 200px center;}
+.p_right{ width:717px; float:right;}
+.ycfcw{ width:717px; height:243px;}
+.np_pic{width:715PX;border: 1px solid #e6e6e6; overflow:hidden;}
+.np_B1{border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #b20000;}
+.p_pic_button span{ display:block; width:75px; text-align:left; float:right;}
+.p_pic_p{ width:716px;}
+.p_pic_p_li{width:178px;border-right-style: solid;	border-bottom-style: solid;border-right-color: #f3f3f3;border-bottom-color: #f3f3f3;border-right-width: 1px;border-bottom-width: 1px;display:block; float:left;height:315px;}
+.p_pic_p_li1{width:178px;border-right-style: solid;border-bottom-style: solid;border-right-color: #f3f3f3;border-bottom-color: #f3f3f3;border-right-width: 1px;border-bottom-width: 1px;display:block; float:left;
+	height:315px;background-color:#f3f3f3;}
+.p_pic_p_li2{width:716px;display:block;float:left;height:167px;border-bottom-width: 1px;border-bottom-style: solid;
+	border-bottom-color: #f3f3f3;}
+.p_pic_p_li3{width:716px;display:block;float:left;height:167px;border-bottom-width: 1px;
+	border-bottom-style: solid;background-color:#f3f3f3;border-bottom-color: #f3f3f3;}
+.p_pic_b{border-right-width: 1px;border-right-style: solid;border-right-color: #F3f3f3;height:auto;display:block; float:right;}
+.p_pic_font1{ color:#777; line-height:18px;}
+.p_pic_font1 a{ color:#777;}
+.p_pic_font2{ color:#d80808; line-height:20px; font-size:16px; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+.p_pic_font3{ font-size:14px; color:#000000; font-weight:bold; line-height:28px;}
+.p_pic_font4{ color:#a9a9a9; line-height:18px;}
+.p_pic_font5{ color:#b30000;}
+.p_pic_font6{ color:#5f5f5f; }
+.p_pic_font7{ background-color:#FFFFFF; border:1px solid #f3f3f3;}
+.p_pic_font8{ font-size:18px; color:#CC0000; font-family:Arial, Helvetica, sans-serif; font-weight:bold;}
+.p_pic_font9{text-decoration: line-through;}
+.p_pic_font10{ font-size:14px; color:#CC0000; font-family:Arial, Helvetica, sans-serif;}
+/*↑↑ 内页产品展示 ↑↑ */
+/*↓↓ 试衣 ↓↓ */
+.ss{ width:auto; float:right; height:432px;}
+.ss_1{ width:29px; height:138px; display:block; float:left; padding-top:152px;}
+.ss_23{ float:left; width:auto; display:none;}
+.ss_2{width:200px;height:432px;display:block;float:left;padding-top:0px; position:relative;}
+.ss_2_wm{ position:absolute; z-index:111; top:14px; left:14px; }
+.shiyi_men{width:200px; height:432px;background-image: url(../images/ss_2.jpg);background-repeat: no-repeat;
+	background-position: center center;display: block;position:absolute; z-index:1;}
+.shiyi_women{width:200px; height:432px;background-image: url(../images/ss_22.jpg);background-repeat: no-repeat;
+	background-position: center center;display:none;position:absolute; z-index:1;}
+.ss_2_jt{padding-top:200px; position:absolute; cursor:pointer; z-index:100; left:191px;}
+.ss_3{ width:188px; height:410px; display:block; float:left;background-image: url(../images/ss_4.gif);background-repeat: no-repeat;background-position: center 24px; position:relative;}
+.ss_gd{ position:absolute; left:12px; top:46px; width:155px; height:340px; overflow:hidden;}
+.ss_delete{top:368px;left:150px; width:20px; height:20px; position:absolute; cursor:pointer;}
+.ss_jt{top:45px;left:162px;width:20px;height:36px;position:absolute;overflow: hidden;display:none;}
+.ss_jt img{ padding-bottom:6px;}
+.ss_xt{ width:155px;}
+.ss_xt li{ float:left; display:block;}
+.ss_xt li div{ padding-bottom:4px; margin-right:4px; width:40px; float:left;} 
+.ss_xt li div img{ float:left;cursor:pointer;} 
+.ss_xtli{ width:38px; height:48px; border:1px solid #666;}
+.ss_xtli1{ width:40px;  height:50px;border:0px solid #696969;}
+.ss_men_xt{ width:155px; margin:auto;}
+.ss_women_xt{ width:155px;margin:auto; display:none;}
+#shiyi{position: relative; margin:auto; width:193px; height:374px;}
+#shiyi_3{position:absolute; left:6px; top:30px; z-index:3;display:none;}
+#shiyi_4{position:absolute; left:6px; top:30px;z-index:4;display:none;}
+#shiyi_5{position:absolute; left:6px; top:30px; z-index:5; display:none;}
+#shiyi_6{position:absolute; left:6px; top:30px; z-index:3;display:none;}
+#shiyi_7{position:absolute; left:6px; top:30px;z-index:4;display:none;}
+#shiyi_8{position:absolute; left:6px; top:30px; z-index:5; display:none;}
+#bg{position:absolute; left:0; top:0px; z-index:2;}
+/*↑↑ 试衣 ↑↑ */

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif;  text-align:center; margin:0 auto; background:#f5f5ef;}
+table{border-collapse:collapse;border-spacing:0;}
+
+.clearfloat{height:0;font-size:1px;clear:both;line-height:0;}
+
+#container{  width:945px; text-align:left; margin:0 auto; }
+a{color:#333;text-decoration:none;}
+a:hover{color:#ef9b11; text-decoration:underline;}
+
+
+.maincontent{ padding:12px 17px 30px 21px; width:720px; margin:20px auto; overflow:hidden; border:1px solid #d7d7d7; background:#fff;}
+.maincontent h4{ padding-left:21px; background:url(../images/icon01.gif) no-repeat 1px 6px; padding-top:11px; font-size:14px; padding-bottom:4px;}
+.maincontent .box01{ width:100%;}
+.maincontent .box02{ width:100%; background:url(../images/b1-bg01.gif) repeat-x left bottom; padding-bottom:7px; float:left; margin-bottom:5px;}
+.maincontent .box02 h4{ padding-left:45px; background:url(../images/b1-icon01.gif) no-repeat 1px 2px; padding-top:11px; font-size:14px; padding-bottom:4px;}
+.maincontent .box02 h4 span{ padding-left:4px; color:#ef0000;}
+
+.maincontent .box03{ width:100%; float:left;}
+.maincontent .box03 ul li{ background:url(../images/g1-bg01.gif) repeat-x left bottom; padding:10px 5px 10px 0;}
+.maincontent .box03 ul li p{ padding-left:41px; line-height:24px;}
+span.head{ display:block; padding-left:41px; background:url(../images/g1-icon01.gif) no-repeat 15px 5px; padding-top:6px; cursor:pointer; padding-bottom:5px;}
+.maincontent .box03 ul li.selected { background:#f6f6f6;}
+.maincontent .box03 ul li.selected p{color:#888;}
+span.selected{ background:url(../images/g1-icon02.gif) no-repeat 15px 5px; color:#888;}

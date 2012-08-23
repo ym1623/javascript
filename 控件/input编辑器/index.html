@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>在线编辑input内容 阿里西西</title>
+  <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="jquery.editme.js"></script>
+  <link type="text/css" href="editme.css" rel="stylesheet" />
+  <style type="text/css">
+    html, body {
+      /*font-family: Verdana, Arial, Sans-serif;*/
+      font-family: "Helvetica Neue",Helvetica,sans-serif;
+      font-size: 14px;
+      background-color: #000;
+      color: #fff;
+    }
+    #wrap {
+      margin: 0 auto;
+      width: 600px;
+    }
+    
+    h1 {
+      font-size: 50px;
+    }
+    
+    code {
+      border-left: 3px solid #fff;
+      display: block;
+      padding-left: 10px;
+      font-size: 12px;
+    }
+    
+    .description {
+      font-size: 15px;
+    }
+    
+    .add_new_user {
+      margin-top: 10px;
+    }
+    .add_new_user label {
+      display: block;
+    }
+    
+    .option, .comment {
+      color: #84E84A;
+    }
+    
+    ul.users {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    ul li {
+      margin: 10px 0 0 0;
+      padding: 0;
+    }
+    ul li label {
+      display: block;
+    }
+    
+    a {
+      color: #FF0000;
+      text-decoration: underline;
+    }
+    
+    a.ajaxlink {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  
+<div id="wrap">
+  <h1>www.alixixi.com</h1>
+  
+  <div class="description">
+    editme is a small jQuery plugin designed to make large forms more usable.<br/>
+    <br/>
+    editme hides the input field, shows a nice labeled version of the data in the input field and adds an
+    edit button.
+  </div>
+  
+  <h2>Hiding input fields in forms</h2>
+  
+  <div>
+    Sometimes a long form needs to have dynamic content.<br/>
+    If you have a list of users, you can edit them
+  </div>
+  
+  <ul class="users">
+    <li>
+      <input type="text" name="user[]" value="Jimmi Westerberg" />
+    </li>
+    <li>
+      <input type="text" name="user[]" value="Buddy Carlson" />
+    </li>
+    <li>
+      <input type="text" name="user[]" value="Steve Martin" />
+    </li>
+    <li>
+      <input type="text" name="user[]" value="Babe Ruth" />
+    </li>
+  </ul>
+  
+  <br/>
+  In order to achive this, just have a list of input fields with the type text:<br/>
+  <pre><code>&lt;div class="users"&gt;
+  &lt;input type="text" name="user[]" value="Jimmi Westerberg" /&gt;
+  &lt;input type="text" name="user[]" value="Buddy Carlson" /&gt;
+  &lt;input type="text" name="user[]" value="Steve Martin" /&gt;
+  &lt;input type="text" name="user[]" value="Babe Ruth" /&gt;
+&lt;/div&gt;</code></pre>
+  <br/>
+  And add the following script:<br/>
+  <pre><code>&lt;script type="text/javascript"&gt;
+  $(document).ready(function() {
+    $('ul.users input').editme();
+  });
+&lt;/script&gt;</code></pre>
+
+  <br/>
+  <a name="save_on_the_go"></a>
+  <h2>Save on the go!</h2>
+  Do you want the data to be saved on the fly? (AJAX and other buzzwords here)<br/><br/>
+  Simply use the "autosave" option, with the function for saving the new data entered.<br/>
+  <br/>
+  <pre><code>&lt;script type="text/javascript"&gt;
+  $(document).ready(function() {
+    $('#save_me').editme({
+      <span class="comment">// REMEMBER dataToSave (call it what you want), else the data cannot be passed to your custom function</span>
+      'autosave': function(dataToSave) { 
+        <span class="comment">// implement any way of saving here... i'm using ajax post in this example</span>
+        $.post(
+          'save_data.json',
+          dataToSave,
+          function(data) {
+            <span class="comment">// do whatever you want with the data returned
+            // ...</span>
+
+
+            <span class="comment">// REMEMBER TO CALL THIS METHOD!
+            // else the display view is not shown and it will be stuck at the 
+            // edit mode.</span>
+            $('#save_me').editme('saved');
+          }
+        );
+      }
+    });
+  });
+&lt;/script&gt;</code></pre>
+  
+  <br/>
+  <h2>Options</h2>
+  You can easily customize the editme boxes and even add a remove link!
+  <ul>
+    <li>
+      <span class="option">edittext</span> : The text in the edit link. Default is "edit"
+    </li>
+    <li>
+      <span class="option">removetext</span> : The text in the remove link. Default is "remove"
+    </li>
+    <li>
+      <span class="option">removeable</span> : Show the remove link? Default is "false" (use booleans)
+    </li>
+    <li>
+      <span class="option">savetext</span> : The text in the save button. Default is "save"
+    </li>
+    <li>
+      <span class="option">canceltext</span> : The text in the cancel link. Default is "cancel"
+    </li>
+    <li>
+      <span class="option">autosave</span> : Pass the function you want to use, if you want to save the data using ajax. The function should accept ONE parameter (the data to save). <a href="#save_on_the_go">Example</a>
+    </li>
+  </ul>
+  <br/>
+  <h3>"Nearly all options used"-example</h3>
+  <pre><code>&lt;script type="text/javascript"&gt;
+  $(document).ready(function() {
+    $('#most_options').editme({
+      'edittext':'Edit me!',
+      'removetext': 'Delete this row',
+      'removeable':true,
+      'savetext':'Save for later...',
+      'canceltext':'Oopsie, cancel!'
+    });
+  });
+&lt;/script&gt;</code></pre>
+  <br/>
+  This will give the following editme field:
+  <input type="text" id="most_options" value="Jimmi Westerberg" />
+  <br/>
+  
+  <h2>Completely styleable!</h2>
+  The editme script adds lots of HTML to give you a good impression. A lot of that has classes on them,
+  for easier styling.<br/>
+  <h3>Example HTML output</h3>
+  
+  <pre><code>&lt;div class="editme" id="editme_container_0"&gt;
+  &lt;div class="editme_view_container" id="view_editme_container_0"&gt;
+    &lt;span class="data"&gt;Jimmi Westerberg&lt;/span&gt;
+    &lt;span class="edit_link"&gt;
+      [&lt;a id="edit_link_edit_editme_container_0" class="ajaxlink"&gt;edit&lt;/a&gt;]
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div style="display: none;" class="editme_edit_container" id="edit_editme_container_0"&gt;
+    &lt;input type="text" value="Jimmi Westerberg" name="user[]"&gt;
+    &lt;input type="button" id="save_edit_editme_container_0" value="save"&gt;
+    or &lt;a id="cancel_edit_editme_container_0" class="ajaxlink"&gt;cancel&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('ul.users input').editme();
+
+  // uses the autosave option
+  $('#save_me').editme({
+    'autosave': function(data_to_save) {
+      $.post(
+        'save_data.json',
+        data_to_save, function(data) {
+          // do whatever you want with the data returned
+          // ...
+          
+          
+          // REMEMBER TO CALL THIS METHOD!
+          // else the display view is not shown and it will be stuck at the 
+          // edit more.
+          $('#save_me').editme('saved');
+        }
+      );
+    }
+  });
+  
+  // uses most options as an example
+  $('#most_options').editme({
+    'edittext':'Edit me!',
+    'removetext': 'Delete this row',
+    'removeable':true,
+    'savetext':'Save for later...',
+    'canceltext':'Oopsie, cancel!'
+  });
+});
+</script>
+</body>
+</html>

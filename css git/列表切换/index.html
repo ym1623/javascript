@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="源码下载,网页模板,字体下载,网页制作教程,源码交易,网站交易,网站开发,网页特效,酷站,站长论坛,web development,阿里西西,alixixi,阿里 西西" />
+<meta name="description" content="阿里西 西(alixixi.com)服务于广大Web开发爱好者的免费技术资源网站，提供最专业的网页制作教程，网站源码和模板下载，网页特效、站长资讯等建站资源；同时提供网站开发及技术支持服务。" />
+<title>广告代码 jQuery+CSS实现简单的显示切换功能，阿里西西首发</title>
+<style type="text/css">
+p.switch {
+width: 122px;
+height: 26px;
+margin-bottom: 15px;
+background: url(image/switch_bg.gif) no-repeat;
+}
+a.switch_thumb {
+width: 34px;
+height: 26px;
+line-height: 26px;
+padding: 0;
+margin: 0 0 0 80px;
+display: block;
+background: url(image/switch_btn.gif) no-repeat;
+outline: none;
+text-indent: -9999px;
+}
+a.swap { background-position: left bottom; }
+a:hover.switch_thumb {
+filter:alpha(opacity=75);
+opacity:.75;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+}
+ul.display {
+width: 744px;
+background: #222 none repeat scroll 0 0;
+border-right: 1px solid #333;
+border-top: 1px solid #333;
+margin: 0;
+padding: 0;
+overflow: hidden;
+clear: both;
+}
+ul.display li {
+width: 742px;
+float: left;
+margin: 0;
+padding: 10px 0;
+border: 1px solid;
+border-color: #111 #111 #333 #333;
+}
+ul.display li a {
+color: #DDD;
+text-decoration: none;
+font-size: 140%;
+}
+ul.display li .content_block {
+padding: 0 10px;
+}
+ul.display li .content_block h4 {
+margin: 0;
+padding: 5px;
+}
+ul.display li .content_block p {
+margin: 0;
+padding: 5px 5px 5px 241px; /*--The left padding keeps the content from flowing under the image--*/
+color: #CCC;
+}
+ul.display li .content_block a img{ /*--Double border technique--*/
+border: 5px solid #ccc;
+background: #fff;
+margin: 0 15px 0 0;
+float: left;
+}
+/*-- Switch the width to accommodate for the three column layout-- */
+ul.thumb_view li {
+width: 246px;
+}
+ul.thumb_view li h4 {
+display: inline;
+}
+ul.thumb_view li p {
+display: none;
+}
+ul.thumb_view li .content_block a img {
+margin: 0 0 10px;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("a.switch_thumb").toggle(function(){
+        $(this).addClass("swap");
+        $("ul.display").fadeOut("fast", function() {
+            $(this).fadeIn("fast").addClass("thumb_view");
+        });
+    }, function () {
+        $(this).removeClass("swap");
+        $("ul.display").fadeOut("fast", function() {
+            $(this).fadeIn("fast").removeClass("thumb_view");
+        });
+    });
+});
+</script>
+</head>
+
+<body>
+您的位置：<a href="http://www.alixixi.com">阿里西西</a> > <a href="http://js.alixixi.com">网页特效</a> > <a href="http://js.alixixi.com/c/guanggao_1.shtml">广告代码</a><hr />
+<p class="switch"><a href="#" class="switch_thumb">Switch Display</a></p>
+<ul class="display">
+    <li>
+    <div class="content_block">
+    <a href="#"><img src="image/sample.gif" alt="Sample" /></a>
+    <h4><a href="#">阿里西西</a></h4>
+    <p>阿里西西一号图片</p>
+    <p>原创首发，<a href="http://www.alixixi.com">阿里西西web开发之家</a>，转载请注明出处！</p>
+    </div>
+    </li>
+    <li>
+    <div class="content_block">
+    <a href="#"><img src="image/sample.gif" alt="Sample" /></a>
+    <h4><a href="#">阿里西西</a></h4>
+    <p>阿里西西二号图片</p>
+    <p>原创首发，<a href="http://www.alixixi.com">阿里西西web开发之家</a>，转载请注明出处！</p>
+    </div>
+    </li>
+    <li>
+    <div class="content_block">
+    <a href="#"><img src="image/sample.gif" alt="Sample" /></a>
+    <h4><a href="#">阿里西西</a></h4>
+    <p>阿里西西三号图片</p>
+    <p>原创首发，<a href="http://www.alixixi.com">阿里西西web开发之家</a>，转载请注明出处！</p>
+    </div>
+    </li>
+</ul>
+</body>
+</html>

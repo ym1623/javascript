@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>排名效果，alixixi整理收集</title>
+<script type="text/javascript">
+function nTabs(thisObj,Num){
+    if(thisObj.className == "active")return;
+    var tabObj = thisObj.parentNode.id;
+    var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+    for(i=0; i <tabList.length; i++)
+    {
+        if (i == Num)
+        {
+            thisObj.className = "active";
+            document.getElementById(tabObj+"_Content"+i).style.display = "block";
+        }else{
+            tabList[i].className = "normal";
+            document.getElementById(tabObj+"_Content"+i).style.display = "none";
+        }
+    }
+}
+var show_king_id = 1;
+function show_king_list(e,k)
+{
+    if(show_king_id == k) return true;
+        o = document.getElementById("a"+show_king_id);
+        o.className = "bg";
+    e.className = " ";
+    show_king_id = k;
+}
+var show_kinga_id = 1;
+function show_kinga_list(f,l)
+{
+    if(show_kinga_id == l) return true;
+        o = document.getElementById("b"+show_kinga_id);
+        o.className = "bg";
+    f.className = " ";
+    show_kinga_id = l;
+}
+</script>
+<style type="text/css">
+*{
+margin: 0;
+padding: 0;
+}
+body {
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+color:#666666;
+}
+.door_container {
+width:204px; background:#fff; border:1px solid #ccc;
+margin:20px auto;
+}
+.door_container .TabTitle {
+height:30px; margin-bottom:6px;
+}
+.door_container .TabTitle li {
+list-style:none;
+float:left;
+width:100px;
+height:36px;
+cursor:pointer;
+padding-left:2px;
+line-height:28px;
+color:#7c7c7c;
+font-size:14px;
+text-align:center;
+font-weight:bold;
+background:#DDDDDD;
+}
+.door_container .TabTitle .active {
+color:#0066CC;
+background:#fff;
+}
+.door_container .TabTitle .normal {
+color:#7c7c7c;
+}
+.door_container .TabContent {
+width:198px; background:#fff; padding:3px;
+}
+.none {
+display: none;
+}
+.star{
+width:198px;
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+}
+.star dl{
+width:198px;
+margin:2px 0;
+float:left;
+}
+.star dl dd{
+float:left;
+margin-left:8px;
+line-height:18px;
+}
+.star dl dt{
+float:left;
+}
+.bg{
+width:198px;
+margin:2px 0;
+background:#e1e1e1;
+float:left;
+}
+.sl01{
+background:#0066CC;
+margin:15px 5px 0 5px;
+width:25px;
+height:18px;
+padding-top:7px;
+text-align:center;
+font-weight:bold;
+color:#FFF;
+}
+.sl02 img{
+border:1px solid #999999;
+padding:3px;
+}
+.sl03 a{
+color:#0066CC;
+text-decoration:underline;
+}
+.sl03 a:hover{
+color:#FF0084;
+text-decoration:none;
+}
+.sl04{
+background:#CCCCCC;
+}
+.sl05{
+color:#FF0084;
+}
+.bg .sl01{
+background:#fff;
+margin:5px 5px 0 5px;
+width:25px;
+height:18px;
+padding-top:7px;
+text-align:center;
+font-weight:bold;
+color:#0066CC;
+}
+.bg .sl02 img{
+display:none;
+}
+.bg .sl03{
+width:140px;
+}
+.bg .sl04{
+background:#CCCCCC;
+width:155px;
+}
+.bg .sl05{
+display:none;
+}
+</style>
+</head>
+<body>
+您的位置：<a href="http://www.alixixi.com">阿里西西</a> > <a href="http://js.alixixi.com">网页特效</a> > <a href="http://js.alixixi.com/c/guanggao_1.shtml">广告代码</a><hr />
+<div class="door_container">
+    <div class="TabTitle">
+        <ul id="myTab">
+            <li class="active" onclick=nTabs(this,0);>明星网友</li>
+            <li class="normal" onclick=nTabs(this,1);>优秀圈主</li>
+        </ul>
+    </div>
+    <div class="TabContent">
+        <div id=myTab_Content0>
+            <div class="star">
+                <dl id=a1 onmouseover=show_king_list(this,1);>
+                    <dt class="sl01">01</dt>
+                    <dt class="sl02"><a href="#"><img src="001.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">Kevin Ye</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a2 onmouseover=show_king_list(this,2);>
+                    <dt class="sl01">02</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a3 onmouseover=show_king_list(this,3);>
+                    <dt class="sl01">03</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a4 onmouseover=show_king_list(this,4);>
+                    <dt class="sl01">04</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a5 onmouseover=show_king_list(this,5);>
+                    <dt class="sl01">05</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a6 onmouseover=show_king_list(this,6);>
+                    <dt class="sl01">06</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a7 onmouseover=show_king_list(this,7);>
+                    <dt class="sl01">07</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a8 onmouseover=show_king_list(this,8);>
+                    <dt class="sl01">08</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a9 onmouseover=show_king_list(this,9);>
+                    <dt class="sl01">09</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=a10 onmouseover=show_king_list(this,10);>
+                    <dt class="sl01">10</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="none" id=myTab_Content1>
+            <div class="star">
+                <dl id=b1 onmouseover=show_kinga_list(this,1);>
+                    <dt class="sl01">01</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b2 onmouseover=show_kinga_list(this,2);>
+                    <dt class="sl01">02</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b3 onmouseover=show_kinga_list(this,3);>
+                    <dt class="sl01">03</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b4 onmouseover=show_kinga_list(this,4);>
+                    <dt class="sl01">04</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b5 onmouseover=show_kinga_list(this,5);>
+                    <dt class="sl01">05</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b6 onmouseover=show_kinga_list(this,6);>
+                    <dt class="sl01">06</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b7 onmouseover=show_kinga_list(this,7);>
+                    <dt class="sl01">07</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b8 onmouseover=show_kinga_list(this,8);>
+                    <dt class="sl01">08</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b9 onmouseover=show_kinga_list(this,9);>
+                    <dt class="sl01">09</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+                <dl class=bg id=b10 onmouseover=show_kinga_list(this,10);>
+                    <dt class="sl01">10</dt>
+                    <dt class="sl02"><a href="#"><img src="002.gif" alt="" /></a></dt>
+                    <dd class="sl03"><a href="#">User Name</a></dd>
+                    <dd class="sl04">24岁 广东·广州</dd>
+                    <dd class="sl05">人气:1243178</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

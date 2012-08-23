@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="JS代码,菜单导航,JS广告代码,JS特效代码" />
+<meta name="description" content="此代码内容为sohu团购顶部切换城市导航，属于站长常用代码，更多菜单导航代码请访问阿里西西JS代码频道。" />
+<LINK href="css/css.css" type=text/css rel=stylesheet>
+<title>sohu团购顶部切换城市导航_阿里西西</title>
+</head>
+
+<BODY>
+
+<DIV class=selCity id=allCity style="DISPLAY: none">
+<DIV class=area>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><A class=cur href="#">北京</A></TD>
+    <TD><A href="#">上海</A></TD>
+    <TD><A href="#">广州</A></TD>
+    <TD><A href="#">深圳</A></TD>
+    <TD><A href="#">重庆</A></TD>
+    <TD><A href="#">西安</A></TD></TR>
+  <TR>
+    <TD><A href="#">天津</A></TD>
+    <TD><A href="#">南京</A></TD>
+    <TD><A href="#">成都</A></TD>
+    <TD><A href="#">武汉</A></TD>
+    <TD><A href="#">杭州</A></TD>
+    <TD><A href="#">济南</A></TD></TR>
+  <TR>
+    <TD><A href="#">哈尔滨</A></TD>
+    <TD><A href="#">厦门</A></TD>
+    <TD><A href="#">海南</A></TD>
+    <TD><A href="#">沈阳</A></TD>
+    <TD><A href="#">大连</A></TD>
+    <TD><A href="#">石家庄</A></TD></TR>
+  <TR>
+    <TD><A href="#">长春</A></TD>
+    <TD><A href="#">郑州</A></TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR></TBODY></TABLE>
+<DIV class=none><A id=foldin href="javascript:;">收起</A></DIV></DIV></DIV>
+<DIV class=header>
+	<DIV class=area>
+		<DIV class=r>
+			<DIV class="topCtiy clear">
+				<UL>
+				  <LI class=i1>北京 </LI>
+				  <LI class=i2 id=changeCity>切换城市 </LI>
+				</UL>
+			</DIV>
+		</DIV>
+	</DIV>
+</DIV>
+<SCRIPT src="js/sohu.js" type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+jQuery(function(){
+	$("#changeCity").click(function(a){$("#allCity").slideDown(300);a.stopPropagation();$(this).blur()});$("#allCity").click(function(a){a.stopPropagation()});$(document).click(function(a){a.button!=2&&$("#allCity").slideUp(300)});$("#foldin").click(function(){$("#allCity").slideUp(300)})
+});
+</SCRIPT>
+
+<br /><br />
+<p>来源：<a href="http://ihome.sohu.com/beijing/life/" target="_blank">搜狐爱家团</a>　代码整理：<a href="http://www.alixixi.com/" target="_blank">阿里西西</a></p>
+<p>＊尊重他人劳动成果，转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+<p></p>
+<p><p>sohu团购顶部切换城市导航，可打开关闭在顶部，方便在其他城市之间切换。</p></p>
+<p></p>
+</body>
+</html>

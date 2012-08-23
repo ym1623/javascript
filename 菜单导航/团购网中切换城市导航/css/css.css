@@ -1,0 +1,45 @@
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif;  text-align:center; margin:0 auto;}
+table{border-collapse:collapse;border-spacing:0;}
+p{line-height:24px}
+
+.clearfloat{height:0;font-size:1px;clear:both;line-height:0;}
+
+#container{ width:960px; text-align:left; margin:0 auto; }
+a{color:#333;text-decoration:none;}
+a:hover{color:#ef9b11; text-decoration:underline;}
+
+.header{ background:url(../images/tuan_head_01.gif) repeat-x; height:32px;}
+.header .topCtiy {PADDING-RIGHT: 10px; PADDING-TOP: 4px; HEIGHT: 22px}
+.header .topCtiy UL {FLOAT: right}
+.header .topCtiy LI {PADDING-RIGHT: 10px; DISPLAY: inline; PADDING-LEFT: 10px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN-LEFT: 3px; COLOR: #fff; LINE-HEIGHT: 22px; PADDING-TOP: 0px}
+.header .topCtiy LI.i1 {PADDING-RIGHT: 13px; PADDING-LEFT: 13px; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: #e16e6e; PADDING-BOTTOM: 0px; PADDING-TOP: 0px}
+.header .topCtiy LI.i2 {BACKGROUND: url(../images/tuan_icon10.gif) no-repeat 100% 50%; CURSOR: pointer}
+.header .topCtiy LI A {COLOR: #fff}
+.header .topCtiy LI A:hover {COLOR: #fff}
+.selCity {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 10; BACKGROUND: url(../images/tuan_bgx06.gif) #7e2725 repeat-x 50% bottom; PADDING-BOTTOM: 4px; WIDTH: 100%; PADDING-TOP: 2px; POSITION: relative;}
+.selCity .none {LEFT: 47.5%; BOTTOM: -18px; POSITION: absolute}
+.selCity .none A {DISPLAY: block; BACKGROUND: url(../images/tuan_bg15.gif) no-repeat; WIDTH: 68px; TEXT-INDENT: -3000px; HEIGHT: 21px; TEXT-DECORATION: none}
+.selCity .none A:hover {DISPLAY: block; BACKGROUND: url(../images/tuan_bg15.gif) no-repeat; WIDTH: 68px; TEXT-INDENT: -3000px; HEIGHT: 21px; TEXT-DECORATION: none}
+.selCity TABLE {MARGIN: 0px auto; WIDTH: 950px; BORDER-COLLAPSE: collapse}
+.selCity TABLE TD {BORDER-RIGHT: #8b3d3b 1px dashed; BORDER-TOP: #8b3d3b 1px dashed; FONT-SIZE: 14px; VERTICAL-ALIGN: middle; BORDER-LEFT: #8b3d3b 1px dashed; WIDTH: 157px; COLOR: #fff; BORDER-BOTTOM: #8b3d3b 1px dashed; HEIGHT: 39px; TEXT-ALIGN: center}
+.selCity TABLE TD A {DISPLAY: block; COLOR: #fff; LINE-HEIGHT: 40px; HEIGHT: 40px; TEXT-DECORATION: none}
+.selCity TABLE TD A:hover {BACKGROUND: #a86e6d; COLOR: #fff; TEXT-DECORATION: none}
+.selCity TABLE TD A.cur {BACKGROUND: #a86e6d}
+.header .box {MARGIN-TOP: 36px; TEXT-ALIGN: left}
+.header .lab_city {MARGIN-TOP: 1px; FLOAT: left; WIDTH: 210px; COLOR: #fff; POSITION: relative; HEIGHT: 25px}
+.header .sel_fl {PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: #400a09; LEFT: -97px; PADDING-BOTTOM: 27px; WIDTH: 361px; PADDING-TOP: 23px; POSITION: absolute; TOP: 28px}
+.header .sel_fl TABLE {BORDER-COLLAPSE: collapse}
+.header .sel_fl TABLE TD {
+BORDER-RIGHT: #8b3d3b 1px dashed; BORDER-TOP: #8b3d3b 1px dashed; FONT-SIZE: 14px; VERTICAL-ALIGN: middle; BORDER-LEFT: #8b3d3b 1px dashed; WIDTH: 88px; COLOR: #fff; BORDER-BOTTOM: #8b3d3b 1px dashed; HEIGHT: 34px; TEXT-ALIGN: center}
+.header .sel_fl TABLE TD.first {BORDER-LEFT-WIDTH: 0px}
+.header .sel_fl TABLE TD.last {BORDER-RIGHT-WIDTH: 0px}
+.header .sel_fl TABLE TD A {DISPLAY: block; LINE-HEIGHT: 34px; HEIGHT: 34px; TEXT-DECORATION: none}
+.header .sel_fl TABLE TD A:hover {DISPLAY: block; LINE-HEIGHT: 34px; HEIGHT: 34px; TEXT-DECORATION: none}
+.header .sel_fl TABLE TD A:hover {BACKGROUND: #5c2f2e}
+.header .sel_fl TABLE TD A.cur {BACKGROUND: #5c2f2e}
+.header .lab_city .city {FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(../images/tuan_bg01.gif) no-repeat 100% 0px; FLOAT: left; WIDTH: 70px; LINE-HEIGHT: 25px; MARGIN-RIGHT: 16px; TEXT-ALIGN: center}
+.header .lab_city .txt {DISPLAY: inline-block; CURSOR: pointer; PADDING-TOP: 8px}

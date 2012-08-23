@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>QQ客服焦点图片切换，alixixi整理收集。</title>
+<style type="text/css">
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,iframe {margin:0;padding:0;}
+fieldset,img {border:0;}
+address,caption,cite,dfn,em,th,var {font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;}
+
+.on,.question,.often,.question_q a{
+	background:url(index_bg.png) no-repeat;
+}
+.left{
+	float:left;
+	width:670px;
+}
+
+.banner{
+	width:670px;
+	height:240px;
+	margin-top:5px;
+	position:relative;
+}
+.banner_tab{
+	height:43px;
+	position:absolute;
+	right: 5px;
+	bottom: 5px;
+}
+.banner_tab ul {
+	cursor:pointer;
+}
+.banner_tab li {
+    float: left;
+    list-style-type: none;
+    text-align: center;
+}
+.banner_tab a {
+	 width:80px;
+	 height:43px;
+	 display:block;
+	 margin-right:2px;
+}
+.banner_tab  img{
+	border:1px solid #659ab6;
+}
+.hidecontent {display:none;}
+.on{
+	 background-position:0px -100px;
+}
+.on img{
+      border:1px solid #0099ff;
+}
+.out{}
+
+.clear{ clear:both;}
+
+.content{
+	margin:0 auto;
+	background:url(content_bg.png) repeat-x top;
+	border-left:1px solid #bad1de;
+	border-right:1px solid #bad1de;
+}
+
+.tab_img{ 
+	 width:72px;
+	 height:35px;
+	 margin-top:3px;
+	 border:1px solid #fff;
+ }
+
+.help{
+	margin-top:10px;
+	width:670px;
+}
+.help .div_p{
+	padding:10px 5px 15px;
+	>padding:13px 5px 15px;
+}
+.help .help_ul{
+	padding:10px 0px 30px 30px;
+	>padding-top:1px;
+}
+
+.help_ul li{
+	float:left;
+	width:310px;
+	height:28px;
+	line-height:28px;
+	position:relative;
+}
+.help_ul .img_hot{
+	top:8px;
+	position:absolute;
+}
+
+a.k:link, a.k:visited {
+	color:#228ada;
+	text-decoration:none;
+}
+a.k:active,a.k:hover {
+	color:#000;
+	text-decoration:underline;
+}
+.right{
+	width:230px;
+	float:right;
+}
+
+
+
+
+</style>
+<script type="text/javascript">
+function setTab(/*string*/name,/*int*/ itemCnt,/*int*/ curItem, /**/classHide, /**/classShow)
+{
+	 for(i=1;i<=itemCnt;i++)
+	{
+		eval("document.getElementById('tab_" + name + "_" + i + "').className='" + classHide + "'");
+	} 
+	eval("document.getElementById('tab_" + name + "_" + curItem + "').className='" + classShow + "'");
+ 
+ for(i=1;i<=itemCnt;i++)
+ {
+  eval("ele_hide = document.getElementById('con_" + name + "_" + i +"')");
+  if(ele_hide) ele_hide.style.display = "none";
+ }
+ eval("ele_play = document.getElementById('con_" + name + "_" + curItem + "')");
+ if(ele_play) ele_play.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+您的位置：<a href="http://www.alixixi.com">阿里西西</a> > <a href="http://js.alixixi.com">网页特效</a> > <a href="http://js.alixixi.com/c/guanggao_1.shtml">广告代码</a><hr />
+ <div class="banner" id="banner">
+			<div class="banner_tab clearfix">
+				<ul>
+				  <li id="tab_tophome_1" class="on"><a href="/other/phone_flow.shtml" target="_blank"  onmousemove="startIndex=1;setTab('tophome',4,1,'out','on');" onclick="javascript:pgvSendClick({hottag:'KF.SERVICE.INDEX.PHONE_2'});"><img src="ad_1.jpg"  class="tab_img" alt="电话按键指引"/></a></li>
+				  <li id="tab_tophome_2" class="out"><a href="/self/self_help.shtml" target="_blank" onmousemove="startIndex=2;setTab('tophome',4,2,'out','on');" onclick="javascript:pgvSendClick({hottag:'KF.SERVICE.INDEX.SELF_2'});"><img src="ad_3.jpg"  class="tab_img" alt="自助服务"/></a></li>
+				  <li id="tab_tophome_3" class="out"><a href="showSurvey?survey_id=567" target="_blank" onmousemove="startIndex=3;setTab('tophome',4,3,'out','on');" onclick="javascript:pgvSendClick({hottag:'KF.SERVICE.INDEX.STUDY_2'});"><img src="ad_2.jpg"  class="tab_img" alt="腾讯学堂"/></a></li>
+				  <li id="tab_tophome_4" class="out"><a href="c1090519040.htm" target="_blank" onmousemove="startIndex=4;setTab('tophome',4,4,'out','on');" onclick="javascript:pgvSendClick({hottag:'KF.SERVICE.INDEX.SOSO_2'});"><img src="ad_4.jpg"  class="tab_img" alt="问问专区"/></a></li>
+				</ul>  
+			</div>
+			<div>
+				<div id="con_tophome_1"><a href="/other/phone_flow.shtml" target="_blank" onclick="javascript:pgvSendClick({hottag:'KF.SERVICE.INDEX.PHONE_1'});"><img src="ad_1.jpg" alt="电话按键指引"/></a></div>    
+				<div id="con_tophome_2"  class="hidecontent"><a href="/self/self_help.shtml" target="_blank" onclick="javascript:pgvSendClick({hottag:'KF.SERVICE.INDEX.SELF_1'});"><img src="ad_3.jpg" alt="自助服务" /></a></div>   
+				<div id="con_tophome_3"  class="hidecontent"><a href="showSurvey?survey_id=567" target="_blank" onclick="javascript:pgvSendClick({hottag:'KF.SERVICE.INDEX.STUDY_1'});"><img src="ad_2.jpg" alt="腾讯学堂" /></a></div>   
+				<div id="con_tophome_4"  class="hidecontent"><a href="c1090519040.htm" target="_blank" onclick="javascript:pgvSendClick({hottag:'KF.SERVICE.INDEX.SOSO_1'});"><img src="ad_4.jpg" alt="问问专区"/></a></div>     
+			  <div class="clear"></div>
+			</div>
+        </div>
+		<script type="text/javascript">
+ var pause = false;
+ var con_num = 4;
+ var startIndex = 1;
+ function setLoop(){
+  try{
+   var oScroll = document.getElementById('banner');
+   oScroll.noWrap = true;
+   oScroll.onmouseover = function(e){pause = true;};
+   oScroll.onmouseout = function(e){pause = false;};
+   setInterval('scrollTopHome()', 3000);
+   }catch(e){alert(e.toString());}
+ }
+ function scrollTopHome(){
+  if(pause) return;
+  startIndex += 1;
+  if(startIndex > con_num){startIndex = 1;}
+  setTab('tophome',4,startIndex,'out','on');
+ } 
+ setLoop();
+</script>
+</body>
+</html>

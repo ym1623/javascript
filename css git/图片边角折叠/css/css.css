@@ -1,0 +1,14 @@
+.curlycontainer{
+border: 1px solid #b8b8b8;
+margin-bottom: 1em;
+width: 300px;
+font-size:12px
+}
+
+.curlycontainer .innerdiv{
+background: transparent url(../images/brcorner.gif) bottom right no-repeat;
+position: relative;
+left: 2px;
+top: 2px;
+padding: 1px 4px 15px 5px;
+}

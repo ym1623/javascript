@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="JS代码,在线客服,JS广告代码,JS特效代码" />
+<meta name="description" content="此代码内容为左侧可折叠在线客户代码，属于站长常用代码，更多在线客服代码请访问阿里西西JS代码频道。" />
+<LINK rel=stylesheet type=text/css href="css/css.css">
+<title>左侧可折叠在线客户代码_阿里西西</title>
+</head>
+
+<body>
+您的位置：<a href="http://www.alixixi.com/">阿里西西</a> &gt; <a href="http://js.alixixi.com/">网页特效</a> &gt; <a href="http://js.alixixi.com/c/guanggao_1.shtml">广告代码</a>
+<hr />
+<table width="980" height="2500" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#F4F4F4">
+  <tr>
+    <td align="center" valign="top">
+	  <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>代码整理：<a href="http://www.alixixi.com/" target="_blank">阿里西西</a>　来源：<a href="http://www.zuoluo.com/" target="_blank">一家购物网</a></p>
+      <p>＊尊重他人劳动成果，转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+</td>
+  </tr>
+</table>
+
+<DIV id=xixi onmouseover=toBig() onmouseout=toSmall()>
+<TABLE style="FLOAT: left" border=0 cellSpacing=0 cellPadding=0 width=157>
+  <TBODY>
+  <TR>
+    <TD class=main_head height=39 vAlign=top>&nbsp;</TD></TR>
+  <TR>
+    <TD class=info vAlign=top>
+      <TABLE class=qqtable border=0 cellSpacing=0 cellPadding=0 width=120 
+      align=center>
+        <TBODY>
+        <TR>
+          <TD align=middle><a href="http://www.alixixi.com/" target="_blank"><IMG border=0 
+            src="images/kefu_head.gif"></a> </TD>
+        </TR>
+        <TR>
+          <TD height=5></TD></TR>
+        <TR>
+          <TD height=30 align=middle><SPAN>QQ:178010108</SPAN></TD></TR>
+        <TR>
+          <TD height=30 align=middle><SPAN>QQ:260176837</SPAN></TD></TR>
+        <TR>
+          <TD height=5></TD></TR>
+        <TR>
+          <TD height=35 vAlign=top align=middle><A href="http://www.alixixi.com/" target="_blank"><IMG border=0 src="images/img3-5-btn1.gif" width=90 height=25></A></TD>
+        </TR>
+        <TR>
+          <TD height=38 vAlign=top align=middle><A href="http://www.alixixi.com/" target="_blank"><IMG border=0 src="images/img3-5-btn2.gif" width=90 height=25></A></TD>
+        </TR>
+        <TR>
+          <TD align=middle>
+            <DIV class=qun><FONT 
+            color=#9b9b9b>会员交流群</FONT><BR><SPAN>27565214</SPAN></DIV></TD></TR>
+        <TR>
+          <TD align=middle>
+            <DIV class=qun><FONT 
+            color=#9b9b9b>商家交流群</FONT><BR><SPAN>1724691</SPAN></DIV></TD></TR>
+        <TR>
+          <TD align=middle>&nbsp;</TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=down_kefu vAlign=top></TD></TR></TBODY></TABLE>
+<DIV class=Obtn></DIV></DIV>
+<SCRIPT language=javascript>
+		客服果果=function (id,_top,_left){
+		var me=id.charAt?document.getElementById(id):id, d1=document.body, d2=document.documentElement;
+		d1.style.height=d2.style.height='100%';me.style.top=_top?_top+'px':0;me.style.left=_left+"px";//[(_left>0?'left':'left')]=_left?Math.abs(_left)+'px':0;
+		me.style.position='absolute';
+		setInterval(function (){me.style.top=parseInt(me.style.top)+(Math.max(d1.scrollTop,d2.scrollTop)+_top-parseInt(me.style.top))*0.1+'px';},10+parseInt(Math.random()*20));
+		return arguments.callee;
+		};
+		window.onload=function (){
+		客服果果
+		('xixi',100,-152)
+		}
+	</SCRIPT>
+
+<SCRIPT language=javascript> 
+			lastScrollY=0; 
+			
+			var InterTime = 1;
+			var maxWidth=-1;
+			var minWidth=-152;
+			var numInter = 8;
+			
+			var BigInter ;
+			var SmallInter ;
+			
+			var o =  document.getElementById("xixi");
+				var i = parseInt(o.style.left);
+				function Big()
+				{
+					if(parseInt(o.style.left)<maxWidth)
+					{
+						i = parseInt(o.style.left);
+						i += numInter;	
+						o.style.left=i+"px";	
+						if(i==maxWidth)
+							clearInterval(BigInter);
+					}
+				}
+				function toBig()
+				{
+					clearInterval(SmallInter);
+					clearInterval(BigInter);
+						BigInter = setInterval(Big,InterTime);
+				}
+				function Small()
+				{
+					if(parseInt(o.style.left)>minWidth)
+					{
+						i = parseInt(o.style.left);
+						i -= numInter;
+						o.style.left=i+"px";
+						
+						if(i==minWidth)
+							clearInterval(SmallInter);
+					}
+				}
+				function toSmall()
+				{
+					clearInterval(SmallInter);
+					clearInterval(BigInter);
+					SmallInter = setInterval(Small,InterTime);
+					
+				}
+				
+</SCRIPT>
+
+</body>
+</html>
