@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery弹出层插件点击弹出层拖动特效</title>
+<meta name="description" content="jquery弹出层插件制作注册表单点击按钮弹出层表单提交效果，可支持拖到的jQuery弹出层效果。标题、高度、宽度等可以自定义弹出层插件。jQuery插件" />
+</head>
+
+<body>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif;}
+label{cursor:pointer;}
+.democode{width:400px;margin:30px auto 0 auto;line-height:24px;}
+.democode h2{font-size:14px;color:#3366cc;height:28px;}
+.agree{margin:40px auto;width:400px;font-size:16px;font-weight:800;color:#3366cc;}
+.mainlist{padding:10px;}
+.mainlist li{height:28px;line-height:28px;font-size:12px;}
+.mainlist li span{margin:0 5px 0 0;font-family:"宋体";font-size:12px;font-weight:400;color:#ddd;}
+.btnbox{text-align:center;height:30px;padding-top:10px;background:#ECF9FF;}
+
+#windownbg{display:none;position:absolute;width:100%;height:100%;background:#000;top:0;left:0;}
+#windown-box{position:fixed;_position:absolute;border:5px solid #E9F3FD;background:#FFF;text-align:left;}
+#windown-title{position:relative;height:30px;border:1px solid #A6C9E1;overflow:hidden;background:url(images/tipbg.png) 0 0 repeat-x;}
+#windown-title h2{position:relative;left:10px;top:5px;font-size:14px;color:#666;}
+#windown-close{position:absolute;right:10px;top:8px;width:10px;height:16px;text-indent:-10em;overflow:hidden;background:url(images/tipbg.png) 100% -49px no-repeat;cursor:pointer;}
+#windown-content-border{position:relative;top:-1px;border:1px solid #A6C9E1;padding:5px 0 5px 5px;}
+#windown-content img,#windown-content iframe{display:block;}
+#windown-content .loading{position:absolute;left:50%;top:50%;margin-left:-8px;margin-top:-8px;}
+</style>
+
+<script type="text/javascript" src="http://www.jsfoot.com/skin/js/jquery.js"></script>
+<script type="text/javascript" src="js/tipswindown.js"></script>
+<script type="text/javascript">
+/*
+*弹出本页指定ID的内容于窗口
+*id 指定的元素的id
+*title:	window弹出窗的标题
+*width:	窗口的宽,height:窗口的高
+*/
+function showTipsWindown(title,id,width,height){
+	tipsWindown(title,"id:"+id,width,height,"true","","true",id);
+}
+
+function confirmTerm(s) {
+	parent.closeWindown();
+	if(s == 1) {
+		parent.document.getElementById("isread").checked = true;
+	}
+}
+
+
+//弹出层调用
+function popTips(){
+	showTipsWindown("jquery弹出层", 'simTestContent', 600, 255);
+	$("#isread").attr("checked", false);
+}
+
+$(document).ready(function(){
+	
+	$("#isread").click(popTips);
+	$("#isread-text").click(popTips);
+	
+});
+</script>
+
+<div class="democode">
+	<h2>jQuery弹出窗口 调用说明</h2>
+	title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;窗口标题<br />
+  content:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容(可选内容为){ text | id | img | url | iframe }<br />
+    width:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容宽度<br />
+   height:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容高度<br />
+	 drag:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是否可以拖动(ture为是,false为否)<br />
+     time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自动关闭等待的时间，为空是则不自动关闭<br />
+   showbg:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[可选参数]设置是否显示遮罩层(0为不显示,1为显示)<br />
+  cssName:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[可选参数]附加class名称
+</div>
+
+<div class="agree">
+	<label><input type="checkbox" name="isread" id="isread" /></label>
+	<label id="isread-text">点击弹出 7个jQuery弹出层特效</label>
+</div><!--agree end-->
+			
+<div style="display:none;">
+
+	<div id="simTestContent" class="simScrollCont">
+	
+		<div class="mainlist">
+			<ul>
+				<li><span>▪</span><a href="http://www.jsfoot.com/js/popup/2012-06-04/642.html" target="_blank">javascript弹出层插件可自定义js弹出层动画特效</a></li>
+				<li><span>▪</span><a href="http://www.jsfoot.com/jquery/popup/2012-05-24/624.html" target="_blank">jquery弹出层鼠标点击弹出层可浮动在屏幕滚动</a></li>
+				<li><span>▪</span><a href="http://www.jsfoot.com/jquery/popup/2012-04-18/568.html" target="_blank">jquery弹出层特效animate制作类似flash动画效果弹出层</a></li>
+				<li><span>▪</span><a href="http://www.jsfoot.com/jquery/popup/2011-09-21/195.html" target="_blank">jquery 弹出层 点击按钮弹出层兼容IE和firefox浏览器</a></li>
+				<li><span>▪</span><a href="http://www.jsfoot.com/jquery/popup/2011-09-13/183.html" target="_blank">jquery 弹出层插件 鼠标点击文字获取标题弹出层内容信息</a></li>
+				<li><span>▪</span><a href="http://www.jsfoot.com/jquery/popup/2011-08-31/157.html" target="_blank">jquery 弹出层插件 ThickBox 多功能弹出层插件支持图片、ajax、内嵌内容弹等</a></li>
+				<li><span>▪</span><a href="http://www.jsfoot.com/jquery/popup/2011-07-30/90.html" target="_blank">jquery 弹出层插件FancyBox弹出层演示支持图片、文章内容、flash swf弹出层等</a></li>
+			</ul>
+		</div>
+		
+		<div class="btnbox"><input type="button" id="confirmTerm" value="我喜欢" onClick="confirmTerm(1);" class="confirmBtn"/></div>
+		
+	</div><!--simTestContent end-->
+	
+</div>
+
+</body>
+</html>
