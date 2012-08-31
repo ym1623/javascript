@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Jquery仿百姓网的意见反馈和返回顶部特效 - Jquery-school</title>
+<meta name="author" content="Jquery-School" />
+<meta name="Copyright" content="Jquery-School,www.jq-school.com" />
+<meta name="keywords" content="Jquery,Jquery资源,前端设计,div+css" />
+<meta name="description" content="JquerySchool是一个专门分享jquery资源、插件、特效的一个网站,完全开放源代码,把实际开发中应用最多、最实用的Jquery资源抽取出来再加以精心编排,让广大网友能以最短的时间、花最少的精力去真正掌握jQuery开发的知识。" />
+<script type="text/javascript" src="http://www.jq-school.com/js/jquery-1.7.2.min.js"></script>
+<link href="css/feedback.css" rel="stylesheet" />
+<style type="text/css">
+<!--
+a{text-decoration:none;outline:none; color:#666666;}
+a:hover{text-decoration:none}
+img{border:0}
+ul{list-style:none;margin:0;}
+h2{
+	color:#6CBD45;
+	font-size:14px;
+	font-weight:bold;
+	padding-bottom:0.5em;
+	margin:0;
+}
+
+h3{
+	font-size:13px;
+	font-weight:bold;
+	
+	
+}
+#meun{color:#fff; padding-left:10px;}
+#meun img{ float:left;}
+#submeun{ margin-left:70px; float:left;}
+#submeun li{ text-align:center;  margin-right:10px; float:left;  display:inline;}
+#submeun li a{ color:#fff;height:50px; line-height:50px;  font-size:14px; font-weight:bold; text-align:center;  padding-left:15px; padding-right:15px;display:block;}
+#submeun li.cur{ text-align:center; background:#82ce18; margin-right:10px;float:left;  display:inline;}
+#top{
+	background-color:#000;
+	margin: 0em 0 10px 0em;
+
+	border-style:solid; border-width:1px; border-color:#E5E5E5;
+	height:50px;
+	line-height:50px;
+}
+h2.subtitle{
+	font-size:13px;
+	float:right;
+	color:#6CBD45;
+	margin:0 10px;
+	text-align:right;
+}
+
+h1.title{
+	height:50px;    
+    font-size:12px;
+	background:url(logo.png) no-repeat;
+	
+}
+h1.title a:link,h1.title a:visited,h1.title a:hover{
+	color:#000;
+	text-decoration:none;
+}
+-->
+</style>
+</head>
+
+<body>
+<div id="top">
+  <h2 class="subtitle"> JQuery让你的前端设计更精彩！</h2>
+  <div id="meun"><a href="http://www.jq-school.com/" title="Jquery-School"><img src="http://www.jq-school.com/logo.png" /></a>
+    <ul id="submeun">
+      <li><a href="http://www.jq-school.com/">首 页</a></li>
+      <li class="cur"><a href="javascript:void(0)">Jquery仿百姓网的意见反馈和返回顶部特效</a></li>
+    </ul>
+  </div>
+</div>
+<div class="fixedBtn">
+	<a rel="nofollow" href="###" class="feedback" title="欢迎给JquerySchool找问题和提建议～">意见反馈</a>
+	<a href="#top" class="top" title="回到顶部">回到顶部</a>
+	<div class="feedbackTips fb-open hide green">
+		反馈已发送！
+	</div>
+	<div class="feedbackCnt">
+		<h3><cite class="red">* </cite>您对JquerySchool网的意见和建议：</h3>
+		<textarea name="feedbackCnt">提示：如果您希望反馈的内容得到JquerySchool回复，请留下您的联系方式，谢谢～</textarea>
+		<span class="button button-green button-medium">提交反馈</span>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+	$animating = false;
+	$('.fixedBtn .top').click(function(){
+		if ($animating == false) {
+			$body.animate({scrollTop: 0}, 500);
+			$animating = true;
+		}
+		return false;
+	});
+	$(window).scroll(function(){
+		if ($('.fixedBtn').offset().top > 500) {
+			$('.fixedBtn .top').css('display', 'inline-block');
+		} else {
+			$('.fixedBtn .top').css('display', 'none');
+			$animating = false;
+		}
+	});	
+	var	fixedBtn = $('.fixedBtn'),
+		feedback = $('.feedback', fixedBtn),
+		feedbackCnt = $('.feedbackCnt'),
+		sendBtn = $('.button', fixedBtn),
+		content = $('textarea', fixedBtn),
+		feedbackTips = $('.feedbackTips', fixedBtn),
+		FBCLASS = 'fb-open',
+		close = function(){
+			fixedBtn.animate({
+				right: '-=350'
+			})
+			feedbackCnt.removeClass(FBCLASS);
+		},
+		open = function(){
+			feedbackTips.hide();
+			feedbackCnt.show();
+			fixedBtn.animate({
+				right: '+=350'
+			});
+			feedbackCnt.addClass(FBCLASS);
+		};
+	feedback.length && feedback.on('click', function(e){
+		e.preventDefault();
+		feedbackCnt.hasClass(FBCLASS) ? close() : open();
+	});	
+});
+</script>
+</body>
+</html>

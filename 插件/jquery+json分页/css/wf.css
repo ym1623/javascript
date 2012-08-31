@@ -1,0 +1,21 @@
+.sparker5_wf_02 {
+	Z-INDEX: 1; POSITION: relative; MARGIN: 18px auto 0px; WIDTH: 930px; HEIGHT: 388px
+}
+.sparker5_wf_02 .wf_showbox_img IMG {
+	Z-INDEX: 99; POSITION: relative; MARGIN-TOP: 0px; WIDTH: 930px; DISPLAY: inline; HEIGHT: 350px; MARGIN-LEFT: 0px
+}
+.sparker5_wf_02 .wf_switchbox {
+	Z-INDEX: 100; POSITION: absolute; TEXT-ALIGN: center; MARGIN: 0px auto; WIDTH: 930px; HEIGHT: 13px; TOP: 360px; LEFT: 0px
+}
+.sparker5_wf_02 .wf_switchbox .wf_switchbox_nav {
+	TEXT-ALIGN: center; MARGIN: 0px auto; WIDTH: 100%; ZOOM: 1; DISPLAY: inline-block; HEIGHT: 13px; TEXT-DECORATION: none
+}
+.sparker5_wf_02 .wf_switchbox A {
+	PADDING-BOTTOM: 5px; MARGIN-TOP: 13px; PADDING-LEFT: 5px; WIDTH: 13px; PADDING-RIGHT: 5px; ZOOM: 1; DISPLAY: inline-block; BACKGROUND: url(../images/switch_botton1.png) no-repeat 50% top; HEIGHT: 12px; MARGIN-RIGHT: 10px; PADDING-TOP: 5px
+}
+.sparker5_wf_02 .wf_switchbox A.activeSlide {
+	PADDING-BOTTOM: 5px; MARGIN-TOP: 13px; PADDING-LEFT: 5px; WIDTH: 13px; PADDING-RIGHT: 5px; ZOOM: 1; BACKGROUND: url(../images/switch_botton3.png) no-repeat 50% top; HEIGHT: 12px; MARGIN-RIGHT: 10px; PADDING-TOP: 5px
+}
+.sparker5_wf_02 .wf_switchbox A:focus {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium
+}

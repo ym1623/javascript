@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>漫画jQuery返回顶部插件 - Jquery-school</title>
+<meta name="author" content="Jquery-School" />
+<meta name="Copyright" content="Jquery-School,www.jq-school.com" />
+<meta name="keywords" content="Jquery,Jquery资源,前端设计,div+css" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/manhuatoTop.1.0.css">
+<link href="http://www.jq-school.com/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/manhuatoTop.1.0.js"></script>
+<script type="text/javascript">
+$(function (){
+	$(window).manhuatoTop({
+		showHeight : 100,//设置滚动高度时显示
+		speed : 500 //返回顶部的速度以毫秒为单位
+	});
+});
+</script>
+
+</head>
+<body>
+<div id="top">
+  <h2 class="subtitle"> JQuery让你的前端设计更精彩！</h2>
+  <div id="meun"><a href="/" title="Jquery-School"><img src="http://www.jq-school.com/images/logo.png" /></a>
+    <ul id="submeun">
+      <li><a href="/">首 页</a></li>	 
+	   <li class="cur"><a href="/tool/tip/demo.html">置顶插件</a></li>
+    </ul>
+  </div>
+</div>
+<pre>
+用法如下：
+&lt;script type="text/javascript"&gt;
+$(function (){
+	$(window).manhuatoTop({
+		showHeight : 100,//设置滚动高度时显示
+		speed : 500 //返回顶部的速度以毫秒为单位
+	});
+});
+&lt;/script&gt;
+
+
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="javascript" />
+<meta name="description" content="javascript" />
+<title>商品属性选择器！</title>
+<link href="css/property-selector.css" type="text/css" rel="stylesheet" media="all" />
+<base target="_blank" />
+</head>
+<body>
+<div class="property-md" id="property-selector">
+<div class="property-hd" id="property-header"><h2>您选择的东西：</h2><button type="button" id="save-selected">保存选择</button></div>	
+<div class="property-bd">
+	<h3 id="city">城市：</h3>
+	<ul class="property-main">
+		<li class="property-dropmenu">
+			<a href="city/wubei">武汉</a>
+			<ul class="property-sub">
+				<li><a href="wuhan/hanyang">汉阳区</a></li>
+				<li><a href="wuhan/wuchang">武昌区</a></li>
+				<li><a href="wuhan/hongshan">洪山区</a></li>
+				<li><a href="wuhan/qiaokou">硚口区</a></li>
+				<li><a href="wuhan/qingshan">青山区</a></li>
+				<li><a href="wuhan/dongxihu">东西湖区</a></li>
+				<li><a href="wuhan/caidian">蔡甸区</a></li>
+				<li><a href="wuhan/jiangxia">江夏区</a></li>
+				<li><a href="wuhan/huangpi">黄陂区</a></li>
+				<li><a href="wuhan/hannan">汉南区</a></li>
+			</ul>
+		</li>	
+		<li class="property-dropmenu">
+			<a href="city/shanghai">上海</a>
+			<ul class="property-sub">
+				<li><a href="shanghai/hongkou">虹口区</a></li>
+				<li><a href="shanghai/xuhui">徐汇区</a></li>
+				<li><a href="shanghai/zhangjiang">张江区</a></li>
+				<li><a href="shanghai/pudong">浦东新区</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class="property-bd">
+	<h3 id="size">尺寸：</h3>
+	<ul class="property-main">
+		<li><a href="size/S">S (小号)</a></li>
+		<li><a href="size/M">M (中号)</a></li>
+		<li><a href="size/L">L (大号)</a></li>
+		<li><a href="size/XL">XL (加大号)</a></li>
+		<li><a href="size/XXL">XXL (加加大号)</a></li>
+	</ul>
+</div>	
+<div class="property-bd">
+	<h3 id="color">颜色：</h3>
+	<ul class="property-main">
+		<li><a href="color/white">白色</a></li>
+		<li><a href="color/black">黑色</a></li>
+		<li><a href="color/red">红色</a></li>
+		<li><a href="color/yellow">黄色</a></li>
+		<li><a href="color/orange">橙色</a></li>
+		<li><a href="color/blue">蓝色</a></li>
+	</ul>
+</div>	
+<div class="property-bd">
+	<h3 id="prize">价格：</h3>
+	<ul class="property-main">
+		<li><a href="prize/50">50</a></li>
+		<li><a href="prize/50-100">51-100</a></li>
+		<li><a href="prize/101-200">101-200</a></li>
+		<li><a href="prize/201-300">201-300</a></li>
+		<li><a href="prize/301-400">301-400</a></li>
+		<li><a href="prize/401">400以上</a></li>
+	</ul>
+</div>
+</div>	
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/property-selector.js"></script>
+<script type="text/javascript">
+	jQuery.PropertySelector.select({
+		onlyone: true,
+		lists: $('.property-main')
+	});
+	var hover = $('.property-dropmenu');
+	
+	hover.each(function(i){
+		$(this).mouseover(function(){
+			var submenu = $(hover[i]).find('ul')[0],
+			    list = $(hover[i]).parent();
+			$(list).css("z-index",4);
+			$(hover[i]).css("background-color","#F2F2F2");
+			$(submenu).show();
+		});
+		
+		$(this).mouseout(function(){
+			var submenu = $(hover[i]).find('ul')[0],
+			    list = $(hover[i]).parent();
+			$(list).css("z-index","3");
+			$(hover[i]).css("background-color","#FFF");
+			$(submenu).hide();
+		})
+	});
+	
+	$('#save-selected').click(function(){
+		var savedValueToUrl = jQuery.PropertySelector.getSelectedValuesToURL();
+		alert(savedValueToUrl);
+		alert(jQuery.PropertySelector.length);
+	});
+</script>
+</body>
+</html>

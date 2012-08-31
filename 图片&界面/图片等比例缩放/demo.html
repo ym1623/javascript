@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title></title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <link rel="stylesheet" type="text/css" href="cr.css" />
+ <script src="jquery.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+ <script src="jquery.loadthumb.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("button:eq(0)").click(function(){
+		showImg("images/1.jpg");
+	});
+	$("button:eq(1)").click(function(){
+		showImg("images/2.jpg");
+	});
+	$("button:eq(2)").click(function(){
+		showImg("images/3.jpg");
+	});
+	$("button:eq(3)").click(function(){
+		showImg("images/4.jpg");
+	});
+	$("button:eq(4)").click(function(){
+		showImg("images/5.jpg");
+	}).click();
+}); 
+
+function showImg(src) {
+	var $img = $("#myImgs");
+	$img.loadthumb({
+		"src": src ,
+		"imgId":"myImgs",
+		"parentId":"CRviewer"
+	});
+}
+</script>
+</head>
+<body>
+<button>加载第1张(300*80)</button> <button>加载第2张(728*90)</button> <button>加载第3张(548*448)</button> <button>加载第4张(337*186)</button> <button>加载第5张(353*288)</button>
+
+    <div class="box">
+        <div class="CRviewer" id="CRviewer">
+            <img src="images/1.jpg" id="myImgs" alt="" />
+        </div>
+    </div>
+
+</body>
+</html>
+
+ 
+

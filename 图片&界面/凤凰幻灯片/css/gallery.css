@@ -1,0 +1,112 @@
+@charset "utf-8";
+body{background:#171717}
+@media screen and (max-device-width:640px){body{-webkit-text-size-adjust:none}}
+.photoMHD{width:1000px;margin:0 auto;background:#000}
+.title{background:none repeat scroll 0 0 #171717;height:45px;padding-top:2px;position:relative;z-index:9999;}
+.title .txt{width:810px;float:left;}
+.title h1 {color:#ECECEC;font:20px/55px "微软雅黑","黑体";text-indent:26px;} 
+.title h1 span.num{font-size:14px}
+.title h1 span.time{color:#666;font-size:12px;padding-left:16px}
+.title h1 span em{font-size:20px;color:#a16b00}
+.title .function {float:right;padding:17px 0 0;position:relative;width:161px;z-index:10;margin-right:27px;display:inline;}   
+.title .function a.ckbp{width:26px;height:22px;display:block;float:right;background:url(../images/gallery/sprite.v4.gif) no-repeat 0px -112px;margin:1px 6px 0 0;position:relative;cursor:pointer}
+.title .function a.ckbp:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -30px -112px;}
+.title .function a.ckap{width:26px;height:22px;display:block;float:right;background:url(../images/gallery/sprite.v4.gif) no-repeat 0px -86px;margin:1px 6px 0 0;position:relative;cursor:pointer}
+.title .function a.ckap:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -30px -86px;}
+.title .function a.return{width:26px;height:22px;display:block;float:right;background:url(../images/gallery/sprite.v4.gif) no-repeat 0px -137px;margin:1px 6px 0 0;position:relative;cursor:pointer}
+.title .function a.return:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -30px -137px;}
+.photoMHD .photoNews {margin:0 auto;padding:16px 0 26px;width:1000px;}
+.photoMHD .photoNews .picDiv{text-align:center;position:relative;}
+.wrap_text{float:left;width:730px}
+.wrap_text p.text_con{color:#999}
+.wrap_text p.text_con a{color:#A16B00}
+.keywords{color:#666;padding-bottom:2px}
+.keywords a:link, .keywords a:visited, .keywords a:active{color:#666}
+.keywords a:hover{color:#999}
+.zy p {display:inline;float:left;line-height:20px;margin-left:15px;padding-bottom:6px;text-align:left;width:730px;}
+.photoMHD .photoList{width:926px;margin:0 auto;_width:935px;}
+.photoMHD .photoList a{color:#666}
+.photoMHD .photoList a:hover{color:#999}
+.photoMHD .photoList .before, .photoMHD .photoList .after{float:left;width:103px;background:url(../images/gallery/sprite.v4.gif) no-repeat -219px 0;padding:6px 11px 0 6px;text-align:center;_padding-top:5px}
+.photoMHD .photoList .before a:hover img, .photoMHD .photoList .after a:hover img{opacity:0.8;filter:alpha(opacity=80);}
+.photoMHD .photoList .after{background:url(../images/gallery/sprite.v4.gif) no-repeat -219px -125px;padding:6px 7px 0 10px;float:right;_padding-top:5px}
+.photoMHD .photoList .before img, .photoMHD .photoList .after img{vertical-align:middle }
+.photoMHD .photoList .before p, .photoMHD .photoList .after p{margin-top:26px;}
+.photoMHD .photoList .picList{width:647px;float:left;margin:0 19px;display:inline;}
+.photoMHD .photoList .picList .l1{width:36px;float:left;height:117px;_width:36px;}
+.photoMHD .photoList .picList .l1 a{width:28px;height:28px;margin:37px 8px 0 0;cursor:pointer;background:url(../images/gallery/sprite.v4.gif) no-repeat -165px -164px;float:left;_margin-right:7px}
+.photoMHD .photoList .picList .l1 a.no{width:28px;height:28px;margin:37px 8px 0 0;cursor:default;background:url(../images/gallery/sprite.v4.gif) no-repeat -165px -164px;float:left;_margin-right:7px}
+.photoMHD .photoList .picList .l1 a.no, .photoMHD .photoList .picList .l1 a.no:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -103px -164px;}
+.photoMHD .photoList .picList .l1 a:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -134px -164px}
+.photoMHD .photoList .picList .l2 {width:575px;height:117px;float:left;display:block;overflow:hidden;_width:575px;}
+.photoMHD .photoList .picList .l3{width:36px;float:left;height:117px;_width:36px;}
+.photoMHD .photoList .picList .l3 a{width:28px;height:28px;margin:37px 0 0 8px;float:left;cursor:pointer;background:url(../images/gallery/sprite.v4.gif) no-repeat -63px -164px;_margin-left:6px}
+.photoMHD .photoList .picList .l3 a.no{width:28px;height:28px;margin:37px 0 0 8px;float:left;cursor:default;background:url(../images/gallery/sprite.v4.gif) no-repeat -63px -164px;_margin-left:6px}
+.photoMHD .photoList .picList .l3 a.no, .photoMHD .photoList .picList .l3 a.no:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat 0px -164px;}
+.photoMHD .photoList .picList .l3 a:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -32px -164px}
+.photoMHD .photoList .picList .listM{width:575px;height:75px;overflow:hidden;margin-top:13px;float:left;_width:575px;}
+.photoMHD .photoList .picList .listM ul{width:10000px;float:left;}
+
+.photoMHD .photoList .picList .listM li{width:105px;padding:2px 5px 0 5px;display:table-cell;float:left;text-align:center;background:url(../images/gallery/normal.v4.jpg) no-repeat 3px 0px;height:72px;vertical-align:middle;*background:url(../images/gallery/normal.v4.jpg) no-repeat 3px 1px;}
+.photoMHD .photoList .picList .listM li b{display:inline-block;height:100%}
+.photoMHD .photoList .picList .listM li img{vertical-align:middle}
+.photoMHD .photoList .picList .listM li.current{background:url(../images/gallery/current.v4.jpg) no-repeat 3px 0px;*background:url(../images/gallery/current.v4.jpg) no-repeat 3px 1px}
+.photoMHD .photoList .picList .listM li a:hover img{opacity:0.8;filter:alpha(opacity=80);}
+.photoMHD .photoList .picList .listM a img{display:block;margin:0 auto;}
+.photoMHD .photoList .picList .scrollBar{width:575px;height:17px;margin:14px 0 0 0;display:inline;float:left;background:url(../images/gallery/scrollbg.gif) no-repeat;position:relative;overflow:hidden}
+.photoMHD .photoList .picList .scrollBar .drag{position:absolute;top:1px;cursor:pointer;display:block;width:300px;background:url(../images/gallery/scrollbg_25.gif) repeat-x;height:15px}
+.photoMHD .photoList .picList .scrollBar .drag_no{position:absolute;top:1px;left:1px;cursor:default;display:block;width:573px;background:url(../images/gallery/new_19.jpg) repeat-x;height:15px}
+.photoSHD .picList .scrollBar .drag_no{width:553px}
+.photoMHD .photoList .picList .scrollBar .drag:hover{background:url(../images/gallery/scrollbg_35.gif) repeat-x;}
+.photoMHD .photoList .picList .drag b.l_arrow, .photoMHD .photoList .picList .drag_no b.l_arrow{width:12px;height:15px;background:url(../images/gallery/sprite.v4.gif) no-repeat -28px -198px;float:left}
+.photoMHD .photoList .picList .drag_no b.l_arrow{ background:url(../images/gallery/sprite.v4.gif) no-repeat 0px -198px;}
+.photoMHD .photoList .picList .drag:hover b.l_arrow{background:url(../images/gallery/sprite.v4.gif) no-repeat -57px -198px}
+.photoMHD .photoList .picList .drag b.r_arrow, .photoMHD .photoList .picList .drag_no b.r_arrow{width:12px;height:15px;background:url(../images/gallery/sprite.v4.gif) no-repeat -42px -198px;float:right}
+.photoMHD .photoList .picList .drag_no b.r_arrow{background:url(../images/gallery/sprite.v4.gif) no-repeat -13px -198px;}
+.photoMHD .photoList .picList .drag:hover b.r_arrow{background:url(../images/gallery/sprite.v4.gif) -70px -198px}
+.photoMHD .zy{width:950px;margin:11px auto 0 auto}
+.wrap{width:1000px;margin:0 auto;background:#000}
+.space24{height:24px;clear:both}
+.space28{height:28px;clear:both}
+.space05{height:5px;clear:both;overflow:hidden}
+.ad950{width:950px;height:90px;margin:0 auto}
+.ad_btn{width:60px;margin:11px auto 9px auto;height:9px}
+.ad950_2{width:950px;height:90px;margin:28px auto 10px auto}
+.ad_btn ul{padding-left:10px}
+.ad_btn ul li{width:9px;height:9px;background:url(../images/gallery/sprite.v4.gif) no-repeat -158px -138px;float:left;cursor:pointer;margin-right:10px;display:inline}
+.ad_btn ul li.current{background:url(../images/gallery/sprite.v4.gif) no-repeat -171px -138px}
+.ggHead{width:950px;height:90px;margin:21px auto 4px auto}
+ul.l3{padding:10px 0 3px 25px}
+ul.l3 li{width:147px;margin-right:54px;display:inline;float:left}
+ul.l3 li img{border:1px #666 solid;display:block}
+ul.l3 li p,ul.l3 li p a{line-height:40px;color:#999}
+.photoMHD .allPic{width:1000px;margin:0 auto;position:relative}
+.photoMHD .allPic .leftArae, .allPic .rightArae{width:65px;height:572px;float:left}
+.photoMHD .allPic .leftArae a, .photoMHD .allPic .rightArae a{width:22px;height:41px;display:block;margin:257px 24px 0 19px;background:url(../images/gallery/sprite.v4.gif) no-repeat 0 -39px}
+.photoMHD .allPic .leftArae a{margin:257px 0 0 24px;background:url(../images/gallery/sprite.v4.gif) no-repeat -73px -39px}
+.photoMHD .allPic .leftArae a:hover, .allPic .rightArae a:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -24px -39px}
+.photoMHD .allPic .leftArae a:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -49px -39px}
+
+.smallpic_box{overflow:hidden;position:relative;width:870px;height:548px;float:left}
+.smallpic_con{position:absolute;left:0px;top:0px;width:10000px}
+.photoMHD .allPic ul{vertical-align:middle;padding:16px 0 0 0;width:900px;float:left;}
+.photoMHD .allPic ul li{float:left;width:200px;height:160px;background:url(../images/gallery/imgbg_03.jpg);display:table-cell;text-align:center;vertical-align:middle;margin:0px 23px 27px 0 }
+.photoMHD .allPic ul li:hover{background:url(../images/gallery/gray_03.gif)}
+.photoMHD .allPic ul li.current{background:url(../images/gallery/yellow_03.gif);}
+.photoMHD .allPic ul li img{vertical-align:middle;}
+.photoMHD .allPic ul li i{display:inline-block;height:100%;vertical-align:middle}
+
+.photoMHD .allPic .btn{height:11px;padding:23px 0 16px 0;text-align:center;margin:0 auto;}
+.photoSHD .allPic .btn{ padding:15px 0 0px 24px;}
+.photoMHD .allPic .btn a{width:11px;height:11px;background:url(../images/gallery/sprite.v4.gif) no-repeat -140px -137px;margin:0 3px 0 2px;font-size:24px;text-decoration:none}
+.photoMHD .allPic .btn a:hover{background:url(../images/gallery/sprite.v4.gif) no-repeat -109px -137px}
+.photoMHD .allPic .btn a.current{background:url(../images/gallery/sprite.v4.gif) no-repeat -125px -137px}
+
+.photo_prev, .photo_next {height:100%;left:0;position:absolute;top:0;width:50%;background:#fff;opacity:0;filter:alpha(opacity=0);z-index:100}
+.photo_next {left:475px;}
+.btn_pphoto, .btn_nphoto {cursor:url("http://y2.ifengimg.com/a/2012_22/3cbe4913aa86225.cur"), auto;display:block;height:100%;outline:medium none;width:100%;}
+.btn_nphoto {cursor:url("http://y3.ifengimg.com/a/2012_22/5f12e957ed5f6a8.cur"), auto;}
+.photoMHD .photoNews  .pic{width:950px;text-align:center;margin:0 auto;display:block;_height:0px;overflow:hidden;background:url("../images/gallery/load2.gif") no-repeat scroll center center;height:100%;position:relative;z-index:100}
+.hidden{display:none;}
+#thumb p,#thumb i{display:none;}
+#btnPage a{cursor:pointer;}

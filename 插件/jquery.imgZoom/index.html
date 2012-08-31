@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>artZoom demo</title>
+<script src="jquery-1.6.1.min.js"></script>
+<script src="jquery.artZoom.js"></script>
+<link href="jquery.artZoom.css" rel="stylesheet" type="text/css">
+<script>
+jQuery(function ($) {
+	$('.artZoom').artZoom({
+		path: './images',	// 设置artZoom图片文件夹路径
+		preload: true,		// 设置是否提前缓存视野内的大图片
+		blur: true,			// 设置加载大图是否有模糊变清晰的效果
+		
+		// 语言设置
+		left: '左旋转',		// 左旋转按钮文字
+		right: '右旋转',		// 右旋转按钮文字
+		source: '看原图'		// 查看原图按钮文字
+	});
+	
+	$('#myEmail').html(1987 + '.tangbin@' + 'gmail.com');
+});
+</script>
+<style type="text/css">
+/*演示*/
+
+.artZoom {
+	padding:3px;
+	background:#FFF;
+	border:1px solid #EBEBEB;
+}
+body {
+	font-size:75%;
+	font-family:'微软雅黑';
+	padding-bottom:200px;
+}
+img {
+	border:0 none;
+}
+#demo {
+	width:540px;
+	padding:5px;
+	background:#FBFCFD;
+}
+#demo p, #demo ul {
+	padding:0;
+	margin:0;
+}
+#demo ul, #demo ol, #demo li {
+	list-style:none;
+}
+#about {
+	width:550px;
+	padding-bottom:20px;
+	border-bottom:1px solid #CCC;
+	font-size:14px;
+}
+#about .planeart, #about .planeart a {
+	color:#CCC;
+}
+.footer { color:#666; width:550px; }
+.content {
+	padding:20px;
+	background:#f3f6fa;
+	border:1px solid #e3e7ed;
+	border-radius: 10px;
+}
+.help {
+	font-size:12px;
+	font-weight:normal;
+	color:#808080;
+	cursor:help;
+}
+dt {
+	font-size:18px;
+	font-weight:bold;
+}
+dd {
+	padding:20px 0;
+}
+ul.imgList {
+}
+ul.imgList li {
+	margin-top:10px;
+}
+
+</style>
+</head>
+<body>
+<div id="about">
+  <h1>artZoom - 微博简约贴图缩放插件</h1>
+  <div class="content">
+    <dl>
+      <dt>极快的显示速度!</dt>
+      <dd>采用 <a href="http://www.planeart.cn/?p=1121" target="_blank" title="查看详情">imgReady</a> 技术，无需服务端支持即可快速获取大图尺寸，支持大图一边下载一边浏览。同时artZoom会使用队列机制预先缓存视野内的大图，这使得artZoom展示大图的速度比国内主流微博的快很多倍，在网速比较慢的情况下artZoom优势将越明显。</dd>
+    </dl>
+    <dl>
+      <dt>跨浏览器支持</dt>
+      <dd>兼容IE6~IE8,Chrome,Firefox,Opera,Safari等浏览器，同时完美解决了IE8旋转后高度自适应问题 <span class="help" title="IE8滤镜与IE6、7有点不一样，你可以看看腾讯微博旋转后的效果">[?]</span></dd>
+    </dl>
+    <dl>
+      <dt>调用简单</dt>
+      <dd>一次调用：内部使用事件代理，使得DOM中新插入的图片仍然有效，无需重新绑定，节省内存</dd>
+      <dd>例如： $('#twitter a.thumb img').artZoom()</dd>
+    </dl>
+    <dl>
+      <dt>下载artZoom</dt>
+      <dd><a href="jquery.imgZoom.rar" onclick="this.style.background='url(http://goo.gl/BLXlZ)'" target="_blank">jquery.imgZoom.rar</a></dd>
+    </dl>
+  </div>
+</div>
+<div id="demo">
+  <h2>演示 <span class="help">更多设置请右键查看本页面源码</span></h2>
+  <ul class="imgList">
+    <li> <a href="http://www.planeart.cn/demo/artZoom/_demo/01.jpg" rel="http://www.planeart.cn/demo/artZoom/_demo/01.jpg"><img class="artZoom" src="http://www.planeart.cn/demo/artZoom/_demo/01m.jpg" /></a> </li>
+    <li> <img class="artZoom" src="http://www.planeart.cn/demo/artZoom/_demo/03m.jpg" data-artZoom-show="http://www.planeart.cn/demo/artZoom/_demo/03.jpg" data-artZoom-source="http://www.planeart.cn/demo/artZoom/_demo/03m.jpg" /> </li>
+    <li> <a href="http://www.planeart.cn/demo/artZoom/_demo/04.jpg" data-artZoom-source="http://www.planeart.cn/demo/artZoom/_demo/04.jpg"> <img class="artZoom" src="http://www.planeart.cn/demo/artZoom/_demo/04m.jpg" data-artZoom-source="http://www.planeart.cn/demo/artZoom/_demo/01m.jpg" /> </a> </li>
+    <li> <a href="http://www.planeart.cn/demo/artZoom/_demo/05.jpg" rel="http://www.planeart.cn/demo/artZoom/_demo/05.jpg"><img class="artZoom" src="http://www.planeart.cn/demo/artZoom/_demo/05m.jpg" /></a> </li>
+  </ul>
+  <p><em>下面是一张特别长的图片，这种种图片在微博中非常常见，如果使用artZoom，用户将无需等待图片完全下载完毕即可观看大图：</em></p>
+  <p><img class="artZoom" src="http://www.planeart.cn/demo/artZoom/_demo/min.jpg" data-artZoom-show="http://www.planeart.cn/demo/artZoom/_demo/big.jpg" data-artZoom-source="http://www.planeart.cn/demo/artZoom/_demo/big.jpg" /></p>
+</div>
+<div class="footer">
+  <p>artZoom基于LPGL开源授权，非商业用户可免费修改并使用。商业用户只需要支付￥30获取商业授权后即可摆脱LGPL开源协议的限制。</p>
+  <p>支付宝帐号 <span id="myEmail"></span></p>
+  <p>by tangbin. <a href="http://www.planeArt.cn" target="_blank" title="planeArt">www.planeArt.cn</a><br />
+    This is licensed under the GNU LGPL, version 2.1 or later.</p>
+</div>
+
+</body>
+</html>

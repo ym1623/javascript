@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="javascript" />
+<meta name="description" content="javascript" />
+<title>商品属性(单选)选择器！</title>
+<link href="css/property-selector.css" type="text/css" rel="stylesheet" media="all" />
+<base target="_blank" />
+</head>
+<body>
+<div class="property-md" id="property-selector">
+<div class="property-hd" id="property-header"><h2>您选择的东西（单选）：</h2><button type="button" id="save-selected">保存选择</button></div>	
+<div class="property-bd">
+	<h3 id="wine">酒水：</h3>
+	<ul>
+		<li><a href="wine/pijiu">啤酒</a></li>
+		<li><a href="wine/baijiu">白酒</a></li>
+		<li><a href="wine/putaojiu">葡萄酒</a></li>
+		<li><a href="wine/huangjiu">黄酒</a></li>
+		<li><a href="wine/yangjiu">洋酒</a></li>
+		<li><a href="wine/zibujiu">滋补酒</a></li>
+		<li><a href="wine/ribenjiu">日本酒</a></li>
+		<li><a href="wine/yutiaojiu">预调酒</a></li>
+    </ul>
+</div>
+<div class="property-bd">
+	<h3 id="drink">饮料：</h3>
+	<ul>
+        <li><a href="drink/taishuan">碳酸饮料</a></li>
+        <li><a href="drink/frout">果汁</a></li>
+        <li><a href="drink/sports">运动/健康饮料</a></li>
+        <li><a href="drink/tea">茶饮料</a></li>
+        <li><a href="drink/water">水</a></li>
+        <li><a href="drink/milk">乳品</a></li>
+	</ul>
+</div>	
+<div class="property-bd">
+	<h3 id="food">食品：</h3>
+	<ul>
+        <li><a href="food/jinkou">进口食品</a></li>
+        <li><a href="food/xiuxian">休闲食品</a></li>
+        <li><a href="food/tanggou">糖果/巧克力</a></li>
+        <li><a href="food/binggan">饼干</a></li>
+        <li><a href="food/sushi">方便面/速食</a></li>
+        <li><a href="food/gaodian">糕点</a></li>
+        <li><a href="food/guantou">罐头食品</a></li>
+        <li><a href="food/yanzhi">腌制类</a></li>
+	</ul>
+</div>	
+<div class="property-bd">
+	<h3 id="makeup">美容护肤：</h3>
+	<ul>
+		<li><a href="makeup/mainbu">面部护肤</a></li>
+		<li><a href="makeup/mainbu">男士护理</a></li>
+		<li><a href="makeup/mainbu">眼部保养</a></li>
+		<li><a href="makeup/mainbu">洗发护发</a></li>
+		<li><a href="makeup/mainbu">身体护理</a></li>
+		<li><a href="makeup/mainbu">洗浴用品</a></li>
+		<li><a href="makeup/mainbu">女性护理</a></li>
+		<li><a href="makeup/mainbu">口腔护理</a></li>
+		<li><a href="makeup/mainbu">成人保健</a></li>
+		<li><a href="makeup/mainbu">美容工具</a></li>
+	</ul>
+</div>
+</div>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/property-selector.js"></script>
+<script type="text/javascript">
+	jQuery.PropertySelector.select({
+		onlyone: true
+	});
+	
+	$('#save-selected').click(function(){
+		var savedValueToUrl = jQuery.PropertySelector.getSelectedValuesToURL();
+		alert(savedValueToUrl);
+	});
+</script>
+</body>
+</html>

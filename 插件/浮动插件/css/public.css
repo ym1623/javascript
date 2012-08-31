@@ -1,0 +1,11 @@
+* { font-size:12px; font-family:Arial, "宋体", "黑体", "微软雅黑"; color:#333; margin:0; padding:0; list-style:none; text-shadow:0 1px 1px #fff; }
+html { background:url(bg.png) repeat; }
+#ps { width:600px; margin:50px auto;  }
+#ps h1 { padding-bottom:20px; text-shadow:1px 1px 0 #fff; color:#c00; font-size:23px; font-weight:bold; }
+#ps h2 { line-height:20px; text-shadow:1px 1px 0 #fff; padding:10px 0; }
+#ps h1 p { display:inline; font-size:16px; font-weight:bold; color:#666; margin-left:20px; }
+#ps dl { padding-left:0; }
+#ps dl dt,#ps dl dd { height:30px; line-height:30px; font-size:13px; text-shadow:1px 1px 0 #fff;  }
+#ps dl dt { padding-left:10px; }
+#ps dl dd { color:#ff6600; text-shadow:1px 1px 0 #fff; }
+#ps dl dd span {color:#900; margin-right:50px; letter-spacing:0.01em; padding-left:10px;}

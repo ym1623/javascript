@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jOuery:动态渐变按钮演示--by维奇</title>
+<link rel="stylesheet" href="style.css" />
+<!-- 页面样式 -->
+<style>
+/* 纯CSS按钮 */
+.button { width:200px; height:80px; display:block; background:url(bg_button.gif) top no-repeat; text-indent:-9999px; }
+.button:hover { background:url(bg_button.gif) bottom no-repeat; }
+/* jQuery动态渐变按钮 */
+.jsbutton { position:relative; display:block; width:200px; height:80px; background:url(bg_button.gif) top no-repeat; cursor: pointer; text-indent:-9999px; }
+.jsbutton span.hover { position: absolute; display: block; width:200px; height:80px; background:url(bg_button.gif) bottom no-repeat; text-indent:-9999px; }
+/* 扩展应用按钮样式 */
+.viewbutton, .viewbutton span.hover, .downloadbutton, .downloadbutton span.hover { display: block; width:120px; height:42px; background-image:url(vd_bg_button.gif); text-indent:-9999px; }
+.viewbutton { float: left; position:relative; background-position: top left; }
+.viewbutton span.hover { position: absolute; background-position: bottom left; }
+.downloadbutton { float: left; position:relative; background-position: top right; }
+.downloadbutton span.hover { position: absolute; background-position: bottom right; }
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('.jsbutton,.viewbutton,.downloadbutton').wrapInner('<span class="hover"></span>').css('textIndent','0')
+			.each(function () {
+				$('span.hover').css('opacity', 0).hover(function () {
+					$(this).stop().fadeTo(650, 1);
+				}, function () {
+					$(this).stop().fadeTo(650, 0);
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+<div id="header">
+  <div id="header_nav">
+    <div class="fleft"> <a class="top_home" title="首页" href="http://wiky.000a.biz/">HOME</a> <a class="top_blog" title="博客" href="http://wiky.cnblogs.com/">BLOG</a> </div>
+    <div class="fright"> <a class="top_about" title="关于作者" href="http://www.cnblogs.com/wiky/articles/about.html">ABOUT</a> </div>
+  </div>
+</div>
+<div id="content">
+  <h1>jOuery动态渐变按钮</h1>
+  <p>这是一个演示页面，您可以点击 <a href="http://www.cnblogs.com/wiky/articles/gradual-change-button.html">查看原文</a></p>
+  <hr />
+  <h2>纯CSS效果 <small>| xhtml + css</small></h2>
+  <p class="fcenter"><a href="#" class="button">前端档案</a></p>
+  <br/>
+  <h2>jQuery动态渐变效果 <small>| xhtml + css + javascript</small></h2>
+  <p class="fcenter"><a href="#" class="jsbutton">前端档案</a></p>
+  <br/>
+  <h2>扩展效果应用</h2>
+  <p class="vdbutton"> <a href="#" class="viewbutton">查看演示</a> <a href="#" class="downloadbutton">下载源码</a> </p>
+</div>
+<div id="footer">
+<div style="width:550px;margin:20px auto;">
+<p><strong><a href="http://js.mobanwang.com" target="_blank">模板王整理</a></strong> </p>
+<p>转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+</div>
+
+</div>
+</body>
+</html>

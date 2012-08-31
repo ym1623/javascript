@@ -1,0 +1,72 @@
+.dianxin_intro {
+	POSITION: relative; MARGIN: 25px auto 0px; WIDTH: 930px; HEIGHT: 160px
+}
+.dianxin_intro P {
+	DISPLAY: block
+}
+.intro_os {
+	BACKGROUND-COLOR: #fff; WIDTH: 300px; FLOAT: left; HEIGHT: 160px; MARGIN-RIGHT: 15px; box-shadow: rgba(0, 0, 0, 0.25)0 0 2px; -moz-box-shadow: rgba(0, 0, 0, 0.25)0 0 2px; -webkit-box-shadow: rgba(0, 0, 0, 0.25)0 0 2px
+}
+.intro_os3 {
+	MARGIN-RIGHT: 0px
+}
+.intro_os .intro_img {
+	POSITION: absolute; MARGIN: 2px; WIDTH: 296px; HEIGHT: 156px; TOP: 0px
+}
+.intro_os P {
+	MARGIN-LEFT: 18px
+}
+.intro_title {
+	POSITION: absolute; MARGIN-TOP: 15px; COLOR: #606060; FONT-SIZE: 20px
+}
+.intro_title_a {
+	COLOR: #606060
+}
+.intro_title_a:active {
+	COLOR: #606060
+}
+.intro_title_a:visited {
+	COLOR: #606060
+}
+.intro_title_a:link {
+	COLOR: #606060
+}
+.intro_title_a:hover {
+	COLOR: #606060
+}
+.intro_para {
+	POSITION: absolute; LINE-HEIGHT: 18px; MARGIN-TOP: 55px; WIDTH: 130px; DISPLAY: inline; COLOR: #727272; FONT-SIZE: 12px
+}
+.intro_more {
+	POSITION: absolute; WIDTH: 80px; COLOR: #727272; MARGIN-LEFT: 18px; TOP: 120px
+}
+.intro_more:hover {
+	POSITION: absolute; WIDTH: 80px; COLOR: #8a8a8a; TOP: 120px
+}
+.news_box {
+	BACKGROUND-COLOR: #fff; MARGIN: 10px auto 0px; WIDTH: 930px; HEIGHT: 35px; box-shadow: rgba(0, 0, 0, 0.25)0 0 2px; -moz-box-shadow: rgba(0, 0, 0, 0.25)0 0 2px; -webkit-box-shadow: rgba(0, 0, 0, 0.25)0 0 2px
+}
+.news_box .left_box {
+	TEXT-ALIGN: center; MARGIN: 3px 0px; WIDTH: 100px; PADDING-RIGHT: 5px; FLOAT: left; HEIGHT: 28px; BORDER-RIGHT: #e4e4e4 1px solid
+}
+.news_jumplink {
+	MARGIN: 3px 4px 0px 20px; DISPLAY: inline-block; FLOAT: left; HEIGHT: 20px; COLOR: #606060; FONT-SIZE: 16px
+}
+.news_jumplink:hover {
+	COLOR: #8a8a8a
+}
+.rightbox {
+	MARGIN-TOP: 11px; WIDTH: 820px; FLOAT: left; HEIGHT: 24px
+}
+.rightbox .news_arrow {
+	MARGIN: 0px 30px; WIDTH: 8px; DISPLAY: inline-block; FLOAT: left; HEIGHT: 16px
+}
+.rightbox .news_list {
+	WIDTH: 670px; FLOAT: left
+}
+.rightbox .news_list A {
+	LINE-HEIGHT: 16px; WIDTH: 670px; DISPLAY: block; FLOAT: left; HEIGHT: 16px; COLOR: #606060; FONT-SIZE: 12px
+}
+.news_list A {
+	DISPLAY: block; FLOAT: left; HEIGHT: 16px; COLOR: #606060
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>漫画分享自己做的获取全国学校Jquery特效</title>
+<script type="text/javascript" src="http://www.jq-school.com/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="allunivlist.js"></script>
+<style type="text/css">
+<!--
+	*{padding:0; margin:0;}
+	a{text-decoration:none; color:#666666; float:left; margin-right:15px;}
+	body,ul,ol,h2,h3,h4,h5,p,dl,dt,dd,form{padding:0;margin:0;}img{border:none;}li{list-style:none;}a{text-decoration:none;outline:none;color:#666666;}a:hover{text-decoration:none}img{border:0}ul{list-style:none;margin:0;}label{color:#6CBD45;font-size:14px;font-weight:bold;padding-bottom:0.5em;margin:0;}.h3{font-size:13px;font-weight:bold;}#show{background:url(images/photo.jpg)}#meun{color:#fff;padding-left:10px;}#meun img{float:left;}#submeun{margin-left:70px;float:left;}#submeun span{text-align:center;margin-right:10px;float:left;display:inline;}#submeun span a{color:#fff;height:50px;line-height:50px;font-size:14px;font-weight:bold;text-align:center;padding-left:15px;padding-right:15px;display:block;}#submeun span.cur{text-align:center;background:#82ce18;margin-right:10px;float:left;display:inline;}#top{background-color:#000;margin:0em 0 10px 0em;border-style:solid;border-width:1px;border-color:#E5E5E5;height:50px;line-height:50px;}label.subtitle{font-size:13px;float:right;color:#6CBD45;margin:0 10px;text-align:right;}h1.title{height:50px;font-size:12px;background:url(logo.png) no-repeat;}h1.title a:link,h1.title a:visited,h1.title a:hover{color:#000;text-decoration:none;}
+
+-->
+</style>
+<script type="text/javascript">
+var school = "";
+$(function (){
+	$.each(allUnivList,function (j,m){		
+		$("#gj").append("<a href='javascript:void(0);' onclick='getSheng("+j+",\""+m.name+"\")'>"+m.name+"</a>");			
+	});
+});
+
+//获得每个国家的省份
+function getSheng(aid,name){
+school = name;
+	$("#sheng").show();
+	$("#list").html('');
+	$("#sheng").html('');
+	if (allUnivList[aid].provs.length == 0){
+		$("#sheng").append("很抱歉！暂时没有数据（只提供了中国和美国的学校信息）");
+	}
+	else
+	{
+		$.each(allUnivList[aid].provs,function (j,m){				
+			$("#sheng").append("<a href='javascript:void(0);' onclick='getSchool("+aid+","+j+",\""+m.name+"\")'>"+m.name+"</a>");
+		});
+	}
+}
+
+//获得每个省份的学校
+function  getSchool(gid,pid,name){
+school += " - "+name;
+$("#list").show();
+	$("#list").html('');
+	$.each(allUnivList[gid].provs[pid].univs,function (k,l){
+		$("#list").append("<a href='#' style='width:270px;display:block;float:left;'>"+l.name+"</a>");
+	});
+	$("#list").append("<br style='clear:both;' />");
+		
+}
+
+$("#list a").live("click",function (){
+	$("#gj").hide();
+	$("#list").hide();
+	$("#sheng").hide();
+	school += " - "+$(this).text();
+	$("#txtSc").val(school);
+});
+$("#txtSc").live("click",function (){
+	$("#gj").show();
+	$("#list").hide();
+	$("#sheng").hide();
+});
+</script>
+</head>
+
+<body>
+<div id="top">
+  <label class="subtitle"> Jquery学堂QQ群开放(244127054)</label>
+  <div id="meun"><a href="http://www.jq-school.com/" title="Jquery-School"><img src="http://www.jq-school.com/logo.png" /></a>
+    <div id="submeun">
+      <span><a href="http://www.jq-school.com/">首 页</a></span>    
+	   <span class="cur"><a href="javascript:void(0)">漫画分享自己做的获取全国学校Jquery特效</a></span>
+    </div>
+  </div>
+  </div>
+<br />
+<div style="width:950px; margin:100px auto; overflow:hidden;">
+<b>请选择你的就业学校</b><br />
+<input type="text" id="txtSc" style="width:900px; border:3px #006600 solid; padding:10px; overflow:hidden; " />
+
+<div id="gj" style="width:900px; border:3px #006600 solid; padding:10px; overflow:hidden; line-height:25px; display:none;"></div>
+<div id="sheng" style="width:900px; border:3px #006600 solid; padding:10px; overflow:hidden; line-height:25px;display:none;"></div>
+<div id="list" style="width:900px; border:3px #006600 solid; padding:10px; overflow:hidden; line-height:25px;display:none; height:300px; overflow-y:auto;"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="javascript" />
+<meta name="description" content="javascript" />
+<title>商品属性(单选+多选)选择器！</title>
+<link href="css/property-selector.css" type="text/css" rel="stylesheet" media="all" />
+<base target="_blank" />
+</head>
+<body>
+<div class="property-md" id="property-selector">
+<div class="property-hd" id="property-header"><h2>您选择（单选+多选）：</h2><button type="button" id="save-selected">保存选择</button></div>	
+<div class="property-bd" id="property-main">
+	<h3 id="category">商品类别：</h3>
+	<ul id="category-list">
+		<li><a href="category/wine">酒水</a></li>
+		<li><a href="category/drink">饮料</a></li>
+		<li><a href="category/food">食品</a></li>
+		<li><a href="category/makeup">美容化妆、个人护理</a></li>
+		<li><a href="category/office">办公用品</a></li>
+		<li><a href="category/kitchen">厨房用品、清洁用品</a></li>
+		<li><a href="category/furniture">家具汽饰、箱包运动</a></li>
+		<li><a href="category/Clothing">服装鞋帽</a></li>
+		<li><a href="category/health">营养保健</a></li>
+		<li><a href="category/maternal">母婴食品、母婴用品</a></li>
+    </ul>
+</div>
+<div class="property-bd" id="property-second">
+	<h3 id="wine">酒水：</h3>
+	<ul id="category-sub-list">
+		<li><a href="property/pijiu">啤酒</a></li>
+		<li><a href="property/baijiu">白酒</a></li>
+		<li><a href="property/putaojiu">葡萄酒</a></li>
+		<li><a href="property/huangjiu">黄酒</a></li>
+		<li><a href="property/yangjiu">洋酒</a></li>
+		<li><a href="property/zibujiu">滋补酒</a></li>
+		<li><a href="property/ribenjiu">日本酒</a></li>
+		<li><a href="property/yutiaojiu">预调酒</a></li>
+    </ul>
+</div>
+<div class="property-bd" id="property-third">
+	<h3 id="property">属性：</h3>
+	<ul id="property-list">
+        <li><a href="drink/taishuan">碳酸饮料</a></li>
+        <li><a href="drink/frout">果汁</a></li>
+        <li><a href="drink/sports">运动/健康饮料</a></li>
+        <li><a href="drink/tea">茶饮料</a></li>
+        <li><a href="drink/water">水</a></li>
+        <li><a href="drink/milk">乳品</a></li>
+	</ul>
+</div>
+</div>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/property-selector.js"></script>
+<script type="text/javascript">
+	var mainCategorySelector = function(){
+		jQuery.PropertySelector.select({
+			titles: $("#property-main h3"),
+			lists: $("#property-main ul"),
+			onlyone: true
+		});
+	}, subCategorySelector = function(){
+		jQuery.PropertySelector.select({
+			titles: $("#property-second h3"),
+			lists: $("#property-second ul"),
+			onlyone: true
+		});
+	}, propertySelector = function(){
+		jQuery.PropertySelector.select({
+			titles: $("#property-third h3"),
+			lists: $("#property-third ul")
+		});
+	}, mainTabView = function(){
+		jQuery.ajaxTabView($('#property-main li'), $('#property-second')[0], function(){
+			var selectedSubCategory = $('#selected-sub-category')[0],
+			    selecedProperty = $('#selected-property')[0],
+				values = jQuery.PropertySelector.getSelectedValues();
+				
+			subCategorySelector();
+			subTabView();
+			
+			if (selectedSubCategory) {
+				$(selectedSubCategory).remove();
+				
+				if (values['sub-category'].length > 0) {
+					values['sub-category'].length = 0;
+				}
+				
+				$('#property-third').html('');
+			}
+			
+			if (selecedProperty) {
+				$(selecedProperty).remove();
+				
+				if (values['property'].length > 0) {
+					values['property'].length = 0;
+				}
+			}
+		});
+	}, subTabView = function(){
+		jQuery.ajaxTabView($('#property-second li'), $('#property-third')[0], function(){
+			var selecedProperty = $('#selected-property')[0],
+				values = jQuery.PropertySelector.getSelectedValues();
+			if (selecedProperty) {
+				$(selecedProperty).remove();
+				
+				if (values['property'].length > 0) {
+					values['property'].length = 0;
+				}
+			}
+			propertySelector();
+		});
+	};
+	
+	mainTabView();
+	subTabView();
+	mainCategorySelector();
+	
+	$('#save-selected').click(function(){
+		var savedValueToUrl = jQuery.PropertySelector.getSelectedValuesToURL();
+		alert(savedValueToUrl);
+	});
+</script>
+</body>
+</html>

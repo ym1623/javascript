@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery图片滚动单排图片左右滚动滑过图片放大滚动</title>
+<meta name="description" content="jquery图片滚动特效，制作单排列表图片左右滚动，鼠标滑过图片放大展示，图片左右滚动，图片滚动到最后一张，按钮失去焦点的jQuery图片滚动。jQuery下载。" />
+
+</head>
+
+<body>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif,"宋体";background:#eee;}
+
+/* sliderbox */
+.sliderbox{background:url(images/index-bottom.jpg) no-repeat 0 -1px;width:988px;height:200px;overflow:hidden;padding:50px 0 0 0;margin:20px auto;}
+.arrow-btn{margin:35px 0 0 0;display:inline;background:url(images/arrow-btn.png) no-repeat;width:26px;height:124px;overflow:hidden;cursor:pointer;}
+#btn-left{float:left;margin-left:12px;background-position:0 0;}
+#btn-left.dasabled{background-position:0 -124px;}
+#btn-right{float:right;margin-right:6px;cursor:pointer;background-position:-26px 0;}
+#btn-right.dasabled{background-position:-26px -124px;}
+.slider{width:900px;overflow:hidden;position:relative;height:166px;float:left;}
+.slider ul{position:absolute;left:0px;top:32px;width:1800px;height:140px;list-style:none;}
+.slider li{float:left;width:150px;height:140px;}
+.slider a{display:block;text-decoration:none;color:#073a5e;font-size:12px;font-weight:bold;text-align:center;margin-top:24px;}
+.slider img{width:90px;display:inline-block!important;}
+</style>
+
+<div class="sliderbox">
+	<div id="btn-left" class="arrow-btn dasabled"></div>
+	<div class="slider">
+		<ul>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/go-launcher-ex.jpg"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/go-sms.jpg"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/imgwww20120104173328332830083.png"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/imgwww20120222114514451461239.jpg"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/ggbook.jpg"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/imgwww20120621153035303523388.png"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/lianxiren.jpg"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/go-touch.jpg"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/3g-android-market.jpg"/></a></li>
+			<li><a href="http://www.jsfoot.com/" target="_blank"><img src="images/3ggoucai.jpg"/></a></li>
+		</ul>
+	</div>
+	<div id="btn-right" class="arrow-btn"></div>
+</div>
+
+<script src="http://www.jsfoot.com/skin/js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+var $slider = $('.slider ul');
+var $slider_child_l = $('.slider ul li').length;
+var $slider_width = $('.slider ul li').width();
+$slider.width($slider_child_l * $slider_width);
+
+var slider_count = 0;
+
+if ($slider_child_l < 6) {
+	$('#btn-right').css({cursor: 'auto'});
+	$('#btn-right').removeClass("dasabled");
+}
+
+$('#btn-right').click(function() {
+	if ($slider_child_l < 6 || slider_count >= $slider_child_l - 6) {
+		return false;
+	}
+	
+	slider_count++;
+	$slider.animate({left: '-=' + $slider_width + 'px'}, 'slow');
+	slider_pic();
+});
+
+$('#btn-left').click(function() {
+	if (slider_count <= 0) {
+		return false;
+	}
+	
+	slider_count--;
+	$slider.animate({left: '+=' + $slider_width + 'px'}, 'slow');
+	slider_pic();
+});
+
+function slider_pic() {
+	if (slider_count >= $slider_child_l - 6) {
+		$('#btn-right').css({cursor: 'auto'});
+		$('#btn-right').addClass("dasabled");
+	}
+	else if (slider_count > 0 && slider_count <= $slider_child_l - 6) {
+		$('#btn-left').css({cursor: 'pointer'});
+		$('#btn-left').removeClass("dasabled");
+		$('#btn-right').css({cursor: 'pointer'});
+		$('#btn-right').removeClass("dasabled");
+	}
+	else if (slider_count <= 0) {
+		$('#btn-left').css({cursor: 'auto'});
+		$('#btn-left').addClass("dasabled");
+	}
+}
+
+$('.slider a').hover(function() {
+	if ($(this).find('img:animated').length) return;
+	$(this).animate({marginTop: '0px'}, 300);
+	$(this).find('img').animate({width: '150px'}, 300);
+}, function() {
+	
+	$(this).animate({marginTop: '24px'}, 200);
+	$(this).find('img').animate({width: '90px'}, 200);
+});
+
+</script>
+</body>
+</html>

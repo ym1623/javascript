@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>jquery-bigui</title>
+	<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	<link href="../css/demo.css" rel="stylesheet" type="text/css" />
+	<link href="../css/syntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../js/jquery-1.6.1.js"></script>
+	<script type="text/javascript" src="../js/syntaxHighlighter/shCore.js"></script>
+	<script type="text/javascript" src="../js/syntaxHighlighter/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/demo-common.js"></script>	
+	<script type="text/javascript" src="../js/main.js"></script>	
+	<script type="text/javascript" >
+		$(function(){
+			SyntaxHighlighter.all({"toolbar":false,"quick-code":false});
+		});
+	</script>
+	
+</head>
+
+<body>
+	<div class="content">
+		<div class="header" >
+			<a href="../index.html" hidefocus="true" ><img src="../images/JQuery_logo.png" />big系列UI插件</a>
+		</div>
+		<div class="main">
+			<div class="left-menu" style="height:1180px;" >
+				<div>
+					<div class="section" ><a href="colorpicker.html">颜色拾取器插件</a></div>
+					<ul>
+						<li><div class="demo-text" >帮助文档</div></li>
+						<li><a href="demo.html">例子(demo)</a></li>
+						<li><a href="download.html">下载</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="right-main" >
+				<div>
+					<h3>一、如何使用：</h3>
+   					<div>1、下载源码。</div>
+					<div>2、 引入jquery.bigcolorpicker.js和jquery.bigcolorpicker.css文件到你的页面中。</div>
+					<div>3、 拷贝images/big_bgcolor.jpg图片到你的项目下，图片放置的目录结构请看源码。 	</div>
+				</div>
+				<div>
+					<h3>二、在bigColorpicker展现颜色选择区域小格时有两种实现方式：</h3>
+					<div class="deom-tab">1、是一张背景图片，采用光标定位的方式获取颜色。p(或P)</div>
+					<div class="deom-tab">2、每个小格就是一个li，获取li的背景颜色。l(或L)</div>
+					<div class="deom-tab">实现方式的不同，效率有所差异，可以自己在使用时选择，默认是p(或P)。</div>
+					<br />
+					<div class="deom-tab">第一种实现方式传参为p(或P)或不传参数：</div>
+					<div class="deom-tab">js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>
+					<div class="code-section deom-tab"  >
+						<pre class="brush: js">
+							&lt;input type="text" id="demo1Text"/&gt;
+							$(function(){
+								$("#demo1Text").bigColorpicker();
+							})
+						</pre>
+					</div>	
+					
+					<div class="deom-tab">第二种实现方式传参为l(或L)：</div>
+					<div class="deom-tab">js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>
+					<div class="code-section deom-tab"  >
+						<pre class="brush: js">
+							&lt;input type="text" id="demo2Text"/&gt;
+							$(function(){
+								$("#demo2Text").bigColorpicker("demo2Text","L");
+							
+							})
+						</pre>
+					</div>	
+					<div>在一个页面中只有一种方式是生效的，后定义和执行的那种方式生效。></div>									
+				</div>
+				
+				<div>
+					<h3>三、参数说明：</h3>
+					<div class="deom-tab">$("xxxxx").bigColorpicker(callback,engine,sideLength);</div>
+					<div class="deom-tab">
+						<table>
+							<thead>
+								<tr ><td width="30%">参数</td><td>说明</td></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>callback(可选)：</td>
+									<td>
+										可以是undefined（不传参数时）、字符串、函数
+										<div>undefined：把选择的颜色设置到绑定bigColorpicker的元素的value上。</div>	
+										<div>字符串：把选择的颜色设置到id为"字符串"的元素的value上。</div>	
+										<div>函数：执行传入的函数以实现自定义的获取颜色后的动作。</div>	
+									</td>
+								</tr>
+								<tr>
+									<td>engine(可选)：</td>
+									<td>
+										可以是undefined、p、L，默认P。
+									</td>
+								</tr>
+								<tr>
+									<td>sideLength(可选)：</td>
+									<td>
+										改变颜色区域大小的基数，在[2~10]之间，可选默认是6，只有engine为L时生效。
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div>
+					<h3>四、如果在可以拖拽的浮层上使用取色板的话，需要额外的做一些事件</h3>
+					<div class="deom-tab">上面的例子可以看出在单击取色板以外的地方时取色板是自动隐藏的，但是在拖拽时却不会隐藏，那么拖拽时有两种处理方式：</div>
+					<div class="deom-tab">
+						1、拖拽开始时自动隐藏取色板（以下代码需要写在拖拽的开始时）
+						<pre class="brush: js">
+							$("#demo2Text").bigColorpickerHide();
+						</pre>
+					</div>
+					<div class="deom-tab">
+						2、拖拽时取色板的位置随浮层一起移动（以下代码需要写在拖拽的进行时）
+						<pre class="brush: js">
+							$("#demo2Text").bigColorpickerMove();
+						</pre>					
+					</div>
+				</div>
+
+			</div>
+			<div style="clear:both;" ></div>
+		</div>
+			
+	</div>
+</body>
+</html>

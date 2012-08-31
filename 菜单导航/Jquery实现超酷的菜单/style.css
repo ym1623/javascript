@@ -1,0 +1,114 @@
+body {
+	FONT-SIZE: 12px;
+	COLOR: #FFF;
+	TEXT-DECORATION: none;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	LINE-HEIGHT: 22px;
+
+}
+	
+
+
+ul{FONT-SIZE: 12px;margin-top: 0px; margin-left:30px;}
+
+
+A:link,A:visited{
+	FONT-SIZE: 12px;
+	COLOR: #FFF;
+	TEXT-DECORATION: none;
+}
+A:hover {
+	FONT-SIZE: 12px;
+	COLOR: #666;
+	TEXT-DECORATION: none;
+}
+
+A.link:link,A.link:visited{
+	FONT-SIZE: 14px;
+	COLOR: #000;
+	padding-right:0px;
+	padding-left:0px;
+	font-weight: bolder;
+	LINE-HEIGHT: 30px;
+}
+A.link:hover {FONT-SIZE: 14px; COLOR: #FF6600;padding-right:0px; padding-left:0px; font-weight: bolder; LINE-HEIGHT: 30px;}
+
+A.links:link,A.links:visited{FONT-SIZE: 12px; COLOR: #ffffff;TEXT-DECORATION: none;}
+A.links:hover {FONT-SIZE: 12px; COLOR: #cc3300;  TEXT-DECORATION: none;}
+
+A.link1:link,A.link1:visited{FONT-SIZE: 12px; padding-right:15px; padding-left:15px;COLOR: #333333;  TEXT-DECORATION: none;}
+A.link1:hover {FONT-SIZE: 12px;COLOR: #6ab01c;padding-right:15px; padding-left:15px;  TEXT-DECORATION: none;}
+
+.back {	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 20px; LETTER-SPACING: 0px;}
+
+.biaot {FONT-SIZE: 18px; COLOR: #ffffff;LETTER-SPACING: 1px;FONT-WEIGHT: bold; } 
+
+.h2 { FONT-SIZE: 11px; COLOR: #666666; LINE-HEIGHT:14px;}
+
+.Title {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 18px;
+	COLOR: #000;
+	font-family: "黑体";
+	
+}
+
+.big {	FONT-SIZE: 14px; COLOR: #7a6a5b; LINE-HEIGHT: 24px;font-weight:bolder}
+
+.red {
+	FONT-SIZE: 14px;
+	COLOR: #333;
+	font-weight:bolder;
+	LINE-HEIGHT: 22px;
+}
+
+.red1 {
+	FONT-SIZE: 14px;
+	COLOR: #333;
+	font-weight:bolder;
+	LINE-HEIGHT: 24px;
+}
+
+.red2 {	FONT-SIZE: 13px; COLOR: #555555; font-weight:bolder; LINE-HEIGHT: 24px;}
+
+.zixun {FONT-SIZE: 14px;COLOR: #CD9A23;	font-weight: bolder;}
+
+.bb {
+	FONT-SIZE: 12px;
+	COLOR: #333;
+	LINE-HEIGHT: 14px;
+}
+
+.inpu {
+	FONT-SIZE: 12px; height:20px; COLOR: #444444; border:1px #cccccc solid;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+
+.tim { color:#ffffff;border-bottom: 1px dashed #e1e1e1 ;
+}
+
+.font {color:#000; 
+}
+.liuxingp{
+	font-size:12px;
+	color:#CCC;
+	line-height: 20px;
+}
+.liuxingTitle{FONT-WEIGHT: bold;
+	FONT-SIZE: 18px; color:#FFF;}
+	
+.activities{
+	font-size: 16px;
+	color: #FFF;
+	text-indent: 20px;
+	line-height: 30px;
+	margin-left:15px;
+	margin-right:20px;
+}
+.activitiestitle{
+	font-size: 24px;
+	color: #FFF;	
+}
+	
+	

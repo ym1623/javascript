@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery与css3制作滑过新闻列表提示新闻图片信息</title>
+<meta name="description" content="jquery与css3 transition属性结合制作鼠标滑过新闻列表提示新闻图片信息，当鼠标滑过新闻列表标题时，动画提示新闻列表图片信息。" />
+</head>
+
+<body>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif,"宋体";}
+/* case */
+.case{width:400px;margin:80px auto 0 auto;border:solid 1px #ddd;padding:10px;border-radius:10px;}
+.case li{
+	display:block;height:32px;line-height:32px;padding-left:18px;position:relative;background:url(images/greenarrowright.gif) no-repeat -5px center;
+	border-radius:0px;
+	-moz-transition:all 0.3s ease;
+	-webkit-transition:all 0.3s ease;
+	-o-transition:all 0.3s ease;
+}
+.case li.lihover{background:url(images/greenarrowright.gif) no-repeat 10px center #F1F1F1;border-radius:10px;}
+/* tips */
+.case .tips{
+	position:absolute;top:-53px;left:300px;width:182px;height:123px;visibility:hidden;background:url(images/tipbg.png) no-repeat;opacity:0.0;
+	-moz-transition:all 0.5s ease;
+	-webkit-transition:all 0.5s ease;
+	-o-transition:all 0.5s ease;
+}
+.case .tips .tipscont{width:100px;text-align:center;margin:10px 0 0 50px;}
+.case .hover{visibility:visible;top:-93px;left:320px;opacity:1;}
+</style>
+
+<script type="text/javascript" src="http://www.jsfoot.com/skin/js/jquery.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$(".case ul li a").each(function(i){
+		$(this).hover(function(){
+			$(this).parent().find(".tips").addClass("hover");
+			$(this).parent().addClass("lihover");
+		},function(){
+			$(this).parent().find(".tips").removeClass("hover");
+			$(this).parent().removeClass("lihover");
+		});	
+	});
+	
+});
+</script>
+
+
+
+<div class="case">
+	<ul>
+		<li>
+			<a href="http://www.jsfoot.com/css3/layout/2012-08-07/730.html" target="_blank">div+css布局限制图片最大宽度图片垂直居中(兼容IE6/IE7/IE8/FF)</a>
+			<div class="tips">
+				<div class="tipscont"><img src="http://www.jsfoot.com/d/file/css3/layout/2012-08-07/smallda1a1ff8828722e330aa7e7d89e287db.jpg" width="100" height="100" alt="div+css布局限制图片最大宽度图片垂直居中(兼容IE6/IE7/IE8/FF)" /></div>
+			</div>
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/css3/layout/2012-04-10/551.html" target="_blank">div+css布局通过样式来控制让图片垂直居中与水平居中显示</a>
+			<div class="tips">
+				<div class="tipscont"><img src="http://www.jsfoot.com/d/file/css3/layout/2012-04-10/smallceec9a946b7af6d1e04944d6ddcc5799.jpg" width="100" height="100" alt="div+css布局通过样式来控制让图片垂直居中与水平居中显示" /></div>
+			</div>
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/css3/layout/2012-04-06/531.html" target="_blank">div+css教程TOP排行榜或新闻列表最标准div css样式表代码写法</a>
+			<div class="tips">
+				<div class="tipscont"><img src="http://www.jsfoot.com/d/file/css3/layout/2012-04-06/small37d7e19acbb85fd66d14589ea46a23a7.jpg" width="100" height="100" alt="div+css教程TOP排行榜或新闻列表最标准div css样式表代码写法" /></div>
+			</div>
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/css3/layout/2011-10-13/215.html" target="_blank">div+css制作在IE6 上用absolute模拟fixed IE6浏览器定位层框不闪动</a>
+			<div class="tips">
+				<div class="tipscont"><img src="http://www.jsfoot.com/d/file/css3/items/2011-10-13/smalla4c7c67dec86de131924d9e69e745e18.jpg" width="100" height="100" alt="div+css制作在IE6 上用absolute模拟fixed IE6浏览器定位层框不闪动" /></div>
+			</div>
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/css3/layout/2011-09-22/199.html" target="_blank">div+css制作非常实用的24款分页页码css代码</a>
+			<div class="tips">
+				<div class="tipscont"><img src="http://www.jsfoot.com/d/file/css3/items/2011-09-22/smallf1179c13ff068ff4b102b2b97852e960.jpg" width="100" height="100" alt="div+css制作非常实用的24款分页页码css代码" /></div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+</body>
+</html>

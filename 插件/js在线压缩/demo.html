@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>漫画改编Jquery前端设计辅助工具 - Jquery-school</title>
+<meta name="author" content="Jquery-School" />
+<meta name="Copyright" content="Jquery-School,www.jq-school.com" />
+<meta name="keywords" content="Jquery,Jquery资源,前端设计,div+css" />
+<meta name="description" content="" />
+<link href="http://www.jq-school.com/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.jq-school.com/js/jquery-1.7.2.min.js"></script>
+<style>
+h3{ font-family:"Arial"; font-size:30px; color:#666; margin:20px 0 10px 0; text-shadow:2px 2px #fff;}
+#content{ font-size:12px; border-radius: 2px; border:1px solid #bbb; *border-color:#bbb #e9e9e9 #e9e9e9 #bbb; color:#325AA3; box-shadow:0 0 5px #ddd inset; overflow:auto;width:900px; height:400px;  padding:5px; background-color:#fff; margin:5px 0;}
+#code{ width:920px; height:auto; overflow:hidden; margin:50px auto;}
+.btn1{outline:none; background:#82ce18; font-size:14px; cursor:pointer; display:inline-block; text-decoration:none; padding:10px; border:1px solid #82ce18; color:#fff; width:120px; border-radius:2px; margin:5px 15px 0 0; text-shadow:-1px -1px #305CAA; font-weight:bold; letter-spacing:3px;}
+.cur1{outline:none; background:#FF9900; font-size:14px; cursor:pointer; display:inline-block; text-decoration:none; padding:10px; border:1px solid #FF9900; color:#000; width:120px; border-radius:2px; margin:5px 15px 0 0; text-shadow:-1px -1px #305CAA; font-weight:bold; letter-spacing:3px;}
+</style>
+
+<script type="text/javascript" src="js/my.js"></script>
+<script type="text/javascript" src="js/Words.js"></script>
+<script type="text/javascript" src="js/jsformat.js"></script>
+<script type="text/javascript" src="js/Packer.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){	
+	$("#btn").click(function(){
+		var packer = new Packer;
+		var c = $("#content").val();	
+		if (c.length<=0 || c=="请输入内容")
+		{
+			$("#content").val("请输入内容");
+			
+		}else{
+			var v = packer.pack(c, true, true);
+			$("#content").val(v);
+		}
+	});	
+
+	
+	$('.btn1').live('mouseover', function(){	
+		$(this).addClass("cur1");	
+	}).live('mouseout', function(){	
+		$(this).removeClass("cur1");	
+	});
+	
+	$("#btnDecode").click(function(){
+		var c = $("#content").val();	
+		if (c.length<=0 || c=="请输入内容")
+		{
+			$("#content").val("请输入内容");
+			
+		}else{		
+			var r = eval(c.slice(4));		
+			r = r.replace(/^\s+/, '');   
+			if (r && r.charAt(0) === '<') {
+				r = style_html(r, 4, ' ', 80);
+			} else {
+				r = js_beautify(r, 4, ' ');
+			}
+			$("#content").val(r);
+		}
+	});
+	
+	$("#btnJSFormat").click(function(){
+		var r = $("#content").val();	
+		r = r.replace(/^\s+/, ''); 
+        if (r && r.charAt(0) === '<') {
+            r = style_html(r, 4, ' ', 80);
+        } else {
+            r = js_beautify(r, 4, ' ');
+        }
+		$("#content").val(r);
+	});
+	
+	$("#btnJSYS").click(function(){		
+		var c = $("#content").val();
+		if (c.length<=0 || c=="请输入内容")
+		{
+			$("#content").val("请输入内容");
+			
+		}else{
+			var v = jsmin("", c, 2);
+			$("#content").val(v);
+			alert("原来大小"+jsmin.oldSize+" 压缩后大小："+jsmin.newSize+"  压缩率为："+(Math.round(jsmin.newSize / jsmin.oldSize * 1000) / 10) + '%');
+		}
+	});
+	
+	$("#btnCSSFormat").click(function(){
+		CSS('format');
+	});
+	
+	$("#btnCSSYS").click(function(){
+		CSS('pack');
+	});
+});
+
+
+<!--
+    var lCSSCoder = {
+        format: function (s) {//格式化代码
+            s = s.replace(/\s*([\{\}\:\;\,])\s*/g, "$1");
+            s = s.replace(/;\s*;/g, ";"); //清除连续分号
+            s = s.replace(/\,[\s\.\#\d]*{/g, "{");
+            s = s.replace(/([^\s])\{([^\s])/g, "$1 {\n\t$2");
+            s = s.replace(/([^\s])\}([^\n]*)/g, "$1\n}\n$2");
+            s = s.replace(/([^\s]);([^\s\}])/g, "$1;\n\t$2");
+            return s;
+        },
+        pack: function (s) {//压缩代码
+            s = s.replace(/\/\*(.|\n)*?\*\//g, ""); //删除注释
+            s = s.replace(/\s*([\{\}\:\;\,])\s*/g, "$1");
+            s = s.replace(/\,[\s\.\#\d]*\{/g, "{"); //容错处理
+            s = s.replace(/;\s*;/g, ";"); //清除连续分号
+            s = s.match(/^\s*(\S+(\s+\S+)*)\s*$/); //去掉首尾空白
+            return (s == null) ? "" : s[1];
+        }
+    };
+    function CSS(s) {
+		var r = $("#content").val();
+        r = lCSSCoder[s](r);
+		$("#content").val(r);
+    }
+//-->
+
+</script>
+</head>
+
+<body>
+<div id="top">
+  <h2 class="subtitle"> JQuery让你的前端设计更精彩！</h2>
+  <div id="meun"><a href="/" title="Jquery-School"><img src="http://www.jq-school.com/logo.png" /></a>
+    <ul id="submeun">
+      <li><a href="/">首 页</a></li>    
+	   <li class="cur"><a href="javascript:void(0)">Js压缩混淆工具</a></li>
+    </ul>
+  </div>
+  </div>
+<div id="code">
+<h3>在线JS混淆/解混淆、JS格式化/压缩、CSS格式化/压缩</h3>
+<textarea id="content">
+/* 
+ *
+ * 提供JS混淆、JS解混淆、JS压缩、JS格式化、CSS格式化、CSS压缩
+ *
+ * 本程序使用最简单的原理实现，另存为就可以在本地使用
+ *
+ * 供大家方便使用
+ *
+ */
+</textarea><br />
+<input id="btn" type="button" value="混淆" class="btn1"  />
+<input id="btnDecode" type="button" value="解混淆" class="btn1"  />
+<input id="btnJSFormat" type="button" value="JS格式化" class="btn1"  />
+<input id="btnJSYS" type="button" value="JS压缩" class="btn1"  />
+<input id="btnCSSFormat" type="button" value="CSS格式化" class="btn1"  />
+<input id="btnCSSYS" type="button" value="CSS压缩" class="btn1"  />
+</div>
+</body>
+</html>

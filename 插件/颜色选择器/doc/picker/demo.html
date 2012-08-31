@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>jquery-bigui</title>
+	<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	<link href="../css/demo.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/jquery.bigcolorpicker.css" type="text/css" />
+	<script type="text/javascript" src="../js/jquery-1.6.1.js"></script>
+	<script type="text/javascript" src="../js/jquery.bigcolorpicker.js"></script>
+	<script type="text/javascript" src="../js/demo-common.js"></script>
+	<script type="text/javascript" src="../js/demo-bigcolorpicker.js"></script>
+	
+	<link href="../css/syntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../js/syntaxHighlighter/shCore.js"></script>
+	<script type="text/javascript" src="../js/syntaxHighlighter/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>		
+</head>
+<body>
+	<div class="content">
+		<div class="header" >
+			<a href="../index.html" hidefocus="true" ><img src="../images/JQuery_logo.png" />big系列UI插件</a>
+		</div>
+		<div class="main">
+			<div class="left-menu"  >
+				<div>
+					<div class="section" ><a href="colorpicker.html">颜色拾取器插件</a></div>
+					<ul>
+						<li><a href="doc.html">帮助文档</a></li>
+						<li>例子(demo)
+							<ul>
+								<li class="li-cursor demo-text" demo="demo1" >单个文本框注册取色板</li>
+								<li class="li-cursor" demo="demo2" >单个按钮注册取色板</li>
+								<li class="li-cursor" demo="demo3" >单个选择块注册取色板</li>
+								<li class="li-cursor" demo="demo4" >批量文本框注册取色板</li>
+								<li class="li-cursor" demo="demo5" >批量按钮注册取色板</li>
+								<li class="li-cursor" demo="demo6" >批量选择块注册取色板</li>
+								<li class="li-cursor" demo="demo7" >自定义颜色块个数</li>
+							</ul>
+						</li>
+						<li><a href="download.html">下载</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<div class="right-main" >
+				<div class="demo" id="demo1" >
+					<div>1、单个文本框注册取色板：</div>
+					<div class="regist" ><input type="text" value="" id="demo1Text"/></div>
+					<br />
+					<div>js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>
+					<div class="code-section"  >
+<pre class="brush: js">
+	&lt;input type="text" id="demo1Text"/&gt;
+	$(function(){
+		$("#demo1Text").bigColorpicker();
+	})
+</pre>
+					</div>
+					<div>单击文本输入框弹出取色板，鼠标悬停或单击颜色小方块时将颜色HEX值设置在输入框的value上。</div>
+				</div>
+				
+				<div class="demo" id="demo2" style="display:none"  >
+					<div>2、单个按钮注册取色板：</div>
+					<div class="regist"><input type="text"  value="" id="demo2Text"/><input id="bn" type="button" value="选色" /></div>
+					<br />
+					<div>js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>				
+
+					<div class="code-section" >
+<pre class="brush: js">
+	&lt;input type="text" id="demo2Text"/&gt;&lt;input id="bn" type="button" value="选色" /&gt;
+	$(function(){
+		$("#bn").bigColorpicker("#demo2Text");
+	})
+</pre>
+					</div>
+					<div>
+						<div>单击选色按钮弹出取色板，鼠标悬停在颜色小方块上时将颜色HEX值设置在输入框的value上。</div>
+						<div>$("#bn").bigColorpicker("#demo2Text") "demo2Text"为文本框id，也可以这么写：</div>
+						<div>$("#bn").bigColorpicker("demo2Text")</div>
+					</div>
+				</div>
+				<div class="demo" id="demo3" style="display:none"  >
+					<div>3、单个选择块注册取色板：</div>
+					<div class="regist"><div class="block-select"><a href="javascript:void(0)" id="bgImg" ></a></div></div>
+					<br />
+					<div>js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>				
+
+					<div class="code-section" >
+<pre class="brush: js">
+	&lt;div class="block-select"&gt;&lt;a href="javascript:void(0)" id="bgImg" &gt;&lt;/a&gt;&lt;/div&gt;
+	$(function(){
+		$("#bgImg").bigColorpicker(function(el,color){
+			$(el).css("backgroundColor",color);
+		});	
+	})
+</pre>
+					</div>
+					<div>
+						<div>单击页面的选择块，鼠标悬停在颜色小方块上时将颜色设置为选择块的背景。</div>
+						<div>el:为&lt;a href="javascript:void(0)" id="bgImg" &gt;&lt;/a&gt;</div>
+						<div>color:选择的颜色hex值。</div>
+						<div> $(el).css("backgroundColor",color)，通过回调函数设置a的背景颜色。</div>
+					</div>
+				</div>
+				
+				<div class="demo" id="demo4" style="display:none"  >
+					<div>4、批量文本框注册取色板：</div>
+					<div class="regist">
+						<input type="text" value="" name="textbatch"/>
+						<input type="text" value="" name="textbatch"/>
+					</div>
+					<br />
+					<div>js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>				
+
+					<div class="code-section" >
+<pre class="brush: js">
+	&lt;input type="text" value="" name="textbatch"/&gt;
+	&lt;input type="text" value="" name="textbatch"/&gt;
+	$(function(){
+		$(":input[name='textbatch']").bigColorpicker(function(el,color){
+			$(el).val(color);
+		});	
+	})
+</pre>
+					</div>
+					<div>批量给页面上很多个文本框注册颜色取色板事件，将回调函数返回的颜色设置到相应的文本框中。</div>
+				</div>
+				
+				<div class="demo" id="demo5" style="display:none"  >
+					<div>5、批量按钮注册取色板：</div>
+					<div class="regist">
+						<input type="text" id="bn1" value="" /> <input name="bnn" data-target="bn1" type="button" value="选色" /><br/>
+						<input type="text" id="bn2" value="" /> <input name="bnn" data-target="bn2" type="button" value="选色" /><br/>
+					</div>
+					<br />
+					<div>js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>				
+					
+					<div class="code-section" >
+<pre class="brush: js">
+	&lt;input type="text" id="bn1"/&gt; &lt;input name="bnn" data-target="bn1" type="button" value="选色" /&gt;
+	&lt;input type="text" id="bn2"/&gt; &lt;input name="bnn" data-target="bn2" type="button" value="选色" /&gt;
+	$(function(){
+		$(":input[name='bnn']").bigColorpicker(function(el,color){
+			$("#" + $(el).attr("data-target"))
+			             .val(color);
+		});
+	})
+</pre>
+					</div>
+					<div>批量给页面上很多个按钮都注册颜色取色板事件，通过注册单击事件元素的"data-target"自定义属性指向需要赋值的文本框。这里也是使用回调函数处理，比较灵活。</div>
+				</div>
+				
+				<div class="demo" id="demo6" style="display:none"  >
+					<div>6、批量选择块注册取色板：</div>
+					<div class="regist">
+						<div class="block-select" style="float:left;" ><a href="javascript:void(0)" name="bgImgBatch" ></a></div>
+						<div class="block-select" style="float:left;margin-left:20px" ><a href="javascript:void(0)" name="bgImgBatch" ></a></div>
+						<div style="clear:both;" ></div>
+					</div>
+					<br />
+					<div>js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>				
+
+					<div class="code-section" >
+<pre class="brush: js">
+	&lt;div class="block-select"&gt&lt;a href="javascript:void(0)" name="bgImgBatch" &gt&lt;/a&gt&lt;/div&gt
+	&lt;div class="block-select"&gt&lt;a href="javascript:void(0)" name="bgImgBatch" &gt&lt;/a&gt&lt;/div&gt
+	$(function(){
+		$("a[name='bgImgBatch']").bigColorpicker(function(el,color){
+			$(el).css("backgroundColor",color);
+		});	
+	})
+</pre>
+					</div>
+					<div>批量给页面上很多个选择块都注册颜色取色板事件，将回调函数返回的颜色设置为a块元素的背景颜色。</div>
+				</div>
+				
+				<div class="demo" id="demo7" style="display:none" >
+					<div>7、自定义颜色块个数：</div>
+					<div class="regist" ><input type="text" value="" id="demo7Text"/></div>
+					<br />
+					<div>js代码：<span class="J-copy" title="复制代码到剪切板" ></span></div>
+					<div class="code-section"  >
+<pre class="brush: js">
+	&lt;input type="text" id="demo7Text"/&gt;
+	$(function(){
+		$("#demo7Text").bigColorpicker("#demo7Text","L",3);	
+	})
+</pre>
+					</div>
+					<div>
+						<div>demo1Text：要设置颜色值的输入框id。</div>
+						<div> L：采用颜色区域展现使用li的实现方式（要可以改变格数大小，这个参数必须为L（l）。）</div>
+						<div> 10:格数的基数，值在[2~10]之间。</div>
+					</div>
+				</div>				
+								
+			</div>
+			<div style="clear:both;" ></div>
+		</div>
+	</div>
+</body>
+</html>

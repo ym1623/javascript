@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="javascript" />
+<meta name="description" content="javascript" />
+<title>商品属性选择器！</title>
+<link href="css/property-selector.css" type="text/css" rel="stylesheet" media="all" />
+<base target="_blank" />
+</head>
+<body>
+<div class="selector-md" id="select">
+<div class="selector-hd" id="selected"><h2>您选择的东西：</h2></div>	
+<div class="selector-bd">
+	<h3 id="size">尺寸：</h3>
+	<ul>
+		<li><a href="size/S">S (小号)</a></li>
+		<li><a href="size/M">M (中号)</a></li>
+		<li><a href="size/L">L (大号)</a></li>
+		<li><a href="size/XL">XL (加大号)</a></li>
+		<li><a href="size/XXL">XXL (加加大号)</a></li>
+	</ul>
+</div>	
+<div class="selector-bd">
+	<h3 id="color">颜色：</h3>
+	<ul>
+		<li><a href="color/white">白色</a></li>
+		<li><a href="color/black">黑色</a></li>
+		<li><a href="color/red">红色</a></li>
+		<li><a href="color/yellow">黄色</a></li>
+		<li><a href="color/orange">橙色</a></li>
+		<li><a href="color/blue">蓝色</a></li>
+	</ul>
+</div>	
+<div class="selector-bd">
+	<h3 id="prize">价格：</h3>
+	<ul>
+		<li><a href="prize/50">50</a></li>
+		<li><a href="prize/50-100">51-100</a></li>
+		<li><a href="prize/101-200">101-200</a></li>
+		<li><a href="prize/201-300">201-300</a></li>
+		<li><a href="prize/301-400">301-400</a></li>
+		<li><a href="prize/401">400以上</a></li>
+	</ul>
+</div>
+</div>	
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript">
+var PropertySelector = function(){
+	var selectedProperties = {
+		values: {},
+		keys:{}
+	}, 
+	selectedTabs = [],
+	selectedTabsTitle = [],
+	header = $("#selected"), 
+	lists = $("#select ul"), 
+	titles = $("#select h3"),
+	isOnlyOne = false,
+	lastSelectedTab = null,
+	selectedCounter = 0;
+	
+	lists.each(function(i){
+		var tabs = $(this).find("li"),
+		property = $(titles[i]).attr("id"),
+		propertyText = $(titles[i]).text(),
+		values = selectedProperties.values,
+		keys = selectedProperties.keys;
+		
+		values[property] = [];
+		keys[property] = [];
+		
+		if (isOnlyOne) {
+			values[property].length = 1;
+			keys[property].length = 1;
+		}
+		
+		selectedTabs[i] = null;
+		selectedTabsTitle[i] = null;
+		
+		tabs.each(function(j){
+			$(this).click(function(evt){
+				var lnk = $($(this).find('a')[0]), value = lnk.attr('href').split('/')[1], valueText = $(this).text(), selectedKeyURL = property + '/' + value + '/', selectedKey = $('<a class="property" href="' + selectedKeyURL + '" tabindex="' + j + '" title="点击我可以取消选择">' + valueText + '</a>'), k = 0, len = 0;
+				
+				if (!selectedTabs[i]) {
+					selectedTabs[i] = $('<span class="properties"></span>');
+					header.append(selectedTabs[i]);
+				}
+				else {
+					if (selectedTabs[i]) {
+						$(selectedTabs[i]).show();
+					}
+				}
+				
+				if (!selectedTabsTitle[i]) {
+					selectedTabsTitle[i] = $('<em></em>').html(propertyText);
+					$(selectedTabs[i]).append(selectedTabsTitle[i]);
+				}
+				
+				if (isOnlyOne) {
+					values[property][0] = value;
+					keys[property][0] = valueText;
+					selectedCounter = 1;
+					$(this).hide();
+					$(lastSelectedTab).show();
+					$(selectedTabs[i].find('a')[0]).remove();
+					$(selectedTabs[i]).append(selectedKey);
+				}
+				else {
+					values[property].push(value);
+					keys[property].push(valueText);
+					selectedCounter += 1;
+					$(this).hide();
+					$(selectedTabs[i]).append(selectedKey);
+				}
+				$(selectedKey).click(function(evt){
+					var tabIndex = $(this).attr('tabindex');
+					$(this).remove();
+					if (isOnlyOne) {
+						selectedCounter = 0;
+					}
+					else {
+						selectedCounter -= 1;
+						if (selectedCounter < 0) {
+							selectedCounter = 0;
+						}
+					}
+					$(tabs[tabIndex]).show();
+					if($(selectedTabs[i]).find('a').length===0){
+						$(selectedTabs[i]).hide();
+					}
+					evt.preventDefault();
+					evt.stopPropagation();
+				});
+				lastSelectedTab = $(this);
+				
+				evt.preventDefault();
+				evt.stopPropagation();
+			});
+		});
+	});
+};
+PropertySelector();
+</script>
+</body>
+</html>

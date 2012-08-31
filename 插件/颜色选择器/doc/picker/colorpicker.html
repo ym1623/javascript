@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>jquery-bigui</title>
+	<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../js/main.js"></script>	
+</head>
+
+<body>
+	<div class="content">
+		<div class="header" >
+			<a href="../index.html" hidefocus="true" ><img src="../images/JQuery_logo.png" />big系列UI插件</a>
+		</div>
+		<div class="main">
+			<div class="left-menu" style="height:738px;" >
+				<div>
+					<div class="section" >颜色拾取器插件</div>
+					<ul>
+						<li><a href="doc.html">帮助文档</a></li>
+						<li><a href="demo.html">例子(demo)</a></li>
+						<li><a href="download.html">下载</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="right-main" >
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;这是一个小巧简单实用的使用jquery写的颜色拾取器。</div>
+				<div>效果图如下：
+					<div>
+						<img src="../images/xiaoguotu.JPG" alt="" />
+					</div>
+				</div>
+				<div>
+					<h3>更新列表：</h3>
+					<div>
+						<h4>2.4 更新-2012.7.22：</h4>  
+						 <p>部分代码结构重构，提升性能，完善帮助文档。</p>
+					</div>
+					<div>
+						<h4>2.3 更新：</h4>  
+					 	<p>在L引擎下颜色选择框边界缺失的问题。</p>
+					</div>
+					<div>
+						<h4>2.2 更新：</h4>  
+						 <p>&nbsp;&nbsp;&nbsp;&nbsp;bigcolorpicker在单击颜色选择器区域以外的位置时会隐藏，实现的方法是在document上先unbind mousedown事件，再注册mousedown事件，如果和其他插件一起共存时会把其他插件注册的mousedown清除，此版本修复这个问题。</p>
+					</div>
+					<div>
+						<h4>2.1 更新：</h4>  
+						 <p>解决IE6、IE7、chrome浏览器兼容问题，目前兼容的浏览器为IE6、IE7、IE8、firefox、chrome。</p>
+					</div>
+					<div> 
+						<h4>2.0 更新：</h4> 
+						 <p>1、增加可以自定义颜色区域的大小功能(使用方法请看demo)，参数增加一个sideLength。
+						    &nbsp;&nbsp;&nbsp;&nbsp;$("xxxxx").bigColorpicker(callback,engine,sideLength);<br/>
+						           改变颜色区域大小的基数，在[2~10]之间（可选默认是6，只有engine为L时生效）</p>
+						 <p>2、在使用鼠标定位实现时增加背景颜色图片预加载功能。</p>
+					</div>
+				</div>
+			</div>
+			<div style="clear:both;" ></div>
+		</div>
+			
+	</div>
+</body>
+</html>

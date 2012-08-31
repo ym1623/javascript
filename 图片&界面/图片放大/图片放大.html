@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery hover图片特效,鼠标滑过图片animate动画放大显示</title>
+<meta name="description" content="jquery hover 图片特效当鼠标滑过图片时，图片animate动画放大显示。鼠标离开图片，图片animate动画缩小为原图尺寸。jquery 下载。" />
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://www.jsfoot.com/skin/js/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	
+	var cont_left = $("#container").position().left;
+	
+    $("UL.templates LI").hover(function () {
+        // hover in
+        $(this).css("z-index", 2);
+        animateB($(this).find("A"));
+        animateB($(this).find("IMG"));
+    }, function () {
+        // hover out
+        $(this).css("z-index", 0);
+        reversAnimationB($(this).find("A"));
+        reversAnimationB($(this).find("IMG"));
+    });
+
+
+    function animateB(obj) {
+        $(obj).animate({
+            height: "189",
+            width: "265",
+            left: "-=25",
+            top: "-=25"
+        }, "1000");
+    }
+
+    function reversAnimationB(obj) {
+        $(obj).animate({
+            height: "139",
+            width: "215",
+            left: "+=25",
+            top: "+=25"
+        }, "1000");
+    }
+
+    $("#container a").each(function (index) {
+        var left = (index * 0) + cont_left;
+        $(this).css("left", left + "px");
+    });
+
+});
+</script>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:10px/180% Arial,Lucida,Verdana,"宋体",Helvetica,sans-serif;color:#333;background:#fff;}
+/* container */
+#container{position:relative;width:766px;margin:100px 0 0 100px;}
+#container li{position:relative;left:0;top:0;z-index:0;}
+.templates li{float:left;height:210px;width:252px;}
+.templates a{display:block;height:139px;padding:7px 5px 34px;text-align:center;width:215px;cursor:pointer;position:relative;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:#666 2px 4px 8px;-moz-box-shadow:#666 2px 4px 8px;box-shadow:#666 2px 4px 8px;background:#ffffff;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#ffffff));background:-webkit-linear-gradient(#ffffff, #ffffff);background:-moz-linear-gradient(#ffffff, #ffffff);background:-ms-linear-gradient(#ffffff, #ffffff);background:-o-linear-gradient(#ffffff, #ffffff);background:linear-gradient(#ffffff, #ffffff);-pie-background:linear-gradient(#ffffff, #ffffff);}
+.btn20{float:left;height:20px;font:1.2em/20px Arial;text-align:center;padding:0 20px;text-align:center;width:40px;color:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-webkit-box-shadow:#666 2px 2px 2px;-moz-box-shadow:#666 2px 2px 2px;box-shadow:#666 2px 2px 2px;background:#009fd8;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#009fd8), to(#0088ce));background:-webkit-linear-gradient(#009fd8, #0088ce);background:-moz-linear-gradient(#009fd8, #0088ce);background:-ms-linear-gradient(#009fd8, #0088ce);background:-o-linear-gradient(#009fd8, #0088ce);background:linear-gradient(#009fd8, #0088ce);-pie-background:linear-gradient(#009fd8, #0088ce);}
+.templates img{width:215px;height:139px;}
+.templates .btnLine{position:absolute;bottom:8px;left:6px;right:6px;display:block;}
+.templates .price{font:1.2em/20px Arial;float:right;}
+</style>
+
+<div id="container">
+	<ul class="templates clearfix">
+		<li>
+			<a href="http://www.jsfoot.com/jquery/images/more/2012-04-23/576.html">
+				<img alt="" src="http://www.jsfoot.com/d/file/jquery/images/more/2012-04-23/smallab09b1de296db0fcd9792a884814d223.jpg" />
+				<div class="btnLine">
+					<span class="btn20">下载</span>
+					<span class="price">积分: 20</span>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/jquery/images/gg/2012-04-21/574.html">
+				<img alt="" src="http://www.jsfoot.com/d/file/jquery/images/gg/2012-04-21/smallec5434ea1175ba57996a155400fc315d.jpg" />
+				<div class="btnLine">
+					<span class="btn20">下载</span>
+					<span class="price">积分: 20</span>
+				</div>
+			</a>
+	
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/jquery/images/more/2012-04-13/559.html">
+				<img alt="" src="http://www.jsfoot.com/d/file/jquery/images/more/2012-04-13/small1ef40ddb8e4798d1737bbc414cfb17ec.jpg" />
+				<div class="btnLine">
+					<span class="btn20">下载</span>
+					<span class="price">积分: 20</span>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/jquery/images/qh/2012-04-13/557.html">
+				<img alt="" src="http://www.jsfoot.com/d/file/jquery/images/qh/2012-04-13/small578c5d822200e38fa692f59d6a7f92d2.jpg" />
+				<div class="btnLine">
+					<span class="btn20">下载</span>
+					<span class="price">积分: 20</span>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/jquery/images/fdj/2012-04-08/543.html">
+				<img alt="" src="http://www.jsfoot.com/d/file/jquery/images/fdj/2012-04-08/smallc40edfd12471e5104437d58c348cc5ac.jpg" />
+				<div class="btnLine">
+					<span class="btn20">下载</span>
+					<span class="price">积分: 20</span>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.jsfoot.com/jquery/images/more/2012-04-23/576.html">
+				<img alt="" src="http://www.jsfoot.com/d/file/jquery/images/more/2012-04-23/smallab09b1de296db0fcd9792a884814d223.jpg" />
+				<div class="btnLine">
+					<span class="btn20">下载</span>
+					<span class="price">积分: 20</span>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+
+</body>
+</html>

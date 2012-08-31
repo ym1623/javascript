@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Matrix Javascript Test</title>
+		<style type="text/css">
+.LW_Matrix_table {
+	border: 1px black solid;
+	border-collapse: collapse;
+	padding: 5px;
+}
+.LW_Matrix_row {
+	padding: 5px;
+}
+.LW_Matrix_col {
+	border: 1px black dashed;
+	padding: 5px;
+	text-align:center;
+}
+.LW_Matrix_float {
+	float: left;
+	margin: 10px;
+	vertical-align: middle;
+}
+.LW_Id_float {
+	text-align:center;
+	vertical-align: middle;
+	float: left;
+}
+caption.LW_left {
+	caption-side: left;
+	vertical-align: middle;
+}
+.clearFloat {
+    clear: both;
+}
+div.LW_output {
+    border: 1px black solid;
+    overflow: auto;
+    width:600px;
+}
+</style>
+<script type ="text/javascript" src="matrix.class.js"></script>
+	</head>
+<body>
+
+<script>
+
+function matAInput() {
+   var newMat = new lw_matrix(coeff.value).tPrint("A=");
+   document.getElementById('matrixA').innerHTML = newMat;
+}
+
+function matBInput() {
+   var newMat = new lw_matrix(consts.value).tPrint("B=");
+   document.getElementById('matrixB').innerHTML = newMat;
+}
+
+function solveMat() {
+    var a = new lw_matrix(coeff.value);
+	var b = new lw_matrix(consts.value);
+	var aInv = a.inverse();
+	var sol = aInv.mpMatrix(b);
+	document.getElementById('matrixAinvB').innerHTML = sol.tPrint("A<sup>-1</sup>B=");
+}
+/*var a = new lw_matrix("[1,-3,3;2,3,-1;4,-3,-1]");
+var b = new lw_matrix("[-4;15;19]");
+var aInv = a.inverse();
+var sol = aInv.mpMatrix(b);
+//document.write(c.getDeterminant());
+//c.tPrint();
+document.write(sol.tPrint());*/
+
+</script>
+
+<div> When entering your matrices, the format is as follows:
+</div>
+
+<div class="LW_Matrix_float">
+  <table class="LW_Matrix_table">
+    <caption class="LW_left">[1,2,3;4,5,6;7,8,9]=</caption>
+    <tr class="LW_Matrix_row">
+      <td class="LW_Matrix_col">1</td>
+      <td class="LW_Matrix_col">2</td>
+      <td class="LW_Matrix_col">3</td>
+    </tr>
+    <tr class="LW_Matrix_row">
+      <td class="LW_Matrix_col">4</td>
+      <td class="LW_Matrix_col">5</td>
+      <td class="LW_Matrix_col">6</td>
+    </tr>
+    <tr class="LW_Matrix_row">
+      <td class="LW_Matrix_col">7</td>
+      <td class="LW_Matrix_col">8</td>
+      <td class="LW_Matrix_col">9</td>
+    </tr>
+  </table>
+</div>
+<div class="LW_Matrix_float">
+  <table class="LW_Matrix_table">
+    <caption class="LW_left">[1;2;3]=</caption>
+    <tr class="LW_Matrix_row">
+      <td class="LW_Matrix_col">1</td>
+    </tr>
+    <tr class="LW_Matrix_row">
+      <td class="LW_Matrix_col">2</td>
+    </tr>
+    <tr class="LW_Matrix_row">
+      <td class="LW_Matrix_col">3</td>
+    </tr>
+  </table>
+</div>
+<div class="clearFloat">&nbsp;</div>
+<pre>To solve for:
+x  - 3y + 3z = -4
+2x + 3y - z  = 15
+4x - 3y - z  = 19
+
+Coefficient matrix = [1,-3,3;2,3,-1;4,-3,-1]
+Constants matrix = [-4;15;19]
+</pre>
+<form name="theForm" method="post" action="javascript:solveMat();">
+  <label for="coeff">Coefficients in Matrix Form:</label>
+  <input type="text" name="coeff" id="coeff" value="[1,-3,3;2,3,-1;4,-3,-1]" size="50" onkeyup="javascript:matAInput();">
+  <br>
+  <label for="consts">Constants in Matrix Form:</label>
+  <input name="consts" type="text" id="consts" value="[-4;15;19]" size="15" onkeyup="javascript:matBInput();">
+  <br>
+  Get Variable solutions!
+  <input type="submit" name="submit" id="submit" value="Submit">
+</form>
+<p>&nbsp;</p>
+<div class="LW_output">
+<p>Values:</p><div class="LW_Matrix_float" id="matrixA"></div>
+<div class="LW_Matrix_float" id="matrixB"></div>
+<div class="LW_Matrix_float" id="matrixAinvB"></div>
+</div>
+</body>
+</html>

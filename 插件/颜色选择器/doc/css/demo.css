@@ -1,0 +1,52 @@
+.li-cursor{
+	cursor: pointer;
+	list-style: disc inside none !important ;
+}
+.demo-text{
+	color: red !important;
+}
+.demo{
+	line-height: 25px;
+	
+}
+.demo li{
+	margin: 20px;
+	
+}
+.demo a{
+	width:35px;
+	height:35px;
+	display:block;
+}
+.demo .regist{
+	padding: 10px 18px;
+}
+
+.demo .bg{
+  background-color: #E0E0E0;
+}
+
+.demo .block-select{
+	width:37px;
+	height:37px;
+	display:block;
+	border: solid 1px ;
+}
+
+.deom-tab{
+	padding-left: 20px !important;
+}
+
+.code-section{
+	width:96%;
+}
+table{
+	border-collapse: collapse;
+    border-spacing: 0;	
+	background: none repeat scroll 0 0 #FFFFFF;
+	width: 100%;
+}
+table, tr,td{
+	border: 1px solid #AFAFAF;
+	padding: 2px;
+}

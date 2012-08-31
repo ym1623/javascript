@@ -1,0 +1,10 @@
+*{padding:0; margin:0}
+#floatBoxBg{display:none;width:100%;height:100%;background:#000;position:fixed; _position:absolute;top:0;left:0;filter:alpha(opacity=0);opacity:0;}
+.floatBox{border:#9CC95F 5px solid;position:absolute;top:50px;left:40%;background:#fff; display:none;}
+.floatBox .title{height:23px;padding:7px 10px 0;color:#fff;background-attachment: scroll;background: url(../images/dialog_bg.gif) #9CC95F;background-repeat: repeat-x;background-position: 0px 0px;}
+.floatBox .title h4{float:left;padding:0;margin:0;font-size:14px;line-height:16px;}
+.floatBox .title span{float:right;cursor:pointer;}
+.floatBox .title span img{cursor:pointer; margin:-5px -5px;}
+.floatBox .content{padding:20px 15px;background:#fff;overflow-x:hidden;overflow-y: auto}
+#closeDialog{ font-size:20px; font-weight:bold; color:#000; margin-top:-5px;}
+#closeDialog:hover{ font-size:20px; font-weight:bold; color:#fff; margin-top:-5px;}

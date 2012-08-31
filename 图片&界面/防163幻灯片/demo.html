@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js图片幻灯片特效高仿网易163幻灯片图片切换</title>
+<meta name="description" content="js幻灯片特效高仿网易163幻灯片展示用拖动插件和滑动条插件制作图片幻灯片效果，点击切换上下图片效果。js插件、js代码。" />
+<link type="text/css" href="css/gallery.css" rel="stylesheet" />
+<script src="js/slider.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="nph_area">
+
+<div id="gallery" class="nph_gallery clearfix">
+	<div class="nph_bg">
+		<div class="nph_photo" id="modePhoto">
+			<div class="nph_photo_view">
+				<div id="photoView" class="nph_cnt">
+					<i></i><img src="http://img1.cache.netease.com/cnews/img/gallery11/bg06.png" id="photo" />
+				</div>
+				<div class="nph_photo_prev">
+					<a id="photoPrev" class="nph_btn_pphoto" target="_self" hidefocus="true" href="#p=7DOBC5MA00AO0001"></a>
+				</div>
+				<div class="nph_photo_next">
+					<a id="photoNext" class="nph_btn_nphoto" target="_self" hidefocus="true" href="#p=7DOBC21A00AO0001"></a>
+				</div>
+			</div>
+			<!--nph_photo_view end-->
+			
+			<div class="nph_cnt">
+				<div class="nph_cnt clearfix">
+					<div class="nph_set_info">
+						<div id="setInfo">
+							<div class="nph_set_title">
+								<span id="photoType" class="nph_set_cur">（<span class="nph_c_lh" id="photoIndex">6</span>/11）</span>
+								<h1>混血“腰”姬美女，凹凸玲珑妖娆</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div id="photoDesc" class="nph_photo_desc">
+					<p></p>
+				</div>
+			</div><!--nph_cnt end-->
+			
+			<div class="nph_cnt">
+				<div class="clearfix">
+					<div class="nph_set">
+						<div class="nph_set_thumb">
+							<div id="scrl" class="nph_photo_thumb clearfix" style="width:589px;">
+								<div class="clearfix">
+									<div class="nph_scrl">
+										<div class="nph_scrl_thumb">
+											<div class="nph_scrl_main" id="nph_scrl_main">
+												<ul id="thumb" class="nph_list_thumb clearfix" style="width:1180px;">
+<li>
+<a href="#p=80LDC1RI43UD0031" hidefocus="true"><img src="http://img3.cache.netease.com/photo/0031/2012-05-04/s_80LDC1RI43UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>1、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2012-05-04/80LDC1RI43UD0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2012-05-04/t_80LDC1RI43UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDBVG943UD0031" hidefocus="true"><img src="http://img4.cache.netease.com/photo/0031/2012-05-04/s_80LDBVG943UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>2、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2012-05-04/80LDBVG943UD0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2012-05-04/t_80LDBVG943UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDC4EG43UD0031" hidefocus="true"><img src="http://img3.cache.netease.com/photo/0031/2012-05-04/s_80LDC4EG43UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>3、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2012-05-04/80LDC4EG43UD0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2012-05-04/t_80LDC4EG43UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDC11R43UD0031" hidefocus="true"><img src="http://img3.cache.netease.com/photo/0031/2012-05-04/s_80LDC11R43UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>4、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2012-05-04/80LDC11R43UD0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2012-05-04/t_80LDC11R43UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDBVOE43UD0031" hidefocus="true"><img src="http://img3.cache.netease.com/photo/0031/2012-05-04/s_80LDBVOE43UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>5、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2012-05-04/80LDBVOE43UD0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2012-05-04/t_80LDBVOE43UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDC0BE43UD0031" hidefocus="true"><img src="http://img4.cache.netease.com/photo/0031/2012-05-04/s_80LDC0BE43UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>6、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2012-05-04/80LDC0BE43UD0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2012-05-04/t_80LDC0BE43UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDC1B543UD0031" hidefocus="true"><img src="http://img3.cache.netease.com/photo/0031/2012-05-04/s_80LDC1B543UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>7、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2012-05-04/80LDC1B543UD0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2012-05-04/t_80LDC1B543UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDC2J743UD0031" hidefocus="true"><img src="http://img4.cache.netease.com/photo/0031/2012-05-04/s_80LDC2J743UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>8、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2012-05-04/80LDC2J743UD0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2012-05-04/t_80LDC2J743UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDC2TE43UD0031" hidefocus="true"><img src="http://img4.cache.netease.com/photo/0031/2012-05-04/s_80LDC2TE43UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>9、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2012-05-04/80LDC2TE43UD0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2012-05-04/t_80LDC2TE43UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDC3BP43UD0031" hidefocus="true"><img src="http://img3.cache.netease.com/photo/0031/2012-05-04/s_80LDC3BP43UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>10、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2012-05-04/80LDC3BP43UD0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2012-05-04/t_80LDC3BP43UD0031.jpg</i>
+</li>
+<li>
+<a href="#p=80LDC43543UD0031" hidefocus="true"><img src="http://img3.cache.netease.com/photo/0031/2012-05-04/s_80LDC43543UD0031.jpg" alt="混血“腰”姬美女，凹凸玲珑妖娆" /></a>
+<p>11、近日《使徒》论坛发出一组名为混血美女秀凹凸身材的写真，庆游戏公测。</p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2012-05-04/80LDC43543UD0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2012-05-04/t_80LDC43543UD0031.jpg</i>
+</li>
+												</ul>
+											</div>
+											
+											<div class="nph_scrl_bar clearfix">
+												<span class="nph_scrl_lt"></span>
+												<span class="nph_scrl_rt"></span>
+												<div class="nph_scrl_bd">
+													<div class="nph_scrl_ct" id="nph_scrl_ct">
+														<a id="bar" class="nph_btn_scrl">
+															<b class="nph_btn_lt"></b>
+															<b class="nph_btn_rt"></b>
+															<span class="nph_btn_bd"><span><b class="nph_btn_ct"></b></span></span>
+														</a>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									
+									<span class="nph_scrl_prev"><a id="scrlPrev" class="nph_btn_pscrl" hidefocus="true" href="javascript:void(0)"></a></span>
+									<span class="nph_scrl_next"><a id="scrlNext" class="nph_btn_nscrl" hidefocus="true" href="javascript:void(0)"></a></span>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--gallery end-->
+
+</div>
+
+<script type="text/javascript">
+var slider = new Slider({
+	icontainer : "nph_scrl_ct",
+	idrag : "bar",
+	plusBtn : "scrlPrev",
+	reduceBtn : "scrlNext",
+	panel : "thumb",
+	content : "nph_scrl_main",	
+	direction : "left",
+	acceleration : 5,
+	sliderAcc : 1		
+});
+
+var ul = $.get("nph_scrl_main"),
+	list = ul.getElementsByTagName("li"),
+	len = list.length,
+	intervalD = Math.ceil( ul.scrollWidth / len ),
+	intervalS = Math.ceil( slider.Max.left / len ),
+	index = 1,
+	photoPrev = $.get("photoPrev"),
+	photoNext = $.get("photoNext"),
+	photo = $.get("photo"),
+	photoIndex = $.get("photoIndex"),
+	photoDesc = $.get("photoDesc").getElementsByTagName("p")[0];
+
+function removeClass(){
+	$.each(list, function(o, i){
+		o.className = "";
+	});
+}
+
+function Go(i, o){
+	index = i;
+	var _distance = 0;
+	if(i > 2){
+		slider.content.scrollLeft = intervalD * (i - 2);		
+	}else{
+		slider.content.scrollLeft = 0;
+	}
+	_distance = intervalS * i;
+	if(i === len - 1){
+		_distance = intervalS * (i + 1);
+	}
+	slider.idrag.style.left = Math.min(Math.max(_distance , 0),slider.Max.left)  + "px"
+	removeClass();
+	o.className = "nph_list_active";
+	photo.src = o.getElementsByTagName("i")[0].innerHTML;
+	photoDesc.innerHTML = o.getElementsByTagName("p")[0].innerHTML;
+	photoIndex.innerHTML = i + 1;
+}
+
+Go(0, list[0]);
+	
+$.each(list, function(o, i){
+	$.addEvent(o, function(){
+		Go(i, o);		
+	},"click");
+});
+
+$.addEvent(photoNext, function(){
+	index++;
+	if(index >= len){
+		index = len - 1;
+		return;
+	}
+	Go(index, list[index]);
+	
+},"click");
+
+$.addEvent(photoPrev, function(){
+	index--;
+	if(index < 0 ){
+		index = 0;
+		return;
+	}
+	Go(index, list[index]);
+	
+},"click");
+</script>
+
+</body>
+</html>

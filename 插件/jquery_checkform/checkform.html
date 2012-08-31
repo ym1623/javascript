@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 12px;
+}
+-->
+</style>
+<script language="javascript" src="jquery-1.4.min.js"></script>
+<script language="javascript" src="jquery.checkform.js"></script>
+<script language="javascript">
+$(function(){
+
+	$("#form1").valid([
+		//{ name:"username",type:"ajax",message:"用户名没有注册", url:"abc.asp" },
+		{ name:"username",type:"username",simple:"用户名"},
+		{ name:"password",type:"password",simple:"密码",min:8,max:16},
+		{ name:"password2",type:"eq",simple:"重复密码", to:"password" },
+		{ name:"english",type:"eng",simple:"英文域", require:false },
+		{ name:"chinese",type:"chn",simple:"中文域", require:false },
+		{ name:"email",type:"mail",simple:"邮箱" },
+		{ name:"url",type:"url",message:"地址信息不正确哦!" },
+		{ name:"checkbox",simple:"多选" },
+		{ name:"select",simple:"选择框" },
+	]);
+
+})
+</script>
+
+</head>
+
+<body>
+
+<form id="form1" name="form1" method="post" action="">
+<table width="760" border="0">
+  <tr>
+    <td width="90" align="right">用户名</td>
+    <td><input type="text" name="username" id="username" /></td>
+  </tr>
+  <tr>
+    <td align="right">密码</td>
+    <td><input type="password" name="password" id="password" /></td>
+  </tr>
+  <tr>
+    <td align="right">重复密码</td>
+    <td><input type="password" name="password2" id="password2" /></td>
+  </tr>
+  <tr>
+    <td align="right">英文</td>
+    <td><input type="text" name="english" id="english" /></td>
+  </tr>
+  <tr>
+    <td align="right">中文</td>
+    <td><input type="text" name="chinese" id="chinese" /></td>
+  </tr>
+  <tr>
+    <td align="right">邮箱</td>
+    <td><input type="text" name="email" id="email" /></td>
+  </tr>
+  <tr>
+    <td align="right">网址</td>
+    <td><input type="text" name="url" id="url" /></td>
+  </tr>
+  <tr>
+    <td align="right">金额</td>
+    <td><input type="text" name="currency" id="currency" /></td>
+  </tr>
+  <tr>
+    <td align="right">数字</td>
+    <td><input type="text" name="number" id="number" /></td>
+  </tr>
+  <tr>
+    <td align="right">整数</td>
+    <td>
+      <input type="text" name="int" id="int" />
+    </td>
+  </tr>
+  <tr>
+    <td align="right">小数</td>
+    <td><input type="text" name="double" id="double" /></td>
+  </tr>
+  <tr>
+    <td align="right">QQ</td>
+    <td><input type="text" name="qq" id="qq" /></td>
+  </tr>
+  <tr>
+    <td align="right">时间</td>
+    <td><input type="text" name="date" id="date" /></td>
+  </tr>
+  <tr>
+    <td align="right">年</td>
+    <td><input type="text" name="year" id="year" /></td>
+  </tr>
+  <tr>
+    <td align="right">月</td>
+    <td><input type="text" name="month" id="month" /></td>
+  </tr>  
+  <tr>
+    <td align="right">日</td>
+    <td><input type="text" name="day" id="day" /></td>
+  </tr>
+  <tr>
+    <td align="right">小时</td>
+    <td><input type="text" name="hour" id="hour" /></td>
+  </tr>
+  <tr>
+    <td align="right">分/秒</td>
+    <td><input type="text" name="stime" id="stime" /></td>
+  </tr>
+  <tr>
+    <td align="right">电话号码</td>
+    <td><input type="text" name="telphone" id="telphone" /></td>
+  </tr>
+  <tr>
+    <td align="right">手机</td>
+    <td><input type="text" name="mobile" id="mobile" /></td>
+  </tr>
+  <tr>
+    <td align="right">身份证</td>
+    <td><input type="text" name="idcard" id="idcard" /></td>
+  </tr>
+  <tr>
+    <td align="right">邮编</td>
+    <td><input type="text" name="zipcode" id="zipcode" /></td>
+  </tr>
+  <tr>
+    <td align="right">IP</td>
+    <td><input type="text" name="ip" id="ip" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="radio" name="radio" id="radio" value="1" />
+      <label>项1</label>
+      <input type="radio" name="radio" id="radio2" value="2" />
+     <label>项2</label>
+      <input type="radio" name="radio" id="radio3" value="3" />
+      <label>项3</label>      </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input name="checkbox" type="checkbox" id="checkbox" value="1" />
+	<label>项1</label>
+    <input name="checkbox" type="checkbox" id="checkbox2" value="2" />
+	<label>项2</label>
+	<input name="checkbox" type="checkbox" id="checkbox3" value="3" />
+	<label>项3</label></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><select name="select" id="select">
+      <option value="">请选择</option>
+      <option value="1">项一</option>
+      <option value="2">项二</option>
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><textarea name="textarea" id="textarea" cols="40" rows="3"></textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="button" id="button" value="Submit" />
+      <input type="reset" name="button2" id="button2" value="Reset" /></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

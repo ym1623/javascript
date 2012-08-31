@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1d/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>凤凰网js图片幻灯片插件门户网站流行幻灯片展示特效</title>
+<meta name="description" content="凤凰网js图片幻灯片插件是一款带图片缩略图拖动图片放大展示的幻灯片，支持图片分页浏览。非常好的用户体验设计图片幻灯片。js代码" />
+<link type="text/css" rel="stylesheet" href="css/base.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="css/gallery.css" media="screen">
+</head>
+<body>
+
+
+	<div class="photoMHD">
+	
+		<div class="title">
+			<div class="txt">
+				<h1>内地嫩模代言网游走红 成韩国杂志封面女郎 <span class="num">(<em id="photoIndex"></em>/15)</span><span class="time">2012-06-30 13:18</span></h1>
+			</div>
+			<div class="function">
+				<a class="ckap" title="查看全部图片" id="showallPic"></a>
+				<a class="ckbp" id="btnOrig" title="查看大图" target="_blank"></a>
+				<a class="return" title="返回幻灯" style="display:none"></a>
+			</div>
+		</div><!--title end-->
+		
+		<div class="photoNews" id="imgBox">
+		
+			<div id="picDiv" style="display:block;">
+				<div class="pic" id="photoView">
+					<img id="photoPrevLoading" src="http://www.jsfoot.com/js/demo/2012-07-18/images/rdn_4fe5f4f8ee668.jpg" width="609" height="800" style="display:none"/>
+					<div class="photo_prev"><a id="photoPrev" class="btn_pphoto" target="_self" hidefocus="true" title="上一张，支持 '← '翻页"></a></div>
+					<div class="photo_next"><a id="photoNext" class="btn_nphoto" target="_self" hidefocus="true" title="下一张，支持 '→ '翻页"></a></div>
+					<a id="photoimg"><img id="photo" style="filter:alpha(opacity=100);" src="http://www.jsfoot.com/js/demo/2012-07-18/images/rdn_4fe5f4f8ee668.jpg" width="609" height="800" /></a>			
+				</div>
+			</div>
+			
+			<div class="allPic" id="moretab" style="display:none">
+				<div class="leftArae"><a id="moreLeft"></a></div>
+				<div class="smallpic_box clearfix">
+					<div style="height:560px;overflow:hidden;position:relative;width:935px;">
+						<div id="imageListView"  class="smallpic_con clearfix"></div>
+					</div>
+				</div>
+				<div class="rightArae"><a id="moreRight"></a></div>
+				<div class="clear"></div>
+				<div class="btn" id="btnPage"></div>
+			</div>
+			
+			<div class="zy clearfix">
+				<div class="wrap_text">
+					<p class="text_con" id="photoDesc">据悉，韩国出品的成人网游《女王之刃》代言人，内地超模艾尚真被选为韩国娱乐杂志《MAXIM（箴言）》的7月刊封面女郎。为了参与《女王之刃》的宣传活动于今年五月访韩的艾尚真，在参与游戏宣传活动之余还参与了《MAXIM》杂志的照片拍摄。</p>
+					<p class="keywords">关键词：<a href="#" target="_blank">艾尚真</a> <a href="#" target="_blank">女王之刃</a> <a href="#" target="_blank">MAXIM杂志</a></p>
+				</div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="photoList" id="picList_b">
+				<div class="before">
+					<a id="prevSet" href="http://games.ifeng.com/picture/gaoqing/detail_2012_06/19/15417602_0.shtml" target="_blank"><img src="http://www.jsfoot.com/js/demo/2012-07-18/images/xes_a8c044c953814602afc9c9cfc98db8c8.jpg" width="104" height="69" /></a>
+					<p><a href="http://games.ifeng.com/picture/gaoqing/detail_2012_06/19/15417602_0.shtml" target="_blank">&lt;&lt;&nbsp;上一图集</a></p>
+				</div>
+				
+				<div class="picList" id="scrl">
+					<div id="scrlPrev" class="l1"><a id="scrlPrev_b"></a></div>
+					
+					<div class="l2">
+						<div class="listM" style="position:relative">
+							<ul id="thumb" style="position:absolute">
+								<li><a href="#p=1" hidefocus="true"><img src="http://www.jsfoot.com/js/demo/2012-07-18/images/xes_04115e473f58bf599cbc52794a4c0e3d.jpg" /></a></li>
+								<li><a href="#p=2" hidefocus="true"><img src="http://www.jsfoot.com/js/demo/2012-07-18/images/xes_c78dc213a6c7bdaf3fd601fd4c24a131.jpg" /></a></li>
+								<li><a href="#p=3" hidefocus="true"><img src="http://www.jsfoot.com/js/demo/2012-07-18/images/xes_c0a7c52195eba83b8b2ee81abd5c4ce0.jpg" /></a></li>
+								<li><a href="#p=4" hidefocus="true"><img src="http://www.jsfoot.com/js/demo/2012-07-18/images/xes_228bfeb5af191a13aedf5ad1abfb9804.jpg" /></a></li>
+								<li><a href="#p=5" hidefocus="true"><img src="http://www.jsfoot.com/js/demo/2012-07-18/images/xes_01a639c9981430cf0b79251ad6674445.jpg" /></a></li>
+							</ul>
+						</div>
+						<div class="scrollBar">
+							<a class="drag" id="bar"><b class="l_arrow"></b><b class="r_arrow"></b></a>
+						</div>
+					</div>
+					
+					<div id="scrlNext" class="l3"><a id="scrlNext_b"></a></div>
+				</div>
+				
+				<div class="after">            
+					<a id="nextSet" href="http://games.ifeng.com/picture/gaoqing/detail_2012_06/30/15671210_0.shtml" target="_blank"><img src="http://www.jsfoot.com/js/demo/2012-07-18/images/xes_e8099596d70821d210b4251bded5681c.jpg" width="104" height="69" /></a>
+					<p><a href="http://games.ifeng.com/picture/gaoqing/detail_2012_06/30/15671210_0.shtml" target="_blank">下一图集&nbsp;&gt;&gt;</a></p>
+				</div>
+				
+				<div class="clear"></div>
+				
+			</div>
+			
+		</div><!--photoNews end-->
+		
+		<div class="clear"></div>
+		
+	</div>
+    
+<script type="text/javascript" src="js/BX.1.0.1.U.js"></script>     
+<script type="text/javascript" src="js/gallery.js"></script> 
+<script type="text/javascript" src="js/piclist.js"></script>
+</body>
+</html>

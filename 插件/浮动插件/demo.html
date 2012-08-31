@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网友JCJquery分享自己写的浮动客服插件 - Jquery-school</title>
+<meta name="author" content="Jquery-School" />
+<meta name="Copyright" content="Jquery-School,www.jq-school.com" />
+<meta name="keywords" content="Jquery,Jquery资源,前端设计,div+css" />
+<meta name="description" content="" />
+<link href="http://www.jq-school.com/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.jq-school.com/js/jquery-1.7.2.min.js"></script>
+<link href="css/public.css" rel="stylesheet" type="text/css" media="all" />
+<style>
+<!-- 
+#contact #online { border:1px solid #ccc; width:120px; background:#fff; }
+#contact #online #title { background:#f2f2f2; height:27px; padding:0 8px; border-bottom:1px solid #ccc; overflow:hidden; }
+#contact #online #title b { float:left; display:block; line-height:30px; font-size:13px; }
+#contact #online #title a.close { float:right; background:url(images/close.png) no-repeat center center; height:30px; width:10px; cursor:pointer; }
+#contact #online ul { padding:12px 8px;}
+#contact #online #bottom { background:#f2f2f2; height:27px; border-top:1px solid #ccc; }
+#contact #btn { background: url(images/left.gif) no-repeat; position:absolute; top:0; left:0; width:26px; height:99px; cursor:pointer; }
+-->
+</style>
+<script src="js/jQuery-jcContact.js" language="javascript"></script>
+<script>
+$(function(){
+    $('#contact').jcFloat({
+		floatMode:'online',
+		speed:400,
+		position:'center',
+		float:'left',
+		contentHidden:true
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="top">
+  <h2 class="subtitle"> JQuery让你的前端设计更精彩！</h2>
+  <div id="meun"><a href="/" title="Jquery-School"><img src="http://www.jq-school.com/logo.png" /></a>
+    <ul id="submeun">
+      <li><a href="/">首 页</a></li>    
+	   <li class="cur"><a href="javascript:void(0)">浮动客服插件</a></li>
+    </ul>
+  </div>
+  </div>
+<!-- HTML 开始 -->
+<div id="contact">
+     <div id="online">
+         <div id="title"><b>分享到...</b><a class="close"></a></div>
+         <ul>
+             <img src="images/tp.png" height="178" width="97" />
+         </ul>
+         <div id="bottom"></div>
+     </div>
+	 <div id="btn"></div>
+</div>
+
+
+
+<!-- 结束 -->
+<div id="ps" style=" width:800px;">
+<h1>jQuery-jcContact插件<p>by Riddick</p></h1>
+<dl> 
+	<h2>* 关键语句</h2>
+    <dt>jQuery - jcContact v1.10</dt>
+    <dt>Copyright(c) 2012 by Riddick-design </dt>
+    <dt>Date: 2012-01-10</dt>
+    <h2>* 相关参数 </h2>
+    <dd><span>speed:400,</span>\\ 动画效果滑动速度</dd>
+    <dd><span>position:'center',</span>\\ 按钮垂直位置，提供top,center,bottom 和 自定义像素(如100px)</dd>
+    <dd><span>float:'left',</span>\\ 特效位置，提供left,right</dd>
+    <dd><span>contentHidden:true </span>\\ 是否隐藏，提供true,false</dd>
+	<script type="text/javascript" src="../js/cufon-yui.js"></script>
+    <script type="text/javascript" src="../js/Microsoft_YaHei.js"></script>
+    <script src="../js/users.js" type="text/javascript"></script>
+</dl>
+</div>
+
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />v
+
+
+</body>
+</html>

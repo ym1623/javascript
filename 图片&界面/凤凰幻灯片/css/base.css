@@ -1,0 +1,37 @@
+/*清除文档类型声明中的默认属性*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;} 
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+q:before,q:after{content:'';}
+
+/*字体定义*/
+body {font-size:12px;font-family:simsun,arial,helvetica,clean,sans-serif;background:#fff;color:#2b2b2b;}
+table {font-size:inherit;font:100%;} 
+
+/*重新定义*/
+h1 {font-size:14px;}
+h2 {font-size:14px;font-weight:normal;}
+h3 {font-size:12px;}
+h4 {font-size:12px;font-weight:normal;}
+
+strong {font-weight:bold;}
+a {text-decoration:none;} 
+a:hover {text-decoration:underline;}
+
+/*全站链接颜色*/
+a:link{color:#004276;}
+a:visited{color:#004276;}
+a:hover{color:#ba2636;}
+a:active{color:#004276;}
+
+/*通用定义*/
+.clear {clear:both;} 
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */
+*+html .clearfix {min-height: 1%;}

@@ -1,0 +1,83 @@
+*{padding:0; margin:0;}
+body{height:3000px;}
+.fixedBtn {
+	POSITION: fixed; WIDTH: 350px; HEIGHT: 155px; TOP: 160px; RIGHT: -350px;
+}
+* HTML .fixedBtn {
+	POSITION: absolute; BOTTOM: auto
+}
+HTML {
+	_overflow-x: hidden
+}
+.fixedBtn .feedback {
+	POSITION: absolute; TEXT-INDENT: -2000px; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: 0px; WIDTH: 33px; DISPLAY: inline-block; BACKGROUND: url(../images/feedback.gif); HEIGHT: 101px; TOP: 0px; LEFT: -33px
+}
+.fixedBtn .feedback:hover {
+	BACKGROUND-POSITION: -33px 0px
+}
+.fixedBtn .top {
+	POSITION: absolute; TEXT-INDENT: -2000px; WIDTH: 33px; DISPLAY: none; BACKGROUND: url(../images/topbutton.png); HEIGHT: 61px; TOP: 93px; LEFT: -33px
+}
+.fixedBtn .top:hover {
+	BACKGROUND-POSITION: -33px 0px
+}
+.feedbackCnt {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 15px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #fff; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 15px
+}
+.feedbackCnt H3 {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 14px
+}
+.feedbackTips {
+	TEXT-ALIGN: center; LINE-HEIGHT: 180px; BACKGROUND: #fff; HEIGHT: 180px; FONT-SIZE: 20px
+}
+.feedbackCnt TEXTAREA {
+	BORDER-BOTTOM: #cfcfcf 1px solid; BORDER-LEFT: #cfcfcf 1px solid; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; WIDTH: 305px; PADDING-RIGHT: 5px; DISPLAY: block; MARGIN-BOTTOM: 10px; HEIGHT: 100px; BORDER-TOP: #cfcfcf 1px solid; BORDER-RIGHT: #cfcfcf 1px solid; PADDING-TOP: 5px
+}	
+.fb-open {
+	BORDER-BOTTOM: #cfcfcf 1px solid; BORDER-LEFT: #cfcfcf 1px solid; BORDER-TOP: #cfcfcf 1px solid; BORDER-RIGHT: #cfcfcf 1px solid; borer-right: none; box-shadow: 2px 2px 8px #aaa
+}
+.button-orange {
+	BORDER-BOTTOM-COLOR: #f47602; BORDER-TOP-COLOR: #f47602; BACKGROUND: #ff8110; BORDER-RIGHT-COLOR: #f47602; BORDER-LEFT-COLOR: #f47602; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px
+}
+.button-orange:hover {
+	BACKGROUND: #f89918
+}
+.button {
+	BORDER-BOTTOM: #d1d1d1 1px solid; BORDER-LEFT: #d1d1d1 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: inline-block; HEIGHT: 28px; COLOR: #333; FONT-SIZE: 12px; VERTICAL-ALIGN: middle; BORDER-TOP: #d1d1d1 1px solid; CURSOR: pointer; BORDER-RIGHT: #d1d1d1 1px solid; PADDING-TOP: 0px; _overflow: visible; _overflow-y: hidden
+}
+.button:hover {
+	BACKGROUND: #f7f7f7; TEXT-DECORATION: none
+}
+.button-hover {
+	BACKGROUND: #f7f7f7; TEXT-DECORATION: none
+}
+.button-grey {
+	LINE-HEIGHT: 2; FONT-SIZE: 14px
+}
+.button-green {
+	LINE-HEIGHT: 2; FONT-SIZE: 14px
+}
+.button-medium {
+	LINE-HEIGHT: 24px; HEIGHT: 24px; FONT-SIZE: 12px
+}
+.button-grey {
+	BORDER-BOTTOM: #dadada 1px solid; FILTER: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAF9F5',endColorstr='#F0EFEB') chroma(color=black); BORDER-LEFT: #dadada 1px solid; BORDER-TOP: #dadada 1px solid; BORDER-RIGHT: #dadada 1px solid
+}
+.button-grey:hover {
+	BORDER-BOTTOM: #c1c1c1 1px solid; FILTER: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0EFEB',endColorstr='#FAF9F5') chroma(color=black); BORDER-LEFT: #c1c1c1 1px solid; COLOR: #333; BORDER-TOP: #c1c1c1 1px solid; BORDER-RIGHT: #c1c1c1 1px solid
+}
+.button-grey-hover {
+	BORDER-BOTTOM: #c1c1c1 1px solid; FILTER: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0EFEB',endColorstr='#FAF9F5') chroma(color=black); BORDER-LEFT: #c1c1c1 1px solid; COLOR: #333; BORDER-TOP: #c1c1c1 1px solid; BORDER-RIGHT: #c1c1c1 1px solid
+}
+.button-green {
+	BORDER-BOTTOM: #549812 1px solid; FILTER: progid:DXImageTransform.Microsoft.gradient(startColorstr='#72B717',endColorstr='#60A00D') chroma(color=black); BORDER-LEFT: #549812 1px solid; BACKGROUND: #60a00d; COLOR: #ffc; BORDER-TOP: #549812 1px solid; BORDER-RIGHT: #549812 1px solid
+}
+.nav {
+	BORDER-BOTTOM: #549812 1px solid; FILTER: progid:DXImageTransform.Microsoft.gradient(startColorstr='#72B717',endColorstr='#60A00D') chroma(color=black); BORDER-LEFT: #549812 1px solid; BACKGROUND: #60a00d; COLOR: #ffc; BORDER-TOP: #549812 1px solid; BORDER-RIGHT: #549812 1px solid
+}
+.button-green:hover {
+	FILTER: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468A07',endColorstr='#72B717') chroma(color=black); BACKGROUND: #72b717; COLOR: #fff
+}
+.button-green-hover {
+	FILTER: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468A07',endColorstr='#72B717') chroma(color=black); BACKGROUND: #72b717; COLOR: #fff
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="新添吉LOGO icon" type="image/ico" href="http://www.tjtex.com.cn/images/LOGO/新添吉LOGO.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jquery实现超酷的导航菜单特效 - Jquery-school</title>
+<link href="http://www.jq-school.com/css/style.css" type="text/css" rel="stylesheet" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<link type="text/css" href="menu.css" rel="stylesheet" />
+<style type="text/css">
+
+
+div#copyright {
+    font:11px 'Trebuchet MS';
+    color:#222;
+    text-indent:30px;
+    padding:40px 0 0 0;
+}
+div#copyright a { color:#000; }
+div#copyright a:hover { color:#222; }
+</style>
+<script type="text/javascript" src="http://www.jq-school.com/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="top">
+  <h2 class="subtitle"> JQuery让你的前端设计更精彩！</h2>
+  <div id="meun"><a href="http://www.jq-school.com/" title="Jquery-School"><img src="http://www.jq-school.com/logo.png" /></a>
+    <ul id="submeun">
+      <li><a href="http://www.jq-school.com/">首 页</a></li>
+      <li class="cur"><a href="javascript:void(0)">Jquery实现超酷的导航菜单特效</a></li>
+    </ul>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="menu">
+  <ul class="menu">
+    <li><a href="http://www.jq-school.com/" ><span>JquerySchool</span></a></li>
+    <li><a href="http://www.jq-school.com/" class="parent"><span>原创Jquery插件</span></a>
+      <div>
+        <ul>
+          <li><a href="http://www.jq-school.com/" class="parent"><span>插件分类</span></a>
+            <div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="http://www.jq-school.com/" class="parent"><span>作品分类</span></a>
+            <div>
+              <ul>
+               <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="http://www.jq-school.com/"><span>其它</span></a></li>
+         
+        </ul>
+      </div>
+    </li>
+    <li><a href="special.asp?NumberID=002" class="parent"><span>网络收集Jquery插件</span></a>
+      <div>
+        <ul>
+           <li><a href="http://www.jq-school.com/" class="parent"><span>插件分类</span></a>
+            <div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+          </li>
+         <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+			<li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+			<li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+			<li><a href="http://www.jq-school.com/"><span>其他</span></a>
+			<div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+			</li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="special.asp?NumberID=002" class="parent"><span>网友分享Jquery插件</span></a>
+      <div>
+        <ul>
+           <li><a href="http://www.jq-school.com/" class="parent"><span>插件分类</span></a>
+            <div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+          </li>
+         <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+			<li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+			<li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+			<li><a href="http://www.jq-school.com/"><span>其他</span></a>
+			<div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+			</li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="special.asp?NumberID=002" class="parent"><span>Jquery学堂</span></a>
+      <div>
+        <ul>
+           <li><a href="http://www.jq-school.com/" class="parent"><span>插件分类</span></a>
+            <div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+          </li>
+         <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+			<li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+			<li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+			<li><a href="http://www.jq-school.com/"><span>其他</span></a>
+			<div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+			</li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="special.asp?NumberID=002" class="parent"><span>分享快乐</span></a>
+      <div>
+        <ul>
+           <li><a href="http://www.jq-school.com/" class="parent"><span>插件分类</span></a>
+            <div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+          </li>
+         <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+			<li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+			<li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+			<li><a href="http://www.jq-school.com/"><span>其他</span></a>
+			<div>
+              <ul>
+                <li><a href="http://www.jq-school.com/"><span>图片特效</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网络收集</span></a></li>
+                <li><a href="http://www.jq-school.com/"><span>网友分享</span></a></li>             
+                <li><a href="http://www.jq-school.com/"><span>其他</span></a></li>
+              </ul>
+            </div>
+			</li>
+        </ul>
+      </div>
+    </li>   
+  </ul>
+</div>
+</body>
+</html>

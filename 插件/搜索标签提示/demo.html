@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery标签点击搜索文本框弹出热门标签关键字选择</title>
+<meta name="description" content="jQuery标签特效制作点击text文本框搜索框时弹出层选择关键词，热门标签，赋值到text文本框里面，进行热门标签关键词搜索功能。jQuery下载。" />
+</head>
+
+<body>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+textarea,input{
+	padding:4px;line-height:1em;color:#8c7e7e;background:#fcf9f9;border:1px solid;border-color:#ddd #e1dfdf #d1cdcd;
+	box-shadow:inset 0 0 2px rgba(255,255,255,0.75);
+	-moz-box-shadow:inset 0 0 2px rgba(255,255,255,0.75);
+	-webkit-box-shadow:inset 0 0 2px rgba(255,255,255,0.75);
+}
+a{color:#221919;text-decoration:none;outline:none;}
+a{
+	-webkit-transition-property:background-color,color;
+	-webkit-transition-duration:.4s,.5s;
+	-webkit-transition-timing-function:ease,ease;
+	
+	-moz-transition-property:background-color,color;
+	-moz-transition-duration:.4s,.5s;
+	-moz-transition-timing-function:ease,ease;
+	
+	-ms-transition-property:background-color,color;
+	-ms-transition-duration:.4s,.5s;
+	-ms-transition-timing-function:ease,ease;
+	
+	-o-transition-property:background-color,color;
+	-o-transition-duration:.4s,.5s;
+	-o-transition-timing-function:ease,ease;
+	
+	transition-property:background-color,color;
+	transition-duration:.4s,.5s;
+	transition-timing-function:ease,ease
+}
+a:hover{color:#3366cc;text-decoration:underline;}
+body{font:12px/180% Arial,Lucida,Verdana,"宋体",Helvetica,sans-serif;font-size:13px;color:#211922;}
+/* Search */
+#Search{margin:20px auto;width:300px;}
+#Search input{
+	float:left;width:140px;background-color:#F7F8F9;border:1px solid;border-color:#c2c0c0 #cccaca #d1cfcf;font-size:14px;line-height:1.3;
+	
+	border-radius:5px 0 0 5px;
+	-moz-border-radius:5px 0 0 5px;
+	-webkit-border-radius:5px 0 0 5px;
+	
+	box-shadow:0 1px #fff, inset 0 1px rgba(34,25,25,0.05);
+	-moz-box-shadow:0 1px #fff, inset 0 1px rgba(34,25,25,0.05);
+	-webkit-box-shadow:0 1px #fff, inset 0 1px rgba(34,25,25,0.05);
+}
+#Search input:focus{
+	background-color:#fff;
+	box-shadow:0 1px #fff, inset 0 1px rgba(34,25,25,0.1);
+	-moz-box-shadow:0 1px #fff, inset 0 1px rgba(34,25,25,0.1);
+	-webkit-box-shadow:0 1px #fff, inset 0 1px rgba(34,25,25,0.1);
+}
+#Search a{
+	float:left;margin-left:-1px;padding:6px 7px 1px 7px;min-height:17px;_height:17px;border:1px solid;border-color:#c2c0c0 #cccaca #d1cfcf;
+	
+	border-radius:0 3px 3px 0;
+	-moz-border-radius:0 3px 3px 0;
+	-webkit-border-radius:0 3px 3px 0;
+	
+	box-shadow:0 1px rgba(255,255,255,0.9), inset 0 0 2px rgba(255,255,255,0.75);
+	-moz-box-shadow:0 1px rgba(255,255,255,0.9), inset 0 0 2px rgba(255,255,255,0.75);
+	-webkit-box-shadow:0 1px rgba(255,255,255,0.9), inset 0 0 2px rgba(255,255,255,0.75);
+}
+#Search a:active{
+	box-shadow:inset 0 1px 1px rgba(34,29,29,0.15);
+	-moz-box-shadow:inset 0 1px 1px rgba(34,29,29,0.15);
+	-webkit-box-shadow:inset 0 1px 1px rgba(34,29,29,0.15);
+}
+/* searchTag */
+#searchTag{
+	z-index:1000;display:none;position:absolute;top:0px;left:0px;width:390px;padding:10px;background:#fff;border:solid 1px #cccaca;
+	
+	border-radius:0 0 5px 5px;
+	-moz-border-radius:0 0 5px 5px;
+	-webkit-border-radius:0 0 5px 5px;
+	
+	box-shadow:0 2px 4px rgba(34,25,25,0.5);
+	-moz-box-shadow:0 2px 4px rgba(34,25,25,0.5);
+	-webkit-box-shadow:0 2px 4px rgba(34,25,25,0.5);
+}
+#searchTag p{text-align:left;line-height:22px;padding:2px 0;margin:0;border:0;}
+#searchTag span{font-weight:bold;color:#3366cc;}
+#searchTag em.red{color:#ff0000;font-style:normal;}
+#searchTag a{margin:0 5px;}
+#tagClose{font-size:12px;color:#ff6600;font-weight:800;cursor:pointer;position:absolute;top:2px;right:8px;}
+</style>
+
+<script type="text/javascript" src="http://www.jsfoot.com/skin/js/jquery.js"></script>
+<script type="text/javascript">
+//ie6 select框层遮罩解决插件
+(function($){
+	$.fn.bgIframe = $.fn.bgiframe = function(s) {
+		if ( $.browser.msie && /6.0/.test(navigator.userAgent) ) {
+			s = $.extend({
+				top     : 'auto', // auto == .currentStyle.borderTopWidth
+				left    : 'auto', // auto == .currentStyle.borderLeftWidth
+				width   : 'auto', // auto == offsetWidth
+				height  : 'auto', // auto == offsetHeight
+				opacity : true,
+				src     : 'javascript:false;'
+			}, s || {});
+			var prop = function(n){return n&&n.constructor==Number?n+'px':n;},
+				html = '<iframe class="bgiframe"frameborder="0"tabindex="-1"src="'+s.src+'"'+
+						   'style="display:block;position:absolute;z-index:-1;'+
+							   (s.opacity !== false?'filter:Alpha(Opacity=\'0\');':'')+
+							   'top:'+(s.top=='auto'?'expression(((parseInt(this.parentNode.currentStyle.borderTopWidth)||0)*-1)+\'px\')':prop(s.top))+';'+
+							   'left:'+(s.left=='auto'?'expression(((parseInt(this.parentNode.currentStyle.borderLeftWidth)||0)*-1)+\'px\')':prop(s.left))+';'+
+							   'width:'+(s.width=='auto'?'expression(this.parentNode.offsetWidth+\'px\')':prop(s.width))+';'+
+							   'height:'+(s.height=='auto'?'expression(this.parentNode.offsetHeight+\'px\')':prop(s.height))+';'+
+						'"/>';
+			return this.each(function() {
+				if ( $('> iframe.bgiframe', this).length == 0 )
+					this.insertBefore( document.createElement(html), this.firstChild );
+			});
+		}
+		return this;
+	};
+})(jQuery);
+
+//浮动层定位设置插件
+jQuery.fn.selectCity = function(targetId) {
+	var _seft = this;
+	var targetId = $(targetId);
+	this.click(function(){
+		var A_top = $(this).offset().top + $(this).outerHeight(true);  //  1
+		var A_left =  $(this).offset().left;
+		targetId.bgiframe();
+		targetId.show().css({"position":"absolute","top":A_top+"px" ,"left":A_left+"px"});
+	});
+	targetId.find("#tagClose").click(function(){
+		targetId.hide();
+	});
+	$(document).click(function(event){
+		if(event.target.id!=_seft.selector.substring(1)){
+			targetId.hide();	
+		}
+	});
+	targetId.click(function(e){
+		e.stopPropagation(); //  2
+	});
+    return this;
+}
+
+//调用浮动层
+$(function(){
+	$("#selecttags").selectCity("#searchTag");
+});
+
+//为文本域连续赋值
+function checktag(o){
+	var tagid = function(id){
+		return document.getElementById(id);
+	}
+	var tags = [];//存放标签,避免重复加入
+	var tagidSPLITCHAR = ' ';//设定分隔符,根据程序需求可改
+	var d = tagid('selecttags');
+	if (d.value)
+	tags = d.value.split(tagidSPLITCHAR);
+	var v = o.innerHTML;//如果tag有别的值或者别的非innerHTML里体现的内容
+	var s = tagidSPLITCHAR+tags.join(tagidSPLITCHAR)+tagidSPLITCHAR
+	if(!new RegExp(tagidSPLITCHAR+v+tagidSPLITCHAR,'g').test(s)){
+		s+=v;
+	}
+	s = s.replace(new RegExp("(^"+tagidSPLITCHAR+"*|"+tagidSPLITCHAR+"*tagid)","g"),'');
+	d.value = s;
+	tags = s.split(tagidSPLITCHAR);
+}
+</script>
+
+<div id="Search">
+	<form action="" method="get" class="text">
+		<input type="text" id="selecttags" name="q" size="27" value="" placeholder="搜索你喜欢的" />
+		<a id="query_button" href="#" class="lg"><img src="images/search.gif" alt="" /></a>
+	</form>
+</div><!--Search end-->
+
+<div id="searchTag">
+	<div id="tagClose">关闭</div>
+	<p><span>温馨提示：</span>多个标签请用“<em class="red">空格</em>”、“<em class="red">逗号</em>”或“<em class="red">分号</em>”隔开。</p>
+	<p><span>热门标签：</span><a href="javascript:void(0)" onClick="checktag(this)">彩妆</a><a href="javascript:void(0)" onClick="checktag(this)">美发</a><a href="javascript:void(0)" onClick="checktag(this)">美优博客</a><a href="javascript:void(0)" onClick="checktag(this)">aaa</a><a href="javascript:void(0)" onClick="checktag(this)">bbb</a><a href="javascript:void(0)" onClick="checktag(this)">天堂</a><a href="javascript:void(0)" onClick="checktag(this)">eee</a><a href="javascript:void(0)" onClick="checktag(this)">fff</a><a href="javascript:void(0)" onClick="checktag(this)">ggg</a></p>
+	<p><span>您使用过的标签：</span><a href="javascript:void(0)" onClick="checktag(this)">软件</a><a href="javascript:void(0)" onClick="checktag(this)">Delphi</a><a href="javascript:void(0)" onClick="checktag(this)">博客</a><a href="javascript:void(0)" onClick="checktag(this)">源码</a><a href="javascript:void(0)" onClick="checktag(this)">彩妆</a><a href="javascript:void(0)" onClick="checktag(this)">google</a><a href="javascript:void(0)" onClick="checktag(this)">新浪</a></p>
+</div><!--searchTag end-->
+
+</body>
+</html>
