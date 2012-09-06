@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网友Adam'分享原创图片幻灯片Jquery插件</title>
+<link href="http://www.jq-school.com/tool/jc/css/public.css" rel="stylesheet" type="text/css" media="all" />
+<style>
+<!--
+#jcImg { width:625px; padding:5px; border:1px solid #ccc; background:#f2f2f2; position:relative; overflow:hidden; } 
+#jcImg ul { width:625px; height:350px; overflow:hidden; position:relative; z-index:0; }
+#jcImg ul li { display:none; width:625px; height:350px; overflow:hidden; position:absolute; left:0; top:0; z-index:0; }
+#smallImg { height:65px;overflow:hidden; margin:5px auto 0; position:relative; width:590px; }
+#jcImg dl { width:9999%; position:relative; }
+#jcImg dd { float:left; width:115px; height:64px; overflow:hidden; margin-right:4px; _display:inline; cursor:pointer; position:relative; }
+#jcImg dd div { position:absolute; background:#000; height:64px; width:115px; }
+#jcImg b { width:14px; height:64px; background:#fff url(img/btn.png) no-repeat; position:absolute; top:360px; z-index:1; cursor:pointer; }
+#jcImg #prev { float:left; left:4px; background-position:0 0; }
+#jcImg #next { float:right; right:4px; background-position:right 0;  }
+#jcImg #prev:hover {  background-position:0 -70px; }
+#jcImg #next:hover {  background-position:right -70px; }
+#imgText { position:absolute; z-index:1; left:5px; top:315px; width:625px; height:40px; display:none; }
+#imgText p,#imgText b { display:block; position:absolute; left:0; top:0; width:591px; line-height:40px; padding:0 17px; height:40px; overflow:hidden; z-index:1; }
+#imgText b { background:#000; z-index:0; }
+#imgText span { color:#fff; text-shadow:1px 1px 0 #000; float:left; font-size:14px; }
+#imgText samp { color:#fff; text-shadow:1px 1px 0 #000; float:right; font-size:13px;  }
+#imgHover { border:4px solid #EC0000; height:56px; width:107px; position:absolute; left:0; top:0; display:none;}
+body,ul,ol,h2,h3,h4,h5,p,dl,dt,dd,form{padding:0;margin:0;}img{border:none;}li{list-style:none;}a{text-decoration:none;outline:none;color:#666666;}a:hover{text-decoration:none}img{border:0}ul{list-style:none;margin:0;}label{color:#6CBD45;font-size:14px;font-weight:bold;padding-bottom:0.5em;margin:0;}.h3{font-size:13px;font-weight:bold;}#show{background:url(images/photo.jpg)}#meun{color:#fff;padding-left:10px;}#meun img{float:left;}#submeun{margin-left:70px;float:left;}#submeun span{text-align:center;margin-right:10px;float:left;display:inline;}#submeun span a{color:#fff;height:50px;line-height:50px;font-size:14px;font-weight:bold;text-align:center;padding-left:15px;padding-right:15px;display:block;}#submeun span.cur{text-align:center;background:#82ce18;margin-right:10px;float:left;display:inline;}#top{background-color:#000;margin:0em 0 10px 0em;border-style:solid;border-width:1px;border-color:#E5E5E5;height:50px;line-height:50px;}label.subtitle{font-size:13px;float:right;color:#6CBD45;margin:0 10px;text-align:right;}h1.title{height:50px;font-size:12px;background:url(logo.png) no-repeat;}h1.title a:link,h1.title a:visited,h1.title a:hover{color:#000;text-decoration:none;}
+-->
+</style>
+<script src="http://www.jq-school.com/js/jquery-1.7.2.min.js" language="javascript" type="text/javascript"></script>
+<script src="js/jQuery-jcImg.js" language="javascript"></script>
+<script>
+$(function(){
+	$("#jcImg").jcImg({
+		speed : 400, // 动画速度
+		height :64,  // 缩略图高度设置
+		width : 115, // 缩略图宽度设置
+		textBg : .8, // 文本透明度设置
+		page : 5     // 每页缩略图显示个数
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div id="jcImg" class="TmpStyle">
+	<ul>
+    	<li><a><img src="img/t1.jpg" height="350" width="625" title="公安部、重庆市举行周克华案侦破表彰大会" /></a></li>
+        <li><a><img src="img/t2.jpg" height="350" width="625" title="沈阳交警查处“镶钻套牌宝马”" /></a></li>
+        <li><a><img src="img/t3.jpg" height="350" width="625" title="深圳12对新人过山车上办婚礼 神态各异" /></a></li>
+        <li><a><img src="img/t4.jpg" height="350" width="625" title="东亚经贸新闻月度图片精选：男童拍港姐" /></a></li>
+        <li><a><img src="img/t5.jpg" height="350" width="625" title="《活着》：矿山蜕变--“尘肺病”远去" /></a></li>
+        <li><a><img src="img/t6.jpg" height="350" width="625" title="哈尔滨阳明滩大桥引桥坍塌 多人死伤" /></a></li>
+        <li><a><img src="img/t1.jpg" height="350" width="625" title="公安部、重庆市举行周克华案侦破表彰大会" /></a></li>
+        <li><a><img src="img/t2.jpg" height="350" width="625" title="沈阳交警查处“镶钻套牌宝马”" /></a></li>
+        <li><a><img src="img/t3.jpg" height="350" width="625" title="深圳12对新人过山车上办婚礼 神态各异" /></a></li>
+        <li><a><img src="img/t4.jpg" height="350" width="625" title="东亚经贸新闻月度图片精选：男童拍港姐" /></a></li>
+        <li><a><img src="img/t5.jpg" height="350" width="625" title="《活着》：矿山蜕变--“尘肺病”远去" /></a></li>
+        <li><a><img src="img/t4.jpg" height="350" width="625" title="东亚经贸新闻月度图片精选：男童拍港姐" /></a></li>
+    	<li><a><img src="img/t1.jpg" height="350" width="625" title="公安部、重庆市举行周克华案侦破表彰大会" /></a></li>
+    </ul>
+</div>
+<!-- HTML 结束  -->
+
+</body>
+</html>
