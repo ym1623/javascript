@@ -1,0 +1,28 @@
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif; color:#333; margin:0 auto; }
+table{border-collapse:collapse;border-spacing:0;}
+img{ display:block;}
+
+a{color:#333;text-decoration:none;}
+a:hover{color:#c00; text-decoration:underline;}
+
+.mask{ width:100%; height:700px; background:#000; opacity:0.6; top:0; filter:alpha(opacity=60); left:0; display:none; position:absolute; z-index:10;}
+.acity{ display:block; padding-left:3px; background:url(../images/selean.gif) no-repeat; width:83px; height:30px; text-align:center; line-height:28px; font-weight:normal; cursor:pointer;display:block;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis; overflow: hidden; margin:20px auto;}
+#wrap{ width:960px; height:700px; margin:0 auto; position:relative; z-index:11;}
+.city{ width:600px; height:320px; z-index:11; display:none; z-index:11; background:#fff; border-bottom:4px solid #ff7400; position:absolute; left:180px; top:50px;}
+.top01-city{ height:27px; line-height:22px; width:100%; background:url(../images/bg01.gif) repeat-x left bottom;  float:left;text-align:right; border-bottom:1px solid #ccc;}
+.top01-city b{ display:block; float:left; padding-left:27px; background:url(../images/icon01.gif) no-repeat 5px 4px; color:#fff;}
+.top01-city .ok{ float:right; cursor:pointer; font-style:normal; padding-right:10px; color:#fff;}
+
+.mid01-city{ padding:2% 1%; width:98%; background:url(../images/bg02.gif) repeat-x left top; float:left;}
+.cityshow{ width:100%; float:left; background:url(../images/line.gif) repeat-x left bottom;  padding-bottom:6px; margin-bottom:10px;}
+.cityshow i{ font-style:normal; font-weight:bold; color:#ff7400; float:left; padding-right:5px;}
+.cityshow ul{ float:left;}
+.cityshow ul li{ float:left; padding-right:14px;}
+.cityshow ul li .check{ margin-right:5px;}
+.cityul{width:100%; float:left;}
+.cityul li{ width:320px; float:left; padding-bottom:7px;}
+.cityul li b{ padding:0 6px; cursor:pointer;}

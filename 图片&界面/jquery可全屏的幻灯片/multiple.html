@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>Skitter - Slideshow for anytime!</title>
+	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
+	
+	<link rel="shortcut icon" href="images/favicon.ico">
+
+	<link href="css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+	
+	
+	<script src="js/jquery-1.6.3.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.animate-colors-min.js"></script>
+	<script src="js/jquery.skitter.js"></script>
+
+	
+	<script>
+	$(document).ready(function(){
+		if (document.location.search) {
+			var array = document.location.search.split('=');
+			var param = array[0].replace('?', '');
+			var value = array[1];
+			if(param == 'fullscreen'){
+				$('.box_skitter_normal').skitter({fullscreen:true});
+			}
+		}else{
+			$('.box_skitter_normal').css({width: 400, height: 300}).skitter({animation: 'blind', interval: 2000, hideTools: true});
+		}
+		
+		
+	});
+	</script>
+</head>
+<body>
+<div id="page">
+	
+	<div id="content">
+		<div class="border_box">
+			<div class="box_skitter box_skitter_normal">
+				<ul>
+					<li><a href="#directionTop"><img src="images/017.jpg" class="directionTop" /></a><div class="label_text"><p>directionTop</p></div></li>
+					<li><a href="#directionBottom"><img src="images/018.jpg" class="directionBottom" /></a><div class="label_text"><p>directionBottom</p></div></li>
+					<li><a href="#directionRight"><img src="images/019.jpg" class="directionRight" /></a><div class="label_text"><p>directionRight</p></div></li>
+					<li><a href="#directionLeft"><img src="images/020.jpg" class="directionLeft" /></a><div class="label_text"><p>directionLeft</p></div></li>
+					<li><a href="#cubeStopRandom"><img src="images/021.jpg" class="cubeStopRandom" /></a><div class="label_text"><p>cubeStopRandom</p></div></li>
+					<li><a href="#cubeSpread"><img src="images/022.jpg" class="cubeSpread" /></a><div class="label_text"><p>cubeSpread</p></div></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

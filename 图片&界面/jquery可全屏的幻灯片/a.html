@@ -1,0 +1,30 @@
+﻿
+﻿    <link href="http://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Rosario" rel="stylesheet" type="text/css">
+	<link href="http://localhost/ers_site/zh-tw/plugins/css/skitter.styles.css" type="text/css" media="all" rel="stylesheet">
+	
+	<script src="http://localhost/ers_site/zh-tw/plugins/js/jquery-1.6.3.min.js"></script>
+	<script src="http://localhost/ers_site/zh-tw/plugins/js/jquery.easing.1.3.js"></script>
+	<script src="http://localhost/ers_site/zh-tw/plugins/js/jquery.animate-colors-min.js"></script>
+	<script src="http://localhost/ers_site/zh-tw/plugins/js/jquery.skitter.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		if (document.location.search) {
+			var array = document.location.search.split('=');
+			var param = array[0].replace('?', '');
+			var value = array[1];
+			if(param == 'fullscreen'){
+				$('.box_skitter_normal').skitter({fullscreen:true});
+			}
+		}else{
+			$('.box_skitter_normal').css({width: 400, height: 300}).skitter({animation: 'blind', interval: 2000, hideTools: true});
+		}
+		
+		// Highlight
+		$('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
+		
+	});
+	</script>
+	<div class="box_skitter box_skitter_normal">
+				<ul><li><a href="#directionTop"><img src="http://localhost/ers_site/zh-tw/sites/default/files/0912_presscon_p4.jpg" class="directionTop"></a><div class="label_text"><p>新聞發佈會現場四</p></div></li><li><a href="#directionTop"><img src="http://localhost/ers_site/zh-tw/sites/default/files/0912_presscon_p3.jpg" class="directionTop"></a><div class="label_text"><p>新聞發佈會現場三</p></div></li><li><a href="#directionTop"><img src="http://localhost/ers_site/zh-tw/sites/default/files/0912_presscon_p2.jpg" class="directionTop"></a><div class="label_text"><p>新聞發佈會現場二</p></div></li><li><a href="#directionTop"><img src="http://localhost/ers_site/zh-tw/sites/default/files/0912_presscon_p1.jpg" class="directionTop"></a><div class="label_text"><p>新聞發佈會現場一</p></div></li></ul></div></div></div></div>
+   

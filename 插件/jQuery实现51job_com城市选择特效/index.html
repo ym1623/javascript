@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery特效,css3,html5--163css</title>
+<LINK rel=stylesheet href="css/163css.css" type="text/css">
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript">
+	var cityId = 0;	
+	$(function(){
+		$('.acity').click(function(){
+			$('.city').show();
+			$('.mask').show();
+		});
+		$('.cityul b').click(function(){
+			var test=$(this).html();
+		
+			if($(this).attr("city") == undefined){ $(this).attr("city", window.cityId++);}
+			var city = $(this).attr("city");
+			if( $('input[city="'+ city +'"]').size()){
+				$('input[city="'+ city +'"]').parent().remove();
+			} else {
+				var ml=$('.cityshow li').length;
+				if(ml>4){
+					alert('最多只能添加5个');
+				}else{
+					var test=$(this).html();
+					$('<li class="licity"><input name="citychk" type="checkbox" checked="true" city="'+ city +'" class="check"><b>'+test+'</b></li>').appendTo('.cityshow ul');
+				}
+			}
+			
+			$('input[name=citychk]').click(function(){
+				$(this).parent('.licity').remove();
+			});
+			
+		});	
+		$('.ok').click(function(){
+				
+				var total="";
+				if($('.cityshow ul li').text()==''){alert('请选择')}else{
+					$('.cityshow ul li').each(function(){
+						total += (total.length > 0 ? "+" : "" ) + $(this).text();
+					});
+					$('.acity').text(total);
+					$('.city').hide();
+					$('.mask').hide();
+				}
+				
+				
+			})
+	
+	})
+</script>
+</head>
+
+<BODY>
+<div class="mask"></div>
+<b class="acity">请选择城市</b>
+<div id="wrap">
+	
+	<div class="city">
+		<div class="top01-city">
+			<em class="ok">确定</em><b>请选择工作地点（最多五项）</b>
+		</div>
+		<div class="mid01-city">
+			<div class="cityshow" id="show">
+				<i>已选地点:</i>
+				<ul></ul>	
+			</div>
+			<ul class="cityul">
+				<li><strong>B</strong><b>北京</b><b>保定</b></li>
+				<li><strong>C</strong><b>长春</b><b>长沙</b><b>重庆</b></li>
+				<li><strong>D</strong><b>大连</b><b>东莞</b></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</BODY>
+</HTML>
