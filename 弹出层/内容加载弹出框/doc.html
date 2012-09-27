@@ -1,0 +1,17 @@
+使用说明:<br />
+id:"id",                      //id必须防止重复<br />
+title:"标题" ,                //显示在弹出层的标题<br />
+url:""                        //要加载的内容地址<br />
+$('#***').skyLayer.Sclose();  //关闭弹出层<br />
+<br />
+$(function(){<br />
+　$('#img').click(function(){<br />
+　　$(this).skyLayer({id:'img',title:'图片',url:&quot;./photo.html&quot;});<br />
+　})<br />
+　$('#music').click(function(){<br />
+　　$(this).skyLayer({id:'music',title:'音乐',url:&quot;./music.html&quot;});<br />
+　})<br />
+　$('#doc').click(function(){<br />
+　　$(this).skyLayer({id:'doc',title:'说明',url:&quot;./doc.html&quot;});<br />
+　})<br />
+})<br />
