@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>淘宝评价功能</title>
+<style>
+<!--
+	body, ul, li, p{ margin:0; padding:0;}
+	body{ font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#666;}
+	ul{ list-style-type:none;}
+	#star span,#star ul{ float:left; height:19px; line-height:19px;}
+	#star ul{ margin:0 10px;}
+	#star ul li{ text-indent:-9999px; float:left; width:20px; background:url("star_v2.png") 0 -2px no-repeat; cursor:pointer;}
+	#star ul li.on{ background-position:0 -30px;}
+	#star ul li.on_1{ background-position:0 -118px;}
+	#star p{ position:absolute; top:20px; left:0; width:160px; height:60px; border:1px solid #999; padding:7px 10px 0; display:none;}
+	#star p em{ display:block; color:#f60; font-style:normal;}
+	#star strong{ color:#f60; }
+-->
+</style>
+<script>
+<!--
+	//显示星星个数
+	var showStar=function(){
+		this.Score=0;
+		this.Msg=[ 
+					"很不满意|差得太离谱，与卖家描述的严重不符，非常不满",		
+		    		"不满意|部分有破损，与卖家描述的不符，不满意",				
+					"一般|质量一般，没有卖家描述的那么好",				
+					"满意|质量不错，与卖家描述的基本一致，还是挺满意的",				
+					"非常满意|质量非常好，与卖家描述的完全一致，非常满意"
+		]
+	};
+	showStar.prototype={
+		show:function(element,num)
+		{
+			var starNum=num==null?this.Score:num;
+			for(var i=0;i<element.length;i++)
+			{
+				//这样写我觉得更清楚点
+				if(starNum<=2){
+					element[i].className=i<starNum ? "on_1":"";
+				}
+				else{
+					element[i].className=i<starNum ? "on":"";
+				}
+					
+			}
+		}
+	}
+	window.onload=function(){
+		var starbox=document.getElementById("star");
+		var star=starbox.getElementsByTagName("li");
+		var span=starbox.getElementsByTagName("span")[1];
+		var p=starbox.getElementsByTagName("p")[0];
+		var newstar=new showStar();
+		for(var i=0;i<star.length;i++)
+		{
+			star[i].index=i+1;
+			star[i].onmouseover=function(){
+				newstar.show(star,this.index);
+				p.innerHTML="<em><strong>"+this.index+"</strong>分 "+newstar.Msg[this.index-1].match(/(.+)\|/)[1]+"</em>"+newstar.Msg[this.index-1].match(/\|(.+)/)[1];
+				p.style.left=starbox.offsetLeft+this.offsetWidth*this.index+56+"px";
+				p.style.display="block";
+			}
+			star[i].onmouseout=function(){
+				newstar.show(star);
+				p.style.display="none";
+			}
+			star[i].onclick=function(){
+				newstar.Score=this.index;
+				span.innerHTML="<strong>"+newstar.Score+"分</strong>("+newstar.Msg[newstar.Score-1].match(/\|(.+)/)[1]+")";
+				p.style.display="none";
+			}
+		}
+		
+	}
+-->
+</script>
+</head>
+
+<body>
+<div id="star">
+	<span>小提示：点击星星就能打分</span>
+    <ul>
+    	<li><a href="javascript:void();">1</a></li>
+        <li><a href="javascript:void();">2</a></li>
+        <li><a href="javascript:void();">3</a></li>
+        <li><a href="javascript:void();">4</a></li>
+        <li><a href="javascript:void();">5</a></li>
+    </ul>
+    <span></span>
+    <p></p>
+</div>
+</body>
+</html>

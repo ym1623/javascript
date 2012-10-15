@@ -1,0 +1,27 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>兼容的背景透明圆角弹出层DIV＋CSS＋TABLE</title>
+<link href="websjy.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="websjy.js"></script>
+</head>
+
+<body>
+<div class="open"><span onclick="openShutManager(this,'box',false,'点击这里，关闭层','点击这里，弹出层')">点击这里，弹出层</span>
+<div class="odiv" id="box" style="display:none"><table border="0" cellpadding="0" cellspacing="0">
+  <tr><td class="lt"></td><td class="t"></td><td class="rt"></td></tr><tr><td class="l"></td><td class="box">
+	<h3 class="tit"><b>这里是标题</b><a class="cls" href="javascript:;" onclick="openShutManager(this,'box',false)" title="关闭">关闭</a></h3>
+	<div class="nr"> 提示：<br />
+	  1、在代码状态下使用[html][/html]可以贴“代码运行”的代码。并禁用发帖左侧的 URL 识别和标签解析<br />
+	  2、技术版面请勿灌水。特别受欢迎的主题可以顶一顶，但是请接受版主的定期“擦水”，这是为了减少技术讨论区出现的无效信息。<br />
+	  3、如需要收藏主题，请使用主题右上角的链接，还可以推荐给论坛里的朋友。<br />
+	  4、如果代码无法运行，您可以打开<a href="http://www.websjy.com/bbs/html.html" target="_blank">浏览页面</a>，将代码粘贴到运行框中运行。<br />
+	  <b>此方法简单，自适应内容高宽，易方便改风格。原创：设计源:<a href="http://www.websjy.com" target="_blank">http://www.websjy.com</a></b>
+	  </div>
+	  </td><td class="r"></td></tr><tr><td class="lb"></td><td class="b"></td><td class="rb"></td></tr></table><s><i></i></s>
+	  </div>
+</div>
+</body>
+</html>

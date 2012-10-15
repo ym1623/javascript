@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>首页搜索条</title>
+<meta name="author" content="wjoin@qq.com" />
+<link href="Search.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div><input type="hidden" name="kk" id="kk" value="0" /></div>
+<div id="menu"><a href="javascript:void(0)" class="cur" id="m0">网页</a><a href="javascript:void(0)" id="m1">MP3</a><a href="javascript:void(0)" id="m2">影视</a><a href="javascript:void(0)" id="m3">视频</a><a href="javascript:void(0)" id="m4">图片</a><a href="javascript:void(0)" id="m5">贴吧</a><a href="javascript:void(0)" id="m6">淘宝</a></div>
+<div class="cls">
+<form name="form1" id="search" action="http://www.baidu.com/s" method="get" target="_blank">
+<div class="search-in"><input autocomplete="off" type="text" id="key" name="wd" /><input type="submit" id="submit" name="submit" value=" 搜 索 " /></div>
+<div id="sps"><input type="radio" value="sp1"  name="sp"  checked="checked" />百度&nbsp;<input type="radio" name="sp" value="sp2" />Google&nbsp;<input type="radio" name="sp" value="sp3" />搜狗</div>
+</form>
+</div>
+</body>
+<script language="javascript" src="jquery-1.4.2.min.js"></script>
+<script language="javascript" src="search_core.js"></script>
+</html>

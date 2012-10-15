@@ -1,0 +1,133 @@
+
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+
+UL {
+	LIST-STYLE-TYPE: none
+}
+
+BODY {
+	BACKGROUND: #fff; FONT: 12px/1.75 "ËÎÌו", arial, sans-serif; COLOR: #000
+}
+
+
+A:link {
+	COLOR: #0b3b8c; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0b3b8c; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0b3b8c; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #0b3b8c; TEXT-DECORATION: underline
+}
+
+.mod-left {
+	BORDER-RIGHT: #d8d8d8 1px solid;
+	BORDER-TOP: #d8d8d8 1px solid;
+	MARGIN-BOTTOM: 8px;
+	BORDER-LEFT: #d8d8d8 1px solid;
+	WIDTH: 648px;
+	BORDER-BOTTOM: #d8d8d8 1px solid
+}
+
+.mod-left H2 {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 0px; 
+	MARGIN: 0px; 
+	PADDING-TOP: 0px;
+	COLOR: #1c2c58
+}
+
+
+.sildPic-Article-QQ .cnt A:visited {
+	COLOR: #0b3b8c
+}
+
+.bottom-Article-QQ .hd {
+	BACKGROUND: #fafafa; WIDTH: 100%; LINE-HEIGHT: 28px; BORDER-BOTTOM: #d8d8d8 1px solid; HEIGHT: 28px
+}
+.bottom-Article-QQ H2 {
+	FONT-SIZE: 14px; TEXT-INDENT: 17px
+}
+.bottom-Article-QQ .bd {
+	PADDING-LEFT: 22px; PADDING-BOTTOM: 10px; WIDTH: 626px; PADDING-TOP: 10px
+}
+.bottom-Article-QQ LI {
+	FLOAT: left; WIDTH: 156px; LINE-HEIGHT: 21px; TEXT-ALIGN: left
+}
+.bottom-Article-QQ .haveTab {
+	OVERFLOW: visible; POSITION: relative
+}
+.bottom-Article-QQ .haveTab H2#h2One {
+	BORDER-RIGHT: #d8d8d8 1px solid; PADDING-RIGHT: 20px; LEFT: 0px; CURSOR: pointer; POSITION: absolute; TOP: 0px
+}
+.bottom-Article-QQ .haveTab H2#h2Tow {
+	BORDER-RIGHT: #d8d8d8 1px solid; PADDING-RIGHT: 20px; LEFT: 94px; CURSOR: pointer; POSITION: absolute; TOP: 0px
+}
+.bottom-Article-QQ .haveTab .select {
+	BACKGROUND: #fff; BORDER-BOTTOM: #fff 1px solid
+}
+.bottom-Article-QQ .block {
+	DISPLAY: block
+}
+.bottom-Article-QQ .none {
+	DISPLAY: none
+}
+
+.sildPic-Article-QQ H2 {
+	FLOAT: left
+}
+.sildPic-Article-QQ .hd {
+	BACKGROUND: #fafcff
+}
+.sildPic-Article-QQ .bd {
+	BACKGROUND: #fafcff
+}
+.sildPic-Article-QQ .sildPicBar {
+	DISPLAY: inline; FLOAT: right; OVERFLOW: hidden; WIDTH: 86px; MARGIN-RIGHT: 18px; PADDING-TOP: 6px; ZOOM: 1; HEIGHT: 22px
+}
+.sildPic-Article-QQ .pre {
+	DISPLAY: inline; BACKGROUND: url(../images/xixi.png) no-repeat -151px -60px; FLOAT: left; WIDTH: 20px; CURSOR: pointer; MARGIN-RIGHT: 8px; HEIGHT: 15px
+}
+.sildPic-Article-QQ .next {
+	BACKGROUND: url(../images/xixi.png) no-repeat -151px -131px; FLOAT: right; WIDTH: 20px; CURSOR: pointer; HEIGHT: 15px
+}
+.sildPic-Article-QQ .sildPicBar LI {
+	MARGIN-TOP: 5px; DISPLAY: inline; BACKGROUND: url(../images/xixi.png) no-repeat -165px -112px; FLOAT: left; MARGIN-LEFT: 3px; WIDTH: 6px; CURSOR: pointer; HEIGHT: 6px
+}
+.sildPic-Article-QQ .sildPicBar LI.select {
+	BACKGROUND: url(../images/xixi.png) no-repeat -165px -86px
+}
+.sildPic-Article-QQ .bd {
+	PADDING-LEFT: 19px; BACKGROUND: #fafcff; PADDING-BOTTOM: 0px; WIDTH: 629px; PADDING-TOP: 5px
+}
+.sildPic-Article-QQ .cnt-wrap {
+	/*OVERFLOW: hidden; WIDTH: 624px; ZOOM: 1; HEIGHT: 162px*/
+	OVERFLOW: hidden; WIDTH: 624px; ZOOM: 1; HEIGHT: 400px
+}
+.sildPic-Article-QQ .cnt {
+	WIDTH: 1872px
+}
+.sildPic-Article-QQ LI {
+	FLOAT: left; WIDTH: 156px
+}
+.sildPic-Article-QQ .cnt SPAN {
+	WIDTH: 100%; COLOR: #7e7e7e; TEXT-ALIGN: left
+}
+.sildPic-Article-QQ .cnt IMG {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid
+}
+.sildPic-Article-QQ .cnt .link {
+	DISPLAY: block; MARGIN-LEFT: 0px; WIDTH: 140px; TEXT-ALIGN: center
+}
+.sildPic-Article-QQ .cnt SPAN A {
+	COLOR: #7e7e7e
+}
+.sildPic-Article-QQ .cnt SPAN A:visited {
+	COLOR: #7e7e7e
+}

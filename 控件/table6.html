@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>【最终效果】</title>
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){  
+		$("#Usertb tr:even").addClass("alt");
+         //给class为stripe的表格的偶数行添加class值为alt		 
+        $("#Usertb tr:gt(0)").mouseover(function(){  
+         //如果鼠标移到class为stripe的表格的tr上时，执行函数
+        $(this).addClass("over");})		
+		.mouseout(function(){ 
+        //给这行添加class值为over，并且当鼠标一出该行时执行函数
+        $(this).removeClass("over");})       		
+		.click(function(){
+		//点tr变色，选中checkbox
+			if($(this).hasClass('click')){
+				$(this).removeClass('click');	
+				$(this).find(':checkbox').attr('checked',false);
+			}
+			else{
+				$(this).removeClass("alt").addClass('click');
+				$(this).find(':checkbox').attr('checked',true); 
+			}
+		 })		
+		 
+		 //全选
+		 $("#checkbox11").click(function(){
+			if($(this).attr("checked")==true)
+			   {
+				 $("input:checkbox").each(function(){
+					 $(this).attr("checked",true);
+					 $("#Usertb tr").removeClass("alt").addClass("click");
+				 });
+				}
+			   else
+			   {
+				  $("input:checkbox").each(function(){
+					  $(this).attr("checked",false);
+					  $("#Usertb tr").removeClass("click");
+					  $("#Usertb tr:even").addClass("alt")
+				 });
+				}
+			 })
+	
+});
+</script>
+<style>
+th {
+	background:#58a8f8;
+	color:#FFFFFF;
+	line-height:20px;
+	height:30px;
+}
+td {
+	padding:4px 4px;	
+	vertical-align:top;
+	text-align:center;
+}
+td * {
+	padding:6px 11px;
+}
+tr.alt td {
+	background:#ecf6fc;  /*这行将给所有的tr加上背景色*/
+}
+tr.over td {
+	background:#bcd4ec;  /*这个将是鼠标高亮行的背景色*/
+}
+.click {
+	background:#bcd4ec;
+}
+</style>
+</head>
+<body >
+<table cellspacing="0" rules="all" border="1" id="Usertb" style="width:886px;border-collapse:collapse; font-size:14px">
+  <tr>
+    <th scope="col">员工姓名</th>
+    <th scope="col">性别</th>
+    <th scope="col">部门</th>
+    <th scope="col">职务</th>
+    <th scope="col">邮箱</th>
+    <th scope="col">联系电话</th>
+    <th scope="col">登陆账号</th>
+    <th scope="col" style="width:120px;"><input type="checkbox" name="checkbox11" id="checkbox11" /></th>
+  </tr>
+  <tr>
+    <td>21212</td>
+    <td>男</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>2</td>
+    <td>2</td>
+    <td>122</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox10" id="checkbox10" /></td>
+  </tr>
+  <tr>
+    <td>王1</td>
+    <td>男</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>12</td>
+    <td>12</td>
+    <td>21212</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox9" id="checkbox9" /></td>
+  </tr>
+  <tr>
+    <td>王2</td>
+    <td>男</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>sdf</td>
+    <td>sdf</td>
+    <td>sdf</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox8" id="checkbox8" /></td>
+  </tr>
+  <tr>
+    <td>admin</td>
+    <td>女</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>12</td>
+    <td>2</td>
+    <td>admin</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox7" id="checkbox7" /></td>
+  </tr>
+  <tr>
+    <td>王2</td>
+    <td>女</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>12</td>
+    <td>12</td>
+    <td>2121212</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox6" id="checkbox6" /></td>
+  </tr>
+  <tr>
+    <td>asasas</td>
+    <td>男</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>sa</td>
+    <td>sa</td>
+    <td>121a</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox5" id="checkbox5" /></td>
+  </tr>
+  <tr>
+    <td>1112wq</td>
+    <td>女</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>12</td>
+    <td>12</td>
+    <td>sd</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox4" id="checkbox4" /></td>
+  </tr>
+  <tr>
+    <td>123q</td>
+    <td>女</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>a</td>
+    <td>a</td>
+    <td>aaa</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox3" id="checkbox3" /></td>
+  </tr>
+  <tr>
+    <td>wqq</td>
+    <td>男</td>
+    <td>销售部</td>
+    <td>总裁</td>
+    <td>qq</td>
+    <td>qq</td>
+    <td>qq</td>
+    <td style="width:120px;"><input type="checkbox" name="checkbox2" id="checkbox2" /></td>
+  </tr>
+  <tr>
+    <td>as</td>
+    <td>女</td>
+    <td>销售部</td>
+    <td>小秘书</td>
+    <td>22</td>
+    <td>22</td>
+    <td>21</td>
+    <td style="width:120px;">
+      <input type="checkbox" name="checkbox" id="checkbox" />
+    </td>
+  </tr>
+</table>
+</body>
+</html>

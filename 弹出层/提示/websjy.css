@@ -1,0 +1,22 @@
+/* CSS Document */
+body{ background:url(http://img.t.sinajs.cn/t4/skin/skin000/images/body_bg.jpg) center top no-repeat; font-size:12px;}
+.tit{ font-size:14px; padding:0; margin:0; height:31px; line-height:31px; background: url(titbg.gif) center top repeat-x #CBE4EF;}
+.tit b{ float:left; margin-left:15px;}
+.tit a{ float:right; margin-right:5px; margin-top:6px; display:inline;}
+a.cls{height:18px; width:18px;display:block; overflow:hidden; line-height:200px;}
+.nr{padding:10px; text-align:left;}
+a.cls,a.cls:link,a.cls:visited{background:url(cls.gif) center 0 no-repeat;}
+a.cls:hover{background:url(cls.gif) center -20px no-repeat;}
+.box{ border:1px #999999 solid; background:#FFF;}
+/*Ô²½Ç±ß¿ò*/
+.lt,.rt,.lb,.rb{ background-image:url(abg.png);filter:alpha(opacity=10);-moz-opacity:.1;opacity:.1;line-height:0;}
+.lt,.rt,.lb,.rb{ height:6px;width:6px;}.t,.b,.l,.r{ background:#000000;filter:alpha(opacity=10);-moz-opacity:.1;opacity:.1;line-height:0;}
+.l,.r{width:6px;}.t,.b{height:6px;}.lt{ background-position:0 0;}.rt{ background-position:right 0;}.lb{ background-position:0 bottom;}.rb{ background-position:right bottom;}
+/*Ð¡Èý½Ç*/
+s{position:absolute;top:-13px;*top:-13px;left:50px;display:block;height:0;width:0;font-size:0; line-height: 0;border-color:transparent transparent #666 transparent;border-style:dashed dashed solid dashed;border-width:10px;}
+i{position:absolute;top:-9px;*top:-9px;left:-10px;display:block;height:0;width:0;font-size: 0;border-width:10px;
+line-height: 0;border-color:transparent transparent #FFF transparent;border-style:dashed dashed solid dashed;}
+
+.open{ position:relative; width:150px; height:25px;line-height:180%; border:1px solid #FF9900; background:#FFCC00;margin:12% auto 0 400px; text-align:center;}
+.open span{cursor:pointer; display:block; width:100%;}
+.odiv{ position:absolute; top:29px; left:-1px; width:300px;}

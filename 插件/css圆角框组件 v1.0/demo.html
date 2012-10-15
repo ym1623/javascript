@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>冰极峰原创作品－－css圆角框组件 v1.0</title>
+<style type="text/css">
+/****************************************
+CSS圆角框组件 v1.0
+冰极峰原创
+更多内容请访问：http://binyong.cnblogs.com/
+*****************************************/
+* {margin:0;padding:0;}
+body {background:url(image/bg.gif);}
+a:link,a:visited{ text-decoration:none;color:#fff;}
+a:hover{color:orange;border-bottom:1px orange solid;}
+h3 {height:26px;line-height:26px;font-size:12px;border-bottom:1px #E3E197 solid;padding:0 10px;color:#fff;}
+h4 {font-size:12px;text-indent:20px;border-bottom:none;}
+p {line-height:22px;text-indent:10px;padding:0 10px;}
+.top{width:490px;height:80px;margin:10px auto;overflow:hidden;background:url(image/topbg.gif) no-repeat right bottom;text-align:center;font-size:12px;font-weight:bold;}
+.top p{color:#fff;font-weight:bold;line-height:24px;}
+h1 {font-size:20px;height:20px;color:#fff;}
+.wrapper {width:490px;margin:0px auto;font-size:14px;overflow:hidden;margin-bottom:10px;}
+.left {float:left;width:70%;}
+.left1 {font-size:12px;}
+.img {float:left;display:inline;margin:10px 0 0px 10px;}
+.left2 {font-size:12px;overflow:hidden;margin-top:10px;}
+.right {float:right;width:28%;}
+.right1 {margin-bottom:10px;font-size:12px;}
+.right2 {margin-bottom:10px;font-size:12px;color:#fff;}
+.right3 {margin-bottom:10px;font-size:12px;}
+.rightbgimg {background:url(image/img2.jpg) no-repeat right bottom;width:138px;height:104px;text-align:center;font-size:12px;color:#ffffff;}
+.bottom {clear:both;width:490px;margin:0px auto;text-align:center;font-size:12px;font-weight:bold;height:50px;line-height:50px;}
+.bottom a:link,.bottom a:visited{color:#000;} 
+.bottom a:hover{color:orange;border-bottom:1px orange solid;} 
+.hasH{height:100%;overflow:hidden;padding-bottom:8px;}/*for ie6*/
+</style>
+</head>
+<body>
+<div class="top">
+    <p>冰极峰原创作品</p>
+    <h1>css圆角框组件 v1.0</h1>
+    <p>博客地址：<a href="http://binyong.cnblogs.com" title="冰极峰博客">http://binyong.cnblogs.com</a></p>
+</div>
+<div class="wrapper">
+  <div class="left">
+    <div class="left1">
+      <h3>标题带有背景图片</h3>
+      <div class="hasH">
+        <p><b>组件优点：</b></p>
+        <p>1. 全面兼容所有浏览器</p>
+        <p>2. 圆角不需要图片，直接代码生成，省去制图的麻烦。</p>
+        <p>3. 自适应外框的大小，可广泛应用于布局区块中。</p>
+        <p>4. 封装难以控制的CSS代码，调用灵活方便。</p>
+        <p>5. 封装HTML结构，你只需定义你想要的结构，无冗余，更语义化。</p>
+        <p><b>组件缺点：</b></p>
+        <p>1. 不能定义线框的大小。如果你需要改变线框大小，本组件不适合你。</p>
+        <p>2. 圆角不够圆滑，如果你对圆角图片的精度要求较高，不宜采用本组件。</p>
+        <p>3. 线框颜色和背景色不宜采用对比太强烈的颜色，容易看出锯齿。</p>
+      </div>
+    </div>
+    <div class="left2">
+      <h3>下面圆角图片是img图片，而非背景图片。</h3>
+      <div class="hasH">
+        <div class="img"><a href="http://binyong.cnblogs.com/" title="漂亮女孩1" target="_blank"><img src="image/girl-1.jpg" height="115" width="154" alt="漂亮女孩1"/></a></div>
+        <div class="img"><a href="http://binyong.cnblogs.com/" title="漂亮女孩2" target="_blank"><img src="image/girl-2.jpg" height="115" width="154" alt="漂亮女孩2"/></a></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="right">
+    <div class="right1">
+      <h3>标题带背景色</h3>
+      <div class="hasH">
+        <p>标题栏的背景色与内容区背景可以定义不同的颜色。这些颜色值都可以直接在CSS中定义。</p>
+      </div>
+    </div>
+    <div class="right3">
+      <h3>标题带有背景图片</h3>
+      <div class="hasH">
+        <p>标题栏也可以在样式表中定义背景图片，这张背景图片自动圆角化。</p>
+      </div>
+    </div>
+    <div class="right2">
+      <h3>标题栏透明</h3>
+      <div class="hasH">
+        <p>你可以只要线框，不加任何颜色和背景图片。</p>
+      </div>
+    </div>
+    <div class="rightbgimg">
+        <p><br/>装饰性背景图片<br/>
+          也可以圆角化</p>
+    </div>
+  </div>
+</div>
+<div class="bottom"><a href="http://binyong.cnblogs.com" title="更多原创">冰极峰</a> 版权所有</div>
+<script type="text/javascript" src="js/bRoundCurve 1.0.js"></script>
+<script type="text/javascript">
+	b_RoundCurve("bottom","#F8B3D0","#FFF5FA",1);//普通圆角框
+	b_RoundCurve("left2","#E0750F","#FFF2A5",3,"h3","","image/bg3.gif");//标题用背景图片
+	b_RoundCurve("left1","#AE0474","#FB7D3F",3,"h3","","image/bg2.gif");//标题用背景图片
+	b_RoundCurve("right1","#863313","#84D4CA",3,"h3","#BAB556");//标题只用纯色背景
+	b_RoundCurve("right2","orange","",3,"h3","");//标题不带背景色
+	b_RoundCurve("right3","#A0C044","#E9F2CC",3,"h3","","image/bg1.gif");//标题用背景图片
+	b_RoundCurve("rightbgimg","#F38E1A","",4);//圆角背景图片
+	b_RoundCurve("top","#4E271A","",4);//圆角背景图片
+	b_RoundCurve("img","#999","#FFF5FA",2);//圆角IMG图片
+</script>
+</body>
+</html>

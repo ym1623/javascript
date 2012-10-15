@@ -1,0 +1,97 @@
+
+#btn{background:url(btn.png) no-repeat;width:183px;height:21px;border:none;cursor:pointer}
+#btn_residency,#btn_jobArea,
+#btn_FuntypeID,#btn_FuntypeID_2,
+#btn_IndustryID,#btn_IndustryID_2,
+#btn_hukou,#btn_nation,
+#btn_MajorID,#btn_MajorID_2{background:url(btn.png) no-repeat;width:183px;height:21px;border:none;cursor:pointer}
+
+/* 选择居住地 */
+#residencyAlpha{padding:10px 4px}
+#residencyAlpha h4{color:#F90;font-size:14px;}
+#residencyAlpha dl{zoom:1;overflow:hidden;line-height:25px}
+#residencyAlpha dt{float:left;width:80px;font-weight:bold}
+#residencyAlpha dd{float:left;width:492px}
+#residencyAlpha dd li{float:left;width:82px;cursor:pointer;text-indent:4px;height:25px;overflow:Hidden}
+#residencyAlpha dd li.over{background:#f90;color:#fff}
+#allProv{border-top:1px dashed #ccc;margin-top:6px;padding-top:10px}
+/* 居住地 悬浮子菜单 */
+#sub_city{border:1px solid #f60;line-height:25px;text-align:left}
+#sub_city h4{border-bottom:1px dashed #ccc}
+#sub_city ul{overflow:hidden;zoom:1}
+#sub_city ul li{float:left;width:60px;height:25px;}
+#sub_city ul a{display:block;height:25px;color:#000;text-decoration:none;text-indent:4px}
+#sub_city ul a:hover{background:#f90;color:#fff}
+
+/* 选择工作地区 */
+#jobAreaAlpha{padding:10px 4px}
+#jobAreaAlpha h4{color:#F90;font-size:14px;}
+#jobAreaAlpha dl{zoom:1;overflow:hidden;line-height:25px}
+#jobAreaAlpha dt{float:left;width:80px;font-weight:bold}
+#jobAreaAlpha dd{float:left;width:492px}
+#jobAreaAlpha dd li{float:left;width:82px;cursor:pointer;text-indent:16px;height:25px;overflow:Hidden}
+#jobAreaAlpha dd li.over{background-color:#f90;color:#fff}
+
+#jobAreSelected{border-bottom:1px dashed #ccc;margin-bottom:10px;padding-bottom:6px}
+#jobAreSelected dt{font-size:14px;color:#f90}
+#maincity2 li,#jobAreSelected li{background-image:url(chk_off.gif);background-repeat:no-repeat;background-position:2px 6px}
+#maincity2 li.chkON,#jobAreSelected li.chkON{background-image:url(chk_on.gif)}
+#allProv2{border-top:1px dashed #ccc;margin-top:6px;padding-top:10px}
+/* 工作地区 悬浮子菜单 */
+#sub_jobArea{border:1px solid #f60;line-height:25px;text-align:left}
+#sub_jobArea h4{border-bottom:1px dashed #ccc}
+#sub_jobArea ul{overflow:hidden;zoom:1}
+#sub_jobArea ul li{float:left;width:80px;height:25px}
+#sub_jobArea ul a{display:block;height:25px;color:#000;text-decoration:none;text-indent:16px;background-image:url(chk_off.gif);background-repeat:no-repeat;background-position:2px 6px}
+#sub_jobArea ul a:hover{background-color:#f90;color:#fff}
+#sub_jobArea ul a.chkON{background-image:url(chk_on.gif)}
+
+/* 选择行业列表 */
+#IndustryAlpha{padding:10px 4px}
+#IndustryAlpha dl{zoom:1;overflow:hidden;line-height:25px;border-bottom:1px dashed #ccc}
+#IndustryAlpha dt{float:left;width:200px;font-weight:bold;font-size:14px;color:#f90}
+#IndustryAlpha dd{float:left;width:450px}
+
+#IndustryAlpha ul{zoom:1;overflow:Hidden;line-height:25px;padding:8px 0}
+#IndustryAlpha li{float:left;width:220px;cursor:pointer;text-indent:20px;height:25px;overflow:Hidden;background-image:url(chk_off.gif);background-repeat:no-repeat;background-position:6px 6px}
+#IndustryAlpha li.over{background-color:#f90;color:#fff}
+#IndustryAlpha li.chkON{background-image:url(chk_on.gif)}
+#IndustryAlpha .radio li{background-image:none}
+/* 选择职能类别列表 */
+#FuntypeAlpha{padding:10px 4px}
+#FuntypeAlpha dl{zoom:1;overflow:hidden;line-height:25px;border-bottom:1px dashed #ccc}
+#FuntypeAlpha dt{float:left;width:200px;font-weight:bold;font-size:14px;color:#f90}
+#FuntypeAlpha dd{float:left;width:450px}
+
+#FuntypeAlpha ul{zoom:1;overflow:Hidden;line-height:25px;padding:8px 0}
+#FuntypeAlpha li{float:left;width:220px;cursor:pointer;text-indent:20px;height:25px;overflow:Hidden;background-repeat:no-repeat;background-position:6px 6px}
+#FuntypeAlpha li.over{background-color:#f90;color:#fff}
+#FuntypeAlpha li.chkON{background-image:url(chk_on.gif)}
+/* 职能类别 悬浮子菜单 */
+#sub_funtype{border:1px solid #f60;line-height:25px;text-align:left}
+#sub_funtype h4{border-bottom:1px dashed #ccc}
+#sub_funtype ul{overflow:hidden;zoom:1}
+#sub_funtype ul li{float:left;width:220px;height:25px;overflow:hidden}
+#sub_funtype ul a{display:block;height:25px;color:#000;text-decoration:none;text-indent:16px;background-image:url(chk_off.gif);background-repeat:no-repeat;background-position:2px 6px}
+#sub_funtype ul a:hover{background-color:#f90;color:#fff}
+#sub_funtype ul a.chkON{background-image:url(chk_on.gif)}
+#sublist .radio a{background-image:none}
+/* 国籍 */
+#nationAlpha{padding:10px 4px}
+#nationAlpha ul{zoom:1;overflow:Hidden;line-height:25px;padding:8px 0}
+#nationAlpha li{float:left;width:90px;cursor:pointer;text-indent:20px;height:25px;overflow:Hidden}
+#nationAlpha li.over{background:#f90;color:#fff}
+
+/* 选择专业列表 */
+#MajorAlpha{padding:10px 4px}
+#MajorAlpha ul{zoom:1;overflow:Hidden;line-height:25px;padding:8px 0}
+#MajorAlpha li{float:left;width:220px;cursor:pointer;text-indent:20px;height:25px;overflow:Hidden;background-repeat:no-repeat;background-position:6px 6px}
+#MajorAlpha li.over{background-color:#f90;color:#fff}
+/* 专业 悬浮子菜单 */
+#sub_major{border:1px solid #f60;line-height:25px;text-align:left}
+#sub_major h4{border-bottom:1px dashed #ccc}
+#sub_major ul{overflow:hidden;zoom:1}
+#sub_major ul li{float:left;width:220px;height:25px;overflow:hidden}
+#sub_major ul a{display:block;height:25px;color:#000;text-decoration:none;text-indent:16px;background-image:url(chk_off.gif);background-repeat:no-repeat;background-position:2px 6px}
+#sub_major ul a:hover{background-color:#f90;color:#fff}
+#sublist .radio a{background-image:none}

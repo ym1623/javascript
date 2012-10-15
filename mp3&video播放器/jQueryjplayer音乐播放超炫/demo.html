@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'> 
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en' xml:lang='en'> 
+<head> 
+<title>jPlayer</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link href="skin/cssreset.css" rel="stylesheet" type="text/css" /> 
+<link href="skin/default/css/default.css" rel="stylesheet" type="text/css" /> 
+<!--[if lt IE 7]>
+<style type="text/css">
+.playlist_content_songer .imgDiv a span { behavior: url(skin/default/css/iepngfix.htc); cursor: pointer; }
+#player_play{behavior: url(skin/default/css/iepngfix.htc); }
+#player_pause{behavior: url(skin/default/css/iepngfix.htc); }
+</style>
+<![endif]-->
+<script type="text/javascript" src="js/jquery-1.3.2.js"></script> 
+<script type="text/javascript" src="js/jquery.jplayer.js"></script> 
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script> 
+<script type="text/javascript" src="js/common.js"></script>
+</head> 
+<body> 
+<div id="container">
+	<div id="jquery_jplayer"></div> 
+	<div id="player_title">
+		<h1>Music Box</h1>
+	</div>
+	<div id="playlist_list"> 
+		<div class="playlist_main">
+			<div class="playlist_wrap" >
+				<div class="playlist_cc">
+				<ul class="playlist_content" > 
+					<li class="player" jplayer="mp3/测试.mp3" songer="许慧欣" ablum="幸福的糖" songimg="skin/default/images/songer/1.jpg">幸福的糖E</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="杨千嬅" ablum="麦芽糖"  songimg="skin/default/images/songer/2.jpg">麦芽糖</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="破天荒" ablum="专辑3"  songimg="skin/default/images/songer/3.jpg">Sorry</li>
+					<li class="player" jplayer="mp3/01.mp3" songer="棉花糖" ablum="专辑4"  songimg="skin/default/images/songer/1.jpg">This is me</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="不知道1" ablum="专辑5"  songimg="skin/default/images/songer/2.jpg">同音乐私奔</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="SHE" ablum="专辑6"  songimg="skin/default/images/songer/3.jpg">そばにいるね</li>
+					<li class="player" jplayer="mp3/01.mp3" songer="周杰伦" ablum="专辑7"  songimg="skin/default/images/songer/1.jpg">听妈妈的话</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="不知道2" ablum="专辑8"  songimg="skin/default/images/songer/2.jpg">我们的幸福时光</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="宫田" ablum="专辑9"  songimg="skin/default/images/songer/3.jpg">Last Friends</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="久石让" ablum="专辑10"  songimg="skin/default/images/songer/2.jpg">千与千寻</li>
+
+					
+					<li class="player" jplayer="mp3/02.mp3" songer="杨千嬅" ablum="麦芽糖"  songimg="skin/default/images/songer/2.jpg">麦芽糖2</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="破天荒" ablum="专辑3"  songimg="skin/default/images/songer/3.jpg">Sorry2</li>
+					<li class="player" jplayer="mp3/01.mp3" songer="棉花糖" ablum="专辑4"  songimg="skin/default/images/songer/1.jpg">This is me2</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="不知道1" ablum="专辑5"  songimg="skin/default/images/songer/2.jpg">同音乐私奔</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="SHE" ablum="专辑6"  songimg="skin/default/images/songer/3.jpg">そばにいるね</li>
+					<li class="player" jplayer="mp3/01.mp3" songer="周杰伦" ablum="专辑7"  songimg="skin/default/images/songer/1.jpg">听妈妈的话</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="不知道2" ablum="专辑8"  songimg="skin/default/images/songer/2.jpg">我们的幸福时光</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="宫田" ablum="专辑9"  songimg="skin/default/images/songer/3.jpg">Last Friends</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="久石让" ablum="专辑10"  songimg="skin/default/images/songer/2.jpg">千与千寻</li>
+
+					
+					<li class="player" jplayer="mp3/02.mp3" songer="杨千嬅" ablum="麦芽糖"  songimg="skin/default/images/songer/2.jpg">麦芽糖3</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="破天荒" ablum="专辑3"  songimg="skin/default/images/songer/3.jpg">Sorry3</li>
+					<li class="player" jplayer="mp3/01.mp3" songer="棉花糖" ablum="专辑4"  songimg="skin/default/images/songer/1.jpg">This is 3me2</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="不知道1" ablum="专辑5"  songimg="skin/default/images/songer/2.jpg">同音乐私奔3</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="SHE" ablum="专辑6"  songimg="skin/default/images/songer/3.jpg">そばにいるね3</li>
+					<li class="player" jplayer="mp3/01.mp3" songer="周杰伦" ablum="专辑7"  songimg="skin/default/images/songer/1.jpg">听妈妈的话3</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="不知道2" ablum="专辑8"  songimg="skin/default/images/songer/2.jpg">我们的幸福时3光</li>
+					<li class="player" jplayer="mp3/03.mp3" songer="宫田" ablum="专辑9"  songimg="skin/default/images/songer/3.jpg">Last Frien3ds</li>
+					<li class="player" jplayer="mp3/02.mp3" songer="久石让" ablum="专辑10"  songimg="skin/default/images/songer/2.jpg">千与千3寻</li>
+
+				</ul>
+				</div>
+				<div class="playlist_content_details">
+					<div class="playlist_content_return">
+						<ul class="playlist_content_footer">
+							<li class="list_reuturn"><a href="#">返 回</a></li>
+						</ul>
+					</div>
+					<div class="playlist_content_songer" >
+						<div class="imgDiv">
+							<a href="#"><span></span><img src="skin/default/images/songer/1.jpg" alt="专辑封面" /></a>
+						</div>
+						<ul>
+							<li class="songName">周杰伦</li>
+							<li class="songAblum">摩羯座</li>
+						</ul>
+						<div class="playlist_content_songer_silde">
+							<div class="playlist_content_songer_txt">正在播放:牛仔很忙...</div>
+						</div>
+					</div>
+					<div class="playlist_content_pro" >
+						<ul id="player_controls"> 
+							<li id="player_play">
+								<a href="#" title="播放"><span>play</span></a></li> 
+							</li> 
+							<li id="player_pause">
+								<a href="#" title="暂停"><span>pause</span></a>
+							</li>
+						</ul> 
+						<div id="play_time"></div> 
+						<div id="total_time"></div> 
+						<div id="player_progress"> 
+							<div id="player_progress_load_bar" class="jqjp_buffer"> 
+								<div id="player_progress_play_bar"></div> 
+							</div> 
+						</div> 
+						<div id="player_volume_bar"> 
+							<div id="player_volume_bar_value"></div> 
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div> 
+		<div class="playlist_footer_content">
+			<ul class="playlist_footer">
+				<li class="list_up"><a href="#">上 翻</a></li>
+				<li class="list_down"><a href="#">下 翻</a></li>
+				<li class="list_ramdom"><a href="#">随便听听</a></li>
+				<li class="list_power"><a href="http://www.jb51.net">Down from jb51.net</a></li>
+			</ul>
+		</div>
+	</div> 
+</div> 
+</body> 
+</html> 

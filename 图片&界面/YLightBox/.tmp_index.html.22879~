@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>YaoUI！扩展插件，YLightBox相册！</title>
+<link href="css/layout.css" type="text/css" rel="stylesheet" media="all" />
+</head>
+<body>
+<h1>YaoUI！扩展插件，YLightBox相册！</h1>
+<div id="container">
+	 <p class="sample"><img src="samples/1.jpg" class="y-lightbox" alt="示例图片（1）" /></p>
+	 <p class="sample"><img src="samples/2.jpg" class="y-lightbox" alt="示例图片（2）" /></p>
+	 <p class="sample"><img src="samples/3.jpg" class="y-lightbox" alt="示例图片（3）" /></p>
+	 <p class="sample"><img src="samples/4.jpg" class="y-lightbox" alt="示例图片（4）" /></p>
+	 <p class="sample"><img src="samples/5.jpg" class="y-lightbox" alt="示例图片（5）" /></p>
+	 <p class="sample"><img src="samples/6.jpg" class="y-lightbox" alt="示例图片（6）" /></p>
+</div>
+<div id="footer"><p>Copyright &copy; 2008-2009 <a href="http://www.yaohaixiao.com/">yaohaixiao.com</a>, All right reserved.</p></div>
+<script type="text/javascript" src="js/yao.js"></script>
+<script type="text/javascript">
+<!--
+(function(){
+	var D = document, isDisplay = false, photos = YAO.getElByClassName('y-lightbox', 'img', 'container'), i, len = photos.length, YOverlay = null, YBox = null, YBoxDefaultWidth=500, YBoxDefaultHeight=0, YBoxHd = null, YBoxTitle = null,YBoxCloseBar = null, YBoxAdjustBar = null, isAdjust = false, YBoxNewWinBar = null, YBoxBd = null, YBoxBDefaultHeight = 0, YPhoto = null, YPhotoDefaultWidth = 0, YPhotoDefaultHeight = 0;
+	function close(){
+		if (YOverlay && YBox && isDisplay) {
+			YAO.setStyle(YOverlay, 'display', 'none');
+			adjustSize();
+			YAO.setStyle(YBox, 'display', 'none');
+			isDisplay = false;
+		}
+	};
+	function zoomInSize(){
+		var width = YPhoto.width;
+		var height = YPhoto.height;
+		var percent = width/height;
+		if(width>YBoxDefaultWidth){
+			width = YBoxDefaultWidth;
+			height = width/percent;
+			YBoxDefaultHeight = height + YBoxHd.offsetHeight;
+			YBoxBDefaultHeight = height;
+			YAO.setStyles(YPhoto,{
+				width: width + 'px',
+				height: height + 'px'
+			});
+			YAO.setStyles(YBox,{
+				width: width + 'px',
+				height: YBoxDefaultHeight + 'px'
+			});
+		}
+	};
+	function adjustSize(){
+		var width = YPhotoDefaultWidth;
+		var height = YPhotoDefaultHeight;
+		if (!isAdjust) {
+			YAO.setStyles(YPhoto, {
+				width: width + 'px',
+				height: height + 'px'
+			});
+			YAO.setStyles(YBoxBd, {
+				height: height + 'px'
+			});
+			YAO.setStyles(YBox, {
+				width: width + 'px',
+				height: (height + YBoxHd.offsetHeight) + 'px'
+			});
+			YBoxAdjustBar.title = '显示缩略图';
+			isAdjust = true;
+		}
+		else{
+			YAO.setStyles(YBoxBd, {
+				height: YBoxBDefaultHeight + 'px'
+			});
+			YAO.setStyles(YBox, {
+				width: YBoxDefaultWidth + 'px',
+				height: YBoxDefaultHeight + 'px',
+				
+			});
+			YBoxAdjustBar.title = '显示实际尺寸';
+			isAdjust = false;
+		}
+		fixPosition();
+	};
+	function fixPosition(){
+		var documentWidth = YAO.getDocumentWidth();
+		var documentHeight = YAO.getDocumentHeight();
+		var viewportWidth = YAO.getViewportWidth();
+		var viewportHeight = YAO.getViewportHeight();
+		var xScroll = YAO.getXScroll();
+		var yScroll = YAO.getYScroll();
+		var YBoxWidth = YBox.offsetWidth;
+		var YBoxHeight = YBox.offsetHeight;
+		var left = xScroll + ((viewportWidth - YBoxWidth) / 2);
+		var top = yScroll + ((viewportHeight - YBoxHeight) / 2);
+		
+		if (YBoxWidth > viewportWidth) {
+			if ((YBoxWidth < documentWidth) && ((YBoxWidth + xScroll) < documentWidth)) {
+				left = xScroll;
+			}
+			else {
+				left = documentWidth - YBoxWidth;
+			}
+		}
+		else{
+			if(YBoxWidth>documentWidth){
+				left = 0;
+			}
+		}
+		if (YBoxHeight > viewportHeight) {
+			if ((YBoxHeight < documentHeight) && ((YBoxHeight + yScroll) <= documentHeight)) {
+				top = yScroll;
+			}
+			else {
+				top = documentHeight - YBoxHeight;
+			}
+		}
+		else{
+			if(YBoxHeight>documentHeight){
+				top = 0;
+			}
+		}
+		YBoxTitle.innerHTML = 'top:'+top+': left:'+left;
+		if (isDisplay) {
+			YAO.setStyles(YBox, {
+				margin: 0,
+				left: left + 'px',
+				top: top + 'px'
+			});
+		}
+	};
+	for (i = 0; i < len; ++i) {
+		YAO.on(photos[i], 'click', function(index){
+			return function(event){
+				var oDf = D.createDocumentFragment(), docWidth = YAO.getDocumentWidth(),docHeight = YAO.getDocumentHeight();
+				if (!YBox) {
+					oDf.appendChild(YAO.Builder.Node('div', {
+						id: 'yl-shardow'
+					}));
+					oDf.appendChild(YAO.Builder.Node('div', {
+						id: 'yl-box'
+					}, [YAO.Builder.Node('div', {
+						id: 'yl-box-hd'
+					}, [YAO.Builder.Node('h3', {
+						id: 'yl-box-tlt'
+					}, this.alt), YAO.Builder.Node('a', {
+						id: 'yl-box-closebar',
+						className: 'imgclose',
+						href: '#close',
+						title: '关闭窗口'
+					}, '关闭窗口'), YAO.Builder.Node('a', {
+						id: 'yl-box-adjust',
+						className: 'imgadjust',
+						href: '#adjust',
+						title: '显示实际尺寸'
+					}, '显示实际尺寸'), YAO.Builder.Node('a', {
+						id: 'yl-box-newindow',
+						href: this.src,
+						target: '_blank',
+						title: '新窗口打开'
+					}, '新窗口打开')]), YAO.Builder.Node('div', {
+						id: 'yl-box-bd'
+					}, YAO.Builder.Node('img', {
+						src: this.src,
+						alt: this.alt,
+						id: 'yl-photo'
+					}))]));
+					D.body.appendChild(oDf);
+					
+					YOverlay = YAO.getEl('yl-shardow');
+					YAO.setStyles(YOverlay, {
+						height: docHeight + 'px'
+					});
+					YBox = YAO.getEl('yl-box');
+					YBoxHd = YAO.getEl('yl-box-hd');
+					YBoxTitle = YAO.getEl('yl-box-tlt');
+					YBoxCloseBar = YAO.getEl('yl-box-closebar');
+					YBoxAdjustBar = YAO.getEl('yl-box-adjust');
+					YBoxNewWinBar = YAO.getEl('yl-box-newindow');
+					YBoxBd = YAO.getEl('yl-box-bd');
+					YPhoto = YAO.getEl('yl-photo');
+				}
+				else{
+					if (YOverlay && YBox && YAO.getStyle(YOverlay, 'display') === 'none' && YAO.getStyle(YBox, 'display') === 'none') {
+						YBoxTitle.innerHTML = this.alt;
+						YBoxNewWinBar.href = this.src;
+						YAO.Builder.Attributes(YPhoto, {
+							src: this.src,
+							alt: this.alt
+						});
+						YAO.setStyle(YOverlay, 'display', 'block');
+						YAO.setStyle(YBox, 'display', 'block');
+					}
+				}
+				isDisplay = true;
+				YPhotoDefaultWidth = this.width;
+				YPhotoDefaultHeight = this.height;
+				zoomInSize();
+				fixPosition();
+				YAO.on(YBoxCloseBar,'click',close,YBoxCloseBar,true);
+				YAO.on(YBoxAdjustBar,'click',adjustSize,YBoxAdjustBar,true);
+	            YAO.on(window, 'scroll', fixPosition);
+	            YAO.on(window, 'resize', fixPosition);
+			}
+		}(i), photos[i], true);
+	}
+})();
+//-->
+</script>
+</body>
+</html>

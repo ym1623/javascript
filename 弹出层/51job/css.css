@@ -1,0 +1,20 @@
+/*
+ *Author:	±øµ∞’Ê±ø(QQ:28240885)
+ *Date:		2009-9-15
+ *Content:	www.soche8.com
+*/
+@import url(alpha.css);
+body{font-family:"ÀŒÃÂ",arial;margin:0;padding:0;background:#fff;font-size:12px;color:#000}
+div,form,img,ul,ol,li,dl,dt,dd{margin:0;padding:0;border:0}
+li{list-style:none;list-style-position:outside}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:12px}
+
+/* ’⁄’÷≤„ */
+#maskLayer{position: absolute;left:0px;top:0px}
+#alphadiv{position:absolute;background:#000;z-index: 2000}
+#drag{position:absolute;background:#fff;z-index: 2001;width:580px;border:1px solid #ccc}
+#drag_h{line-height:28px;height:28px;cursor:move;color:#fff;background:#D01A22;border-bottom:1px dashed #babcbc;padding:0 10px}
+#drag h3 b{float:left}
+#drag h3 span{font-weight:normal;float:right;cursor:pointer}
+
+#sublist{position:absolute;z-index:2100;background:#fff}

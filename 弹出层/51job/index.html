@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>仿51job选择地区、选择行业、选择职位效果</title>
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="drag.js"></script>
+<script type="text/javascript" src="city_arr.js"></script>
+<script type="text/javascript" src="nationality_arr.js"></script>
+<script type="text/javascript" src="funtype_arr.js"></script>
+<script type="text/javascript" src="industry_arr.js"></script>
+<script type="text/javascript" src="major_arr.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+// 是否在数组内
+function in_array(needle, haystack) {
+	if(typeof needle == 'string' || typeof needle == 'number') {
+		for(var i in haystack) {
+			if(haystack[i] == needle) {
+					return true;
+			}
+		}
+	}
+	return false;
+}
+</script>
+
+
+<div style="height:1000px;margin:50px 0 0 400px">
+<div style="padding:30px;font-size:26px;color:red">同时引入多个js文件，页面加载后再点击</div>
+<form method="POST" action="">
+	<script type="text/javascript" src="nationality_func.js"></script>
+	<input id="btn_nation" type="button" value="请选择国籍" onclick="nationSelect()" />
+	<input id="nation" type="hidden" name="nation" value="" />
+
+<br /><br />
+
+	<script type="text/javascript" src="city_func.js"></script>
+	<input id="btn_residency" type="button" value="请选择居住地" onclick="residencySelect()" />
+	<input id="residency" type="hidden" name="residency" value="" />
+
+<br /><br />
+
+	<script type="text/javascript" src="city_func.js"></script>
+	<input id="btn_hukou" type="button" value="户口所在地" onclick="hukouSelect()" />
+	<input id="hukou" type="hidden" name="hukou" value="" />
+
+<br /><br />
+
+	<script type="text/javascript" src="city_func.js"></script>
+	<input id="btn_jobArea" type="button" value="请选择地区" onclick="jobAreaSelect()" />
+	<input id="jobAreaID" type="hidden" name="jobAreaID" value="" />多选
+
+<br /><br /><br /><br />
+
+	<script type="text/javascript" src="funtype_func.js"></script>
+	<input id="btn_FuntypeID" type="button" value="请选择职能类别" onclick="funtypeSelect()" />
+	<input id="FuntypeID" type="hidden" name="FuntypeID" value="" />多选
+
+<br /><br />
+
+	<script type="text/javascript" src="funtype_func.js"></script>
+	<input id="btn_FuntypeID_2" type="button" value="请选择职能类别" onclick="funtypeSelect_2()" />
+	<input id="FuntypeID_2" type="hidden" name="FuntypeID_2" value="" />单选
+
+<br /><br />
+
+	<script type="text/javascript" src="industry_func.js"></script>
+	<input id="btn_IndustryID" type="button" value="请选择行业" onclick="IndustrySelect()" />
+	<input id="IndustryID" type="hidden" name="IndustryID" value="" />多选
+
+<br /><br />
+
+	<script type="text/javascript" src="industry_func.js"></script>
+	<input id="btn_IndustryID_2" type="button" value="请选择行业" onclick="IndustrySelect_2()" />
+	<input id="IndustryID_2" type="hidden" name="IndustryID_2" value="" />单选
+
+<br /><br /><br /><br />
+
+	<script type="text/javascript" src="major_func.js"></script>
+	<input id="btn_MajorID_2" type="button" value="请选择专业" onclick="majorSelect_2()" />
+	<input id="MajorID_2" type="hidden" name="MajorID_2" value="" />单选
+
+<br /><br /><br /><br />	
+	
+	<select id="certificate" name="certificate">
+		<option value="00">自定义</option>
+		<option value="01">外语证书</option>
+		<option value="02">计算机证书</option>
+		<option value="03">会计证书</option>
+		<option value="04">职称证书</option>
+		<option value="05">其他证书</option>
+	</select>
+	<select id="certificate_2" name="certificate_2" style="width:300px;display:none"></select>
+	<input id="certificate_3" name="certificate_3" type="text" />
+
+	<script type="text/javascript" src="certificate_arr.js"></script>
+	<script type="text/javascript" src="certificate_func.js"></script>
+
+</form>
+</div>
+
+
+
+<!-- alpha div -->
+<div id="maskLayer" style="display:none">
+<iframe id="maskLayer_iframe" frameBorder=0 scrolling=no style="filter:alpha(opacity=50)"></iframe>
+<div id="alphadiv" style="filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5"></div>
+	<div id="drag">
+		<h3 id="drag_h"></h3>
+		<div id="drag_con"></div><!-- drag_con end -->
+	</div>
+</div><!-- maskLayer end -->
+</div>
+<!-- alpha div end -->
+<div id="sublist" style="display:none"></div>
+
+
+</body>
+</html>
