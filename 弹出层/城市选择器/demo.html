@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<title>网友绿豆糕原创通用水平选择器Jquery插件</title>
+<style>
+* {margin:0;}
+body {font-size:12px;}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="jquery-levelSelect-ajax.js"></script>
+<SCRIPT>
+
+$(function(){
+	$("#test").click(function(){
+		$.openLayer({
+			maxItems : 5,
+			pid : "0",
+			returnText : "restxts",
+			returnValue : "resvals",
+			span_width : {d1:120,d2:150,d3:150},
+			index : 1
+		});
+	});
+	$("#test2").click(function(){
+		$.openLayer({
+			maxItems : 1,
+			pid : "0",
+			returnText : "restxts",
+			returnValue : "resvals",
+			span_width : {d1:120,d2:150,d3:150},
+			index : 2
+		});
+	});
+});
+</SCRIPT>
+</head>
+<body>
+<br>
+<br>
+<br>
+<center>
+
+<TABLE border=1 cellpadding="0"
+				cellspacing="0" style="background:c8c8c8;">
+<TR>
+	<TH style="width:30%;"><input name="test"  id="test" value="多选例子" type="button"/></TH>
+	<TH><input name="test2"  id="test2" value="单选例子" type="button"/></TH>
+</TR>
+<TR>
+	<TD align=right>结果id：</TD>
+	<TD><input type='text' id='resvals' value='这里存放结果id' size=50></TD>
+</TR>
+<TR>
+	<TD align=right>结果文本：</TD>
+	<TD><input type='text' id='restxts' value='这里存放结果文本' size=50></TD>
+</TR>
+</TABLE>
+</center>
+
+</body>
+</html>
