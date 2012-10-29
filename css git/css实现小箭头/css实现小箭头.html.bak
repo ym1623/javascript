@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CSS实现带小箭头二级下拉导航菜单</title>
+<meta http-equiv="content-type" content="text/html;charset=gb2312">
+<!--把下面代码加到<head>与</head>之间-->
+<STYLE type="text/css">
+* {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; BORDER-RIGHT-WIDTH: 0px
+}
+BODY {
+	FONT: 12px Arial, sans-serif; COLOR: #666
+}
+A {
+	COLOR: #555; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #e33; TEXT-DECORATION: underline
+}
+#selectedI #mI {
+	FONT-WEIGHT: bold;
+	BACKGROUND: url(/blog/upload/image/20120525072202.gif) no-repeat -260px -40px;
+	COLOR: #f33;
+	margin:0 auto;
+}
+.hNav {
+	CLEAR: both; PADDING-RIGHT: 2px; PADDING-LEFT: 3px; BACKGROUND: url(20120525072202.gif) no-repeat left top; PADDING-BOTTOM: 5px; WIDTH: 891px; PADDING-TOP: 3px; HEIGHT: 29px; margin:0 auto;
+}
+.hNav UL LI {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 99px; LINE-HEIGHT: 29px; HEIGHT: 29px; TEXT-ALIGN: center
+}
+.hNav UL LI A {
+	DISPLAY: block; OVERFLOW: hidden; WIDTH: 99px; CURSOR: pointer; COLOR: #fff; WHITE-SPACE: nowrap; HEIGHT: 29px
+}
+.hNav UL LI A:hover {
+	BACKGROUND: url(20120525072202.gif) no-repeat -260px -40px; COLOR: #f33; TEXT-DECORATION: none
+}
+.hNav UL LI.over {
+	BACKGROUND: url(20120525072202.gif) no-repeat -260px -40px; OVERFLOW: visible
+}
+.hNav UL LI.over UL {
+	Z-INDEX: 2; FILTER: alpha(opacity=80); FLOAT: left; OVERFLOW: auto; POSITION: relative; opacity: 0.8; -moz-opacity: 0.8
+}
+.hNav UL LI.over UL LI {
+	BACKGROUND: #111; LINE-HEIGHT: 24px; HEIGHT: 24px
+}
+.hNav UL LI.over UL LI A {
+	MARGIN: 0px 3px; WIDTH: 93px; HEIGHT: 24px
+}
+.hNav UL LI.over UL LI A:hover {
+	COLOR: #e00
+}
+.hNav UL LI.over UL LI.e1 {
+	DISPLAY: inline; MARGIN: 0px 1px; OVERFLOW: hidden; WIDTH: 97px; HEIGHT: 1px
+}
+.hNav UL LI.over UL LI.e2 {
+	DISPLAY: inline; MARGIN: 0px 1px; OVERFLOW: hidden; WIDTH: 97px; HEIGHT: 1px
+}
+.hNav UL LI.over UL LI.e3 {
+	DISPLAY: inline; MARGIN: 0px 1px; OVERFLOW: hidden; WIDTH: 97px; HEIGHT: 1px
+}
+.hNav UL LI.over UL LI.e2 {
+	BACKGROUND: #e30
+}
+.hNav UL LI.over UL LI.e3 {
+	BACKGROUND: #e30
+}
+.hNav UL LI.over UL LI.e3 {
+	MARGIN: 0px 3px; WIDTH: 93px
+}
+</STYLE>
+</head>
+<body>
+<!--把下面代码加到<body>与</body>之间-->
+<DIV id="selectedI">
+	<DIV class="hNav">
+		<UL>
+			<LI><A id="mI" href="#">首页</A></LI>
+			<LI onMouseOver="this.className='over'" onMouseOut="this.className=''">
+				<A id="m1" href="#">网站导航</A>
+				<UL>
+					<LI><A id="m2" href="#">财富</A></LI>
+					<LI><A href="#" target="_blank">外部链接</A></LI>
+					<LI><A id="m4" href="#">创业</A></LI>
+					<LI><A id="m5" href="#">感情</A></LI>
+					<LI><A id="m6" href="#">家庭</A></LI>
+					<LI class="e1"></LI>
+					<LI class="e2"></LI>
+					<LI class="e3"><!-- 圆角 --></LI>
+				</UL>
+			</LI>
+			<LI onMouseOver="this.className='over'" onMouseOut="this.className=''">
+				<A id="m7" href="#">影印娱乐</A>
+				<UL>
+					<LI><A id="m9" href="#">我的DV</A></LI>
+					<LI><A id="m20" href="#">我的相册</A></LI>
+					<LI class="e1"></LI>
+					<LI class="e2"></LI>
+					<LI class="e3"><!-- 圆角 --></LI>
+				</UL>
+			</LI>
+			<LI onMouseOver="this.className='over'" onMouseOut="this.className=''">
+				<A id="m8" href="#">新人新事</A>
+				<UL>
+					<LI><A id="m10" href="#">天下新闻</A></LI>
+					<LI class="e1"></LI>
+					<LI class="e2"></LI>
+					<LI class="e3"><!-- 圆角 --></LI>
+				</UL>
+				<UL>
+				</UL>
+			</LI>
+			<LI onMouseOver="this.className='over'" onMouseOut="this.className=''">
+				<A id="m12" href="#">个人作品</A>
+				<UL>
+					<LI><A id="m19" href="#">心情感想</A></LI>
+					<LI class="e1"></LI>
+					<LI class="e2"></LI>
+					<LI class="e3"><!-- 圆角 --></LI>
+				</UL>
+			</LI>
+			<LI onMouseOver="this.className='over'" onMouseOut="this.className=''">
+				<A id="m13" href="#">合作事宜</A>
+				<UL>
+					<LI><A id="m18" href="#">项目资金</A></LI>
+					<LI class="e1"></LI>
+					<LI class="e2"></LI>
+					<LI class="e3"><!-- 圆角 --></LI>
+				</UL>
+			</LI>
+			<LI onMouseOver="this.className='over'" onMouseOut="this.className=''">
+				<A id="m14" href="#">团队建设</A>
+				<UL>
+					<LI><A id="m17" href="#">我是团长</A></LI>
+					<LI class="e1"></LI>
+					<LI class="e2"></LI>
+					<LI class="e3"><!-- 圆角 --></LI>
+				</UL>
+			</LI>
+			<LI onMouseOver="this.className='over'" onMouseOut="this.className=''"><A id="m15" href="#">联系方式</A>
+				<UL>
+					<LI><A id="m16" href="#">联系方式</A></LI>
+					<LI class="e1"></LI>
+					<LI class="e2"></LI>
+					<LI class="e3"><!-- 圆角 --></LI>
+				</UL>
+			</LI>
+			<LI><A id="mL" href="#">留言本</A></LI>
+		</UL>
+	</DIV>
+</DIV>
+</body>
+</html></td>
+	  </tr>
+	</table>
