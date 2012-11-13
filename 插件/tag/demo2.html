@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>GBin1 Super Bike Gallery Demo</title>
+
+<meta name="description" content="GBin1 Super Bike Gallery Demo">
+<meta name="keywords" content="javascript, jquery, filtering, filter, plugin" />
+<meta name="author" content="GBin1.com">
+
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/sunburst.css">
+<link rel="stylesheet" href="css/filtrify.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="js/filtrify.min.js"></script>
+
+<style type="text/css">
+.highlight { box-shadow: black 0 0 20px; box-shadow: rgba(0, 0, 0, 0.7) 0 0 20px; }
+.fade { opacity: 0.1; filter: alpha(opacity=10); }
+</style>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	$.filtrify("container", "placeHolder", {
+		hide : false,
+		callback : function( query, match, mismatch ) {
+			$(match).find("img:inview").trigger("filter");
+			if ( mismatch.length ) {
+				$( mismatch ).removeClass("highlight").addClass("fade");
+				$( match ).removeClass("fade").addClass("highlight");
+			} else {
+				$( match ).removeClass("fade highlight");
+			};
+		}
+	});
+
+});
+
+</script>
+
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+
+<div id="main" role="main">
+<div id="content" class="demo">
+
+<h2>GBin1 Super Bike Gallery</h2>
+
+
+<div id="placeHolder"></div>
+
+<ul id="container">
+	<li data-tag="Ducati"><strong>Hypermotard 796 Silver</strong><img src="img/motor/Model-Page_2012_Hypermotard_796_298.jpg"><span>摩托车, Ducati</span></lspan>
+	<li data-tag="Ducati"><strong>Hypermotard 796 Red</strong><img src="img/motor/HM-796_2001_R_[298x168].jpg"><span>摩托车, Ducati</span></lspan>
+	<li data-tag="Ducati"><strong>Hypermotard 1100 Evo Red</strong><img src="img/motor/2012-Ducati-Hypermotard-1100EVO4-298.jpg"><span>摩托车, Ducati</span></lspan>
+	<li data-tag="Ducati"><strong>Streetfighter 848</strong><img src="img/motor/Color_SF-848_R_NC_298x168.jpg"><span>摩托车, Ducati</span></lspan>
+	<li data-tag="Ducati"><strong>Diavel Carbon</strong><img src="img/motor/Model-Page_2012_Hypermotard_796_298.jpg"><span>摩托车, Ducati</span></lspan>
+	<li data-tag="BMW"><strong>BMW K1300S HP</strong><img src="img/motor/2012-BMW-K1300SHPb-298x168.jpg"><span>摩托车, BMW</span></lspan>
+	<li data-tag="BMW"><strong>2012 BMW G650GS</strong><img src="img/motor/2012-BMW-G650GSd-298x168.jpg"><span>摩托车, BMW</span></lspan>
+	<li data-tag="Beneli"><strong>Tre-K 1130 Amazonas</strong><img src="img/motor/2012-Benelli-TreK1130Amazonas1-298x168.jpg"><span>摩托车, Beneli</span></lspan>
+	<li data-tag="KTM"><strong>2012 KTM 1190 RC8R</strong><img src="img/motor/2012-KTM-1190RC8R4-298x168.jpg"><span>摩托车, KTM</span></lspan>
+	<li data-tag="KTM"><strong>012 KTM 990 Duke R</strong><img src="img/motor/2012-KTM-990DukeR4-298x168.jpg"><span>摩托车, KTM</span></lspan>
+	<li data-tag="Bimota"><strong>DB10B Motard</strong><img src="img/motor/2012-Bimota-DB10BMotard1-298x168.jpg"><span>摩托车, Bimota</span></lspan>
+	<li data-tag="Yamaha"><strong>DB10B Motard</strong><img src="img/motor/2012-Yamaha-YZFR1d-298x168.jpg"><span>摩托车, Yamaha</span></lspan>
+	<li data-tag="Yamaha"><strong>VMAX / VMX17</strong><img src="img/motor/2012-Yamaha-VMAX-VMX17a-298x168.jpg"><span>摩托车, Yamaha</span></lspan>
+	<li data-tag="Honda"><strong>Honda CBR1000RR</strong><img src="img/motor/2012-Honda-CBR1000RRe-298x168.jpg"><span>摩托车, Honda</span></lspan>
+	<li data-tag="Suzuki"><strong>Hayabusa</strong><img src="img/motor/2012-Suzuki-Hayabusaa-298x168.jpg"><span>摩托车, Suzuki</span></lspan>
+	<li data-tag="Suzuki"><strong>V-Strom 1000 SE</strong><img src="img/motor/2012-Suzuki-VStrom1000SE1-298.x168.jpg"><span>摩托车, Suzuki</span></lspan>
+	<li data-tag="Kawasaki"><strong>Ninja ZX-14R</strong><img src="img/motor/2012-Kawasaki-NinjaZX14Ra-298x168.jpg"><span>摩托车, Kawasaki</span></lspan>
+	<li data-tag="Harley Davidson"><strong>XL883N Iron 883</strong><img src="img/motor/2012-Harley-Davidson-XL883N-Iron883z-298x168.jpg"><span>摩托车, Harley Davidson</span></lspan>
+</ul>
+
+</div>
+</div>
+
+</body>
+</html>

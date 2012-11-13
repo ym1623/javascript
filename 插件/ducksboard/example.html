@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="dist/jquery.gridster.min.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script src="dist/jquery.gridster.min.js"></script>
+<script type='text/javascript'>
+	$(function(){ //DOM Ready
+
+		$(".gridster ul").gridster({
+			widget_margins: [10, 10],
+			widget_base_dimensions: [140, 140]
+		});
+
+	});
+</script>
+
+  <meta charset=utf-8 />
+<title>gridster.js¼òµ¥Ê¾Àý</title>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+  ul, ol {
+list-style: none;
+}
+  .gridster .gs_w {
+background: white;
+cursor: pointer;
+-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+  .gridster .gs_w.try {
+background-image: url(http://gridster.net/assets/img/sprite.png);
+background-repeat: no-repeat;
+background-position: 37px -169px;
+}
+</style>
+</head>
+<body>
+<div class="gridster">
+    <ul>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
+        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
+
+        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1" class="try"></li>
+        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
+        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
+        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li>
+    </ul>
+</div></body>
+</html>

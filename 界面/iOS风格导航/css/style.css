@@ -1,0 +1,123 @@
+body {
+  font-size: 14px;
+  font-family: Arial;
+  background:#f5f5f8;
+}
+.js {
+  position:absolute;
+  width:320px;
+  height:480px;
+  top:50%;
+  left:50%;
+  margin:-280px 0 0 -160px;
+  overflow:hidden;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  background:#fff;
+  -webkit-box-shadow:0 1px 2px rgba(0,0,0,.25);
+  -moz-box-shadow:0 1px 2px rgba(0,0,0,.25);
+  box-shadow:0 1px 2px rgba(0,0,0,.25);
+}
+.js .files {
+  background-image:none;
+}
+.js .hidden {
+  display:none;
+}
+.js * {
+  font-size:14px;
+  font-weight:400;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.js > div {
+  position:relative;
+  z-index:1;
+  height:44px;
+  text-align:center;
+  font-size:14px;
+  line-height:44px;
+  color:#fff;
+  text-shadow:0 -1px 0 rgba(0,0,0,.4);
+  background:#7f94b0;
+  background:-webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    color-stop(0,#b5c0ce),
+    color-stop(0.5,#889bb3),
+    color-stop(0.51,#7f94b0),
+    color-stop(1,#6d83a1)
+  );
+  background:-moz-linear-gradient(
+    top center,
+    #b5c0ce,
+    #889bb3 22px,
+    #7f94b0 23px,
+    #6d83a1
+  );
+  border-bottom:1px solid #2d3033;
+  -webkit-border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -moz-border-radius-topleft:5px;
+  -moz-border-radius-topright:5px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+}
+.js > div a {
+  height:31px;
+  top:7px;
+  left:20px;
+  font-size:14px;
+  line-height:31px;
+  color:#fff;
+  background:url('../images//center.png');
+}
+.js > div a, .js > div a:before, .js > div a:after {
+  position:absolute;
+}
+.js > div a:before {
+  left:-13px;
+  content:url('../images//left.png');
+}
+.js > div a:after {
+  right:-10px;
+  top:0;
+  content:url('../images//right.png');
+}
+.js > div a:active {
+  opacity:.65;
+}
+.js a {
+  text-decoration:none;
+}
+.js ul a {
+  display:block;
+  color:#000;
+  padding:.8em 18px;
+  border-bottom:1px solid #e0e0e0;
+  background:url('images/next.png') no-repeat 94% 50%;
+}
+.js ul a:hover {
+  background-color:#edf3fe;
+}
+.js a:focus {
+  outline:none;
+}
+.js ul {
+  position:absolute;
+  top:0;
+  padding-top:45px;
+  width:100%;
+  -webkit-transition:left .4s ease-out;
+  -moz-transition:left .4s ease-out;
+  -o-transition:left .4s ease-out;
+}
+.js ul {
+  left:0;
+}
+.js ul ul {
+  left:320px;
+}

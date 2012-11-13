@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	
 	var config = {
-		siteName    : 'Kpop',
-		siteURL		: 'http://kpop.e-research-solutions.com',	// Change this to your site
+		siteName    : '漫画',
+		siteURL		: 'http://www.jq-school.com',	// Change this to your site
 		searchSite	: true,
 		type		: 'web',
 		append		: false,

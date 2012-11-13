@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery轻量级进度条 progressbar 带动画显示的进度过程的jquery进度条特效</title>
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://www.jq-school.com/js/jquery-1.7.2.min.js"></script>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+a{color:#333;text-decoration:none;}
+/* votebox */
+.votebox{margin:20px auto;width:600px;border:solid 1px #ddd;padding:30px 0;}
+.votebox h2{font-size:14px;color:#05345E;margin:0;text-align:center;}
+.votebox ul{height:18px;margin:20px 0 0 200px;}
+.votebox li{height:18px;line-height:18px;overflow:hidden;float:left;margin:0 20px 0 0;font-size:12px;}
+.votebox li span{display:inline-block;float:left;width:10px;height:10px;overflow:hidden;background:url(images/barbg.gif) repeat-x;margin:3px 3px 0 0;}
+.votebox li span.barline-01{border:1px solid #C2142C;background-position:0 0;}
+.votebox li span.barline-02{border:1px solid #EFA804;background-position:0 -10px;}
+.votebox li span.barline-03{border:1px solid #0A83E6;background-position:0 -20px;}
+.votebtn{height:32px;overflow:hidden;margin:30px auto 0 auto;width:205px;}
+.votebtn a{background:url(images/yellowbtn.gif) no-repeat;width:82px;height:32px;line-height:32px;overflow:hidden;text-align:center;font-size:14px;font-weight:800;display:inline-block;color:#fff;margin:0 10px;}
+.votebtn a:hover{color:#fff;text-decoration:none;}
+/* barbox */
+.barbox{height:18px;line-height:18px;overflow:hidden;padding:20px 0 0 120px;}
+.barbox dt{float:left;font-size:14px;width:112px;text-align:right;}
+.barbox dt a{color:#0048CC;}
+.barbox dd{float:left;}
+.barbox dd.last{color:#999;}
+.barbox dd.barline{width:160px;background:#E3E3E3;height:12px;overflow:hidden;margin:3px 10px 0 10px;display:inline;border-bottom:solid 1px #F4F4F4;border-right:solid 1px #F4F4F4;}
+.barbox dd.barline div.charts{height:10px;overflow:hidden;background:url(images/barbg.gif) repeat-x;}
+.barbox dd.barline div.charts.barred{background-position:0 0;border:1px solid #C2142C;}
+.barbox dd.barline div.charts.baryellow{background-position:0 -10px;border:1px solid #EFA804;}
+.barbox dd.barline div.charts.barblue{background-position:0 -20px;border:1px solid #0A83E6;}
+</style>
+
+<div class="votebox">
+	<h2>票选最给力的网页特效</h2>
+	<ul>
+		<li><span class="barline-01"></span>最大值</li>
+		<li><span class="barline-02"></span>一般值</li>
+		<li><span class="barline-03"></span>最小值</li>
+	</ul>
+	<dl class="barbox">
+		<dt><a href="jquery/items/">jquery 特效</a></dt>
+		<dd class="barline">
+			<div divindex="0" id="chartSlide_0" w="70" style="width:0px;" class="charts"></div>
+		</dd>
+		<dd class="last">70%</dd>
+	</dl>
+	<dl class="barbox">
+		<dt><a href="js/items/">javascript 特效</a></dt>
+		<dd class="barline">
+			<div divindex="1" id="chartSlide_1" w="50" style="width:0px;" class="charts"></div>
+		</dd>
+		<dd class="last">50%</dd>
+
+	</dl>
+	<dl class="barbox">
+		<dt><a href="css3/items/">CSS 特效</a></dt>
+		<dd class="barline">
+			<div divindex="2" id="chartSlide_2" w="20" style="width:0px;" class="charts"></div>
+		</dd>
+		<dd class="last">20%</dd>
+	</dl>
+
+	<dl class="barbox">
+		<dt><a href="html5/items/">HTML5 特效</a></dt>
+		<dd class="barline">
+			<div divindex="3" id="chartSlide_3" w="10" style="width:0px;" class="charts"></div>
+		</dd>
+		<dd class="last">10%</dd>
+	</dl>
+	
+	<div class="votebtn"><a href="javascript:void(0);">前往投票</a><a href="javascript:void(0);">返回</a></div>
+	
+</div><!--votebox end-->
+
+
+<script language="javascript">
+function animate(){
+	var max="barred";
+	var middle="baryellow";
+	var min="barblue";	
+	
+	var maxValue=0;
+	var minValue=0;
+	
+	var maxIndex=0;
+	var minIndex=0;
+	
+	$(".charts").each(function(i,item){
+		var a=parseInt($(item).attr("w"));
+	
+		if(i==0){
+			minValue=a;
+			minIndex=i;
+		}
+	
+		if(a>maxValue){
+			maxValue=a;
+			maxIndex=i;
+		}else if(a<minValue){
+			minValue=a;
+			minIndex=i;
+		}
+	
+	});
+	
+	$(".charts").each(function(i,item){
+		var addStyle="";
+		var divindex=parseInt($(item).attr("divindex"));
+		if(divindex==maxIndex){
+			addStyle=max;
+		}else if(divindex==minIndex){
+			addStyle=min;
+		}else{
+			addStyle=middle;
+		}
+	
+		$(item).addClass(addStyle);
+		var a=$(item).attr("w");
+		$(item).animate({
+			width: a+"%"
+		},1000);
+	});
+	
+}
+animate();
+</script>
+					
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello, World</title>
+    <style type="text/css">
+      html { height: 100%; }
+      body { height: 100%; margin:0px; padding:0px; }
+      #container { height:100%; }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/javascript">
+      // 创建地图实例
+    var map = new BMap.Map("container");
+    /*
+      // 创建点坐标
+      var point = new BMap.Point(116.404, 33.915);
+      // 初始化地图，设置中心点坐标和地图级别
+      map.centerAndZoom(point, 15);
+      // 创建标注
+      var marker = new BMap.Marker(point);
+      // 监听标注事件
+      marker.addEventListener("click", function() {
+          alert("您点击了标注");
+          });
+      // 开启标注拖拽功能enableDragging() 默认关闭disableDragging()
+      marker.enableDragging();
+      marker.addEventListener("dragend", function(e) {
+          alert("当前位置：" + e.point.lng + "," + e.point.lat);
+          // 移除标注
+          if(confirm("是否移除")) map.removeOverlay(marker);
+          infoWindow.close();
+          });
+      // 标注鼠标按下事件
+      marker.addEventListener("mousedown", function(e) {
+        // 信息窗口关闭
+        infoWindow.close();
+        });
+        
+      // 将标注添加到地图中
+      map.addOverlay(marker);
+        */
+      // 地图初始化，用地址
+    map.centerAndZoom("宁波鄞州区");
+
+    /*
+      // 信息窗口设定
+      var opts = {
+        width: 250, height: 100, title: "Hello"
+      }
+      var a_link = "<a href='baidu.com'>baidu</a>";
+      // 创建信息窗口对象
+      var infoWindow = new BMap.InfoWindow(a_link, opts);
+      infoWindow.disableCloseOnClick();
+      // 打开信息窗口
+      map.openInfoWindow(infoWindow, point);
+*/
+      // 本地搜索
+      var local = new BMap.LocalSearch(map, {
+        renderOptions: {map: map},
+        pageCapacity: 1,
+        onSearchComplete: function(result) {
+          console.info(local.getStatus());
+          if (local.getStatus() == BMAP_STATUS_SUCCESS) {
+            console.info(2);
+            // 判断状态是否正确
+            var s = [];
+            for (var i = 0; i < result.getCurrentNumPois(); i++) {
+              s.push(result.getPoi(i).title + "," + result.getPoi(i).address);
+            }
+            alert(s.join("-"));
+          }
+        }
+        });
+      local.search("万达广场");
+      // 开启滚轮缩放
+      map.enableScrollWheelZoom();
+      // 加入比例尺空间
+      map.addControl(new BMap.ScaleControl());
+      // 缩略地图空间，使默认打开
+      map.addControl(new BMap.OverviewMapControl({isOpen:true}));
+      // 地图类型空间 地图|卫星|三维 切换
+      map.addControl(new BMap.MapTypeControl());
+      // 地图平移缩放控件
+      map.addControl(new BMap.NavigationControl());
+      /*
+      window.setTimeout(function() {
+	  map.panTo(new BMap.Point(116.409, 39.918));
+          }, 2000);
+      window.setTimeout(function() {
+          map.panTo(new BMap.Point(116.409, 39.918));
+          }, 2000);
+          */
+    </script>
+  </body>
+</html>
