@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://www.jsfoot.com/skin/js/jquery.js"></script>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+/* tipbar */
+.tipbar,.tipbox,.progress li,.tipword,.tipbar .arrow,.tipBarword,.tipSwitch{background-image:url(searchTip.png);background-repeat:no-repeat;}
+#searchTip{overflow:hidden;}
+.tipbox{width:300px;position:relative;height:193px;display:none;background-position:0px -313px;}
+.tipbox .tipboxBtn{position:absolute;display:inline-block;width:25px;height:25px;left:240px;top:36px;cursor:pointer;}
+.tipboxNextbtn{position:absolute;display:inline-block;width:82px;height:28px;left:163px;top:127px;cursor:pointer;}
+.progress{position:absolute;left:71px;top:136px;width:90px;height:9px;line-height:9px;font-size:0px;}
+.progress li{float:left;width:9px;height:9px;margin-right:6px;font-size:0px;background-position:-829px -311px;}
+.progress .on{background-position:-840px -311px;}
+.tipword{position:absolute;}
+#step1{z-index:1005;}
+#step2{z-index:1004;}
+#step3{z-index:1003;}
+#step4{z-index:1002;}
+#step5{z-index:1001;}
+#step6{z-index:1000;}
+#step1 .tipword{width:242px;height:58px;left:33px;top:54px;background-position:-1px -519px;}
+#step2 .tipword{width:203px;height:58px;left:46px;top:54px;background-position:-643px -326px;}
+#step3 .tipword{width:223px;height:58px;left:37px;top:54px;background-position:-266px -520px;}
+#step4 .tipword{width:202px;height:74px;left:50px;top:47px;background-position:-642px -388px;}
+#step5 .tipword{width:240px;height:56px;left:32px;top:56px;background-position:-497px -522px;}
+#step6{width:335px;height:201px;background-position:-301px -312px;}
+#step6 .tipboxBtn{left:266px;top:38px;}
+#step6 .tipboxNextbtn{left:141px;top:128px;}
+.tipbarwrap{position:absolute;width:100%;height:1px;left:0px;top:0px;z-index:1000;background-color:transparent;}
+.tipbardiv{position:relative;width:900px;height:1px;margin:0px auto;}
+.tipbar{display:none;position:absolute;z-index:1000;}
+.tipbarInner{position:relative;}
+.tipbar .arrow{width:70px;height:46px;background-position:-193px -216px;position:absolute;}
+.tipBarword{position:absolute;}
+#tipbar1{width:496px;height:40px;background-position:0px -171px;left:-7px;top:116px;}
+#tipbar1 .arrow{left:509px;top:0px;}
+#tipbar1 .tipBarword{width:166px;height:25px;left:586px;top:0px;background-position:-334px -216px;}
+#tipbar2{width:106px;height:39px;background-position:-744px -489px;top:163px;left:0px;}
+#tipbar2 .arrow{left:111px;top:-3px;}
+#tipbar2 .tipBarword{width:224px;height:24px;left:187px;top:-1px;background-position:-197px -262px;}
+.clear{font-size:0px;line-height:0px;height:0px;overflow:hidden;}
+#tipbar3{width:840px;height:170px;background-position:0px 0px;left:3px;top:202px;}
+#tipbar3 .arrow{left:513px;top:-35px;}
+#tipbar3 .tipBarword{width:224px;height:24px;background-position:-196px -288px;left:589px;top:-36px;}
+#tipbar4{width:189px;height:94px;background-position:0px -213px;left:714px;top:393px;}
+#tipbar4 .arrow{left:-60px;top:-28px;background-position:-263px -216px;}
+#tipbar4 .tipBarword{width:315px;height:25px;background-position:-524px -265px;left:-120px;top:-55px;}
+#tipbar5{width:255px;height:34px;background-position:-585px -170px;left:487px;top:120px;}
+#tipbar5 .arrow{left:301px;top:-8px;}
+#tipbar5 .tipBarword{width:194px;height:54px;top:-4px;left:356px;background-position:-644px -207px;}
+#tipbar1 .tipbarInner{width:454px;height:41px;}
+#tipbar2 .tipbarInner{width:106px;height:39px;}
+#tipbar3 .tipbarInner{width:840px;height:170px;}
+#tipbar4 .tipbarInner{width:189px;height:94px;}
+#tipbar5 .tipbarInner{width:255px;height:34px;}
+.notip{position:absolute;left:230px;top:132px;}
+#notip{vertical-align:middle;}
+.notip label{vertical-align:middle;color:#0c5685;}
+.tipSwitch{width:80px;height:26px;cursor:pointer;background-position:-512px -212px;cursor:pointer;position:absolute;top:48px;right:185px;}
+</style>
+
+<script type="text/javascript">
+$(function(){
+	$("#nipic_search .tipSwitch").live("click",function(){
+		showSearchTip();
+		setSearchTip();
+		SetCookie("tStatus",1);
+	});
+})
+
+function nextStep(next){
+	$(".tipbox").css({"visibility":"hidden","display":"none"});
+	$(".tipbar").hide();
+	$("#step" + next).css({"visibility":"visible","display":"block"});
+	$("#tipbar" + (next -1)).show();
+	if(next == 4){
+		$("#searchTip").css("top","378px");
+	}else {
+		$("#searchTip").css("top","270px");
+	}
+	if(next == 4){
+		$(".tipSwitchAnimate").css("top","539px");
+	}else if(next == 6){
+		$(".tipSwitchAnimate").css("top","357px");
+	}else {
+		$(".tipSwitchAnimate").css("top","352px");	
+	}
+	$(".tipSwitchAnimate").css("left","410px");
+}
+
+//关闭提示框
+function hideTip(){
+	$("#searchTipBg").hide();
+	$("#searchTip").hide();
+	$(".tipbar").hide();
+	$(".tipbox").css({"visibility":"hidden","display":"none"});
+	$("#step1").css({"visibility":"visible","display":"block"});
+	SetCookie("tipVisible","no");
+	$(".tipSwitchAnimate").show().animate({
+		"left":"635px",
+		"top":"171px"
+	},500,function(){
+		$(".tipSwitchAnimate").css({"left":"410px","top":"352px"}).hide();	
+	});
+}
+
+function setSearchTip(){
+	var windowW = $(window).width(),
+		windowH = $(window).height(),
+		width = $("#searchTip").width(),
+		ml = width/2;
+	if($("#searchTip").length > 0 && $("#searchTipBg").length > 0){
+		if($.browser.msie && $.browser.version == '6.0' && !$.support.style){
+		  	var scrollT = $(window).scrollTop(),
+			  	scrollL = $(window).scrollLeft();
+			$("#searchTipBg").css({"width":windowW + scrollL,"height":windowH + scrollT});
+		}else {
+			$("#searchTipBg").css({"width":windowW,"height":windowH});
+		}
+		$("#searchTip").css({"margin-left":-ml});
+	}
+}
+function noShow(){
+	if(document.getElementById("notip").checked){
+		SetCookie("neverShow","no",{expires:37230});
+	}	
+}
+
+function showSearchTip(){
+	var position = $.browser.msie && $.browser.version == '6.0' && !$.support.style ? "absolute" : "fixed";
+	var searchTipBar = "<div class='tipbarwrap'><div class='tipbardiv'>";
+	  	searchTipBar += "<div class='tipbar' id='tipbar1'><div class='tipbarInner'><div class='arrow'></div><div class='tipBarword'></div></div></div>";
+		searchTipBar += "<div class='tipbar' id='tipbar2'><div class='tipbarInner'><div class='arrow'></div><div class='tipBarword'></div></div></div>";
+		searchTipBar += "<div class='tipbar' id='tipbar3'><div class='tipbarInner'><div class='arrow'></div><div class='tipBarword'></div></div></div>";
+		searchTipBar += "<div class='tipbar' id='tipbar4'><div class='tipbarInner'><div class='arrow'></div><div class='tipBarword'></div></div></div>";
+		searchTipBar += "<div class='tipbar' id='tipbar5'><div class='tipbarInner'><div class='arrow'></div><div class='tipBarword'></div></div></div>";
+		searchTipBar += "</div></div>";
+	var searchTipInner = "<div class='tipbox' id='step1'><div class='tipword'></div><span class='tipboxBtn' onclick='hideTip()'></span><span class='tipboxNextbtn' onclick='nextStep(2)'></span><ol class='progress'><li class='on'></li><li></li><li></li><li></li><li></li><li></li></ol></div>";
+		searchTipInner += "<div class='tipbox' id='step2'><div class='tipword'></div><span class='tipboxBtn' onclick='hideTip()'></span><span class='tipboxNextbtn' onclick='nextStep(3)'></span><ol class='progress'><li></li><li class='on'></li><li></li><li></li><li></li><li></li></ol></div>";
+		searchTipInner += "<div class='tipbox' id='step3'><div class='tipword'></div><span class='tipboxBtn' onclick='hideTip()'></span><span class='tipboxNextbtn' onclick='nextStep(4)'></span><ol class='progress'><li></li><li></li><li class='on'></li><li></li><li></li><li></li></ol></div>";
+		searchTipInner += "<div class='tipbox' id='step4'><div class='tipword'></div><span class='tipboxBtn' onclick='hideTip()'></span><span class='tipboxNextbtn' onclick='nextStep(5)'></span><ol class='progress'><li></li><li></li><li></li><li class='on'></li><li></li><li></li></ol></div>";
+		searchTipInner += "<div class='tipbox' id='step5'><div class='tipword'></div><span class='tipboxBtn' onclick='hideTip()'></span><span class='tipboxNextbtn' onclick='nextStep(6)'></span><ol class='progress'><li></li><li></li><li></li><li></li><li class='on'></li><li></li></ol></div>";
+		searchTipInner += "<div class='tipbox' id='step6'><span class='tipboxBtn' onclick='hideTip()'></span><span class='tipboxNextbtn' onclick='hideTip();noShow()'></span><div class='notip'><input type='checkbox' id='notip' /><label for='notip'>不再提示</label></div></div>";
+	var switchBtn = "<div class='tipSwitchAnimate tipSwitch' style='display:none; left:410px; top:353px;'></div>";	
+	if($("#searchTip").length == 0){
+		$("#nipic_search").before("<div id='searchTipBg' style='width:100%; height:100%; left:0px; top:0px; z-index:999; background-color:#000; opacity:0.55; filter:alpha(opacity=55);position:"+ position +"'></div>");
+		$("#nipic_search").before("<div id='searchTip' style='left:50%; top:270px; z-index:1005; background-color:transparent; position:absolute;'>"+ searchTipInner +"</div>");
+		$("#nipic_search").before(searchTipBar);
+		$(switchBtn).appendTo($(".tipbardiv"));
+		$("#step1").css({"visibility":"visible","display":"block"});
+		if(GetCookie("tipVisible") == "no" || GetCookie("neverShow") == "no"){
+			$("#step6 .notip").hide();
+		}
+	}
+	if($("#searchTip").css("display") == "none"){
+		$("#searchTip").css("top","270px").show();
+		$("#searchTipBg").show();
+		$(".tipbox").css({"visibility":"hidden","display":"none"});
+		$("#step1").css({"visibility":"visible","display":"block"});
+	}
+	if($(".tipbarwrap").css("display") == "none"){
+		$(".tipbarwrap").show();
+	}
+}
+
+function GetCookie(name){
+    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+    if(arr != null) return decodeURIComponent(arr[2]); return null;
+}
+
+function SetCookie(name,value,options){
+    var expires = '', path = '', domain = '', secure = ''; 
+    if(options)
+    {
+        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+            var exp;
+            if (typeof options.expires == 'number') {
+                exp = new Date();
+                exp.setTime(exp.getTime() + options.expires*24*60*60*1000);
+            }
+            else{
+                exp = options.expires;
+            }
+            expires = ';expires=' + exp.toUTCString();
+        }
+        path = options.path ? '; path=' + options.path : ''; 
+        domain = options.domain ? ';domain=' + options.domain : ''; 
+        secure = options.secure ? ';secure' : ''; 
+    }
+    document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+}
+</script>	
+	
+<style type="text/css">
+#nipic_search {width:900px;height:268px;overflow:hidden;margin:0px auto 6px;background:url(125sd.jpg) no-repeat;position:relative;}
+</style>
+
+<div style="height:122px;overflow:hidden;"></div>
+
+<div id="nipic_search">
+	<div class="tipSwitch"></div>
+</div>
+
+<script type="text/javascript">
+var tipVisible = GetCookie("tipVisible");
+var neverShow = GetCookie("neverShow");
+if(tipVisible != "no" && neverShow != "no"){
+	showSearchTip();
+	setSearchTip();
+}
+</script>
+
+
+
+</body>
+</html>

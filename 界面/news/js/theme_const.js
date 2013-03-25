@@ -1,0 +1,3 @@
+/* Download by http://www.codefans.net*/
+var J1616_theme_bg={"green":"#FAFFF9","blue":"#f9fcff","red":"#FFFDFD"}
+var J1616_theme_r={"default":'green',"green":'green',"red":'red',"blue":'blue',"_football":'blue',"_avatar":'blue',"_newyear":'red',"_christmas":'red',"_music":'red',"_xiyangyang":'green',"_fendou2009":'blue',"_guoqing":'red',"_zhongqiu":'red',"_snow":'blue',"_avatar":'blue',"_wow":'blue',"_spring":'green'};

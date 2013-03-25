@@ -1,0 +1,1 @@
+var yx_promList={"isSuccess":false,"errorCode":0,"errorMsg":"该商品无定向优惠标记位与名鞋馆标记位"}

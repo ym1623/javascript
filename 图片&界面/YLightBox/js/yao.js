@@ -793,7 +793,7 @@ var YAO = function(){
 					return elem;
 				}
 			},
-			// 给节点添加属性
+			// 给节点添加属�?
 			Attributes: function(elem, attr){
 				var attrName = '', i;
 				for (i in attr) {
@@ -809,7 +809,7 @@ var YAO = function(){
 				}
 				return elem;
 			},
-			// 追加子节点
+			// 追加子节�?
 			Child: function(parent, child){
 				if (child.tagName) {
 					parent.appendChild(child);
@@ -1673,15 +1673,15 @@ YAO.YAlbum.prototype.init = function(){
 		href: oSelf.oSamples[oSelf.lastIndex].href,
 		id: oSelf.BTN_PREVIOUS_ID,
 		className: oSelf.BTN_PREVIOUS_CLASS,
-		title: '上一张'
-	}, '上一张');
+		title: '上一�?
+	}, '上一�?);
 	this.photoContainer.appendChild(this.btnPrevious);
 	this.btnNext = YAO.Builder.Node('a', {
 		href: oSelf.oSamples[oSelf.lastIndex + 1].href,
 		id: oSelf.BTN_NEXT_ID,
 		className: oSelf.BTN_NEXT_CLASS,
-		title: '下一张'
-	}, '下一张');
+		title: '下一�?
+	}, '下一�?);
 	this.photoContainer.appendChild(this.btnNext);
 	this.load(this.photo.src);
 	
@@ -2079,14 +2079,14 @@ YAO.YLightBox = {
 				id: 'carousel_btn_lastgroup'
 			}, YAO.Builder.Node('a', {
 				href: '#lastgroup',
-				title: '上一组'
-			}, '上一组')));
+				title: '上一�?
+			}, '上一�?)));
 			oDfBtnsGroups.appendChild(YAO.Builder.Node('div', {
 				id: 'carousel_btn_nextgroup'
 			}, YAO.Builder.Node('a', {
 				href: '#nextgroup',
-				title: '下一组'
-			}, '下一组')));
+				title: '下一�?
+			}, '下一�?)));
 			this.YBoxCarousel.appendChild(oDfBtnsGroups);
 			
 			this.YBoxBtnLastGroup = YAO.getEl('carousel_btn_lastgroup');
@@ -2108,16 +2108,16 @@ YAO.YLightBox = {
 				id: 'carousel_previous_photo',
 				className: 'previous',
 				href: (oSelf.YLastIndex - 1 > 0) ? oSelf.photos[oSelf.YLastIndex - 1].src : oSelf.photos[0].src,
-				title: '上一张',
+				title: '上一�?,
 				target: '_blank'
-			}, '上一张'));
+			}, '上一�?));
 			oDfBtnsPhoto.appendChild(YAO.Builder.Node('a', {
 				id: 'carousel_next_photo',
 				className: 'next',
 				href: (oSelf.YLastIndex + 1 < oSelf.length - 1) ? oSelf.photos[oSelf.YLastIndex + 1].src : oSelf.photos[oSelf.length - 1].src,
-				title: '下一张',
+				title: '下一�?,
 				target: '_blank'
-			}, '下一张'));
+			}, '下一�?));
 			this.YBoxBd.appendChild(oDfBtnsPhoto);
 			
 			this.YBoxBtnPrevious = YAO.getEl('carousel_previous_photo');
@@ -2256,7 +2256,7 @@ YAO.YLightBox = {
 			height: (oSelf.YBoxPhotoDefaultHeight + oSelf.YBoxHdHeight) + 'px'
 		});
 		if (this.YBoxMaximizeBar) {
-			this.YBoxMaximizeBar.title = '显示缩略图';
+			this.YBoxMaximizeBar.title = '显示缩略�?;
 		}
 		if (YAO.ua.ie && this.albumable) {
 			YAO.setStyle(this.YBoxBtnPrevious, 'height', (this.YBoxPhotoDefaultWidth + 'px'));

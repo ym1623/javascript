@@ -1,0 +1,167 @@
+/*! Style Platform Copyright(c) 2008-2100,16sucai.com Inc. Some rights reserved. */ body {
+	font:12px/1.5 Tahoma,Helvetica,Arial,'\5b8b\4f53',sans-serif;
+}
+html,legend {
+	color:#404040;
+	background:#fff;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img {
+	border:none;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+li {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+}
+h1 {
+	font-size:18px;
+}
+h2 {
+	font-size:16px;
+}
+h3 {
+	font-size:14px;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym {
+	border:none;
+	font-variant:normal;
+}
+sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}
+input,button,textarea,select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+}
+input,button,textarea,select {
+	*font-size:100%;
+}/*Ò»Á÷ËØ²ÄÍøwww.16sucai.com*/
+select,input,button,textarea {
+	font:100% Tahoma,Helvetica,Arial,sans-serif;
+}
+table {
+	font-size:inherit;
+	font:100%;
+}
+pre,code,kbd,samp,tt {
+	font-family:'Courier New',Courier,monospace;
+}
+small {
+	font-size:100%;
+}
+a {
+	color:#36c;
+	text-decoration:none;
+}
+a:hover {
+	color:#f60;
+	text-decoration:underline;
+}
+abbr,acronym {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+ins {
+	text-decoration:none;
+}
+del {
+	text-decoration:line-through;
+}
+hr {
+	color:#D1D7DC;
+	background-color:#D1D7DC;
+	border:none;
+	height:1px;
+}
+html {
+	overflow-y:scroll;
+}
+#page,#page3 {
+	width:950px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#page3 {
+	width:750px;
+}
+.col-main {
+	float:left;
+	width:100%;
+}
+.col-sub,.col-extra {
+	float:left;
+}
+
+.col-main {
+	min-height:1px;
+}
+body:first-of-type .main-wrap {
+	position:relative;
+}
+
+.hidden {
+	display:none;
+}
+.invisible {
+	visibility:hidden;
+}
+.h {
+	color:#F50!important;
+}
+.floatleft {
+	float:left!important;
+}
+.floatright {
+	float:right!important;
+}
+.clearfix:after {
+	content:'\0020';
+	display:block;
+	height:0;
+	clear:both;
+}
+
+.pic a {
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+.pic a img {
+	vertical-align:middle;
+}
+
+.clearfix {
+	*zoom:1;
+}
+
+.pic {
+	*overflow:hidden;
+}
+.pic a {
+	*display:block;
+	*font-family:Arial;
+	*line-height:1;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery网站功能引导用户提示操作</title>
+<meta name="description" content="jquery制作最近网站比较流行的网站页面功能引导用户，提示用户网站的主要功能和操作。当用户首次进入网站时会提示网站功能引导，提示用户操作。写入cookie浏览器缓存，下次不重复提示网站页面功能引导。" />
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://www.jsfoot.com/skin/js/jquery.js"></script>
+<script type="text/javascript" src="js/guide.js"></script>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";background:url(images/paper.jpg);}
+#guide-step{width:952px;height:1106px;overflow:hidden;margin:0px auto;background:url(images/23458867.png) no-repeat;position:relative;}
+/* tipbar */
+.tipSwitch,.tipbox,.tipword,.progress li,.tipbar .arrow,.tipBarword{background:url(images/guidebg.png) no-repeat;}
+#searchTip{overflow:hidden;}
+.tipbox{width:290px;position:relative;height:190px;display:none;background-position:0 0;}
+.tipbox .tipboxBtn{position:absolute;display:inline-block;width:25px;height:25px;left:236px;top:36px;cursor:pointer;}
+.tipboxNextbtn{position:absolute;display:inline-block;width:82px;height:28px;left:159px;top:127px;cursor:pointer;}
+.progress{position:absolute;left:71px;top:136px;width:60px;height:9px;line-height:9px;font-size:0px;}
+.progress li{float:left;width:9px;height:9px;margin-right:6px;font-size:0px;background-position:-635px -82px;}
+.progress .on{background-position:100% -82px;}
+.tipword{position:absolute;}
+#step1{z-index:1005;}
+#step2{z-index:1004;}
+#step3{z-index:1003;}
+#step4{z-index:1002;}
+#step1 .tipword{width:175px;height:56px;left:55px;top:60px;background-position:0 -217px;}
+#step2 .tipword{width:212px;height:56px;left:36px;top:65px;background-position:-175px -217px;}
+#step3 .tipword{width:195px;height:56px;left:46px;top:60px;background-position:-388px -217px;}
+#step4 .tipword{width:210px;height:56px;left:43px;top:44px;background-position:0 -272px;}
+#step4{width:290px;height:190px;background-position:-294px 0;}
+#step4 .tipboxBtn{left:252px;top:20px;}
+#step4 .tipboxNextbtn{left:84px;top:109px;}
+.tipbarwrap{position:absolute;width:100%;height:1px;left:0px;top:0px;z-index:1000;background-color:transparent;}
+.tipbardiv{position:relative;width:900px;height:1px;margin:0px auto;}
+.tipbar{display:none;position:absolute;z-index:1000;}
+.tipbarInner{position:relative;}
+.tipbar .arrow{width:70px;height:46px;background-position:100% 0;position:absolute;}
+.tipBarword{position:absolute;}
+#tipbar1{background:url(images/stepflow-pic.png) no-repeat;width:615px;height:249px;left:93px;top:70px;}
+#tipbar1 .arrow{left:284px;top:-42px;}
+#tipbar1 .tipBarword{width:62px;height:25px;left:355px;top:-39px;background-position:-84px -192px;}
+#tipbar2{background:url(images/stepflow-pic.png) no-repeat 0 -259px;width:768px;height:471px;top:330px;left:33px;}
+#tipbar2 .arrow{left:284px;top:-42px;}
+#tipbar2 .tipBarword{width:62px;height:24px;left:355px;top:-41px;background-position:-156px -192px;}
+.clear{font-size:0px;line-height:0px;height:0px;overflow:hidden;}
+#tipbar3{background:url(images/stepflow-pic.png) no-repeat 0px -740px;width:680px;height:280px;left:59px;top:816px;}
+#tipbar3 .arrow{left:30px;top:-35px;}
+#tipbar3 .tipBarword{width:62px;height:24px;background-position:-235px -192px;left:100px;top:-34px;}
+#tipbar1 .tipbarInner{width:615px;height:249px;}
+#tipbar2 .tipbarInner{width:768px;height:471px;}
+#tipbar3 .tipbarInner{width:680px;height:280px;}
+.notip{position:absolute;left:175px;top:112px;}
+#notip{vertical-align:middle;}
+.notip label{vertical-align:middle;color:#0c5685;}
+.tipSwitch{width:80px;height:26px;cursor:pointer;background-position:0 -190px;cursor:pointer;position:absolute;top:15px;right:30px;}
+</style>
+
+<div id="guide-step">
+	<div style="margin-top:270px;height:10px;line-height:99em;overflow:hidden;" id="stepflow03">第二步骤</div>
+	<div style="margin-top:530px;height:10px;line-height:99em;overflow:hidden;" id="stepflow04">第三步骤</div>
+	<div class="tipSwitch"></div>
+</div>
+
+<script type="text/javascript">
+var tipVisible = GetCookie("tipVisible");
+var neverShow = GetCookie("neverShow");
+if(tipVisible != "no" && neverShow != "no"){
+	showSearchTip();
+	setSearchTip();
+}
+</script>
+
+
+</body>
+</html>
