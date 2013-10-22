@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery输入框邮箱下拉提示层 - 懒人素材</title>
+<style type="text/css"> 
+*{ margin:0; padding:0;}
+body { font:12px/1.8 Arial; color:#666;}
+ul,li{ list-style:none;}
+h1.tit-h1 { font-size:38px; text-align:center; margin:30px 0 15px; color:#f60;}
+.go-back{ text-align:center; border-top:1px dashed #ccc; padding:10px; margin-top:20px; font-size:40px;}
+.wrap{border:1px dashed #ccc; background:#f8f8f8; padding:20px;}
+
+.login{width:400px; margin:0 auto; background:#EBEBEB; position:relative;}
+input{ width:230px; height:28px; margin:10px 0; line-height:28px;}	
+.login .on_changes{width:232px; position:absolute; top:40px; list-style:none; background:#FFF; border:1px solid #000; display:none; padding:10px;}
+.login .on_changes li{margin:8px;padding:4px;}
+.login .on_changes li.active{ background:#CEE7FF;}
+</style> 
+
+<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="inputmail.js"></script>
+</head>
+<body>
+
+<h1 class="tit-h1">jquery输入框邮箱下拉提示层</h1> 
+
+<div class="wrap">
+
+<script type="text/javascript">
+$(function(){
+	$("#loginName").changeTips({
+		divTip:".on_changes"
+	}); 
+})
+</script>
+
+	<div class="login">
+		<div class="ln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" maxlength="128" name="loginName" id="loginName" placeholder="邮箱/会员帐号/手机号" /></div>
+		<ul class="on_changes" style="position: absolute; left: 78px; top: 42px">
+			<li email="">请选择邮箱类型</li>
+   <li email=""></li>
+			<li email="@sina.com"></li>
+			<li email="@163.com"></li>
+			<li email="@qq.com"></li>
+			<li email="@hotmail.com"></li>
+			<li email="@126.com"></li>
+			<li email="@gmail.com"></li>
+			<li email="@yahoo.com"></li>
+		</ul>
+	</div>
+
+
+</div>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<div style="text-align:center;clear:both">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://www.lanrensc.com/ target="_blank">懒人素材</a></p>
+</div>
+</body> 
+</html>
