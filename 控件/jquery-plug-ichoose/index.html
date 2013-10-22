@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>基于jQuery实现类似Google+圈子选择功能插件（支持键盘事件）@Mr.Think</title>
+    <link rel="stylesheet" href="http://mrthink.net/demo/css/base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://mrthink.net/wp-content/themes/zsofa/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="author" content="Mr.Think又名青鸟简称i" />
+    <meta name="keywords" content="i,Mr.Think,前端开发,WEB前端,前端技术,前端开发,WEB前端开发,用户体验,网站策划,网站优化,青鸟,javascript,jQuery,css,xhtml,html,UE,SEO,Mr.Think的博客,青鸟的博客,PHP爱好者" />
+    <meta name="description" content="Mr.Think的记录" />
+    <link rel="pingback" href="http://mrthink.net/xmlrpc.php" />
+    <link rel="alternate" type="application/rss+xml" title="Mr.Think的博客 RSS Feed" href="http://mrthink.net/feed/" />
+    <style>
+        .ichoose-main{position:relative;width:450px;background: #fff;font-size:14px;line-height:18px}
+        .icm-box{overflow:hidden;overflow-y:auto;width:438px;max-height:310px;padding:5px;border: 1px solid #ccc}
+        .icm-item,.icm-cur-txt{float:left;height:14px;color: #333;line-height: 14px;padding: 3px 15px 3px 0;margin: 1px 0 1px 4px;position: relative}
+        .icm-delete{position: absolute;right: 3px;top:4px;width:11px;height:12px;background-color:#ccc;color:#fff;font-size:12px;text-align:center;text-decoration:none;line-height:12px}
+        .icm-delete:hover{background-position:-161px -100px;background-color:#4889a4;color:#fff}
+        .icm-cur-txt{width:180px;color:#999;cursor:pointer}
+        .icm-input{float:left;width:2px;height:16px;padding:4px 0;border:0 none;line-height:16px;outline:none}
+        .icm-input-w{width:160px}
+        .icm-list{position:absolute;top:30px;left:0;display:none;overflow:hidden;overflow-y:auto;background-color:#fff;border: 1px solid #ccc;border-top:0 none;z-index:8}
+        .icm-list li{overflow:hidden;height:22px;padding:6px;line-height:22px}
+        .icm-list li.selected{background-color:#4889a4;color:#fff;cursor:pointer}
+        .icm-list li img{width:22px;height:22px;margin-right:5px}
+        .icm-list li.hook_noresult{color:#999;font-style:italic}
+    </style>
+</head>
+<body>
+<div id="d_head">
+    <h1><a title="返回Mr.Think的博客" href="http://mrthink.net/">Mr.Think的博客</a><em>可自由转载及使用,但请注明出处.</em></h1>
+    <h2><span><a title="订阅Mr.Think的博客" href="http://mrthink.net/feed/">RSS Feed</a></span>@专注Web前端技术, 热爱PHP, 崇尚简单生活的凡夫俗子.</h2>
+</div>
+<div class="return"><span><a href="/demo/download/jquery-plug-ichoose.zip">点此下载本页DEMO</a></span>返回文章页:<a href="http://mrthink.net/jq-plug-ichoose/">基于jQuery实现类似Google+圈子选择功能插件（支持键盘事件）@Mr.Think</a></div>
+<!--DEMO start-->
+<div id="demo">
+
+    <div class="ichoose-main" id="iChooseMain">
+        <input type="hidden" id="iChooseIds" />
+        <div class="icm-box">
+            <span class="icm-cur-txt">+ 添加用户名</span>
+            <input type="text" class="icm-input" />
+        </div>
+    </div>
+
+</div>
+<!--DEMO end-->
+<!--@Mr.Think的统计及广告代码,使用样例请勿复制:)-->
+<div class="clear"></div>
+<div id="adsense"></div>
+<script src="js/jquery.js"></script>
+<script src="js/mod.udatas.js"></script>
+<script src="js/plug.choose.js"></script>
+<script>
+    $(function () {
+        /*onload start*/
+        //插件调用
+        var inputHook=$('#iChooseMain .icm-input');
+        inputHook.iChoose();
+        /*onload end*/
+    });
+</script>
+
+<script>
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script>
+    try {
+        var pageTracker = _gat._getTracker("UA-15924173-1");
+        pageTracker._trackPageview();
+    } catch(err) {}
+</script>
+<!--@end-->
+</body>
+</html>
