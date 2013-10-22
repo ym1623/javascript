@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>仿新浪微博新版橙色搜索下拉特效_演示页_素材库</title>
+<link href="css/163css.css" rel="stylesheet" type="text/css">	
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.seatext').focus(function(){
+		var keyval=$('.seatext').val();
+		if(keyval=='请输入关键字'){
+			$('.seatext').val('');
+		}
+	})
+	$('.keyul li').hover(function(){$(this).addClass('on');},function(){$(this).removeClass('on');})
+	$('.seatext').focusout(function(){
+		var keyval=$('.seatext').val();
+		if(keyval==''){
+			$('.seatext').val('请输入关键字');
+		}
+	})
+	$('.mkey').click(function(){
+		$('.keyul').show();
+		$('.keyul li').click(function(){
+			var keyval=$(this).text();
+			$('.mkey').text(keyval);
+			$('.keyul').hide();
+		})		
+	})
+	$('.seabtn').click(function(){
+		var mval=$('.mkey').text();
+		var keyval=$('.seatext').val();
+		alert(mval+keyval)	
+	})
+	$(document).mouseup(function() {
+		$('.keyul').hide();
+	});
+})
+</script>
+</head>
+<body>
+<div class="box_163css">
+	<div class="key">
+		<span class="mkey">微博</span>
+		<ul class="keyul">
+			<li>微博</li>
+			<li>新闻</li>
+			<li>图片</li>
+			<li>博客</li>
+			<li>视频</li>
+			<li>知识人</li>
+			<li><a href="#">更多>></a></li>
+		</ul>
+	</div>
+	<input type="text" class="seatext" value="请输入关键字" />
+	<input type="submit" class="seabtn" value="搜索">
+</div>
+</body>
+</html>

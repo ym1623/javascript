@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>仿新浪微博新版橙色搜索下拉特效_演示页_JS代码站</title>
+<link href="css/163css_v.css" rel="stylesheet" type="text/css">	
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.seatext').focus(function(){
+		var keyval=$('.seatext').val();
+		//alert(keyval)
+		if(keyval=='请输入关键字'){
+			$('.seatext').val('');
+		}
+	})
+	$('.seatext').focusout(function(){
+		var keyval=$('.seatext').val();
+		if(keyval==''){
+			$('.seatext').val('请输入关键字');
+		}
+	})
+	$('.mkey').click(function(){
+		$('.keyul').show();
+		$('.keyul li').click(function(){
+			var keyval=$(this).text();
+			//alert(keyval)
+			$('.mkey').text(keyval);
+			$('.keyul').hide();
+		})		
+	})
+	$(document).mouseup(function() {
+		$('.keyul').hide();
+	});
+	$('.seabtn').click(function(){
+		var mval=$('.mkey').text();
+		var keyval=$('.seatext').val();
+		alert(mval+keyval)	
+	})
+	$('.keyul li').hover(function(){$(this).addClass('on');},function(){$(this).removeClass('on');})
+})
+</script>
+</head>
+<body>
+<link href="/templets/skins/style/yulan.css" rel="stylesheet">
+<div id="header">
+  <div id="top">
+    <div id="warp">
+      <div class="topleft fl"> 
+          <a href="#">网站首页</a> <a href='/list-58.html' title='JS代码'>JS代码</a> <a href='/list-5.html' title='Jquery插件'>Jquery插件</a> <a href='/list-56.html' title='前端设计'>前端设计</a> <a href='/list-100.html' title='素材下载'>素材下载</a> <a href='/list-20.html' title='网页模板'>网页模板</a> <a href='/list-4.html' title='网页特效'>网页特效</ <a href='/list-59.html' title='CMS教程'>CMS教程</a> <a href='/list-81.html' title='CMS插件'>CMS插件</a> <a href='/list-57.html' title='网络编程'>网络编程</a> <a href='/list-60.html' title='电脑教程'>电脑教程</a> <a href='/list-55.html' title='站长技术'>站长技术</a> <a href='/list-54.html' title='IT互联网'>IT互联网</a>
+      </div>
+      <div class="topright fr"><a href="#">返回首页</a></div>
+    </div>
+  </div>
+</div>
+<div class="box_163css">
+	<div class="key">
+		<span class="mkey">微博</span>
+		<ul class="keyul">
+			<li>微博</li>
+			<li>新闻</li>
+			<li>图片</li>
+			<li>博客</li>
+			<li>视频</li>
+			<li>知识人</li>
+			<li><a href="#">更多>></a></li>
+		</ul>
+	</div>
+	<input type="text" class="seatext" value="请输入关键字" />
+	<input type="submit" class="seabtn" value="搜索">
+</div>
+</body>
+</html>
