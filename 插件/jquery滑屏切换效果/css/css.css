@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+html,body,div,ul,li,p,a,span,input{margin:0px;padding:0px;}
+body{font-family:Tahoma, Geneva, sans-serif,"宋体";}
+.dot{font-size:14px;font-family:"宋体";color:#333333;}
+ul,li{list-style:none;}
+
+/*页脚导航*/
+#footer{background:#FFF;bottom:0;position:fixed;width:100%;height:54px;}
+#footer-content{background:url(../images/fc_bg.jpg) repeat-x;height:54px;width:100%;}
+#toolbar{height:100%;list-style:none;margin:0 auto;display:block;width:410px;}
+#toolbar li{float:left;display:block;width:82px;height:54px;line-height:54px;text-align:center;}
+
+.inactive{display:block;width:82px;height:54px;float:left;line-height:54px;text-align:center;cursor:pointer;font-size:14px;}
+.inactive a{font-size:14px;color:#333333;text-decoration:none;}
+#footer .active{background:url(../images/li_bg.jpg) no-repeat;color:#4998fa;display:block;width:82px;height:54px;float:left;line-height:54px;text-align:center;cursor:pointer;}
+#footer .active a{font-size:14px;color:#4998fa;text-decoration:none;}
+img{border:none;}
+#footer li a{display:block;width:82px;height:54px;}
+
+/*省钱好站*/
+.page1{width:973px;margin:0 auto;height:100%}
+.head{width:900px;height:95px;border-bottom:#e2e2e2 1px solid;margin:0 auto;margin-bottom:27px;position:relative;}
+.page1 .content{width:973px;height:426px;}
+.title{font-size:30px;font-family:"微软雅黑";padding-top:35px;width:200px;position:absolute;left:0px;}
+
+.page1 ul li{list-style:none;width:139px;height:122px;display:block;float:left;font-size:12px;}
+.tu a:hover{background:url(../images/page1/hover.jpg) no-repeat;}
+.page1 ul{display:block;width:973px;height:122px;}
+.page1 .tu{width:87px;height:87px;margin:0 auto;}
+.tu a{display:block;width:87px;height:87px;}
+.page1 .bt{width:139px;text-align:center;color:#0063dc;height:21px;line-height:21px;font-size:12px;font-family:"宋体";}
+.page1 .fx{width:139px;height:14px;line-height:14px;text-align:center;font-size:12px;font-family:Tahoma,"宋体";color:#66666;}
+.page1 .fx span{color:#ff4e00;}
+
+/*品牌推荐*/
+.page2{width:900px;height:100%;margin:0 auto;}
+.page2 .content{width:900px;height:448px;position:relative;}
+.page2 .mask{background:#000;position:absolute;left:0;top:0;}
+.page2 .m1{width:160px;height:210px;}
+.page2 .m2{width:346px;height:210px;}
+
+/*优惠活动*/
+.page3{width:900px;height:100%;margin:0 auto;}
+.page3 .content{width:900px;height:468px;position:relative;}
+.page3 .mask{position:absolute;background:#000;left:0;top:0;width:444px;height:148px;}
+
+/*热销单品*/
+.page4{width:900px;height:100%;margin:0 auto;}
+.page4 .content{width:900px;height:380px;position:relative;}
+.page4 .mask{position:absolute;background:#000;left:0;top:0;}
+.page4 .m1{width:250px;height:250px;}
+.page4 .m2{width:120px;height:120px;}
+.page4 .item1{display:block;width:250px;height:250px;}
+.page4 .item2{display:block;width:120px;height:120px;}
+.page4 .item2 .mhover{width:120px;height:20px;background:url(../images/rx/m_bg.png) no-repeat;position:absolute;bottom:0;font-size:12px;font-family:Arial, Helvetica, sans-serif,"宋体";line-height:20px;text-align:center;color:#FFF;display:none;}
+.page4 .mhover span{color:#ff0000;font-weight:bold;}
+.page4 .item1 .mhover{width:250px;height:40px;background:url(../images/rx/big_bg.png) no-repeat;position:absolute;bottom:0;font-size:20px;font-family:Arial, Helvetica, sans-serif,"宋体";color:#FFF;display:none;}
+.page4 .item1 .mleft{width:114px;height:40px;float:left;text-align:right;line-height:40px;padding-right:38px;}
+.page4 .item1 .mleft span{color:#ff0000;font-size:30px;font-weight:bold;}
+.page4 .item1 .mright{width:97px;height:40px;float:left;line-height:40px;text-align:left;}
+.page4 .item1 .mright span{color:#ff0000;font-size:30px;font-weight:bold;}
+
+/*优质网店*/
+.page5{width:911px;height:100%;margin:0 auto;}
+.page5 .content{width:911px;height:454px;position:relative;}
+.page5 .dp{width:452px;height:222px;background:url(../images/dp/dp_bg1.jpg) no-repeat;}
+.page5 .dp1{width:452px;height:222px;background:url(../images/dp/dp_bg2.jpg) no-repeat;}
+.page5 .wai{width:415px;height:184px;padding:20px 19px;}
+.page5 .xinxi{width:415px;height:40px;padding-bottom:14px;}
+.page5 .dplogo{width:40px;height:40px;float:left;padding-right:10px;}
+.page5 .name{width:365px;height:40px;float:left;}
+.page5 .name .bt{width:365px;height:23px;font-size:14px;}
+.page5 .name .bt a{font-size:14px;color:#333333;text-decoration:none;}
+.page5 .name .bt a:hover{text-decoration:underline;}
+.page5 .name .bt span{color:#ff4e00;}
+.page5 .zuan{width:365px;height:17px;}
+.page5 .tjpic{width:414px;height:130px;}
+.page5 .tjpic .tu{width:130px;height:130px;float:left;position:relative;}
+.page5 .tu .money{width:60px;height:20px;position:absolute;bottom:5px;right:0px;background:url(../images/dp/money_bg.png) no-repeat;color:#FFF;
+font-size:12px;font-family:Arial, Helvetica, sans-serif;text-align:center;line-height:20px;}
+.page5 .tu .money span{color:#ff0000;font-weight:bold;}
+
+/*搜索*/
+.search{width:253px;height:33px;background:url(../images/search_bg.jpg) no-repeat;float:right;margin-top:37px;}
+.search .active1{width:36px;height:22px;margin:2px;float:left;display:block;cursor:pointer;padding:8px 0px 0px 7px;background:url(../images/active_bg.jpg) no-repeat;}
+.sousuo{width:139px;height:19px;border:none;margin:2px 0px;color:#999999;font-family:"宋体";font-size:12px;padding:5px;float:left;}
+.search-button{width:56px;height:33px;float:right;border:none;background:#4998fa;font-size:15px;font-family:"微软雅黑";color:#FFF;cursor:pointer;}
+.xiala{width:71px;height:87px;border:#e2e2e2 1px solid;position:absolute;top:74px;left:647px;background:#FFF;display:none;z-index:99999;}
+.xiala ul li{display:block;cursor:pointer;clear:both;font-size:12px;}
+.xiala .taobao{width:63px;height:19px;padding:10px 0px 0px 8px;}
+.xiala .xlogo{width:16px;height:19px;float:left;padding-right:6px;}
+.xiala .suning{width:63px;height:22px;padding:7px 0px 0px 8px;}
+.xiala .dangdang{width:68px;height:24px;padding:5px 0px 0px 8px;}
+
+/*外套*/
+#frame {overflow: hidden;margin: 0 auto;width: 100%;position:fixed;top:122px;}
+#scroller {width: 1024px;margin: 0 auto;overflow: hidden;}
+#content {width: 6144px;}
+.section {width: 1024px;float: left;height: 100%;}
+.wrapper{position:fixed;top:0px;width:100%;}
+
+.page4 .content a{text-decoration:none;}

@@ -1,0 +1,849 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery滑屏切换效果 - 懒人素材</title>
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" language="javascript">
+$(document).ready(function () { 
+//优质网店div背景图片切换
+$(".dp").hover( 
+function () { 
+$(this).removeClass("dp").addClass("dp1"); 
+}, 
+function () { 
+$(this).removeClass("dp1").addClass("dp"); 
+} 
+); 
+
+}); 
+ </script>
+<script src="js/cfcoda.js" language="javascript"></script>
+<!--下拉搜索框开始-->
+<script>
+ $(function(){
+	$(".active1").click(function(){
+		$(this).find(".xiala").show();
+	},function(){
+		$(this).find(".xiala").hide();
+	});
+});
+ </script>
+ <script>
+ $(document).ready(function(){
+	$(".taobao").click(function(){
+		$(".xiala").hide(100);
+		$(".activelogo").attr('src',"images/taobao.jpg")
+		})
+	})
+	 
+	 $(document).ready(function(){
+	$(".suning").click(function(){
+		$(".xiala").hide(100);
+		$(".activelogo").attr('src',"images/suning.jpg")
+
+		 })
+		 })
+	 
+	 $(document).ready(function(){
+	$(".dangdang").click(function(){
+		$(".xiala").hide(100);
+		$(".activelogo").attr('src',"images/dangdang.jpg");
+	
+	})
+	
+	 })
+ </script>
+<!--下拉搜索框结束-->
+
+<script>
+$(function() {
+ $(".content").find("a").each(function() {
+  $(this).hover(function() {
+   $(this).siblings().find(".mask").stop();
+   $(this).siblings().find(".mask").fadeTo("fast",0.3);
+  },
+  function() {
+   $(this).siblings().find(".mask").stop();
+   $(this).siblings().find(".mask").fadeTo("fast",0);
+  });
+ });
+})
+</script>
+
+<script>
+ $(function(){
+	$(".item2").hover(function(){
+		$(this).find(".mhover").show();
+	},function(){
+		$(this).find(".mhover").hide();
+	});
+});
+ </script>
+ 
+ <script>
+ $(function(){
+	$(".item1").hover(function(){
+		$(this).find(".mhover").show();
+	},function(){
+		$(this).find(".mhover").hide();
+	});
+});
+ </script>
+ 
+ <!--标题修改-->
+ <script>
+ $(document).ready(function(){
+	 $("#home-tab").click(function(){
+		 $('.title').html('省钱好站');
+
+		 })
+	 })
+	 
+	 $(document).ready(function(){
+	 $("#about-tab").click(function(){
+		 $('.title').html('热销单品');
+
+		 })
+	 })
+	 
+	  $(document).ready(function(){
+	 $("#downloads-tab").click(function(){
+		 $('.title').html('优质网店');
+
+		 })
+	 })
+	 
+	   $(document).ready(function(){
+	 $("#faq-tab").click(function(){
+		 $('.title').html('品牌推荐');
+
+		 })
+	 })
+	 
+	   $(document).ready(function(){
+	 $("#contact-tab").click(function(){
+		 $('.title').html('优惠活动');
+
+		 })
+	 })
+ </script>
+ 
+<script type="text/javascript">
+$(function(){
+ $(".active1").click(function(event){
+  var e=window.event || event;
+  if(e.stopPropagation){
+   e.stopPropagation();
+  }else{
+   e.cancelBubble = true;
+  }   
+  $(".xiala").show();
+ });
+ $(".xiala").click(function(event){
+  var e=window.event || event;
+  if(e.stopPropagation){
+   e.stopPropagation();
+  }else{
+   e.cancelBubble = true;
+  }
+ });
+ document.onclick = function(){
+  $(".xiala").hide();
+ };
+})
+</script>
+</head>
+
+<body>
+ <div class="wrapper">
+ <Div style="width:1024px;margin:0 auto;">
+<!--头部开始-->
+ <div class="head">
+    <div class="title">省钱好站</div>
+    <div class="search">
+     <span class="active1">
+     <img class="activelogo" src="images/taobao.jpg" width="16" height="16">
+       <!--下拉框开始-->
+ <div class="xiala">
+ <ul>
+   <li class="taobao">
+     <div class="xlogo"><img src="images/taobao.jpg" width="16" height="16"></div>
+      淘宝
+   </li>
+   <li class="suning">
+     <div class="xlogo"><img src="images/suning.jpg" width="16" height="16"></div>
+     苏宁
+   </li>
+   <li class="dangdang">
+    <div class="xlogo"><img src="images/dangdang.jpg" width="16" height="16"></div>
+    当当
+   </li>
+ </ul>
+ </div>
+ <!--下拉框结束-->
+      </span>
+     <input name="" type="text" class="sousuo" onfocus="this.className='sousuo';this.onmouseout='';if(this.value=='输入想买的宝贝') {this.value='';}" onblur="this.className='sousuo';this.onmouseout=function(){this.className='sousuo'};if(this.value=='') {this.value='输入想买的宝贝';}" onmouseout="this.className='sousuo'" value="输入想买的宝贝">
+     <input type="submit" class="search-button" value="搜 索">
+    </div>
+    
+    <!--下拉框开始-->
+ <div class="xiala">
+ <ul>
+   <li class="taobao">
+     <div class="xlogo"><img src="images/taobao.jpg" width="16" height="16"></div>
+      淘宝
+   </li>
+   <li class="suning">
+     <div class="xlogo"><img src="images/suning.jpg" width="16" height="16"></div>
+     苏宁
+   </li>
+   <li class="dangdang">
+    <div class="xlogo"><img src="images/dangdang.jpg" width="16" height="16"></div>
+    当当
+   </li>
+ </ul>
+ </div>
+ <!--下拉框结束-->
+ </div>
+ <!--头部结束-->
+ </Div>
+ </div>
+ 
+ <div id="frame">
+ <div id="scroller">
+		<div id="content">
+			<div class="section" id="home-pane">
+			   <div class="page1">
+ 
+  <div class="content">
+    <ul style="margin-bottom:30px;">
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/taobao.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">淘宝网</div>
+          <div class="fx">平均返现<span>50%</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/360buy.png" width="86" height="87"></a>
+         </div>
+          <div class="bt">京东商城</div>
+          <div class="fx">平均返现<span>45元</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/suning.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">苏宁易购</div>
+          <div class="fx">返<span>0-3840积分</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/vancl.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">凡客诚品</div>
+          <div class="fx">返<span>积分（随机）</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/dida.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">嘀嗒团</div>
+          <div class="fx">平均返现<span>45元</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/yixun.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">易讯网</div>
+          <div class="fx">返<span>0-4800积分</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/dangdang.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">当当网</div>
+          <div class="fx">返<span>0-4800积分</span></div>
+      </li>
+    </ul>
+    
+    <ul style="margin-bottom:30px;">
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/joyo.png" width="87" height="87"></a>
+       </div>
+          <div class="bt">卓越亚马逊</div>
+          <div class="fx">平均返现<span>50%</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/1hao.png" width="86" height="87"></a>
+         </div>
+          <div class="bt">一号店</div>
+          <div class="fx">平均返现<span>45元</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/newegg.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">新蛋</div>
+          <div class="fx">返<span>0-3840积分</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/58.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">58团</div>
+          <div class="fx">返<span>积分（随机）</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/jumei.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">聚美优品</div>
+          <div class="fx">平均返现<span>45元</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/yintai.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">银泰</div>
+          <div class="fx">返<span>0-4800积分</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/mengbasha.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">梦芭莎</div>
+          <div class="fx">返<span>0-4800积分</span></div>
+      </li>
+    </ul>
+    
+    <ul style="margin-bottom:30px;">
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/meituan.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">美团网</div>
+          <div class="fx">平均返现<span>50%</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/lashou.png" width="86" height="87"></a>
+         </div>
+          <div class="bt">拉手网</div>
+          <div class="fx">平均返现<span>45元</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/kuba.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">库巴购物网</div>
+          <div class="fx">返<span>0-3840积分</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/vjia.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">Vjia</div>
+          <div class="fx">返<span>积分（随机）</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/24quan.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">24券</div>
+          <div class="fx">平均返现<span>45元</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/kaixin.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">开心团购</div>
+          <div class="fx">返<span>0-4800积分</span></div>
+      </li>
+      
+      <li>
+        <div class="tu">
+          <a href="#"><img src="images/page1/lefeng.png" width="87" height="87"></a>
+         </div>
+          <div class="bt">乐蜂网</div>
+          <div class="fx">返<span>0-4800积分</span></div>
+      </li>
+    </ul>
+    
+  </div>
+</div>
+			</div>
+			<div class="section" id="about-pane">
+
+<div class="page4">
+ 
+  
+  <div class="content">
+
+      <a href="#" style="position:absolute;top:0px;left:0px;" class="item1"><img src="images/rx/big.jpg" width="250" height="250">
+        <div class="mask m1" style="opacity: 0; "></div>
+        <div class="mhover" style="display: none; ">
+          <div class="mleft">¥ <span>29.90</span></div>
+          <div class="mright">¥ <span>5.00</span></div>
+        </div>
+        
+      </a>
+
+    
+   
+   
+ 
+     <a href="#" style="position:absolute;top:0px;left:260px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+    
+    
+   
+     <a href="#" style="position:absolute;top:0px;left:390px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+  
+    
+
+     <a href="#" style="position:absolute;top:0px;left:520px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+   
+
+     <a href="#" style="position:absolute;top:0px;left:650px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+
+    
+
+     <a href="#" style="position:absolute;top:0px;left:780px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+
+    
+   
+   
+
+     <a href="#" style="position:absolute;top:130px;left:260px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+ 
+    
+
+     <a href="#" style="position:absolute;top:130px;left:390px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+
+    
+ 
+     <a href="#" style="position:absolute;top:130px;left:520px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+  
+    
+
+     <a href="#" style="position:absolute;top:130px;left:650px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+
+    
+
+     <a href="#" style="position:absolute;top:130px;left:780px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+  
+    
+   
+     <a href="#" style="position:absolute;bottom:0px;left:0px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+ 
+    
+
+     <a href="#" style="position:absolute;bottom:0px;left:130px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+
+    
+   
+     <a href="#" style="position:absolute;bottom:0px;left:260px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+
+    
+ 
+     <a href="#" style="position:absolute;bottom:0px;left:390px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+
+    
+   
+     <a href="#" style="position:absolute;bottom:0px;left:520px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+ 
+    
+
+     <a href="#" style="position:absolute;bottom:0px;left:650px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+ 
+    
+   
+     <a href="#" style="position:absolute;bottom:0px;left:780px;" class="item2"><img src="images/rx/1.jpg" width="120" height="120">
+      <div class="mask m2" style="opacity: 0; "></div>
+      <div class="mhover">
+       ¥<span>29.90</span> 返 ¥<span>5.00</span>
+      </div>
+     </a>
+   
+  </div>
+</div>
+			</div>
+			<div class="section" id="downloads-pane">
+
+ 
+ <div class="page5">
+
+  <div class="content">
+  <!--店铺1开始-->
+    <div class="dp" style="position:absolute;top:0px;left:0px;" id="dpp">
+       <div class="wai">
+         <div class="xinxi">
+           <div class="dplogo"><a href="#"><img src="images/dp/logo1.jpg" width="40" height="40"></a></div>
+           <div class="name">
+             <div class="bt"><a href="#"><span>7GEGE</span> TOP潮品 欧美日系品质女装</a></div>
+             <div class="zuan">
+             <img src="images/dp/lanzuan.jpg" width="15" height="13">
+             <img src="images/dp/lanzuan.jpg" width="15" height="13">
+             <img src="images/dp/lanzuan.jpg" width="15" height="13">
+             </div>
+           </div>
+         </div>
+         
+         <div class="tjpic">
+           <div class="tu" style="margin-right:12px;">
+           <a href="#"><img src="images/dp/1.jpg" width="130" height="130"></a>
+           <div class="money">¥<span>309.00</span></div>
+           </div>
+           
+           <div class="tu" style="margin-right:12px;">
+           <a href="#"><img src="images/dp/1.jpg" width="130" height="130"></a>
+            <div class="money">¥<span>309.00</span></div>
+           </div>
+           
+           <div class="tu">
+           <a href="#"><img src="images/dp/1.jpg" width="130" height="130"></a>
+            <div class="money">¥<span>309.00</span></div>
+           </div>
+         </div>
+       </div>
+    </div>
+  <!--店铺1结束-->
+   
+ <!--店铺2开始--> 
+  <div class="dp" style="position:absolute;top:0px;right:0px;">
+       <div class="wai">
+         <div class="xinxi">
+           <div class="dplogo"><a href="#"><img src="images/dp/logo2.jpg" width="40" height="40"></a></div>
+           <div class="name">
+             <div class="bt"><a href="#"><span>CIAO</span>!da Fanfan俏 原创尖端小欧美风淘品牌</a></div>
+             <div class="zuan">
+             <img src="images/dp/huangguan.jpg" width="16" height="17"></div>
+           </div>
+         </div>
+         
+         <div class="tjpic">
+           <div class="tu" style="margin-right:12px;">
+           <a href="#"><img src="images/dp/4.jpg" width="130" height="130"></a>
+            <div class="money">¥<span>25.00</span></div>
+           </div>
+           
+           <div class="tu" style="margin-right:12px;">
+           <a href="#"><img src="images/dp/4.jpg" width="130" height="130"></a>
+            <div class="money" "="">¥<span>25.00</span></div>
+           </div>
+           
+           <div class="tu">
+           <a href="#"><img src="images/dp/4.jpg" width="130" height="130"></a>
+            <div class="money" "="">¥<span>25.00</span></div>
+           </div>
+         </div>
+       </div>
+    </div>
+    
+    <!--店铺2结束-->
+    
+     <!--店铺3开始-->
+    <div class="dp" style="position:absolute;bottom:0px;left:0px;">
+       <div class="wai">
+         <div class="xinxi">
+           <div class="dplogo"><a href="#"><img src="images/dp/logo1.jpg" width="40" height="40"></a></div>
+           <div class="name">
+             <div class="bt"><a href="#"><span>7GEGE</span> TOP潮品 欧美日系品质女装</a></div>
+             <div class="zuan">
+             <img src="images/dp/lanzuan.jpg" width="15" height="13">
+             <img src="images/dp/lanzuan.jpg" width="15" height="13">
+             <img src="images/dp/lanzuan.jpg" width="15" height="13">
+             </div>
+           </div>
+         </div>
+         
+         <div class="tjpic">
+           <div class="tu" style="margin-right:12px;">
+           <a href="#"><img src="images/dp/1.jpg" width="130" height="130"></a>
+            <div class="money">¥<span>309.00</span></div>
+           </div>
+           
+           <div class="tu" style="margin-right:12px;">
+           <a href="#"><img src="images/dp/1.jpg" width="130" height="130"></a>
+            <div class="money" "="">¥<span>309.00</span></div>
+           </div>
+           
+           <div class="tu">
+           <a href="#"><img src="images/dp/1.jpg" width="130" height="130"></a>
+            <div class="money" "="">¥<span>309.00</span></div>
+           </div>
+         </div>
+       </div>
+    </div>
+  <!--店铺3结束--> 
+  
+  <!--店铺4开始--> 
+  <div class="dp" style="position:absolute;bottom:0px;right:0px;">
+       <div class="wai">
+         <div class="xinxi">
+           <div class="dplogo"><a href="#"><img src="images/dp/logo2.jpg" width="40" height="40"></a></div>
+           <div class="name">
+             <div class="bt"><a href="#"><span>CIAO</span>!da Fanfan俏 原创尖端小欧美风淘品牌</a></div>
+             <div class="zuan">
+             <img src="images/dp/huangguan.jpg" width="16" height="17"></div>
+           </div>
+         </div>
+         
+         <div class="tjpic">
+           <div class="tu" style="margin-right:12px;">
+           <a href="#"><img src="images/dp/4.jpg" width="130" height="130"></a>
+            <div class="money" "="">¥<span>25.00</span></div>
+           </div>
+           
+           <div class="tu" style="margin-right:12px;">
+           <a href="#"><img src="images/dp/4.jpg" width="130" height="130"></a>
+            <div class="money" "="">¥<span>25.00</span></div>
+           </div>
+           
+           <div class="tu">
+           <a href="#"><img src="images/dp/4.jpg" width="130" height="130"></a>
+            <div class="money">¥<span>25.00</span></div>
+           </div>
+         </div>
+       </div>
+    </div>
+    
+    <!--店铺4结束-->
+  </div>
+</div>
+			</div>
+			<div class="section" id="faq-pane">
+
+
+<div class="page2">
+
+  
+  <div class="content">
+
+     <a href="#" style="position:absolute;top:0px;left:0px;"><img src="images/pinpai/1.jpg" width="160" height="210">
+     <div class="mask m1" style="opacity: 0; "></div>
+     </a>
+  
+    
+
+     <a href="#" style="position:absolute;top:0px;left:185px;"><img src="images/pinpai/2.jpg" width="160" height="210">
+       <div class="mask m1" style="opacity: 0; "></div>
+     </a>
+ 
+    
+
+      <a href="#" style="position:absolute;top:0px;left:370px;"><img src="images/pinpai/3.jpg" width="160" height="210">
+     <div class="mask m1" style="opacity: 0; "></div>
+      </a>
+
+    
+
+     <a href="#" style="position:absolute;top:0px;right:0px;"><img src="images/pinpai/4.jpg" width="346" height="210">
+       <div class="mask m2" style="opacity: 0; "></div>
+     </a>
+ 
+    
+ 
+      <a href="#" style="position:absolute;left:0px;bottom:0px;"><img src="images/pinpai/5.jpg" width="160" height="210">
+        <div class="mask m1" style="opacity: 0; "></div>
+      </a>
+ 
+    
+
+     <a href="#" style="position:absolute;bottom:0px;left:185px;"><img src="images/pinpai/6.jpg" width="160" height="210">
+       <div class="mask m1" style="opacity: 0; "></div>
+     </a>
+  
+    
+
+      <a href="#" style="position:absolute;bottom:0px;left:370px;"><img src="images/pinpai/7.jpg" width="160" height="210">
+        <div class="mask m1" style="opacity: 0; "></div>
+      </a>
+
+    
+
+      <a href="#" style="position:absolute;bottom:0px;left:554px;"><img src="images/pinpai/8.jpg" width="160" height="210">
+        <div class="mask m1" style="opacity: 0; "></div>
+      </a>
+   
+    
+  
+      <a href="#" style="position:absolute;bottom:0px;right:0px;"><img src="images/pinpai/9.jpg" width="160" height="210">
+        <div class="mask m1" style="opacity: 0; "></div>
+      </a>
+
+  </div>
+</div>
+			</div>
+			<div class="section" id="contact-pane">
+
+
+
+		<div class="page3">
+
+  
+  <div class="content">
+  
+     <a href="#" style="position:absolute;top:0px;left:0px;"><img src="images/yh/1.jpg" width="444" height="148">
+       <div class="mask m1" style="opacity: 0; "></div>
+     </a>
+  
+   
+
+     <a href="#" style="position:absolute;top:0px;right:0px;"><img src="images/yh/2.jpg" width="444" height="148">
+        <div class="mask m2" style="opacity: 0; "></div>
+     </a>
+
+
+     <a href="#" style="position:absolute;top:160px;left:0px;"><img src="images/yh/3.jpg" width="444" height="148">
+        <div class="mask m3" style="opacity: 0; "></div>
+     </a>
+
+
+     <a href="#" style="position:absolute;top:160px;right:0px;"><img src="images/yh/4.jpg" width="444" height="148">
+      <div class="mask m4" style="opacity: 0; "></div>
+     </a>
+
+   
+
+     <a href="#" style="position:absolute;top:320px;left:0px;"><img src="images/yh/5.jpg" width="444" height="148">
+       <div class="mask m5" style="opacity: 0; "></div>
+     </a>
+
+   
+
+     <a href="#" style="position:absolute;top:320px;right:0px;"><img src="images/yh/6.jpg" width="443" height="148">
+       <div class="mask m6" style="opacity: 0; "></div>
+     </a>
+
+  </div>
+  
+</div>
+
+		</div>
+	
+	</div><div style="text-align:center;clear:both"><br>
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p><br>
+<p>来源：<a href="http://www.lanrensc.com/" target="_blank">懒人素材</a></p>
+</div>
+</div>
+ </div>
+
+ <div id="footer">
+  <div id="footer-content">
+   
+	<ul id="toolbar" class="navigation">
+		<li id="home-tab" class="active"><a href="#" onclick="javascript:ScrollSection('home-pane', 'scroller', 'home-pane'); return false">省钱好站</a></li>
+		<li id="about-tab" class="inactive"><a href="#" onclick="javascript:ScrollSection('about-pane', 'scroller', 'home-pane'); return false">热销单品</a></li>
+		
+		<li id="downloads-tab" class="inactive"><a href="#" onclick="javascript:ScrollSection('downloads-pane', 'scroller', 'home-pane'); return false">优质网店</a></li>
+		<li id="faq-tab" class="inactive"><a href="#" onclick="javascript:ScrollSection('faq-pane', 'scroller', 'home-pane'); return false">品牌推荐</a></li>
+		<li id="contact-tab" class="inactive"><a href="#" onclick="javascript:ScrollSection('contact-pane', 'scroller', 'home-pane'); return false">优惠活动</a></li>
+	</ul>
+
+  </div>
+</div>
+</body>
+</html>
