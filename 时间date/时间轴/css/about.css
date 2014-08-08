@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+/*= Reset =*//* 代码整理：大头网 www.datouwang.com */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,p,blockquote,th,td,figure{margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{font-weight:normal;text-align:left;}
+fieldset,img{border:0;}
+ul li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+h5{font-size:18px;margin-bottom:20px;color:#666;}
+h5 span{font-size:12px;color:#ccc;font-weight:normal;}
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+html{-webkit-text-size-adjust:none;-ms-text-size-adjust:none;}
+body{font:normal 14px/24px "Helvetica Neue",Helvetica,STheiti,"Microsoft Yahei","冬青黑体简体中文 w3",宋体,Arial,Tahoma,sans-serif,serif;word-wrap:break-word;background: #F0F0F0;}
+a { text-decoration:none;color:#1C3D72 }
+img{-ms-interpolation-mode:bicubic;}
+.box { width:940px;margin:18px auto 0 auto; }
+.event_year { width:60px;border-bottom:2px solid #DDD;text-align:center;float:left;margin-top:10px; }
+.event_year li { height:40px;line-height:40px;background:#FFF;margin-bottom:1px;font-size:18px;color:#828282;cursor:pointer; }
+.event_year li.current { width:61px;background:#0066ff url('../img/jian.png') 60px 0 no-repeat;color:#FFF;text-align:left;padding-left:9px; }
+.event_list { width:850px;float:right;background:url('../img/dian3.png') 139px 0 repeat-y;margin:10px 0 20px 0; }
+.event_list h3 { margin:0 0 10px 132px;font-size:24px;font-family:Georgia;color:#0066ff;padding-left:25px;background:url('../img/jian.png') 0 -45px no-repeat;height:38px;line-height:30px;font-style:italic; }
+.event_list li { background:url('../img/jian.png') 136px -80px no-repeat; }
+.event_list li span { width:127px;text-align:right;display:block;float:left;margin-top:10px; }
+.event_list li p { width:680px;margin-left:24px;display:inline-block;padding-left:10px;background:url('../img/jian.png') -21px 0 no-repeat;line-height:25px;_float:left; }
+.event_list li p span { width:650px;text-align:left;border-bottom:2px solid #DDD;padding:10px 15px;background:#FFF;margin:0; }
+.copyright { width:1050px;margin:0 auto;padding:20px 0;text-align:center;color:#999;display:table;margin-left:180px; }
+/* 代码整理：大头网 www.datouwang.com */
